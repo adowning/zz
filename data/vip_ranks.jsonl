@@ -1,0 +1,5 @@
+ {"id":1,"name":"Bronze","minXp":5000,"dailyBonusCoinPct":0,"hourlyBonusCoinPct":0,"purchaseBonusCoinPct":0,"levelUpBonusCoinPct":0,"hasConcierge":false,"hasVipLoungeAccess":false,"isInvitationOnly":false}
+ {"id":2,"name":"Silver","minXp":25000,"dailyBonusCoinPct":0,"hourlyBonusCoinPct":0,"purchaseBonusCoinPct":0,"levelUpBonusCoinPct":0,"hasConcierge":false,"hasVipLoungeAccess":false,"isInvitationOnly":false}
+ {"id":3,"name":"Gold","minXp":100000,"dailyBonusCoinPct":0,"hourlyBonusCoinPct":0,"purchaseBonusCoinPct":0,"levelUpBonusCoinPct":0,"hasConcierge":false,"hasVipLoungeAccess":false,"isInvitationOnly":false}
+ {"id":4,"name":"Platinum","minXp":500000,"dailyBonusCoinPct":0,"hourlyBonusCoinPct":0,"purchaseBonusCoinPct":0,"levelUpBonusCoinPct":0,"hasConcierge":false,"hasVipLoungeAccess":false,"isInvitationOnly":false}
+ {"id":5,"name":"Diamond","minXp":2500000,"dailyBonusCoinPct":0,"hourlyBonusCoinPct":0,"purchaseBonusCoinPct":0,"levelUpBonusCoinPct":0,"hasConcierge":false,"hasVipLoungeAccess":false,"isInvitationOnly":false}

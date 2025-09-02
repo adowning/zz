@@ -1,0 +1,34 @@
+
+enterButton.png
+size: 512,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+enterDisabled
+  rotate: false
+  xy: 2, 326
+  size: 267, 160
+  orig: 267, 160
+  offset: 0, 0
+  index: -1
+enterDown
+  rotate: false
+  xy: 2, 164
+  size: 267, 160
+  orig: 267, 160
+  offset: 0, 0
+  index: -1
+enterOver
+  rotate: true
+  xy: 271, 219
+  size: 267, 160
+  orig: 267, 160
+  offset: 0, 0
+  index: -1
+enterUp
+  rotate: false
+  xy: 2, 2
+  size: 267, 160
+  orig: 267, 160
+  offset: 0, 0
+  index: -1

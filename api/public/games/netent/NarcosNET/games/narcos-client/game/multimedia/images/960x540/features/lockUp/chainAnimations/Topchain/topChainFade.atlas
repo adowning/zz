@@ -1,0 +1,13 @@
+
+topChainFade.png
+size: 256,64
+format: RGBA8888
+filter: Linear,Linear
+repeat: xy
+chaintop
+  rotate: false
+  xy: 2, 2
+  size: 204, 40
+  orig: 234, 240
+  offset: 16, 200
+  index: -1

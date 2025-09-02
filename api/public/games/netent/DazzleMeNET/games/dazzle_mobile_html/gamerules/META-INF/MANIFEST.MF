@@ -1,0 +1,25 @@
+Manifest-Version: 1.0
+Implementation-Title: Language Library
+Implementation-Version: 2.10.0
+Maven-ArtifactId: dazzle-gamerules
+Archiver-Version: Plexus Archiver
+Built-By: jenkins-slave
+Jenkins-BuildNumber: 10
+Implementation-Vendor-Id: com.netent.casino-software.games.videoslots.
+ dazzle-me
+Jenkins-BuildId: 10
+Git-Hash: 4d46554a341fb9549adcfe9d9230a8d03eb971f7 (with local modific
+ ations)
+Implementation-Vendor: Net Entertainment
+Maven-Classifier: 
+Maven-GroupId: com.netent.casino-software.games.videoslots.dazzle-me
+Jenkins-BuildUrl: https://gdp-got-01.netent.com/job/dazzle-dazzle-me-g
+ amerules-master/10/
+Git-CommitTime: 2019-05-03T12:07:09.000Z
+Git-Url: https://git.netent.com/scm/dazzle/dazzle-me-gamerules.git
+Maven-Name: Language Library
+Maven-Version: 2.10.0
+Jenkins-JobName: dazzle-dazzle-me-gamerules-master
+Created-By: Apache Maven 3.0.4
+Build-Jdk: 1.8.0_151
+

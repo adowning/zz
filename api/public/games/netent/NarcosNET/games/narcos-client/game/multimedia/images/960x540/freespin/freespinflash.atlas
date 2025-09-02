@@ -1,0 +1,20 @@
+
+freespinflash.png
+size: 256,128
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+muzzleflash01
+  rotate: false
+  xy: 2, 2
+  size: 196, 120
+  orig: 198, 136
+  offset: 2, 11
+  index: -1
+tracerbullet01
+  rotate: true
+  xy: 200, 37
+  size: 85, 11
+  orig: 99, 17
+  offset: 8, 4
+  index: -1

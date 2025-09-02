@@ -1,0 +1,56 @@
+{
+  "compilerOptions": {
+    "module": "ESNext",
+    "target": "ESNext",
+    "lib": ["DOM", "ESNext"],
+    "moduleResolution": "Bundler",
+    "jsx": "preserve",
+    "outDir": "./dist",
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "baseUrl": ".",
+    "allowJs": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "strict": true,
+    "noUnusedLocals": true,
+    "strictNullChecks": true,
+    "types": ["unplugin-vue-router/client", "vite-plugin-vue-layouts/client"],
+    "paths": {
+      "@/*": ["./src/*"],
+      "#/*": ["./api/*"],
+      "~/*": ["./shared/*"]
+    }
+  },
+  "include": [
+    "api/db/**/*.ts",
+    "./zero-schema.gen.ts",
+    "src/**/*.ts",
+    "api/**/*.ts",
+    "share/**/*.ts",
+    "src/**/*.d.ts",
+    "api/db/**/*.d.ts",
+    "api/**/*.d.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue",
+    "tests/**/*.ts",
+    "prisma/prisma.json-types.ts",
+    "src/types/auto-imports.d.ts",
+    "src/types/components.d.ts",
+    "shared/**/*.ts",
+    "shared/**/*.d.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "public",
+    "public/**/*",
+    "api/public",
+    "api/public/**/*",
+    "prisma/generated",
+    "scripts",
+    "dist",
+    "shared/sync-replica.db",
+    "shared/sync-replica.*"
+  ]
+}

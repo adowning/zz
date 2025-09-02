@@ -1,0 +1,48 @@
+
+sym11.png
+size: 1024,256
+format: RGBA8888
+filter: Linear,Linear
+repeat: xy
+Q
+  rotate: false
+  xy: 505, 20
+  size: 151, 212
+  orig: 234, 230
+  offset: 35, 16
+  index: -1
+frame
+  rotate: false
+  xy: 815, 29
+  size: 153, 203
+  orig: 234, 230
+  offset: 39, 14
+  index: -1
+sym11
+  rotate: false
+  xy: 346, 18
+  size: 157, 214
+  orig: 234, 230
+  offset: 35, 14
+  index: -1
+sym11b
+  rotate: false
+  xy: 187, 11
+  size: 157, 221
+  orig: 234, 230
+  offset: 35, 9
+  index: -1
+transBG
+  rotate: false
+  xy: 658, 27
+  size: 155, 205
+  orig: 234, 230
+  offset: 38, 13
+  index: -1
+winglow
+  rotate: false
+  xy: 2, 2
+  size: 183, 230
+  orig: 234, 230
+  offset: 24, 0
+  index: -1

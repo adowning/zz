@@ -1,0 +1,20 @@
+
+bottomChainStartStop.png
+size: 512,64
+format: RGBA8888
+filter: Linear,Linear
+repeat: xy
+chainsbottom
+  rotate: false
+  xy: 215, 16
+  size: 204, 39
+  orig: 234, 240
+  offset: 7, 0
+  index: -1
+chainsbottomstart
+  rotate: false
+  xy: 2, 2
+  size: 211, 53
+  orig: 234, 240
+  offset: 8, 0
+  index: -1

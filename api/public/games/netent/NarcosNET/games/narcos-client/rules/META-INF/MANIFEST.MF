@@ -1,0 +1,25 @@
+Manifest-Version: 1.0
+Implementation-Title: Language Library
+Implementation-Version: 1.108.0
+Maven-ArtifactId: narcos-gamerules
+Archiver-Version: Plexus Archiver
+Built-By: jenkins-slave
+Jenkins-BuildNumber: 108
+Implementation-Vendor-Id: com.netent.casino-software.games.videoslots.
+ narcos
+Jenkins-BuildId: 108
+Git-Hash: 91e3d4447a69132fb758cd1324878ef96333f938 (with local modific
+ ations)
+Implementation-Vendor: Net Entertainment
+Maven-Classifier: 
+Maven-GroupId: com.netent.casino-software.games.videoslots.narcos
+Jenkins-BuildUrl: https://gdp-got-01.netent.com/job/narcos-narcos-game
+ rules-master/108/
+Git-CommitTime: 2019-08-27T11:03:18.000Z
+Git-Url: https://git.netent.com/scm/narcos/narcos-gamerules.git
+Maven-Name: Language Library
+Maven-Version: 1.108.0
+Jenkins-JobName: narcos-narcos-gamerules-master
+Created-By: Apache Maven 3.0.4
+Build-Jdk: 1.8.0_151
+

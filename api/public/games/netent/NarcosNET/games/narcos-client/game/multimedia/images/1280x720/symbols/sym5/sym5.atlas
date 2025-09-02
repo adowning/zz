@@ -1,0 +1,132 @@
+
+sym5.png
+size: 2048,256
+format: RGBA8888
+filter: Linear,Linear
+repeat: xy
+body
+  rotate: false
+  xy: 814, 116
+  size: 166, 138
+  orig: 166, 138
+  offset: 0, 0
+  index: -1
+earring
+  rotate: true
+  xy: 506, 42
+  size: 7, 16
+  orig: 7, 16
+  offset: 0, 0
+  index: -1
+eyes_closed
+  rotate: true
+  xy: 1424, 134
+  size: 57, 29
+  orig: 57, 29
+  offset: 0, 0
+  index: -1
+face
+  rotate: true
+  xy: 1730, 174
+  size: 80, 95
+  orig: 80, 95
+  offset: 0, 0
+  index: -1
+hair
+  rotate: true
+  xy: 1153, 109
+  size: 145, 152
+  orig: 145, 152
+  offset: 0, 0
+  index: -1
+hair11
+  rotate: true
+  xy: 982, 131
+  size: 123, 169
+  orig: 123, 169
+  offset: 0, 0
+  index: -1
+hair2
+  rotate: true
+  xy: 1614, 195
+  size: 59, 114
+  orig: 64, 114
+  offset: 5, 0
+  index: -1
+hair22
+  rotate: true
+  xy: 1307, 193
+  size: 61, 171
+  orig: 61, 171
+  offset: 0, 0
+  index: -1
+hand_right
+  rotate: true
+  xy: 1480, 191
+  size: 63, 132
+  orig: 63, 132
+  offset: 0, 0
+  index: -1
+held_left
+  rotate: true
+  xy: 1307, 106
+  size: 85, 115
+  orig: 85, 115
+  offset: 0, 0
+  index: -1
+lokon
+  rotate: false
+  xy: 1827, 226
+  size: 52, 28
+  orig: 52, 28
+  offset: 0, 0
+  index: -1
+mouth
+  rotate: false
+  xy: 814, 71
+  size: 55, 43
+  orig: 56, 46
+  offset: 0, 1
+  index: -1
+pen
+  rotate: true
+  xy: 187, 2
+  size: 26, 61
+  orig: 26, 61
+  offset: 0, 0
+  index: -1
+sym5bg
+  rotate: false
+  xy: 661, 56
+  size: 151, 198
+  orig: 234, 230
+  offset: 41, 18
+  index: -1
+sym5blur2
+  rotate: false
+  xy: 351, 38
+  size: 153, 216
+  orig: 234, 230
+  offset: 39, 11
+  index: -1
+sym5frame
+  rotate: false
+  xy: 506, 51
+  size: 153, 203
+  orig: 234, 230
+  offset: 39, 14
+  index: -1
+winglow
+  rotate: false
+  xy: 2, 24
+  size: 183, 230
+  orig: 234, 230
+  offset: 24, 0
+  index: -1
+winglow2
+  rotate: false
+  xy: 187, 30
+  size: 162, 224
+  orig: 234, 230
+  offset: 32, 1
+  index: -1

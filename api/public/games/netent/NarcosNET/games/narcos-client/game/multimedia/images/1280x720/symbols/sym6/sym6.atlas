@@ -1,0 +1,104 @@
+
+sym6.png
+size: 2048,256
+format: RGBA8888
+filter: Linear,Linear
+repeat: xy
+Body2
+  rotate: false
+  xy: 1103, 126
+  size: 178, 128
+  orig: 178, 128
+  offset: 0, 0
+  index: -1
+Gun1
+  rotate: false
+  xy: 1204, 70
+  size: 37, 54
+  orig: 37, 54
+  offset: 0, 0
+  index: -1
+GunShadow
+  rotate: false
+  xy: 1771, 212
+  size: 48, 42
+  orig: 48, 42
+  offset: 0, 0
+  index: -1
+Hand2
+  rotate: false
+  xy: 1716, 188
+  size: 53, 66
+  orig: 53, 66
+  offset: 0, 0
+  index: -1
+Hat
+  rotate: false
+  xy: 1570, 155
+  size: 144, 99
+  orig: 144, 99
+  offset: 0, 0
+  index: -1
+Head
+  rotate: true
+  xy: 1283, 129
+  size: 125, 132
+  orig: 125, 132
+  offset: 0, 0
+  index: -1
+LeftArm
+  rotate: true
+  xy: 1103, 67
+  size: 57, 99
+  orig: 57, 99
+  offset: 0, 0
+  index: -1
+hand
+  rotate: false
+  xy: 1417, 150
+  size: 151, 104
+  orig: 151, 104
+  offset: 0, 0
+  index: -1
+sym6_b
+  rotate: false
+  xy: 2, 24
+  size: 234, 230
+  orig: 234, 230
+  offset: 0, 0
+  index: -1
+sym6bg
+  rotate: false
+  xy: 946, 49
+  size: 155, 205
+  orig: 155, 205
+  offset: 0, 0
+  index: -1
+sym6frame
+  rotate: false
+  xy: 238, 24
+  size: 234, 230
+  orig: 234, 230
+  offset: 0, 0
+  index: -1
+thumb
+  rotate: false
+  xy: 2, 2
+  size: 23, 20
+  orig: 23, 20
+  offset: 0, 0
+  index: -1
+winglow
+  rotate: false
+  xy: 474, 24
+  size: 234, 230
+  orig: 234, 230
+  offset: 0, 0
+  index: -1
+winglow2
+  rotate: false
+  xy: 710, 24
+  size: 234, 230
+  orig: 234, 230
+  offset: 0, 0
+  index: -1

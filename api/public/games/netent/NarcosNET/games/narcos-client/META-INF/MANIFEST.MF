@@ -1,0 +1,19 @@
+Manifest-Version: 1.0
+Implementation-Title: Narcos
+Implementation-Version: 2.25.0
+Implementation-Vendor: NetEnt AB
+Implementation-Vendor-Id: com.netent.casino-software.games.videoslots.narcos
+Maven-Name: Narcos
+Maven-GroupId: com.netent.casino-software.games.videoslots.narcos
+Maven-ArtifactId: narcos-client
+Maven-Version: 2.25.0
+Git-Url: https://git.netent.com/scm/narcos/narcos-client.git
+Git-CommitTime: Mon Nov 30 14:32:16 2020 +0000
+Git-Hash: bef41e3d835eb46a4e4ba73226720439e321132e
+common-version: 10.5.1
+jmx: false
+Built-By: std-gdp-kiv-01-jenkins-agent-01.nix.cydmodule.com
+Jenkins-JobName: narcos-narcos-client-master
+Jenkins-BuildUrl: https://gdp-kiv-01.netent.com/job/narcos-narcos-client-master/32/
+Jenkins-BuildId: 32
+Jenkins-BuildNumber: 32

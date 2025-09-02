@@ -1,0 +1,46 @@
+/*PAYTABLE INDICATORS*/
+#paytableNavigationindicators {
+    left: 637px;
+    top: 495px;
+}
+
+.interface-cardNavigation_indicator {
+    padding: 0 !important;
+    height: 30px !important;
+    width: 30px !important;
+
+    background: center center url('../../multimedia/images/1280x720/paytable/status_bar_deselected.png') no-repeat;
+    background-size: 100% 100%;
+}
+
+.interface-cardNavigation_indicator:hover {
+    background: center center url('../../multimedia/images/1280x720/paytable/status_bar_over.png') no-repeat;
+    background-size: 100% 100%;
+}
+
+.interface-cardNavigation_indicator.interface-cardNavigation_selectedIndicator {
+    background: center center url('../../multimedia/images/1280x720/paytable/status_bar_selected.png') no-repeat;
+    background-size: 100% 100%;
+}
+
+.interface-settingsWindow_closeButton_uri {
+     background: url('../../multimedia/images/1280x720/paytable/close_button_deselected.png') no-repeat;
+ }
+
+.interface-settingsWindow_closeButton_uri:hover {
+    background: url('../../multimedia/images/1280x720/paytable/close_button_over.png') no-repeat;
+}
+
+.interface-settingsWindow_closeButton_uri.down {
+    background: url('../../multimedia/images/1280x720/paytable/close_button_selected.png') no-repeat;
+}
+
+.interface-settingsWindow_desktop_closeButton {
+    width: 31px;
+    height: 32px;
+    margin-top: 75px;
+    margin-right: 53px;
+    z-index: 1000;
+}
+
+/****PAYTABLE INDICATORS*/

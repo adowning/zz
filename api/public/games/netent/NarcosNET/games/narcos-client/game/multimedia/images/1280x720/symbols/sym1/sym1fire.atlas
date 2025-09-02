@@ -1,0 +1,461 @@
+
+sym1fire.jpg
+size: 2048,2048
+format: RGB888
+filter: Linear,Linear
+repeat: xy
+sabrewildloop-assets/sabrewildloop_00000
+  rotate: false
+  xy: 2, 1444
+  size: 200, 204
+  orig: 200, 204
+  offset: 0, 0
+  index: -1
+sabrewildloop-assets/sabrewildloop_00001
+  rotate: false
+  xy: 204, 1650
+  size: 200, 204
+  orig: 200, 204
+  offset: 0, 0
+  index: -1
+sabrewildloop-assets/sabrewildloop_00002
+  rotate: false
+  xy: 2, 1238
+  size: 200, 204
+  orig: 200, 204
+  offset: 0, 0
+  index: -1
+sabrewildloop-assets/sabrewildloop_00003
+  rotate: false
+  xy: 204, 1444
+  size: 200, 204
+  orig: 200, 204
+  offset: 0, 0
+  index: -1
+sabrewildloop-assets/sabrewildloop_00004
+  rotate: false
+  xy: 406, 1650
+  size: 200, 204
+  orig: 200, 204
+  offset: 0, 0
+  index: -1
+sabrewildloop-assets/sabrewildloop_00005
+  rotate: false
+  xy: 2, 1032
+  size: 200, 204
+  orig: 200, 204
+  offset: 0, 0
+  index: -1
+sabrewildloop-assets/sabrewildloop_00006
+  rotate: false
+  xy: 204, 1238
+  size: 200, 204
+  orig: 200, 204
+  offset: 0, 0
+  index: -1
+sabrewildloop-assets/sabrewildloop_00007
+  rotate: false
+  xy: 406, 1444
+  size: 200, 204
+  orig: 200, 204
+  offset: 0, 0
+  index: -1
+sabrewildloop-assets/sabrewildloop_00008
+  rotate: false
+  xy: 608, 1650
+  size: 200, 204
+  orig: 200, 204
+  offset: 0, 0
+  index: -1
+sabrewildloop-assets/sabrewildloop_00009
+  rotate: false
+  xy: 2, 826
+  size: 200, 204
+  orig: 200, 204
+  offset: 0, 0
+  index: -1
+sabrewildloop-assets/sabrewildloop_00010
+  rotate: false
+  xy: 204, 1032
+  size: 200, 204
+  orig: 200, 204
+  offset: 0, 0
+  index: -1
+sabrewildloop-assets/sabrewildloop_00011
+  rotate: false
+  xy: 406, 1238
+  size: 200, 204
+  orig: 200, 204
+  offset: 0, 0
+  index: -1
+sabrewildloop-assets/sabrewildloop_00012
+  rotate: false
+  xy: 608, 1444
+  size: 200, 204
+  orig: 200, 204
+  offset: 0, 0
+  index: -1
+sabrewildloop-assets/sabrewildloop_00013
+  rotate: false
+  xy: 810, 1650
+  size: 200, 204
+  orig: 200, 204
+  offset: 0, 0
+  index: -1
+sabrewildloop-assets/sabrewildloop_00014
+  rotate: false
+  xy: 2, 620
+  size: 200, 204
+  orig: 200, 204
+  offset: 0, 0
+  index: -1
+sabrewildloop-assets/sabrewildloop_00015
+  rotate: false
+  xy: 204, 826
+  size: 200, 204
+  orig: 200, 204
+  offset: 0, 0
+  index: -1
+sabrewildloop-assets/sabrewildloop_00016
+  rotate: false
+  xy: 406, 1032
+  size: 200, 204
+  orig: 200, 204
+  offset: 0, 0
+  index: -1
+sabrewildloop-assets/sabrewildloop_00017
+  rotate: false
+  xy: 608, 1238
+  size: 200, 204
+  orig: 200, 204
+  offset: 0, 0
+  index: -1
+sabrewildloop-assets/sabrewildloop_00018
+  rotate: false
+  xy: 810, 1444
+  size: 200, 204
+  orig: 200, 204
+  offset: 0, 0
+  index: -1
+sabrewildloop-assets/sabrewildloop_00019
+  rotate: false
+  xy: 1012, 1650
+  size: 200, 204
+  orig: 200, 204
+  offset: 0, 0
+  index: -1
+sabrewildloop-assets/sabrewildloop_00020
+  rotate: false
+  xy: 2, 414
+  size: 200, 204
+  orig: 200, 204
+  offset: 0, 0
+  index: -1
+sabrewildloop-assets/sabrewildloop_00021
+  rotate: false
+  xy: 204, 620
+  size: 200, 204
+  orig: 200, 204
+  offset: 0, 0
+  index: -1
+sabrewildloop-assets/sabrewildloop_00022
+  rotate: false
+  xy: 406, 826
+  size: 200, 204
+  orig: 200, 204
+  offset: 0, 0
+  index: -1
+sabrewildloop-assets/sabrewildloop_00023
+  rotate: false
+  xy: 608, 1032
+  size: 200, 204
+  orig: 200, 204
+  offset: 0, 0
+  index: -1
+sabrewildloop-assets/sabrewildloop_00024
+  rotate: false
+  xy: 810, 1238
+  size: 200, 204
+  orig: 200, 204
+  offset: 0, 0
+  index: -1
+sabrewildloop-assets/sabrewildloop_00025
+  rotate: false
+  xy: 1012, 1444
+  size: 200, 204
+  orig: 200, 204
+  offset: 0, 0
+  index: -1
+sabrewildloop-assets/sabrewildloop_00026
+  rotate: false
+  xy: 1214, 1650
+  size: 200, 204
+  orig: 200, 204
+  offset: 0, 0
+  index: -1
+sabrewildloop-assets/sabrewildloop_00027
+  rotate: false
+  xy: 2, 208
+  size: 200, 204
+  orig: 200, 204
+  offset: 0, 0
+  index: -1
+sabrewildloop-assets/sabrewildloop_00028
+  rotate: false
+  xy: 204, 414
+  size: 200, 204
+  orig: 200, 204
+  offset: 0, 0
+  index: -1
+sabrewildloop-assets/sabrewildloop_00029
+  rotate: false
+  xy: 406, 620
+  size: 200, 204
+  orig: 200, 204
+  offset: 0, 0
+  index: -1
+sabrewildloop-assets/sabrewildloop_00030
+  rotate: false
+  xy: 2, 1650
+  size: 200, 204
+  orig: 200, 204
+  offset: 0, 0
+  index: -1
+sabrewildwalk-assets/sabrewildwalk_00000
+  rotate: false
+  xy: 608, 826
+  size: 200, 204
+  orig: 200, 204
+  offset: 0, 0
+  index: -1
+sabrewildwalk-assets/sabrewildwalk_00001
+  rotate: false
+  xy: 810, 1032
+  size: 200, 204
+  orig: 200, 204
+  offset: 0, 0
+  index: -1
+sabrewildwalk-assets/sabrewildwalk_00002
+  rotate: false
+  xy: 1012, 1238
+  size: 200, 204
+  orig: 200, 204
+  offset: 0, 0
+  index: -1
+sabrewildwalk-assets/sabrewildwalk_00003
+  rotate: false
+  xy: 1214, 1444
+  size: 200, 204
+  orig: 200, 204
+  offset: 0, 0
+  index: -1
+sabrewildwalk-assets/sabrewildwalk_00004
+  rotate: false
+  xy: 1416, 1650
+  size: 200, 204
+  orig: 200, 204
+  offset: 0, 0
+  index: -1
+sabrewildwalk-assets/sabrewildwalk_00005
+  rotate: false
+  xy: 2, 2
+  size: 200, 204
+  orig: 200, 204
+  offset: 0, 0
+  index: -1
+sabrewildwalk-assets/sabrewildwalk_00006
+  rotate: false
+  xy: 204, 208
+  size: 200, 204
+  orig: 200, 204
+  offset: 0, 0
+  index: -1
+sabrewildwalk-assets/sabrewildwalk_00007
+  rotate: false
+  xy: 406, 414
+  size: 200, 204
+  orig: 200, 204
+  offset: 0, 0
+  index: -1
+sabrewildwalk-assets/sabrewildwalk_00008
+  rotate: false
+  xy: 608, 620
+  size: 200, 204
+  orig: 200, 204
+  offset: 0, 0
+  index: -1
+sabrewildwalk-assets/sabrewildwalk_00009
+  rotate: false
+  xy: 810, 826
+  size: 200, 204
+  orig: 200, 204
+  offset: 0, 0
+  index: -1
+sabrewildwalk-assets/sabrewildwalk_00010
+  rotate: false
+  xy: 1012, 1032
+  size: 200, 204
+  orig: 200, 204
+  offset: 0, 0
+  index: -1
+sabrewildwalk-assets/sabrewildwalk_00011
+  rotate: false
+  xy: 1214, 1238
+  size: 200, 204
+  orig: 200, 204
+  offset: 0, 0
+  index: -1
+sabrewildwalk-assets/sabrewildwalk_00012
+  rotate: false
+  xy: 1416, 1444
+  size: 200, 204
+  orig: 200, 204
+  offset: 0, 0
+  index: -1
+sabrewildwalk-assets/sabrewildwalk_00013
+  rotate: false
+  xy: 1618, 1650
+  size: 200, 204
+  orig: 200, 204
+  offset: 0, 0
+  index: -1
+sabrewildwalk-assets/sabrewildwalk_00014
+  rotate: false
+  xy: 204, 2
+  size: 200, 204
+  orig: 200, 204
+  offset: 0, 0
+  index: -1
+sabrewildwalk-assets/sabrewildwalk_00015
+  rotate: false
+  xy: 406, 208
+  size: 200, 204
+  orig: 200, 204
+  offset: 0, 0
+  index: -1
+sabrewildwalk-assets/sabrewildwalk_00016
+  rotate: false
+  xy: 608, 414
+  size: 200, 204
+  orig: 200, 204
+  offset: 0, 0
+  index: -1
+sabrewildwalk-assets/sabrewildwalk_00017
+  rotate: false
+  xy: 810, 620
+  size: 200, 204
+  orig: 200, 204
+  offset: 0, 0
+  index: -1
+sabrewildwalk-assets/sabrewildwalk_00018
+  rotate: false
+  xy: 1012, 826
+  size: 200, 204
+  orig: 200, 204
+  offset: 0, 0
+  index: -1
+sabrewildwalk-assets/sabrewildwalk_00019
+  rotate: false
+  xy: 1214, 1032
+  size: 200, 204
+  orig: 200, 204
+  offset: 0, 0
+  index: -1
+sabrewildwalk-assets/sabrewildwalk_00020
+  rotate: false
+  xy: 1416, 1238
+  size: 200, 204
+  orig: 200, 204
+  offset: 0, 0
+  index: -1
+sabrewildwalk-assets/sabrewildwalk_00021
+  rotate: false
+  xy: 1618, 1444
+  size: 200, 204
+  orig: 200, 204
+  offset: 0, 0
+  index: -1
+sabrewildwalk-assets/sabrewildwalk_00022
+  rotate: false
+  xy: 1820, 1650
+  size: 200, 204
+  orig: 200, 204
+  offset: 0, 0
+  index: -1
+sabrewildwalk-assets/sabrewildwalk_00023
+  rotate: false
+  xy: 406, 2
+  size: 200, 204
+  orig: 200, 204
+  offset: 0, 0
+  index: -1
+sabrewildwalk-assets/sabrewildwalk_00024
+  rotate: false
+  xy: 608, 208
+  size: 200, 204
+  orig: 200, 204
+  offset: 0, 0
+  index: -1
+sabrewildwalk-assets/sabrewildwalk_00025
+  rotate: false
+  xy: 810, 414
+  size: 200, 204
+  orig: 200, 204
+  offset: 0, 0
+  index: -1
+sabrewildwalk-assets/sabrewildwalk_00026
+  rotate: false
+  xy: 1012, 620
+  size: 200, 204
+  orig: 200, 204
+  offset: 0, 0
+  index: -1
+sabrewildwalk-assets/sabrewildwalk_00027
+  rotate: false
+  xy: 1214, 826
+  size: 200, 204
+  orig: 200, 204
+  offset: 0, 0
+  index: -1
+sabrewildwalk-assets/sabrewildwalk_00028
+  rotate: false
+  xy: 1416, 1032
+  size: 200, 204
+  orig: 200, 204
+  offset: 0, 0
+  index: -1
+sabrewildwalk-assets/sabrewildwalk_00029
+  rotate: false
+  xy: 1618, 1238
+  size: 200, 204
+  orig: 200, 204
+  offset: 0, 0
+  index: -1
+sabrewildwalk-assets/sabrewildwalk_00030
+  rotate: false
+  xy: 1820, 1444
+  size: 200, 204
+  orig: 200, 204
+  offset: 0, 0
+  index: -1
+sabrewildwalk-assets/sabrewildwalk_00031
+  rotate: false
+  xy: 608, 2
+  size: 200, 204
+  orig: 200, 204
+  offset: 0, 0
+  index: -1
+sabrewildwalk-assets/sabrewildwalk_00032
+  rotate: false
+  xy: 810, 208
+  size: 200, 204
+  orig: 200, 204
+  offset: 0, 0
+  index: -1
+sabrewildwalk-assets/sabrewildwalk_00033
+  rotate: false
+  xy: 1012, 414
+  size: 200, 204
+  orig: 200, 204
+  offset: 0, 0
+  index: -1

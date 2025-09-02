@@ -1,0 +1,716 @@
+
+firerim-0.jpg
+size: 2024,1987
+format: RGB888
+filter: Linear,Linear
+repeat: none
+firerim-assets/firerim_00000
+  rotate: false
+  xy: 1, 1
+  size: 3, 3
+  orig: 500, 509
+  offset: 0, 506
+  index: -1
+firerim-assets/firerim_00013
+  rotate: true
+  xy: 1018, 1
+  size: 491, 499
+  orig: 500, 509
+  offset: 9, 0
+  index: -1
+firerim-assets/firerim_00014
+  rotate: true
+  xy: 1513, 495
+  size: 493, 498
+  orig: 500, 509
+  offset: 7, 0
+  index: -1
+firerim-assets/firerim_00016
+  rotate: true
+  xy: 1010, 990
+  size: 495, 502
+  orig: 500, 509
+  offset: 5, 0
+  index: -1
+firerim-assets/firerim_00017
+  rotate: true
+  xy: 507, 1487
+  size: 497, 504
+  orig: 500, 509
+  offset: 3, 0
+  index: -1
+firerim-assets/firerim_00018
+  rotate: true
+  xy: 1519, 1488
+  size: 498, 504
+  orig: 500, 509
+  offset: 2, 0
+  index: -1
+firerim-assets/firerim_00019
+  rotate: true
+  xy: 1013, 1488
+  size: 497, 504
+  orig: 500, 509
+  offset: 3, 0
+  index: -1
+firerim-assets/firerim_00020
+  rotate: true
+  xy: 1514, 990
+  size: 496, 504
+  orig: 500, 509
+  offset: 4, 0
+  index: -1
+firerim-assets/firerim_00021
+  rotate: true
+  xy: 1, 1483
+  size: 496, 504
+  orig: 500, 509
+  offset: 4, 0
+  index: -1
+firerim-assets/firerim_00022
+  rotate: true
+  xy: 6, 1
+  size: 490, 504
+  orig: 500, 509
+  offset: 6, 0
+  index: -1
+firerim-assets/firerim_00023
+  rotate: true
+  xy: 1519, 1
+  size: 492, 504
+  orig: 500, 509
+  offset: 4, 0
+  index: -1
+firerim-assets/firerim_00024
+  rotate: true
+  xy: 1, 493
+  size: 492, 504
+  orig: 500, 509
+  offset: 4, 0
+  index: -1
+firerim-assets/firerim_00025
+  rotate: true
+  xy: 507, 494
+  size: 492, 503
+  orig: 500, 509
+  offset: 4, 1
+  index: -1
+firerim-assets/firerim_00026
+  rotate: true
+  xy: 512, 1
+  size: 491, 504
+  orig: 500, 509
+  offset: 5, 0
+  index: -1
+firerim-assets/firerim_00027
+  rotate: true
+  xy: 1, 987
+  size: 494, 504
+  orig: 500, 509
+  offset: 2, 0
+  index: -1
+firerim-assets/firerim_00028
+  rotate: true
+  xy: 507, 988
+  size: 494, 501
+  orig: 500, 509
+  offset: 0, 3
+  index: -1
+firerim-assets/firerim_00029
+  rotate: true
+  xy: 1012, 494
+  size: 493, 499
+  orig: 500, 509
+  offset: 0, 5
+  index: -1
+
+firerim-1.jpg
+size: 1989,1919
+format: RGB888
+filter: Linear,Linear
+repeat: none
+firerim-assets/firerim_00009
+  rotate: false
+  xy: 1, 1
+  size: 488, 448
+  orig: 500, 509
+  offset: 12, 0
+  index: -1
+firerim-assets/firerim_00010
+  rotate: false
+  xy: 491, 1
+  size: 488, 454
+  orig: 500, 509
+  offset: 12, 0
+  index: -1
+firerim-assets/firerim_00011
+  rotate: false
+  xy: 1, 451
+  size: 487, 461
+  orig: 500, 509
+  offset: 13, 0
+  index: -1
+firerim-assets/firerim_00012
+  rotate: true
+  xy: 994, 928
+  size: 491, 484
+  orig: 500, 509
+  offset: 9, 0
+  index: -1
+firerim-assets/firerim_00015
+  rotate: true
+  xy: 1491, 1425
+  size: 493, 497
+  orig: 500, 509
+  offset: 7, 0
+  index: -1
+firerim-assets/firerim_00030
+  rotate: true
+  xy: 991, 1425
+  size: 487, 498
+  orig: 500, 509
+  offset: 3, 6
+  index: -1
+firerim-assets/firerim_00031
+  rotate: true
+  xy: 1, 1402
+  size: 487, 494
+  orig: 500, 509
+  offset: 1, 10
+  index: -1
+firerim-assets/firerim_00032
+  rotate: true
+  xy: 497, 1410
+  size: 489, 492
+  orig: 500, 509
+  offset: 1, 12
+  index: -1
+firerim-assets/firerim_00033
+  rotate: true
+  xy: 1480, 937
+  size: 486, 487
+  orig: 500, 509
+  offset: 4, 17
+  index: -1
+firerim-assets/firerim_00037
+  rotate: true
+  xy: 498, 928
+  size: 480, 494
+  orig: 500, 509
+  offset: 11, 10
+  index: -1
+firerim-assets/firerim_00038
+  rotate: true
+  xy: 1, 923
+  size: 477, 495
+  orig: 500, 509
+  offset: 14, 9
+  index: -1
+firerim-assets/firerim_00039
+  rotate: true
+  xy: 1480, 464
+  size: 471, 495
+  orig: 500, 509
+  offset: 18, 9
+  index: -1
+firerim-assets/firerim_00040
+  rotate: true
+  xy: 1478, 1
+  size: 461, 495
+  orig: 500, 509
+  offset: 22, 9
+  index: -1
+firerim-assets/firerim_00041
+  rotate: true
+  xy: 981, 1
+  size: 456, 495
+  orig: 500, 509
+  offset: 22, 9
+  index: -1
+firerim-assets/firerim_00042
+  rotate: true
+  xy: 490, 459
+  size: 462, 495
+  orig: 500, 509
+  offset: 13, 9
+  index: -1
+firerim-assets/firerim_00043
+  rotate: true
+  xy: 987, 464
+  size: 462, 491
+  orig: 500, 509
+  offset: 15, 13
+  index: -1
+
+firerim-2.jpg
+size: 1938,2018
+format: RGB888
+filter: Linear,Linear
+repeat: none
+firerim-assets/firerim_00003
+  rotate: false
+  xy: 1452, 866
+  size: 469, 390
+  orig: 500, 509
+  offset: 22, 0
+  index: -1
+firerim-assets/firerim_00004
+  rotate: false
+  xy: 1455, 459
+  size: 474, 405
+  orig: 500, 509
+  offset: 17, 0
+  index: -1
+firerim-assets/firerim_00005
+  rotate: false
+  xy: 957, 917
+  size: 479, 415
+  orig: 500, 509
+  offset: 12, 0
+  index: -1
+firerim-assets/firerim_00006
+  rotate: true
+  xy: 467, 1442
+  size: 475, 427
+  orig: 500, 509
+  offset: 13, 0
+  index: -1
+firerim-assets/firerim_00007
+  rotate: false
+  xy: 950, 1334
+  size: 477, 439
+  orig: 500, 509
+  offset: 12, 0
+  index: -1
+firerim-assets/firerim_00008
+  rotate: false
+  xy: 967, 471
+  size: 483, 444
+  orig: 500, 509
+  offset: 15, 0
+  index: -1
+firerim-assets/firerim_00034
+  rotate: false
+  xy: 1, 1
+  size: 485, 482
+  orig: 500, 509
+  offset: 6, 22
+  index: -1
+firerim-assets/firerim_00035
+  rotate: false
+  xy: 1, 485
+  size: 485, 478
+  orig: 500, 509
+  offset: 6, 26
+  index: -1
+firerim-assets/firerim_00036
+  rotate: false
+  xy: 1, 965
+  size: 480, 475
+  orig: 500, 509
+  offset: 11, 29
+  index: -1
+firerim-assets/firerim_00044
+  rotate: true
+  xy: 967, 1
+  size: 468, 486
+  orig: 500, 509
+  offset: 14, 18
+  index: -1
+firerim-assets/firerim_00045
+  rotate: false
+  xy: 488, 1
+  size: 477, 482
+  orig: 500, 509
+  offset: 13, 22
+  index: -1
+firerim-assets/firerim_00046
+  rotate: false
+  xy: 488, 485
+  size: 467, 478
+  orig: 500, 509
+  offset: 20, 26
+  index: -1
+firerim-assets/firerim_00047
+  rotate: false
+  xy: 483, 965
+  size: 465, 465
+  orig: 500, 509
+  offset: 22, 39
+  index: -1
+firerim-assets/firerim_00048
+  rotate: false
+  xy: 1, 1442
+  size: 464, 478
+  orig: 500, 509
+  offset: 18, 26
+  index: -1
+firerim-assets/firerim_00049
+  rotate: true
+  xy: 1455, 1
+  size: 456, 482
+  orig: 500, 509
+  offset: 22, 22
+  index: -1
+firerim-assets/firerim_00050
+  rotate: true
+  xy: 1438, 1258
+  size: 456, 466
+  orig: 500, 509
+  offset: 20, 38
+  index: -1
+firerim-assets/firerim_00096
+  rotate: true
+  xy: 1429, 1716
+  size: 269, 325
+  orig: 500, 509
+  offset: 70, 179
+  index: -1
+firerim-assets/firerim_00097
+  rotate: true
+  xy: 896, 1775
+  size: 242, 307
+  orig: 500, 509
+  offset: 100, 197
+  index: -1
+
+firerim-3.jpg
+size: 2048,2048
+format: RGB888
+filter: Linear,Linear
+repeat: none
+firerim-assets/firerim_00001
+  rotate: true
+  xy: 1304, 1
+  size: 397, 331
+  orig: 500, 509
+  offset: 52, 0
+  index: -1
+firerim-assets/firerim_00002
+  rotate: true
+  xy: 1, 457
+  size: 447, 375
+  orig: 500, 509
+  offset: 35, 0
+  index: -1
+firerim-assets/firerim_00051
+  rotate: false
+  xy: 1, 1
+  size: 451, 454
+  orig: 500, 509
+  offset: 20, 50
+  index: -1
+firerim-assets/firerim_00052
+  rotate: true
+  xy: 454, 1
+  size: 440, 433
+  orig: 500, 509
+  offset: 24, 71
+  index: -1
+firerim-assets/firerim_00053
+  rotate: false
+  xy: 378, 457
+  size: 437, 442
+  orig: 500, 509
+  offset: 20, 62
+  index: -1
+firerim-assets/firerim_00054
+  rotate: false
+  xy: 1, 1351
+  size: 430, 440
+  orig: 500, 509
+  offset: 17, 64
+  index: -1
+firerim-assets/firerim_00055
+  rotate: false
+  xy: 1, 906
+  size: 415, 443
+  orig: 500, 509
+  offset: 13, 61
+  index: -1
+firerim-assets/firerim_00056
+  rotate: false
+  xy: 418, 901
+  size: 412, 440
+  orig: 500, 509
+  offset: 12, 64
+  index: -1
+firerim-assets/firerim_00057
+  rotate: false
+  xy: 1637, 1211
+  size: 410, 423
+  orig: 500, 509
+  offset: 12, 81
+  index: -1
+firerim-assets/firerim_00058
+  rotate: false
+  xy: 1232, 433
+  size: 406, 425
+  orig: 500, 509
+  offset: 14, 79
+  index: -1
+firerim-assets/firerim_00059
+  rotate: false
+  xy: 832, 878
+  size: 411, 428
+  orig: 500, 509
+  offset: 11, 76
+  index: -1
+firerim-assets/firerim_00060
+  rotate: false
+  xy: 817, 443
+  size: 413, 433
+  orig: 500, 509
+  offset: 9, 71
+  index: -1
+firerim-assets/firerim_00061
+  rotate: false
+  xy: 889, 1
+  size: 413, 430
+  orig: 500, 509
+  offset: 7, 74
+  index: -1
+firerim-assets/firerim_00062
+  rotate: false
+  xy: 433, 1343
+  size: 418, 428
+  orig: 500, 509
+  offset: 3, 76
+  index: -1
+firerim-assets/firerim_00068
+  rotate: false
+  xy: 1640, 1
+  size: 407, 420
+  orig: 500, 509
+  offset: 0, 84
+  index: -1
+firerim-assets/firerim_00070
+  rotate: false
+  xy: 853, 1636
+  size: 395, 411
+  orig: 500, 509
+  offset: 3, 87
+  index: -1
+firerim-assets/firerim_00073
+  rotate: false
+  xy: 1621, 1636
+  size: 358, 410
+  orig: 500, 509
+  offset: 62, 94
+  index: -1
+firerim-assets/firerim_00077
+  rotate: false
+  xy: 1245, 1223
+  size: 366, 411
+  orig: 500, 509
+  offset: 58, 93
+  index: -1
+firerim-assets/firerim_00079
+  rotate: false
+  xy: 1250, 1636
+  size: 369, 410
+  orig: 500, 509
+  offset: 56, 91
+  index: -1
+firerim-assets/firerim_00084
+  rotate: true
+  xy: 1640, 818
+  size: 391, 407
+  orig: 500, 509
+  offset: 37, 97
+  index: -1
+firerim-assets/firerim_00087
+  rotate: false
+  xy: 1640, 423
+  size: 407, 393
+  orig: 500, 509
+  offset: 21, 106
+  index: -1
+firerim-assets/firerim_00092
+  rotate: false
+  xy: 1245, 860
+  size: 390, 361
+  orig: 500, 509
+  offset: 23, 143
+  index: -1
+firerim-assets/firerim_00094
+  rotate: true
+  xy: 853, 1308
+  size: 324, 345
+  orig: 500, 509
+  offset: 76, 159
+  index: -1
+
+firerim-4.jpg
+size: 1996,2015
+format: RGB888
+filter: Linear,Linear
+repeat: none
+firerim-assets/firerim_00063
+  rotate: true
+  xy: 1, 1
+  size: 419, 423
+  orig: 500, 509
+  offset: 1, 81
+  index: -1
+firerim-assets/firerim_00064
+  rotate: true
+  xy: 426, 1
+  size: 417, 421
+  orig: 500, 509
+  offset: 1, 83
+  index: -1
+firerim-assets/firerim_00065
+  rotate: false
+  xy: 1, 422
+  size: 417, 415
+  orig: 500, 509
+  offset: 0, 85
+  index: -1
+firerim-assets/firerim_00066
+  rotate: true
+  xy: 849, 1
+  size: 412, 420
+  orig: 500, 509
+  offset: 0, 84
+  index: -1
+firerim-assets/firerim_00067
+  rotate: true
+  xy: 1271, 1
+  size: 412, 419
+  orig: 500, 509
+  offset: 0, 85
+  index: -1
+firerim-assets/firerim_00069
+  rotate: true
+  xy: 426, 420
+  size: 403, 418
+  orig: 500, 509
+  offset: 0, 86
+  index: -1
+firerim-assets/firerim_00071
+  rotate: true
+  xy: 1270, 415
+  size: 400, 414
+  orig: 500, 509
+  offset: 6, 87
+  index: -1
+firerim-assets/firerim_00072
+  rotate: true
+  xy: 420, 825
+  size: 402, 412
+  orig: 500, 509
+  offset: 8, 92
+  index: -1
+firerim-assets/firerim_00074
+  rotate: true
+  xy: 825, 1229
+  size: 362, 407
+  orig: 500, 509
+  offset: 59, 97
+  index: -1
+firerim-assets/firerim_00075
+  rotate: true
+  xy: 415, 1229
+  size: 367, 408
+  orig: 500, 509
+  offset: 59, 96
+  index: -1
+firerim-assets/firerim_00076
+  rotate: false
+  xy: 379, 1598
+  size: 373, 409
+  orig: 500, 509
+  offset: 55, 95
+  index: -1
+firerim-assets/firerim_00078
+  rotate: true
+  xy: 846, 803
+  size: 371, 413
+  orig: 500, 509
+  offset: 56, 91
+  index: -1
+firerim-assets/firerim_00080
+  rotate: true
+  xy: 1, 1221
+  size: 375, 412
+  orig: 500, 509
+  offset: 52, 91
+  index: -1
+firerim-assets/firerim_00081
+  rotate: false
+  xy: 1612, 817
+  size: 375, 396
+  orig: 500, 509
+  offset: 49, 91
+  index: -1
+firerim-assets/firerim_00082
+  rotate: false
+  xy: 1234, 1176
+  size: 376, 403
+  orig: 500, 509
+  offset: 49, 92
+  index: -1
+firerim-assets/firerim_00083
+  rotate: false
+  xy: 754, 1598
+  size: 375, 407
+  orig: 500, 509
+  offset: 50, 94
+  index: -1
+firerim-assets/firerim_00085
+  rotate: false
+  xy: 1131, 1593
+  size: 395, 405
+  orig: 500, 509
+  offset: 33, 99
+  index: -1
+firerim-assets/firerim_00086
+  rotate: true
+  xy: 1528, 1616
+  size: 398, 401
+  orig: 500, 509
+  offset: 27, 102
+  index: -1
+firerim-assets/firerim_00088
+  rotate: false
+  xy: 1, 839
+  size: 412, 380
+  orig: 500, 509
+  offset: 22, 113
+  index: -1
+firerim-assets/firerim_00089
+  rotate: false
+  xy: 849, 415
+  size: 419, 386
+  orig: 500, 509
+  offset: 13, 117
+  index: -1
+firerim-assets/firerim_00090
+  rotate: true
+  xy: 1, 1598
+  size: 409, 376
+  orig: 500, 509
+  offset: 15, 125
+  index: -1
+firerim-assets/firerim_00091
+  rotate: true
+  xy: 1612, 1215
+  size: 399, 371
+  orig: 500, 509
+  offset: 19, 133
+  index: -1
+firerim-assets/firerim_00093
+  rotate: false
+  xy: 1261, 817
+  size: 339, 354
+  orig: 500, 509
+  offset: 75, 150
+  index: -1
+firerim-assets/firerim_00095
+  rotate: false
+  xy: 1686, 415
+  size: 309, 338
+  orig: 500, 509
+  offset: 74, 166
+  index: -1

@@ -1,0 +1,202 @@
+
+main_background.png
+size: 2048,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: xy
+3wires01
+  rotate: false
+  xy: 2, 550
+  size: 676, 449
+  orig: 676, 449
+  offset: 0, 0
+  index: -1
+3wires02
+  rotate: false
+  xy: 602, 214
+  size: 452, 294
+  orig: 452, 294
+  offset: 0, 0
+  index: -1
+3wires03
+  rotate: false
+  xy: 1834, 801
+  size: 190, 198
+  orig: 190, 198
+  offset: 0, 0
+  index: -1
+Bin
+  rotate: true
+  xy: 1392, 522
+  size: 87, 139
+  orig: 87, 139
+  offset: 0, 0
+  index: -1
+Wire01
+  rotate: false
+  xy: 680, 752
+  size: 571, 247
+  orig: 571, 248
+  offset: 0, 0
+  index: -1
+bird01
+  rotate: false
+  xy: 2026, 971
+  size: 12, 28
+  orig: 12, 28
+  offset: 0, 0
+  index: -1
+bird02
+  rotate: false
+  xy: 1011, 115
+  size: 16, 30
+  orig: 16, 30
+  offset: 0, 0
+  index: -1
+bird03
+  rotate: false
+  xy: 1533, 593
+  size: 12, 16
+  orig: 12, 25
+  offset: 0, 5
+  index: -1
+birdbody
+  rotate: false
+  xy: 1727, 618
+  size: 27, 13
+  orig: 27, 13
+  offset: 0, 0
+  index: -1
+birds04
+  rotate: false
+  xy: 602, 519
+  size: 65, 29
+  orig: 65, 29
+  offset: 0, 0
+  index: -1
+birdsfar
+  rotate: true
+  xy: 1727, 633
+  size: 132, 120
+  orig: 132, 120
+  offset: 0, 0
+  index: -1
+birdwing
+  rotate: false
+  xy: 1056, 227
+  size: 22, 19
+  orig: 22, 19
+  offset: 0, 0
+  index: -1
+canope
+  rotate: false
+  xy: 2, 2
+  size: 119, 41
+  orig: 122, 51
+  offset: 3, 4
+  index: -1
+frontpole
+  rotate: true
+  xy: 2, 45
+  size: 85, 609
+  orig: 85, 609
+  offset: 0, 0
+  index: -1
+mobil/dustsmall01
+  rotate: false
+  xy: 1253, 611
+  size: 295, 154
+  orig: 295, 154
+  offset: 0, 0
+  index: -1
+mobil/paper02
+  rotate: false
+  xy: 1849, 637
+  size: 95, 130
+  orig: 95, 130
+  offset: 0, 0
+  index: -1
+plane
+  rotate: true
+  xy: 1946, 652
+  size: 115, 35
+  orig: 115, 35
+  offset: 0, 0
+  index: -1
+pole01
+  rotate: true
+  xy: 602, 147
+  size: 65, 477
+  orig: 65, 477
+  offset: 0, 0
+  index: -1
+pole2
+  rotate: true
+  xy: 1834, 769
+  size: 30, 212
+  orig: 30, 212
+  offset: 0, 0
+  index: -1
+stopSign
+  rotate: true
+  xy: 613, 39
+  size: 106, 396
+  orig: 106, 396
+  offset: 0, 0
+  index: -1
+treesL01
+  rotate: true
+  xy: 1252, 515
+  size: 94, 138
+  orig: 101, 146
+  offset: 0, 5
+  index: -1
+treesL02
+  rotate: true
+  xy: 1550, 609
+  size: 156, 175
+  orig: 172, 188
+  offset: 6, 13
+  index: -1
+treesL03
+  rotate: true
+  xy: 1403, 114
+  size: 132, 83
+  orig: 132, 83
+  offset: 0, 0
+  index: -1
+treesRfront2
+  rotate: true
+  xy: 1081, 108
+  size: 138, 320
+  orig: 138, 320
+  offset: 0, 0
+  index: -1
+wire02
+  rotate: false
+  xy: 680, 510
+  size: 570, 240
+  orig: 570, 240
+  offset: 0, 0
+  index: -1
+wire03
+  rotate: false
+  xy: 1253, 767
+  size: 579, 232
+  orig: 579, 232
+  offset: 0, 0
+  index: -1
+wire04
+  rotate: false
+  xy: 2, 132
+  size: 598, 416
+  orig: 598, 434
+  offset: 0, 18
+  index: -1
+wire05
+  rotate: false
+  xy: 1056, 248
+  size: 438, 260
+  orig: 438, 260
+  offset: 0, 0
+  index: -1

@@ -1,0 +1,28 @@
+<div class="utils_center_text paytable-content" >
+    <div class="header paytable-header">{{HEADER}}</div>
+    <div class="paytable-page">
+        <div class="symbol-with-values">
+            {{#symbols}}
+                <div class="interface-paytable_symbolValues">
+                    <ul>
+                        {{#coins}}
+                            <li class="symbolNumbers">
+                                <div class="symbolCount" style="display: inline-block;">{{number}}</div>
+                                <div class="symbolPayout" style="display: inline-block;">{{amount}}</div>
+                            </li>
+                            <br/>
+                        {{/coins}}
+                    </ul>
+                </div>
+                <div class="feature-symbol paytable-feature-symbol">
+                    <img src="{{image}}" class="SYM-image"/>
+                </div>
+            {{/symbols}}
+        </div>
+            <div class="paytable-feature-body paytable-feature-wild">
+            {{#BODY}}
+                <div class="paytable-text">{{.}}</div>
+            {{/BODY}}
+        </div>
+    </div>
+</div>

@@ -1,0 +1,769 @@
+<script setup lang="ts">
+import { storeToRefs } from 'pinia' // Import storeToRefs
+import { onMounted, reactive, ref } from 'vue' // Import necessary Vue 3 APIs
+import AuthPanel from './AuthPanel.vue'
+import { useAuthStore } from '@/stores/auth.store'
+// import { useGameStore } from '@/stores/game.store'
+// import { useVipStore } from '@/stores/vip.store'
+import { useRouter } from 'vue-router'
+// import { hydrate } from '@/stores'
+
+const authStore = useAuthStore()
+const router = useRouter()
+const {
+    isLoading: isAuthLoading, // Auth store's loading state
+    isAuthenticated, // Auth store's authentication status
+} = storeToRefs(authStore)
+const formData = reactive({
+    email: 'asdf@cashflow.com',
+    password: 'asdfasdf',
+    confirmPassword: 'asdfasdf', // For sign-up
+    username: 'asdf', // For sign-up
+})
+const showError = ref<boolean>(false)
+const showPassword = ref<boolean>(false)
+/*
+{
+    "user": {
+        "id": "6ztw6zznez0svo5nhba27",
+        "username": "asdf",
+        "email": null,
+        "phone": "19037145512",
+        "currentGameSessionDataId": "dp2mu2kc6lp3b9tvkhz84",
+        "currentAuthSessionDataId": "kxdufb7bf1i5ngr1zgseh",
+        "avatar_url": "avatar-01.webp",
+        "role": "USER",
+        "rtgBlockTime": 0,
+        "isActive": true,
+        "lastLoginAt": null,
+        "totalXpGained": 0,
+        "activeWalletId": "1c0jixa28gugsq74omi6t",
+        "vipInfoId": "n5tylqyt6l9lk4nl8dls6",
+        "createdAt": "2025-08-02T08:31:33.458Z",
+        "updatedAt": "2025-08-02T08:31:33.458Z",
+        "deletedAt": null,
+        "lastSeen": "2025-08-12T16:10:23.294Z"
+    },
+    "authSession": {
+        "id": "kxdufb7bf1i5ngr1zgseh",
+        "userId": "6ztw6zznez0svo5nhba27",
+        "status": "ACTIVE",
+        "ipAddress": null,
+        "otp": null,
+        "userAgent": null,
+        "deviceId": null,
+        "createdAt": "2025-08-12T16:10:23.276Z",
+        "expiresAt": null,
+        "lastSeen": "2025-08-12T16:10:23.276Z"
+    },
+    "wallet": {
+        "id": "6ztw6zznez0svo5nhba27",
+        "username": "asdf",
+        "email": null,
+        "passwordHash": "$argon2id$v=19$m=65536,t=2,p=1$IytP4OqJ7llPOE3Jw5WTG3XzJaUKeKbzaihjBJV7+cw$djFjf02bKXfguLX1w7UHqbaeF7XMd8Zw/1J6GMNydgE",
+        "phone": "19037145512",
+        "accessToken": null,
+        "refreshToken": null,
+        "accessTokenExpiresAt": null,
+        "refreshTokenExpiresAt": null,
+        "currentGameSessionDataId": "dp2mu2kc6lp3b9tvkhz84",
+        "currentAuthSessionDataId": "kxdufb7bf1i5ngr1zgseh",
+        "avatar_url": "avatar-01.webp",
+        "role": "USER",
+        "rtgBlockTime": 0,
+        "isActive": true,
+        "lastLoginAt": null,
+        "totalXpGained": 0,
+        "activeWalletId": "1c0jixa28gugsq74omi6t",
+        "vipInfoId": "n5tylqyt6l9lk4nl8dls6",
+        "createdAt": "2025-08-02T08:31:33.458Z",
+        "updatedAt": "2025-08-02T08:31:33.458Z",
+        "deletedAt": null,
+        "lastSeen": "2025-08-12T16:10:23.294Z",
+        "vipInfo": [
+            {
+                "id": "n5tylqyt6l9lk4nl8dls6",
+                "level": 2,
+                "xp": 536,
+                "totalXp": 636,
+                "userId": "6ztw6zznez0svo5nhba27",
+                "currentRankid": null,
+                "createdAt": "2025-08-02T08:31:33.458",
+                "updatedAt": "2025-08-02T08:31:33.458"
+            }
+        ],
+        "activeWallet": {
+            "id": "1c0jixa28gugsq74omi6t",
+            "balance": 49570,
+            "paymentMethod": "INSTORE_CASH",
+            "currency": "USD",
+            "isActive": true,
+            "isDefault": true,
+            "address": null,
+            "cashtag": null,
+            "userId": "6ztw6zznez0svo5nhba27",
+            "operatorId": "clxjv0w2z0000356s1szacrqs",
+            "lastUsedAt": null,
+            "createdAt": "2025-08-02T08:31:33.458",
+            "updatedAt": "2025-08-02T08:31:33.458",
+            "operator": {
+                "id": "clxjv0w2z0000356s1szacrqs",
+                "name": "Default Operator",
+                "operatorSecret": "d6e16c30-b00c-40fe-8b50-938e75544cac",
+                "operatorAccess": "8333ce32-6786-412f-aa53-6aeea333e742",
+                "callbackUrl": "https://example.com/callback",
+                "isActive": true,
+                "allowedIps": [
+                    "0.0.0.0/0"
+                ],
+                "description": null,
+                "productIds": null,
+                "balance": 10000,
+                "netRevenue": 0,
+                "acceptedPayments": [
+                    "INSTORE_CASH",
+                    "INSTORE_CARD"
+                ],
+                "ownerId": null,
+                "lastUsedAt": null,
+                "createdAt": "2025-08-02T08:31:31.64",
+                "updatedAt": "2025-08-02T08:31:31.64",
+                "products": [
+                    {
+                        "id": "prod_9d91bb87-5578-40f5-b646-473654c979be",
+                        "title": "Package One",
+                        "productType": "DEPOSIT_PACKAGE",
+                        "bonusTotalInCredits": 0,
+                        "isActive": null,
+                        "priceInCents": 200,
+                        "amountToReceiveInCredits": 500,
+                        "bestValue": 0,
+                        "discountInCents": 0,
+                        "bonusSpins": 1,
+                        "isPromo": false,
+                        "totalDiscountInCents": 300,
+                        "operatorId": "clxjv0w2z0000356s1szacrqs",
+                        "createdAt": "2025-08-02T08:31:31.688",
+                        "updatedAt": "2025-08-02T08:31:31.688"
+                    },
+                    {
+                        "id": "prod_d8b6c726-60bd-4cf6-98e9-e5d76fb9f716",
+                        "title": "Package Two",
+                        "productType": "DEPOSIT_PACKAGE",
+                        "bonusTotalInCredits": 0,
+                        "isActive": null,
+                        "priceInCents": 500,
+                        "amountToReceiveInCredits": 1000,
+                        "bestValue": 0,
+                        "discountInCents": 0,
+                        "bonusSpins": 2,
+                        "isPromo": false,
+                        "totalDiscountInCents": 500,
+                        "operatorId": "clxjv0w2z0000356s1szacrqs",
+                        "createdAt": "2025-08-02T08:31:31.688",
+                        "updatedAt": "2025-08-02T08:31:31.688"
+                    },
+                    {
+                        "id": "prod_7c2e65be-9e4f-4cd4-b641-55a672d46c88",
+                        "title": "Package Three",
+                        "productType": "DEPOSIT_PACKAGE",
+                        "bonusTotalInCredits": 0,
+                        "isActive": null,
+                        "priceInCents": 1000,
+                        "amountToReceiveInCredits": 1500,
+                        "bestValue": 0,
+                        "discountInCents": 0,
+                        "bonusSpins": 3,
+                        "isPromo": false,
+                        "totalDiscountInCents": 500,
+                        "operatorId": "clxjv0w2z0000356s1szacrqs",
+                        "createdAt": "2025-08-02T08:31:31.688",
+                        "updatedAt": "2025-08-02T08:31:31.688"
+                    },
+                    {
+                        "id": "prod_4c3af3d5-ad63-4226-8a5b-9c9db0d23bae",
+                        "title": "Package Four",
+                        "productType": "DEPOSIT_PACKAGE",
+                        "bonusTotalInCredits": 0,
+                        "isActive": null,
+                        "priceInCents": 1500,
+                        "amountToReceiveInCredits": 2000,
+                        "bestValue": 0,
+                        "discountInCents": 0,
+                        "bonusSpins": 5,
+                        "isPromo": false,
+                        "totalDiscountInCents": 500,
+                        "operatorId": "clxjv0w2z0000356s1szacrqs",
+                        "createdAt": "2025-08-02T08:31:31.688",
+                        "updatedAt": "2025-08-02T08:31:31.688"
+                    }
+                ]
+            }
+        }
+    },
+    "vipInfo": {
+        "0": {
+            "id": "n5tylqyt6l9lk4nl8dls6",
+            "level": 2,
+            "xp": 536,
+            "totalXp": 636,
+            "userId": "6ztw6zznez0svo5nhba27",
+            "currentRankid": null,
+            "createdAt": "2025-08-02T08:31:33.458",
+            "updatedAt": "2025-08-02T08:31:33.458"
+        }
+    },
+    "operator": {
+        "id": "clxjv0w2z0000356s1szacrqs",
+        "name": "Default Operator",
+        "operatorSecret": "d6e16c30-b00c-40fe-8b50-938e75544cac",
+        "operatorAccess": "8333ce32-6786-412f-aa53-6aeea333e742",
+        "callbackUrl": "https://example.com/callback",
+        "isActive": true,
+        "allowedIps": [
+            "0.0.0.0/0"
+        ],
+        "description": null,
+        "productIds": null,
+        "balance": 10000,
+        "netRevenue": 0,
+        "acceptedPayments": [
+            "INSTORE_CASH",
+            "INSTORE_CARD"
+        ],
+        "ownerId": null,
+        "lastUsedAt": null,
+        "createdAt": "2025-08-02T08:31:31.64",
+        "updatedAt": "2025-08-02T08:31:31.64",
+        "products": [
+            {
+                "id": "prod_9d91bb87-5578-40f5-b646-473654c979be",
+                "title": "Package One",
+                "productType": "DEPOSIT_PACKAGE",
+                "bonusTotalInCredits": 0,
+                "isActive": null,
+                "priceInCents": 200,
+                "amountToReceiveInCredits": 500,
+                "bestValue": 0,
+                "discountInCents": 0,
+                "bonusSpins": 1,
+                "isPromo": false,
+                "totalDiscountInCents": 300,
+                "operatorId": "clxjv0w2z0000356s1szacrqs",
+                "createdAt": "2025-08-02T08:31:31.688",
+                "updatedAt": "2025-08-02T08:31:31.688"
+            },
+            {
+                "id": "prod_d8b6c726-60bd-4cf6-98e9-e5d76fb9f716",
+                "title": "Package Two",
+                "productType": "DEPOSIT_PACKAGE",
+                "bonusTotalInCredits": 0,
+                "isActive": null,
+                "priceInCents": 500,
+                "amountToReceiveInCredits": 1000,
+                "bestValue": 0,
+                "discountInCents": 0,
+                "bonusSpins": 2,
+                "isPromo": false,
+                "totalDiscountInCents": 500,
+                "operatorId": "clxjv0w2z0000356s1szacrqs",
+                "createdAt": "2025-08-02T08:31:31.688",
+                "updatedAt": "2025-08-02T08:31:31.688"
+            },
+            {
+                "id": "prod_7c2e65be-9e4f-4cd4-b641-55a672d46c88",
+                "title": "Package Three",
+                "productType": "DEPOSIT_PACKAGE",
+                "bonusTotalInCredits": 0,
+                "isActive": null,
+                "priceInCents": 1000,
+                "amountToReceiveInCredits": 1500,
+                "bestValue": 0,
+                "discountInCents": 0,
+                "bonusSpins": 3,
+                "isPromo": false,
+                "totalDiscountInCents": 500,
+                "operatorId": "clxjv0w2z0000356s1szacrqs",
+                "createdAt": "2025-08-02T08:31:31.688",
+                "updatedAt": "2025-08-02T08:31:31.688"
+            },
+            {
+                "id": "prod_4c3af3d5-ad63-4226-8a5b-9c9db0d23bae",
+                "title": "Package Four",
+                "productType": "DEPOSIT_PACKAGE",
+                "bonusTotalInCredits": 0,
+                "isActive": null,
+                "priceInCents": 1500,
+                "amountToReceiveInCredits": 2000,
+                "bestValue": 0,
+                "discountInCents": 0,
+                "bonusSpins": 5,
+                "isPromo": false,
+                "totalDiscountInCents": 500,
+                "operatorId": "clxjv0w2z0000356s1szacrqs",
+                "createdAt": "2025-08-02T08:31:31.688",
+                "updatedAt": "2025-08-02T08:31:31.688"
+            }
+        ]
+    }
+}
+    */
+async function handleLogin() {
+    try {
+        await authStore.login({
+            username: formData.username,
+            password: formData.password,
+        })
+        console.log(isAuthLoading.value)
+        if (isAuthenticated.value) {
+                // await hydrate()
+                console.log('replacing to home')
+            router.replace('/')
+        }
+    } catch (error) {
+        console.error('Login failed', error)
+    }
+}
+// const handleSignIn = async () => {
+//     if (!formData.username || !formData.password) {
+//         console.log('error in')
+//         notificationStore.addNotification('error', 'Please enter both email and password.')
+//         return
+//     }
+
+//     const success = await signInWithPassword({
+//         username: formData.username,
+//         password: formData.password,
+//     })
+//     console.log(success)
+//     if (success) {
+//         // notificationStore.addNotification('info', error?.message || 'Sign in succeeded.')
+//     } else {
+//         showError.value = true
+//         // notificationStore.addNotification('error', error?.message || 'Sign in failed.')
+//         setTimeout(() => {
+//             showError.value = false
+//             // isAuthLoading.value = false // Use the store's loading state
+
+//             // window.location.reload()
+//         }, 2000)
+//     }
+// }
+
+onMounted(() => {
+    if (isAuthenticated.value) {
+        console.log('Already authenticated, redirecting from LoginView.')
+        // Optional: we rely on guard to route; no action needed here
+    }
+})
+</script>
+
+<template>
+    <AuthPanel title="Login">
+        <form class="flip-card__form text-white flex mx-4 px-4 mt-5 overflow-hidden" @submit.prevent="handleLogin">
+            <!-- Accessibility: include a (visually hidden) username label and input properly typed -->
+            <label for="username" class="sr-only">Username</label>
+            <input id="username" v-model="formData.username" type="text" name="username" inputmode="text"
+                autocomplete="username" placeholder="Username" required class="flip-card__input"
+                :disabled="isAuthLoading || showError">
+            <label for="current-password" class="sr-only">Password</label>
+            <div class="password-field">
+                <input id="current-password" v-model="formData.password" :type="showPassword ? 'text' : 'password'"
+                    name="current-password" placeholder="Password" required autocomplete="current-password"
+                    class="flip-card__input pr-10" :disabled="isAuthLoading || showError"
+                    aria-describedby="toggle-password-visibility">
+                <button id="toggle-password-visibility" type="button" class="toggle-password-btn"
+                    :aria-pressed="showPassword" :aria-label="showPassword ? 'Hide password' : 'Show password'"
+                    :title="showPassword ? 'Hide password' : 'Show password'" @click="showPassword = !showPassword">
+                    <span aria-hidden="true" class="eye-icon">
+                        <!-- Using simple SVGs for open/closed eye to avoid extra deps -->
+                        <svg v-if="!showPassword" xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z" />
+                            <circle cx="12" cy="12" r="3" />
+                        </svg>
+                        <svg v-else xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round">
+                            <path d="M17.94 17.94A10.94 10.94 0 0 1 12 20c-7 0-11-8-11-8a21.77 21.77 0 0 1 5.06-6.06" />
+                            <path d="M1 1l22 22" />
+                            <path d="M9.88 9.88A3 3 0 0 0 12 15a3 3 0 0 0 2.12-.88" />
+                            <path d="M14.12 14.12L9.88 9.88" />
+                        </svg>
+                    </span>
+                </button>
+            </div>
+            <GlassButton type="submit" class="flip-card__btn mt-3" :disabled="isAuthLoading || showError"
+                @click="handleLogin">
+                Let's Go!
+            </GlassButton>
+        </form>
+
+        <div class="flex flex-col">
+            <div class="w-full flex justify-center glow">
+                <div class="flex mt-12" />
+            </div>
+            <div id="googleSignInButtonContainer" class="google-signin-container flex mt-2 mx-3 px-3 justify-center" />
+        </div>
+    </AuthPanel>
+    <!-- <div v-if="!isAuthLoading"> -->
+    <!-- <Loading /> -->
+    <!-- </div> -->
+</template>
+
+<style scoped>
+/* Visually hidden utility for accessibility */
+.sr-only {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+}
+
+input[type='checkbox'] {
+    height: 0;
+    width: 0;
+    visibility: hidden;
+}
+
+label {
+    cursor: pointer;
+    text-indent: -9999px;
+    width: 100px;
+    height: 50px;
+    background: #d19ae4;
+    display: block;
+    border-radius: 50px;
+    position: relative;
+}
+
+label:after {
+    content: '';
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 45px;
+    height: 45px;
+    background: #fff;
+    border-radius: 90px;
+    transition: 0.3s;
+}
+
+input:checked+label {
+    background: #5b0091;
+}
+
+input:checked+label:after {
+    left: calc(100% - 5px);
+    transform: translateX(-100%);
+}
+
+label:active:after {
+    width: 130px;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.login-view-container {
+    width: 100%;
+    height: 60%;
+    /* Ensure it takes full viewport height */
+    margin-top: 0;
+    display: flex;
+    /* Use flex to center content */
+    flex-direction: column;
+    justify-content: start;
+    /* Vertically center */
+    align-items: center;
+    /* Horizontally center */
+    /* background-image: url('/src/assets/login-bg.jpg'); */
+    background-size: cover;
+    /* Changed from contain for full coverage */
+    background-position: center;
+    /* Center the background */
+    background-repeat: no-repeat;
+    background-color: #021130;
+    /* background-image: url('/images/starsbg.png'); */
+    background-size: 120% 120%;
+    background-origin: border-box;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    padding: 20px;
+    /* Add some padding for smaller screens */
+    box-sizing: border-box;
+}
+
+.flip-card__inner {
+    width: 320px;
+    /* Take full width of its parent label */
+    max-width: 420px;
+    /* Max width for the form area */
+    height: auto;
+    /* Let content define height, was 350px */
+    min-height: 380px;
+    /* Ensure enough space for inputs */
+    position: relative;
+    background-color: transparent;
+    perspective: 1000px;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+    margin-top: 16px;
+    position: relative;
+    /* This should already be present */
+    z-index: 0;
+}
+
+.flip-card__front,
+.flip-card__back {
+    box-sizing: border-box;
+    /* Added for better padding control */
+    width: 100%;
+
+    justify-content: center;
+    align-items: center;
+    /* max-width: 420px; /* Let parent control max-width */
+    padding: 20px;
+    /* Unified padding */
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* Center form content */
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    background: var(--bg-color, #1f2937);
+    /* Slightly lighter dark for card */
+    gap: 15px;
+    /* Adjusted gap */
+    border-radius: 8px;
+    /* Softer radius */
+    border: 1px solid var(--main-color, #b954f3);
+    /* Thinner border */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    /* Softer shadow */
+}
+
+.flip-card__back {
+    transform: rotateY(180deg);
+}
+
+.flip-card__form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    /* Adjusted gap */
+    width: 100%;
+    /* Form takes full width of card */
+}
+
+.title {
+    margin-bottom: 15px;
+    /* Adjusted margin */
+    font-size: 24px;
+    /* Slightly smaller */
+    font-weight: 700;
+    /* Adjusted weight */
+    text-align: center;
+    color: var(--font-color, #fefefe);
+}
+
+/* Password visibility toggle */
+.password-field {
+    position: relative;
+    width: 100%;
+}
+
+.toggle-password-btn {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    color: var(--font-color, #fefefe);
+    border: none;
+    padding: 4px 6px;
+    font-size: 12px;
+    cursor: pointer;
+    line-height: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.eye-icon {
+    display: inline-flex;
+    width: 18px;
+    height: 18px;
+}
+
+.toggle-password-btn:focus-visible {
+    outline: 2px solid var(--input-focus, #2d8cf0);
+    border-radius: 4px;
+}
+
+.flip-card__input {
+    width: 100%;
+    /* Full width inputs */
+    /* max-width: 300px;  */
+    height: 45px;
+    /* Slightly taller */
+    border-radius: 5px;
+    border: 2px solid var(--main-color, #b954f3);
+    background-color: var(--bg-color-input, #2c3748);
+    /* Different input bg */
+    box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.2);
+    /* Inset shadow */
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--font-color, #fefefe);
+    padding: 5px 15px;
+    /* More padding */
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.flip-card__input::placeholder {
+    color: var(--font-color-sub, #7e7e7e);
+    opacity: 0.8;
+}
+
+.flip-card__input:focus {
+    border-color: var(--input-focus, #2d8cf0);
+    /* Use border-color for focus */
+}
+
+.flip-card__btn {
+    /* justify-content: center; */
+    /* align-items: center; Center button text */
+    /* min-width: 150px; Minimum width */
+    padding: 8px 20px;
+    font-size: 16px;
+    /* height: 45px; */
+    /* box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2); Softer shadow */
+}
+
+.flip-card__btn:hover {
+    background-color: darken(var(--main-color, #b954f3), 10%);
+    /* Darken on hover */
+}
+
+.flip-card__btn:active {
+    box-shadow: 0px 0px var(--main-color, #b954f3);
+    transform: translate(2px, 2px);
+    /* Slightly less movement */
+}
+
+.flip-card__btn:disabled {
+    background-color: #555;
+    border-color: #444;
+    color: #888;
+    cursor: not-allowed;
+    box-shadow: none;
+    transform: none;
+}
+
+.social-login-divider {
+    margin: 15px 0;
+    color: var(--font-color-sub, #7e7e7e);
+    text-align: center;
+    width: 100%;
+}
+
+.switch-visual-container {
+    position: relative;
+    width: var(--toggle-track-width);
+    height: var(--toggle-track-height);
+}
+
+.switch-track {
+    width: 100%;
+    height: 100%;
+    background-color: var(--track-bg-login);
+    border-radius: calc(var(--toggle-track-height) / 2);
+    /* Pill shape */
+    transition: background-color var(--transition-duration) var(--transition-timing-function);
+}
+
+/* Change track background when sign up is active */
+.auth-mode-toggle.is-signup-active .switch-track {
+    background-color: var(--track-bg-signup);
+}
+
+.switch-knob {
+    position: absolute;
+    top: calc((var(--toggle-track-height) - var(--knob-size)) / 2);
+    left: var(--track-internal-padding);
+    width: var(--knob-size);
+    height: var(--knob-size);
+    background-color: var(--knob-bg-color);
+    border-radius: 50%;
+    /* Circular knob */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    transition: transform var(--transition-duration) var(--transition-timing-function);
+}
+
+.auth-mode-toggle:focus-visible {
+    box-shadow: 0 0 0 2px var(--focus-ring-color);
+}
+
+.lab {
+    font-size: 18px;
+    font-weight: 700;
+    transition:
+        color var(--transition-duration) var(--transition-timing-function),
+        font-weight var(--transition-duration) var(--transition-timing-function);
+}
+
+.login-label {
+    color: var(--text-color-inactive);
+    font-weight: var(--label-font-weight-inactive);
+}
+
+.auth-mode-toggle .login-label.active {
+    color: var(--text-color-active);
+    font-weight: var(--label-font-weight-active);
+}
+
+.signup-label {
+    color: var(--text-color-inactive);
+    font-weight: var(--label-font-weight-inactive);
+}
+
+/* Move knob to the right when sign up is active */
+.auth-mode-toggle.is-signup-active .switch-knob {
+    transform: translateX(calc(var(--toggle-track-width) - var(--knob-size) - (2 * var(--track-internal-padding))));
+}
+
+/* CSS Variables for theming (optional, but good practice) */
+:root {
+    --input-focus: #4a90e2;
+    /* Example: A lighter blue */
+    --font-color: #e0e0e0;
+    /* Light gray for text */
+    --font-color-sub: #a0a0a0;
+    /* Medium gray for subtext/placeholders */
+    --bg-color: #1e2a3b;
+    /* Dark blue-gray background */
+    --bg-color-input: #2c3a4b;
+    /* Slightly lighter for inputs */
+    --main-color: #6c63ff;
+    /* Example: A vibrant purple */
+    --font-color-btn: #ffffff;
+}
+</style>
+<!-- "{\"currentUser\":{\"id\":\"5fymmflp0ul7r9fq7ccre\",\"username\":\"asdf\",\"email\":null,\"accessToken\":null,\"refreshToken\":null,\"accessTokenExpiresAt\":null,\"refreshTokenExpiresAt\":null,\"currentGameSessionDataId\":null,\"currentAuthSessionDataId\":null,\"avatar\":\"avatar-1.webp\",\"role\":\"USER\",\"isActive\":true,\"lastLoginAt\":null,\"totalXpGained\":0,\"activeWalletId\":\"zcqztc8gzbs5lhevkv5m8\",\"vipInfoId\":\"u7l33tc15m7ut4av2wcw2\",\"createdAt\":\"2025-07-25T17:20:31.000Z\",\"updatedAt\":\"2025-07-25T17:20:31.000Z\",\"deletedAt\":null},\"accessToken\":\"eyJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOiI1ZnltbWZscDB1bDdyOWZxN2NjcmUiLCJzZXNzaW9uSWQiOiJic2pzY3ZjdG9xOW9jZ2RwcnpncjUiLCJpYXQiOjE3NTM1NzQ4NDMsImV4cCI6MTc1NDE3OTY0M30.X2jgDrtVrGVX0AwPWX5OEc79E1tCibgNzAH0dmTYEfo\",\"refreshToken\":\"eyJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOiI1ZnltbWZscDB1bDdyOWZxN2NjcmUiLCJzZXNzaW9uSWQiOiJic2pzY3ZjdG9xOW9jZ2RwcnpncjUiLCJpYXQiOjE3NTM1NzQ4NDMsImV4cCI6MTc1NDE3OTY0M30.X2jgDrtVrGVX0AwPWX5OEc79E1tCibgNzAH0dmTYEfo\",\"isLoading\":false,\"error\":null,\"isSignUpMode\":false}" -->

@@ -1,0 +1,15 @@
+[
+  {
+    "title": "Package One",
+    "productType": "DEPOSIT_PACKAGE",
+    "bonusTotalInCredits": 500,
+    "isActive": true,
+    "priceInCents": 200,
+    "amountToReceiveInCredits": 200,
+    "bestValue": 0,
+    "discountInCents": 300,
+    "bonusSpins": 0,
+    "isPromo": false,
+    "totalDiscountInCents": 200
+  }
+]

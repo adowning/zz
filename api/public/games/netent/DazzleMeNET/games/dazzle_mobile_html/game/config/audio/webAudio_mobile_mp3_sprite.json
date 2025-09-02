@@ -1,0 +1,249 @@
+{
+    "clips": {"main": {
+        "dazzleAnticipationCoolDown": {
+            "duration": 2.098956916099773,
+            "volume": 0.6,
+            "start": 0
+        },
+        "dazzlePreWildStart": {
+            "duration": 2.446984126984127,
+            "volume": 0.5,
+            "start": 2.400816326530612
+        },
+        "dazzleBigWinIntro": {
+            "duration": 1.1204308390022675,
+            "volume": 0.8,
+            "duck": {
+                "ambienceGeneral": {
+                    "attack": 0.3,
+                    "release": 0.3,
+                    "value": 0
+                },
+                "ambienceFreeSpin": {
+                    "attack": 0.3,
+                    "release": 0.3,
+                    "value": 0
+                }
+            },
+            "start": 5.149659863945578
+        },
+        "dazzleFreeSpinIntroLoop": {
+            "duration": 2,
+            "volume": 0.4,
+            "start": 6.571950113378684
+        },
+        "quickStop": {
+            "duration": 1.2463492063492063,
+            "volume": 0.9,
+            "start": 8.873809523809523
+        },
+        "smallWin": {
+            "duration": 3.0357142857142856,
+            "volume": 0.6,
+            "start": 10.422018140589568
+        },
+        "dazzleScatterHit2": {
+            "duration": 2.729750566893424,
+            "volume": 0.9,
+            "start": 13.759591836734693
+        },
+        "outroFreeSpin": {
+            "duration": 7.000816326530612,
+            "volume": 0.9,
+            "start": 16.791201814058955
+        },
+        "ambienceGeneral": {
+            "duration": 66,
+            "volume": 0.6,
+            "start": 24.093877551020405
+        },
+        "dazzleWinningSymbolsRampUp": {
+            "duration": 7,
+            "volume": 0.6,
+            "duck": {
+                "ambienceGeneral": {
+                    "attack": 0.3,
+                    "release": 0.3,
+                    "value": 0.15
+                },
+                "ambienceFreeSpin": {
+                    "attack": 0.3,
+                    "release": 0.3,
+                    "value": 0.15
+                }
+            },
+            "start": 90.39573696145123
+        },
+        "dazzleWinningSymbolsBlast2": {
+            "duration": 3,
+            "volume": 0.6,
+            "start": 97.69759637188207
+        },
+        "dazzleWinningSymbolsBlast1": {
+            "duration": 3.0583219954648526,
+            "volume": 0.6,
+            "start": 100.9994557823129
+        },
+        "dazzleWildStart": {
+            "duration": 3.5741496598639455,
+            "volume": 0.65,
+            "duck": {"dazzleWildmusic": {
+                "duration": 1.5,
+                "attack": 0.3,
+                "release": 0.5,
+                "value": 0.45
+            }},
+            "start": 104.3596371882086
+        },
+        "dazzleLinkedReels": {
+            "duration": 3.5173696145124715,
+            "volume": 0.9,
+            "start": 108.23564625850338
+        },
+        "reelBounce": {
+            "duration": 0.3836734693877551,
+            "volume": 0.9,
+            "start": 112.05487528344669
+        },
+        "mediumWin": {
+            "duration": 3,
+            "volume": 0.6,
+            "start": 112.74040816326529
+        },
+        "bigWinLoopEnd": {
+            "duration": 4.6676417233560095,
+            "volume": 0.7,
+            "duck": {
+                "ambienceGeneral": {
+                    "duration": 2.2,
+                    "attack": 0.01,
+                    "release": 0.8,
+                    "value": 0
+                },
+                "ambienceFreeSpin": {
+                    "duration": 2.2,
+                    "attack": 0.01,
+                    "release": 0.8,
+                    "value": 0
+                }
+            },
+            "start": 116.04226757369612
+        },
+        "dazzleWinningSymbolsBlast3": {
+            "duration": 3,
+            "volume": 0.6,
+            "start": 121.01176870748297
+        },
+        "dazzleScatterHit3": {
+            "duration": 3.2308843537414966,
+            "volume": 0.9,
+            "start": 124.31362811791381
+        },
+        "dazzleWildmusic": {
+            "duration": 16,
+            "volume": 0.8,
+            "start": 127.84637188208615
+        },
+        "dazzleNearwin": {
+            "duration": 6.7949659863945575,
+            "volume": 0.8,
+            "duck": {"ambienceGeneral": {
+                "duration": 5.5,
+                "attack": 2,
+                "release": 0.3,
+                "value": 0.1
+            }},
+            "start": 144.14823129251698
+        },
+        "bigWinStart": {
+            "duration": 3.778843537414966,
+            "volume": 0.5,
+            "start": 151.2450566893424
+        },
+        "buttonClick": {
+            "duration": 0.18587301587301588,
+            "volume": 0.9,
+            "start": 155.32575963718818
+        },
+        "bigWinLoop": {
+            "duration": 16,
+            "volume": 0.7,
+            "duck": {
+                "ambienceGeneral": {
+                    "attack": 0.01,
+                    "release": 0.2,
+                    "value": 0
+                },
+                "ambienceFreeSpin": {
+                    "attack": 0.01,
+                    "release": 0.2,
+                    "value": 0
+                }
+            },
+            "start": 155.81349206349205
+        },
+        "dazzleFreeSpinOutroEnterTransition": {
+            "duration": 3.3245351473922904,
+            "volume": 0.7,
+            "start": 172.11535147392289
+        },
+        "introFreeSpin": {
+            "duration": 6.547414965986395,
+            "volume": 0.9,
+            "start": 175.741746031746
+        },
+        "dazzleFreeSpinOutroLoop": {
+            "duration": 4,
+            "volume": 0.9,
+            "start": 182.59102040816325
+        },
+        "dazzleContinueButtonPress": {
+            "duration": 4.365374149659864,
+            "volume": 0.5,
+            "start": 186.89287981859408
+        },
+        "dazzleNearwinCooldown": {
+            "duration": 1.6838775510204083,
+            "volume": 0.8,
+            "start": 191.56011337868478
+        },
+        "ambienceFreeSpin": {
+            "duration": 32,
+            "volume": 0.9,
+            "start": 193.545850340136
+        },
+        "reelSpin": {
+            "duration": 3.461156462585034,
+            "volume": 0.45,
+            "start": 225.84770975056685
+        },
+        "dazzleAnticipationStart": {
+            "duration": 5.481678004535147,
+            "volume": 0.9,
+            "start": 229.6107256235827
+        },
+        "dazzleStartFreeSpinButtonPress": {
+            "duration": 4.445306122448979,
+            "volume": 0.9,
+            "duck": {"ambienceFreeSpin": {
+                "duration": 1,
+                "attack": 0.1,
+                "release": 1,
+                "value": 0.65
+            }},
+            "start": 235.3942630385487
+        },
+        "spinButtonClick": {
+            "duration": 1.9322448979591837,
+            "volume": 0.9,
+            "start": 240.14142857142852
+        },
+        "largeWin": {
+            "duration": 3.095374149659864,
+            "volume": 0.6,
+            "start": 242.37553287981854
+        }
+    }},
+    "files": {"main": "multimedia/audio/webAudio_mobile/main.mp3"},
+    "fileSizes": {"main": 1475230}
+}

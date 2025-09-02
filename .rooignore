@@ -1,0 +1,8 @@
+api/public/
+drizzle/
+prisma/
+public/
+src/gen/
+scripts/
+node_modules/
+bun.lock

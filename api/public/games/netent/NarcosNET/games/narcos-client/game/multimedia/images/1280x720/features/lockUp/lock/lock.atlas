@@ -1,0 +1,167 @@
+
+lock.png
+size: 2048,256
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+locknew02/locknew_00000
+  rotate: true
+  xy: 1568, 161
+  size: 93, 121
+  orig: 200, 200
+  offset: 34, 12
+  index: -1
+locknew02/locknew_00001
+  rotate: true
+  xy: 1691, 162
+  size: 92, 121
+  orig: 200, 200
+  offset: 35, 11
+  index: -1
+locknew02/locknew_00002
+  rotate: true
+  xy: 573, 73
+  size: 92, 119
+  orig: 200, 200
+  offset: 35, 11
+  index: -1
+locknew02/locknew_00003
+  rotate: false
+  xy: 1937, 135
+  size: 93, 119
+  orig: 200, 200
+  offset: 35, 10
+  index: -1
+locknew02/locknew_00004
+  rotate: true
+  xy: 1814, 162
+  size: 92, 121
+  orig: 200, 200
+  offset: 36, 11
+  index: -1
+locknew02/locknew_00005
+  rotate: true
+  xy: 1439, 165
+  size: 89, 127
+  orig: 200, 200
+  offset: 38, 14
+  index: -1
+locknew02/locknew_00006
+  rotate: true
+  xy: 1302, 172
+  size: 82, 135
+  orig: 200, 200
+  offset: 44, 18
+  index: -1
+locknew02/locknew_00007
+  rotate: true
+  xy: 1015, 171
+  size: 83, 142
+  orig: 200, 200
+  offset: 41, 23
+  index: -1
+locknew02/locknew_00008
+  rotate: true
+  xy: 868, 170
+  size: 84, 145
+  orig: 200, 200
+  offset: 38, 29
+  index: -1
+locknew02/locknew_00009
+  rotate: true
+  xy: 721, 168
+  size: 86, 145
+  orig: 200, 200
+  offset: 35, 34
+  index: -1
+locknew02/locknew_00010
+  rotate: true
+  xy: 573, 167
+  size: 87, 146
+  orig: 200, 200
+  offset: 33, 37
+  index: -1
+locknew02/locknew_00011
+  rotate: false
+  xy: 480, 109
+  size: 91, 145
+  orig: 200, 200
+  offset: 32, 39
+  index: -1
+locknew02/locknew_00012
+  rotate: false
+  xy: 386, 107
+  size: 92, 147
+  orig: 200, 200
+  offset: 32, 39
+  index: -1
+locknew02/locknew_00013
+  rotate: false
+  xy: 291, 103
+  size: 93, 151
+  orig: 200, 200
+  offset: 31, 39
+  index: -1
+locknew02/locknew_00014
+  rotate: false
+  xy: 196, 101
+  size: 93, 153
+  orig: 200, 200
+  offset: 31, 40
+  index: -1
+locknew02/locknew_00015
+  rotate: true
+  xy: 2, 2
+  size: 93, 156
+  orig: 200, 200
+  offset: 31, 40
+  index: -1
+locknew02/locknew_00016
+  rotate: false
+  xy: 2, 97
+  size: 95, 157
+  orig: 200, 200
+  offset: 30, 40
+  index: -1
+locknew02/locknew_00017
+  rotate: false
+  xy: 99, 99
+  size: 95, 155
+  orig: 200, 200
+  offset: 30, 41
+  index: -1
+locknew02/locknew_00018
+  rotate: true
+  xy: 1159, 162
+  size: 92, 141
+  orig: 200, 200
+  offset: 34, 35
+  index: -1
+locknew02/locknew_00019
+  rotate: true
+  xy: 411, 19
+  size: 86, 113
+  orig: 200, 200
+  offset: 42, 24
+  index: -1
+locknew02/locknew_00020
+  rotate: false
+  xy: 328, 13
+  size: 81, 88
+  orig: 200, 200
+  offset: 49, 15
+  index: -1
+locknew02/locknew_00021
+  rotate: false
+  xy: 160, 5
+  size: 81, 92
+  orig: 200, 200
+  offset: 49, 15
+  index: -1
+locknew02/locknew_00022
+  rotate: false
+  xy: 243, 3
+  size: 83, 96
+  orig: 200, 200
+  offset: 49, 15
+  index: -1

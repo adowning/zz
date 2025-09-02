@@ -1,0 +1,83 @@
+
+lock_up_bg.png
+size: 2048,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: xy
+FENCE
+  rotate: false
+  xy: 2, 586
+  size: 1280, 385
+  orig: 1280, 385
+  offset: 0, 0
+  index: -1
+TREE-LEFT
+  rotate: false
+  xy: 724, 406
+  size: 551, 178
+  orig: 551, 178
+  offset: 0, 0
+  index: -1
+TREE-RIGHT
+  rotate: true
+  xy: 960, 192
+  size: 212, 238
+  orig: 212, 238
+  offset: 0, 0
+  index: -1
+bushes
+  rotate: false
+  xy: 2, 72
+  size: 720, 512
+  orig: 720, 512
+  offset: 0, 0
+  index: -1
+fence2
+  rotate: true
+  xy: 1284, 171
+  size: 800, 652
+  orig: 800, 652
+  offset: 0, 0
+  index: -1
+helicopter
+  rotate: false
+  xy: 724, 49
+  size: 234, 123
+  orig: 234, 123
+  offset: 0, 0
+  index: -1
+propeller1
+  rotate: true
+  xy: 1938, 833
+  size: 138, 45
+  orig: 138, 45
+  offset: 0, 0
+  index: -1
+propeller2
+  rotate: true
+  xy: 1200, 266
+  size: 138, 45
+  orig: 138, 45
+  offset: 0, 0
+  index: -1
+propeller3
+  rotate: false
+  xy: 2, 25
+  size: 138, 45
+  orig: 138, 45
+  offset: 0, 0
+  index: -1
+spot light
+  rotate: true
+  xy: 960, 2
+  size: 188, 215
+  orig: 188, 215
+  offset: 0, 0
+  index: -1
+spotlight2
+  rotate: false
+  xy: 724, 174
+  size: 234, 230
+  orig: 234, 230
+  offset: 0, 0
+  index: -1

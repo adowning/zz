@@ -1,0 +1,97 @@
+
+lockUpBg.png
+size: 2048,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: xy
+Northtext
+  rotate: false
+  xy: 1285, 135
+  size: 85, 65
+  orig: 112, 104
+  offset: 17, 17
+  index: -1
+blackbg
+  rotate: false
+  xy: 1285, 317
+  size: 320, 182
+  orig: 320, 182
+  offset: 0, 0
+  index: -1
+blackiris
+  rotate: false
+  xy: 1607, 317
+  size: 320, 182
+  orig: 320, 182
+  offset: 0, 0
+  index: -1
+coordinatestext
+  rotate: false
+  xy: 2, 90
+  size: 295, 31
+  orig: 334, 86
+  offset: 16, 21
+  index: -1
+grid
+  rotate: false
+  xy: 644, 135
+  size: 639, 364
+  orig: 640, 364
+  offset: 0, 0
+  index: -1
+lockedupfeaturetext
+  rotate: false
+  xy: 2, 40
+  size: 263, 48
+  orig: 285, 101
+  offset: 7, 25
+  index: -1
+mainroute
+  rotate: false
+  xy: 1285, 202
+  size: 205, 113
+  orig: 214, 128
+  offset: 0, 9
+  index: -1
+meddellin
+  rotate: false
+  xy: 2, 135
+  size: 640, 364
+  orig: 640, 364
+  offset: 0, 0
+  index: -1
+redcircle
+  rotate: false
+  xy: 1680, 161
+  size: 154, 154
+  orig: 163, 164
+  offset: 5, 5
+  index: -1
+reddot
+  rotate: false
+  xy: 2, 2
+  size: 35, 36
+  orig: 43, 45
+  offset: 4, 4
+  index: -1
+redline
+  rotate: false
+  xy: 2, 123
+  size: 756, 10
+  orig: 761, 27
+  offset: 3, 6
+  index: -1
+sec
+  rotate: false
+  xy: 1492, 209
+  size: 186, 106
+  orig: 220, 153
+  offset: 21, 17
+  index: -1
+text01
+  rotate: false
+  xy: 1929, 447
+  size: 104, 52
+  orig: 129, 78
+  offset: 14, 12
+  index: -1

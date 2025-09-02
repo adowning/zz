@@ -1,0 +1,20 @@
+
+leftChainStartStop.png
+size: 64,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: xy
+chainsLeftstart
+  rotate: false
+  xy: 2, 236
+  size: 44, 235
+  orig: 234, 240
+  offset: 9, 5
+  index: -1
+chainsLside
+  rotate: false
+  xy: 2, 2
+  size: 41, 232
+  orig: 234, 240
+  offset: 10, 8
+  index: -1

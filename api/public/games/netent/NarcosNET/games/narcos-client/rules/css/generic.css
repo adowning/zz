@@ -1,0 +1,86 @@
+body {
+    background:black;
+    color: white;
+}
+
+.grc {
+    width: 100%;
+    font-family: NetentStandardUI, Arial, Helvetica, sans-serif;
+    font-size: 1em;
+    color: #ffffff;
+    text-align: justify;
+    font-weight: normal;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0.5em 1em;
+}
+
+.grc h2 {
+    width: 100%;
+    margin-bottom: 0.5em;
+    text-align: center;
+    line-height: 1.6em;
+    color: #ccb37c;
+    font-size: 1.3em;
+    font-weight: 400;
+    text-transform: uppercase;
+    border-bottom: 1px solid #333333;
+}
+
+.grc h3 {
+    font-weight: bold;
+    font-size: 1em;
+}
+
+.grc table {
+    width: 100%;
+    margin: 1em 0;
+    font-family: NetentStandardUI, Arial, Helvetica, sans-serif;
+    font-size: 1em;
+    border: 1px solid #333333;
+    border-collapse: collapse;
+}
+
+.grc th {
+    padding: 0.5em 1em;
+    text-align: center;
+    border: 1px solid #333333;
+}
+
+.grc td {
+    padding: 0.5em 1em;
+    text-align: justify;
+    line-height: 1.5em;
+    border: 1px solid #333333;
+    word-break: break-word;
+}
+
+.grc table img {
+    vertical-align: middle;
+    text-align: center;
+    max-height: 2.45em;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.grc ul {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 1em;
+    margin: 0.25em 0;
+
+    line-height: 1.5em;
+}
+
+.grc li {
+    margin-bottom: 0.75em;
+    line-height: 1.5em;
+}
+
+.grc p {
+    margin-bottom: 0.75em;
+    line-height: 1.5em;
+}

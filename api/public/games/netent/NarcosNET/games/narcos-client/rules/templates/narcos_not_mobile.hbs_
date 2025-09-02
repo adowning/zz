@@ -1,0 +1,479 @@
+<h3 class="largeHeader">
+	{{RTnarcosHeading}}
+<!-- Narcos  Game Rules -->
+</h3>
+
+<ul>
+	<li>{{RTintroNarcos}}</li>
+		<!-- Narcos is a 5-reel, 3-row video slot with 243 bet ways. The game features Free Spins, Wild Transform, and Walking Wilds, and a Lock'em feature with a mystery golden Lock'It symbol. -->
+{{#if (notequal  lang "nt")}}
+	<li>{{waysToWin243cash}}</li>
+		<!-- The game is played with 1-10 bet levels (20 coins per level) and different coin values. -->
+	<li>{{RTnoBetLines}}</li>
+		<!-- There are no bet lines. -->
+{{/if}}
+	<li>{{RTbetLevelInstruction}} {{betLevelDisclaimer}}</li>
+		<!-- The bet level is set using the LEVEL selector. -->
+	<li>{{RTcoinValueInstruction}}</li>
+		<!-- The coin value is set using the COIN VALUE selector. -->
+{{#if (notequal  lang "nt")}}
+	<li>{{RTcoinsDisplayValuesNew}}</li>
+		<!-- COINS displays the number of coins available to wager. -->
+	<li>{{RTmaxbetBetWays2}} {{RTquickSpinDisclaimer}}</li>
+		<!-- MAX BET plays the game at 243 bet ways, the highest bet level, and the current coin value. When playing at any lower bet level, MAX BET must be clicked twice to play the round at the selected level. -->
+{{/if}}
+{{#if (notequal  autoplay "0")}}
+	<li>{{RTautoPlays}} {{RTquickSpinDisclaimer}}</li>
+		<!-- AUTOPLAY automatically plays the game for the selected number of rounds. (not available in all casinos).-->
+{{/if}}
+{{#if (equal  lang "nt")}}
+	<li>{{RTmaxWinStandard}} 100 000 kr.</li>
+	<!-- Det maksimale beløpet du kan vinne er -->
+{{/if}}
+	<li>{{RTwinCombinationPaytablenoBold}}</li>
+		<!-- Winning combinations and payouts are made according to the Paytable. -->
+	<li>{{RTsimultaneousWinsWays}}</li>
+		<!-- Simultaneous wins on different bet ways are added. -->
+	<li>{{RTbetWaysCoinsNoBold}}</li>
+		<!-- A bet way win in coins is equal to the value shown in the Paytable multiplied by the bet level. This amount is also multiplied by any applicable multipliers. -->
+	<li>{{RTwinCalculationBetWaysCurrency}}</li>
+		<!-- A bet way win in currency is equal to the win in coins multiplied by the coin value. -->
+	<li>{{RTMGautoplayPlays}}</li>
+		<!-- Bet way wins pay if in succession from leftmost reel to right. -->
+	<li>{{RTbetWaysExplanation}}</li>
+		<!-- Bet Ways Win Example. -->
+		<div>
+			<img src="../rules/images/paytable_betways_narcos.png" style="width:125px;height:110px" loading="lazy" />
+		</div>
+	<li>{{RTexplanationBetWaysPartThree}}</li>
+		<!-- More bet way wins are created when additional instances of the symbol appear on the same reels that create the longest bet way win. -->
+	<li>{{RTexplanationBetWaysPartTwo}}</li>
+		<!-- Only the longest matching combination per symbol is paid. -->
+{{#if (notequal  lang "nt")}}
+	<li>{{betWayLockUp}}</li>
+		<!-- All coin wins pay on bet ways only, except for wins during the Locked Up feature. -->
+{{/if}}
+	<li>{{wildSymNoScatterLock}}</li>
+		<!-- Wild symbols can appear anywhere on the reels in the main game and Free Spins and substitute for all symbols except for Scatter and Locked Up symbols. -->
+	<li>{{betwayWildSubHigh}}</li>
+		<!-- Wild symbols substitute for the highest possible winning combination on a bet way according to the Paytable. -->
+	<li>{{RTgHistoryNotAvailableForFun}}</li>
+		<!-- Game History is not available when PLAYING FOR FUN. -->
+	<li>{{featuresUnavailableDisclaimer}} {{OCTautoplayPanelLabel}}, {{maxBetLC}}, {{OCTquickSpin}}, {{RTMGquickStop}}</li>
+	<!-- Note: The following functions might be unavailable in some casinos: Autoplay, Max Bet, Quick Spin, Quick Stop.  -->
+	{{#if (equal [config.gameParameters.showMaxWinProbability] "true")}}
+	<li>{{maxWinProbability}} 0.000503%</li>
+	<!-- The probability of winning the maximum prize is  -->
+{{/if}}
+</ul>
+
+<h3 class="smallHeader">
+		{{lockemUp}}
+		<!-- Lock'em Up Feature -->
+	</h3>
+<ul>
+	<li>{{RTlockemActivate}} {{RTlockitCluster}}</li>
+		<!-- During the main game, the Lock'em Up feature is activated when 3 or more Lock'It symbols appear on the same row. --><!-- These Lock'It symbols are then moved together in the form of a cluster. -->
+	<li>{{lockedSpinFree}}</li>
+		<!-- Note: All spins within the Lock'em Up feature are free. -->
+	<li>{{clusterSymDef}}</li>
+		<!-- A symbol is part of a cluster if it is horizontally or vertically adjacent to the same symbol. -->
+	<li>{{RTlockemCluster}}</li>
+		<!-- During the Lock'em feature, the symbols form clusters to award coin wins. -->
+	<li>{{cluster3OrMore}}</li>
+		<!-- 3 or more same symbols appearing in a cluster award a win. -->
+	<li>{{RTlockitMoveMG}}</li>
+		<!-- All Lock'It symbols from the main game stay on the game area and continue to move towards the center forming a cluster. -->
+	<li>{{RTlockitvalue}}</li>
+		<!-- Each Lock'It and Golden Lock'It symbol in a cluster is assigned a value. The value assigned to symbols can be 1-10 times the bet value. -->
+	<li>{{RTlockitBigStartingValue}}</li>
+		<!-- Additionally, Golden Locked Up symbols with Big starting value have an additional amount of Coins assigned to them, which can be 11, 12, 13, 16 or 26 times the total bet. -->
+	<li>{{lockGoldenAppear}}</li>
+		<!-- Only Lock'It and Golden Lock'It symbols can appear in the Lock'em Up feature. -->
+	<li>{{RTlockemStart3Spin}} {{RTlockitSpinReset}} </li>
+		<!-- The player starts the Lock'em Up feature with 3 spins. --> <!-- During this round if new Lock'It symbols appear creating a new winning cluster or adding to an existing cluster, the number of remaining spins reset to 3. -->
+	<li>{{lockitRespin}} </li>
+		<!-- The Lock'It symbols spin independently but simultaneously on the reels. -->
+	<li>{{RTlockemSpin}}</li>
+		<!-- When no more spins are left or the game area is completely filled with Locked Up or Golden Locked Up symbols, the Locked Up feature ends and the wins are awarded. -->
+	<li>{{RTlockemReturActiv}}</li>
+		<!-- At the end of the Lock'em Up feature, the game returns to the round that activated the Lock'em Up feature.  -->
+	<li>{{RTlockemAddBal}}</li>
+		<!-- At the end of the Lock'em Up feature, the total win from Lock'em Up feature is added to any wins from the round that activated the Lock'em Up feature.  -->
+	<li>{{RTlockemFeatDesc}}</li>
+		<!-- The Lock'em Up feature is played at the same bet level and coin value as the spin that activated the feature. The bet level and coin value cannot be changed during the Lock'em Up feature.  -->
+	<li>{{RTlockitNoWin}}</li>
+		<!-- Lock'It symbols that land on the reels but are not part of a winning cluster stays on the reels. These symbols will have no value until they are connected to a winning cluster. -->
+	<li>{{RTgoldLockFeature}}</li>
+		<!-- During Lock'em Up, the Golden Lock'It symbols unlock one of the following features: multiplier, upgrade symbols and a big starting value. -->
+	<li>{{RTnarcosMultExp}}</li>
+		<!-- Multiplier: All symbol values of the winning cluster are multiplied by either x2 or x3 multiplier. -->
+	<li>{{RTnarcosUpgradeExp}}</li>
+		<!-- Upgrade symbols: During this feature, an upgrade value in increment of 1 times the total bet can be assigned to symbols that are part of the same cluster as the Golden Locked Up symbol. --> <!-- This upgrade can happen multiple times. -->
+	<li>{{RTnarcosBigStartVal}}</li>
+		<!-- Big starting value: An additional value is added to the Golden Locked Up symbol as a starting value. -->
+	<li>{{RTgoldLockShow}}</li>
+		<!-- If more than one Golden Locked Up symbol appears during the same spin, the symbol starts revealing the value horizontally from leftmost to rightmost.  -->
+	<li>{{RTgoldLockVal}}</li>
+		<!-- At the start of the feature, the value for the Golden Lock’It symbols may be same as regular Lock’It symbols. This value can change. -->
+{{#if (notequal  lang "nt")}}
+	<li>{{narcosLockedUpAutoplay}}</li>
+        <!-- Note: If the Locked Up feature is activated during Autoplay, Autoplay will automatically stop. -->
+	<li>{{narcosLockedUpAutoplayEnd}}</li>
+        <!-- At the end of the Locked Up feature, the game returns to the round that activated the Locked Up feature and Autoplay is no longer activated. -->
+{{/if}}
+	</ul>
+
+
+<h3 class="smallHeader">
+		{{RTdriveByFeature}}
+		<!-- Drive-by Feature -->
+	</h3>
+<ul>
+	<li>{{wildTransHigh}} {{wildTransformSym}}</li>
+		<!-- The Drive-by feature is activated randomly during the main game. The Drive-by feature transforms some of the high value symbols into the Wild symbols that create the highest possible winning combination. --> <!-- Each symbol transforms independently of the other symbols. -->
+	<li>{{RTdriveByaddedToBalance}}</li>
+		<!-- At the end of the Drive-by feature, the total win resulted from Drive-by is added to any wins from the round that activated the feature. -->
+	<li>{{drivebyFreeSpinsLockedup}}</li>
+		<!-- In case Free Spins or the Locked Up feature also get activated along with the Drive-by feature, the Drive-by feature is played first.  -->
+	<li>{{drivebyPayout}}</li>
+		<!-- The payout of the round activating the Drive-by feature is awarded only after the Drive-by feature ends. -->
+</ul>
+
+<h3 class="smallHeader">
+		{{walkingWild}}
+		<!-- Walking Wild -->
+	</h3>
+
+
+<ul>
+		<li>{{RTwalkWildExp}}</li>
+			<!-- During the main game and Free Spins, Wilds that are part of a win stays on the reel and shifts horizontally one place to the left with each spin. Wilds that shift horizontally during each spin are called Walking Wilds. -->
+		<li>{{RTwalkWildActive}}</li>
+			<!-- During the main game and Free Spins, if any feature gets activated while there are Walking Wilds still present on the reels, the Walking Wilds continue to stay on the reels after the feature is over. -->
+		<li>{{RTwalkWildEnd}}</li>
+			<!-- The Walking Wild feature ends if there are no longer any wins on the Walking Wilds. -->
+
+</ul>
+
+
+<h3 class="smallHeader">
+		{{RTfreeSpinsHead}}
+		<!-- Free Spins -->
+	</h3>
+
+<ul>
+		<li>{{RT3Scat10FS}}</li>
+			<!-- 3 Scatter symbols appearing anywhere on the reels 1,3 and 5 activate 10 Free Spins. -->
+		<li>{{RTprobWildTrans}}</li>
+			<!-- In Free Spins, on every spin there is a chance that one or more symbols turn into Wilds. This is in accordance with the game rules for Drive-by feature.	-->
+		<li>{{RTsameGameRound}}</li>
+			<!--Free Spins and the Walking Wild feature can be activated in the same game round. -->
+		<li>{{RTwalkWildFS}}</li>
+			<!-- At the end of the Free Spins if the Walking Wilds are still left on the reels, one more Free Spin is awarded. -->
+		<li>{{clus3ScatNoteContinue}}</li>
+			<!-- This new Free Spin will be played after the final spin and will be counted as the last Free Spin. -->
+		<li>{{RTfreeSpinsBetCoinActivatingRound}}</li>
+			<!-- Free Spins are played at the same bet level and coin value as the round that activated Free Spins. -->
+		<li>{{RTfreeSpinsaddedToBalance}}</li>
+			<!-- At the end of Free Spins, the total win from Free Spins is added to any wins from the round that activated Free Spins. -->
+		<li>{{RTreturnActivRound}}</li>
+			<!-- At the end of Free Spins, the game returns to the round that activated Free Spins. -->
+		<li>{{RTtotalWinFieldFreeSpins}}</li>
+			<!-- The Total Win field includes any wins during Free Spins added to any wins from the round that activated Free Spins. -->
+</ul>
+
+
+<h3 class="smallHeader">
+		{{RTgameFunctionsHeading}}
+		<!-- Game Functions  -->
+	</h3>
+
+<ul>
+    <li>{{RTtableDescribes}}</li>
+</ul>
+
+
+
+<table class="gamerulestable">
+    <tbody>
+    <tr>
+        <th>
+            {{RTbuttonTableHead}}
+        </th>
+        <th>
+            {{RTfunctionTableHead}}
+        </th>
+    </tr>
+
+    <tr>
+        <td width="100" align="center">
+            <img src="../rules/images/spinbutton.png" style="width:146px; height:152px;" loading="lazy" />
+        </td>
+        <td width="400">
+            {{RTstartGameRound}}
+        </td>
+    </tr>
+
+	<tr>
+        <td width="100" align="center">
+            <img src="../rules/images/Lockup.png" style="width:99px; height:104px;" loading="lazy" />
+        </td>
+        <td width="400">
+            {{RTstartLockemRound}}
+        </td>
+    </tr>
+
+	<tr>
+        <td width="100" align="center">
+            <img src="../rules/images/enter.png" style="width:267px; height:160px;" loading="lazy" />
+        </td>
+        <td width="400">
+            {{RTfreeSpinStart}}
+        </td>
+    </tr>
+
+	<tr>
+        <td width="100" align="center">
+            <img src="../rules/images/exit.png" style="width:267px; height:160px;" loading="lazy" />
+        </td>
+        <td width="400">
+            {{RTfreeSpinEnd}}
+        </td>
+    </tr>
+
+    <tr>
+        <td align="center"><img src="../rules/images/spanner_button.png" style="width:36px; height:36px;" loading="lazy" /></td>
+        <td>{{RTopenSettingsMenu}}</td>
+    </tr>
+
+    <tr>
+        <td align="center"><img src="../rules/images/speaker_button.png" style="width:36px; height:36px;" loading="lazy" /></td>
+        <td>{{RTmuteSoundSliderRev}}</td>
+    </tr>
+
+    <tr>
+        <td align="center"><img src="../rules/images/questionmark_button.png" style="width:36px; height:36px;" loading="lazy" /></td>
+        <td>{{RTopenGameRules}}</td>
+    </tr>
+
+{{#if (notequal  lang "nt")}}
+   <tr>
+        <td align="center"><img src="../rules/images/auto_button.png" style="width:48px; height:28px;" loading="lazy" /></td>
+        <td>{{RTopenAutoplayMenu}} {{RTautoplaySelectSpins}}</td>
+    </tr>
+{{/if}}
+
+    <tr>
+        <td align="center"><img src="../rules/images/paytable_buttons.png" style="width:72px; height:72px;" loading="lazy" /></td>
+        <td>{{RTpaytableButtonsDescRev2}}</td>
+    </tr>
+
+    <tr>
+        <td align="center"><img src="../rules/images/information_button.png" style="width:40px; height:51px;" loading="lazy" /></td>
+        <td>{{RTinformationIconButtonDesc}}</td>
+        <!-- Click to view the PAYTABLE.  -->
+    </tr>
+</tbody>
+</table>
+
+
+<h3 class="smallHeader">
+    {{gameSettingOptionsHeading}}
+    <!-- Game setting options -->
+</h3>
+
+<ul>
+	<li>{{gameSettingIntro}}</li>
+		<!-- To access game settings click the spanner icon in the game panel. -->
+
+{{#if (notequal  lang "nt")}}
+		<li><b>{{RTsettingListQuickSpin}}</b>. {{RTquickSpinDescRev}} {{RTquickSpinDisclaimer}}</li>
+			<!-- Quick spin. Turns the quick spin option on or off. (Not available in all casinos.) -->
+
+{{/if}}
+		<li><b>{{OCTintroGameSetting}}</b>. {{RTIntroMovieOnOff}}</li>
+            <!-- Intro movie. Turns the intro screen on or off. -->
+		 <li><b>{{OCTspaceSpin}}</b>. {{RTspacebarspin}}</li>
+			<!-- Spacebar to spin. Turns the spacebar function on or off.-->
+		<li><b>{{gameHistory}}</b>. {{RTgameHistoryDesc}}. {{RTGameHistNoPlayForFun}}</li>
+			<!-- Game History. Click to view your latest game history. (Not available when PLAYING FOR FUN.) -->
+{{#if (notequal  lang "nt")}}
+		{{RTsettingsDisclaimer}}
+		<!-- Note: Some casinos may operate without all of the listed game settings. -->
+{{/if}}
+</ul>
+
+{{#if (notequal  autoplay "0")}}
+{{#if (notequal  lang "nt")}}
+
+<h3 class="smallHeader">
+    {{advancedAutoplayOptionsHeading}}
+    <!-- Advanced autoplay options -->
+</h3>
+
+<ul>
+<li>{{RTadvancedAutoplayButton}}</li>
+   <!-- To set advanced autoplay options click AUTOPLAY, and then click Advanced settings. -->
+	<li><b>{{onAnyWin}}</b>. {{anyWinDesc}}</li>
+		<!-- On any win. Stop Autoplay when you win in a round. -->
+	<li><b>{{ifFreeSpinsIsStarted}}</b>. {{freeSpinsWonDescNew}}</li>
+		<!-- If free spins is won. Stops Autoplay when Free Spins is won. -->
+	<li><b>{{ifWinExeeds}}</b>. {{RTsingleWinDescRev}}</li>
+		<!-- If single win exceeds. Stops Autoplay when the amount you win exceeds or equals the amount you specify. -->
+	<li><b>{{ifCashIncreasesBy}}</b>. {{RTcashIncreasesDescRev}}</li>
+		<!-- If cash increases by. Stops Autoplay if cash increases by the amount you specify. -->
+	<li><b>{{ifCashDecreasesBy}}</b>. {{RTcashDecreasesDescRev}}</li>
+		<!-- If cash decreases by. Stops Autoplay if cash decreases by the amount you specify. -->
+<li>{{RTclickResetToClear}}</li>
+	<!-- Click Reset to clear all selected Stop Autoplay options. -->
+{{RTautoplayDuringGame}}
+	<!-- When changing Autoplay settings during a game round or Free Spins, all settings will take effect once the game round or feature is completed. -->
+<p style="padding:0;margin:0"> {{RTAutoplayDisconnect}}</p>
+	<!-- Note: If you are disconnected while playing, all Autoplay settings will return to default when you reload the game. -->
+{{RTautoplayNote}}
+	<!-- Note: Some autoplay options are mandatory for some jurisdictions. -->
+</ul>
+{{/if}}
+{{/if}}
+
+{{#if (equal  lang "nt")}}
+<h3 class="smallHeader">{{RTunfinishedGameRoundsHeader}}</h3>
+	<!-- Uferdige spillrunder -->
+
+<ul>
+	<li>{{RTunfinishedGameRoundStorage}}</li>
+	<!--Eventuelle spillrunder som av en eller annen grunn ikke har blitt gjennomført, lagres på serveren. -->
+	<li>{{RTunfinishedGameRoundReason}}</li>
+	<!--En uferdig spillrunde kan eksempelvis skyldes dårlig internettforbindelse. -->
+	<li>{{RTunfinishedGameRoundResume}}</li>
+	<!--Uferdige spillrunder gjenopptas enten automatisk etter en kort forsinkelse eller ved å starte spillet på nytt. -->
+	<li>{{RTunfinishedGameRoundStoredBet}}</li>
+	<!--En uferdig spillrunde lagres på serveren sammen med den gjeldende innsatsen. -->
+	<li>{{RTunfinishedGameRoundResumeWin}}</li>
+	<!--Dersom en spillrunde ikke fortsettes innen kl 03:00, vil spilleren få sine eventuelle gevinster for spill som er avgjort. -->
+	<li>{{RTunfinishedGameRoundBetReturn}}</li>
+	<!--Der spillet ikke er avgjort vil innsatsen returneres til spilleren. -->
+</ul>
+
+<h3 class="smallHeader">{{RTskills}}</h3>
+	<!-- Ferdigheter -->
+
+<ul>
+	<li>{{RTskillsOutcome}}</li>
+	<!--Utfallet av dette spillet kan ikke påvirkes av spilleren. -->
+</ul>
+
+<h3 class="smallHeader">{{jackpotHeading}}</h3>
+	<!-- Jackpot -->
+
+<ul>
+	<li>{{RTjackpotYesorNo}}</li>
+	<!--Dette spillet har ikke Jackpot. -->
+</ul>
+{{/if}}
+
+{{#if (notequal  lang "nt")}}
+<h3 class="smallHeader">
+    {{RTreturnToPlayer}}
+    <!--  -->
+</h3>
+
+<ul>
+<li>{{RTtheoreticalReturn}} 96.23%</li>
+</ul>
+{{/if}}
+
+<h3 class="smallHeader">
+    {{RTadditionalInformation}}
+    <!--  -->
+</h3>
+
+<ul>
+{{#if (notequal  lang "nt")}}
+<li>{{RTreferWebSite}}
+<ul>
+<li>{{RTunfinishedGameSession2}}</li>
+<li>{{RTgameSessions2}}</li>
+</ul>
+</li>
+{{/if}}
+<li>{{RTmalfunction}}</li>
+</ul>
+
+{{#if (notequal  lang "nt")}}
+<h3 class="smallHeader">
+{{RTtransGameTerms}}
+</h3>
+
+<p>{{RTtablePlayLangThnEng}}</p>
+<!-- Note: The following table is only applicable if you are playing in a language other than English.  -->
+
+
+
+<ul>
+    <li>{{RTtableDescribes}}</li>
+</ul>
+
+
+
+<table class="gamerulestable">
+    <tbody>
+    <tr>
+        <th>
+            {{termEnglish}}
+        </th>
+        <th>
+            {{termTranslatedTerm}}
+        </th>
+    </tr>
+
+	<tr>
+    	<td>Enter</td>
+    	<td>{{termEnter}}</td>
+    </tr>
+
+	<tr>
+    	<td>Exit</td>
+    	<td>{{termExit}}</td>
+    </tr>
+
+	<tr>
+    	<td>Scatter</td>
+    	<td>{{termScatter}}</td>
+    </tr>
+
+	<tr>
+    	<td>Free Spins</td>
+    	<td>{{termFreeSpins}}</td>
+    </tr>
+
+	<tr>
+		<td>Walking Wild</td>
+		<td>{{termWalkingWild}}</td>
+	</tr>
+
+	<tr>
+    	<td>Wild</td>
+    	<td>{{termWild}}</td>
+    </tr>
+
+	<tr>
+		<td>Drive-by</td>
+		<td>{{termdriveBy}}</td>
+	</tr>
+
+	<tr>
+		<td>Locked Up</td>
+		<td>{{termLockemUp}}</td>
+	</tr>
+
+	<tr>
+		<td>Golden Locked Up</td>
+		<td>{{termGoldenLockit}}</td>
+	</tr>
+	</tbody>
+ </table>
+ {{/if}}
+
+<p></p><p><b>{{RTrulesGenerated}}</b></p>

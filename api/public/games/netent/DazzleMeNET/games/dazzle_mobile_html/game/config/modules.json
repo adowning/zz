@@ -1,0 +1,513 @@
+{
+    "fullscreen": {
+        "global": "Game",
+        "platforms": ["mobile", "mobileLow"],
+        "module": "Core.Fullscreen"
+    },
+    "stage" : {
+        "global" : "Game",
+        "module" : "Game.Stage"
+    },
+    "postman" : {
+        "global" : "Services",
+        "module" : "Core.Postman",
+        "controller" : "Dazzle.PostmanController"
+    },
+    "autoPlayer" : {
+        "module" : "Core.AutoPlayer",
+        "controller": "Dazzle.AutoPlayerController",
+        "model": "Dazzle.AutoPlayerModel"
+    },
+    "netEntExtend" : {
+        "global" : "Services",
+        "module" : "Core.NetEntExtend",
+        "model" : "Core.Slots.NetEntExtendModel"
+    },
+    "netEntExtendEvents" : {
+        "global" : "Services",
+        "module" : "Core.NetEntExtendEvents",
+        "model" : "Core.Slots.NetEntExtendEventsModel"
+    },
+    "moneyManager" : {
+        "global" : "Services",
+        "module" : "Core.MoneyManager"
+    },
+    "settingsManager" : {
+        "global" : "Services",
+        "module" : "Core.SettingsManager"
+    },
+    "localStorageManager" : {
+        "global" : "Services",
+        "module" : "Core.LocalStorageManager"
+    },
+    "customMessages" : {
+        "module" : "Core.CustomMessages",
+        "model" : {
+          "desktop" : "Core.CustomMessagesDesktopModel"
+        }
+    },
+    "keepAlive" : {
+        "module" : "Core.KeepAlive"
+    },
+    "playForRealPromo" : {
+        "module" : "Core.PlayForRealPromo",
+        "model" : {
+            "desktop" : "Core.PlayForRealPromoDesktopModel"
+        }
+    },
+    "dialogWindow" : {
+        "module" : "Core.DialogWindow",
+        "view" : {
+            "mobile" : "Core.DialogWindowMobileView",
+            "tablet" : "Core.DialogWindowBaseView"
+        }
+    },
+    "errorManager" :{
+        "global" : "Game",
+        "module" : "Core.ErrorManager",
+        "model" : {
+            "desktop" : "Core.ErrorManagerDesktopModel"
+        }
+    },
+    "playModeManager" : {
+        "module" : "Core.PlayModeManager"
+    },
+    "serverManager" : {
+        "module" : "Core.Slots.ServerManager",
+        "model" : "Dazzle.ServerManagerModel"
+    },
+    "responseParser" : {
+        "global"     : "Game",
+        "module"     : "Core.Slots.ResponseParser",
+        "controller" : "Dazzle.ResponseParserController"
+    },
+    "background" : {
+      "module" : "Game.Background",
+      "view"   : "Dazzle.BackgroundView",
+      "controller"   : "Dazzle.BackgroundController"
+    },
+    "spin" : {
+        "global" : "Game",
+        "module" : "Core.Slots.BufferedSpin",
+        "view"   : "Dazzle.BufferedSpinView",
+        "model" : "Dazzle.BufferedSpinModel",
+        "controller"   : "Dazzle.BufferedSpinController"
+    },
+    "spinButton" : {
+        "module" : "Interface.Slots.SpinButton",
+        "view"   : {
+            "mobile" : "Interface.Slots.SpinButtonMobileView",
+            "tablet" : "Interface.Slots.SpinButtonTabletView",
+            "desktop" : "Dazzle.SpinButtonDesktopView"
+        }
+    },
+    "maxBetButton" : {
+        "platforms" : [ "desktop" ],
+        "module" : "Interface.Slots.MaxBetButton",
+        "view" : "Dazzle.MaxBetButtonBaseView"
+    },
+    "quickSettingsMenu" : {
+        "platforms" : ["mobile", "mobileLow", "tablet", "tabletLow"],
+        "module" : "Interface.QuickSettingsMenu",
+        "view" : {
+            "mobile" : "Interface.QuickSettingsMenuBaseView",
+            "tablet" : "Interface.QuickSettingsMenuTabletView"
+        }
+    },
+    "autoPlayButton" : {
+        "platforms" : ["mobile", "mobileLow", "tablet", "tabletLow"],
+        "module" : "Interface.AutoPlayButton"
+    },
+    "quickSpinButton" : {
+        "platforms" : ["mobile", "mobileLow", "tablet", "tabletLow"],
+        "module" : "Interface.QuickSpinButton"
+    },
+    "resourceLoader" : {
+        "module" : "Core.ResourceLoader"
+    },
+    "spinTypeBasic" : {
+        "module"     : "Core.Slots.SpinTypeBasic"
+    },
+    "spinTypeRespin" : {
+        "module"     : "Core.Slots.SpinTypeRespin"
+    },
+    "spinTypeFreespin" : {
+        "module"     : "Core.Slots.SpinTypeFreespin"
+    },
+    "quickStopper" : {
+        "module" : "Game.Slots.QuickStopper",
+        "view" : "Dazzle.QuickStopperView"
+    },
+    "winSituationsDisplay" : {
+        "module" : "Game.Slots.WinSituationsDisplay",
+      "controller" : "Dazzle.WinSituationsDisplayController"
+    },
+    "winSituations" : {
+        "module" : "Game.Slots.WinSituations",
+        "controller" : "Dazzle.WinSituationsController"
+    },
+    "betlineIndicators" : {
+        "module" : "Game.Slots.BetlineIndicators",
+      "model" : "Dazzle.BetlineIndicatorsModel",
+      "controller" :  "Dazzle.BetlineIndicatorsController",
+      "view" :  "Dazzle.BetlineIndicatorsView"
+    },
+    "winBanner" : {
+        "module" : "Game.Slots.WinBanner",
+        "model" : "Dazzle.WinBannerModel",
+        "view" : "Dazzle.WinBannerView",
+        "controller" : "Dazzle.WinBannerController"
+    },
+    "winBannerField" : {
+        "module" : "Dazzle.WinBannerField",
+        "model" : "Dazzle.WinBannerFieldModel",
+        "view": {
+            "desktop": "Dazzle.WinBannerFieldDesktopView",
+            "mobile": "Dazzle.WinBannerFieldView"
+        },
+        "controller" : "Dazzle.WinBannerFieldController"
+    },
+    "stopGame" : {
+        "module" : "Core.StopGame"
+    },
+    "realityCheck" : {
+        "module" : "Core.Slots.RealityCheck",
+        "model" : {
+            "desktop" : "Core.RealityCheckDesktopModel"
+        }
+    },
+    "coinWin" : {
+        "module" : "Game.Slots.CoinWin",
+        "view" : "Dazzle.CoinWinView"
+    },
+    "winningSymbols" : {
+        "module" : "Game.Slots.WinningSymbols",
+        "model" : "Dazzle.WinningSymbolsModel",
+        "view" : "Dazzle.WinningSymbolsView",
+        "controller" : "Dazzle.WinningSymbolsController"
+    },
+    "dimmedNoWinSymbols" : {
+        "module" : "Game.Slots.DimmedNoWinSymbols",
+        "model" : "Dazzle.DimmedNoWinSymbolsModel",
+        "view" : "Dazzle.DimmedNoWinSymbolsView"
+    },
+    "standardWin" : {
+        "module" : "Core.Slots.StandardWin",
+        "controller" : "Dazzle.StandardWinController"
+    },
+    "bigWin": {
+        "module": "Game.Slots.BigWin",
+        "view" : "Dazzle.BigWinView",
+        "model" : "Dazzle.BigWinModel",
+        "controller" : "Dazzle.BigWinController"
+    },
+    "bigWinCountUp" : {
+        "module" : "Game.Slots.BigWinCountUp",
+        "view": {
+            "desktop": "Dazzle.BigWinCountUpView",
+            "mobile": "Dazzle.BigWinCountUpMobileView"
+        }
+    },
+    "JMX" : {
+        "optional" : true,
+        "module" : "Cheats.JMX",
+        "view" : "Dazzle.JMXView",
+        "controller" : "Dazzle.JMXController"
+    },
+	"JMXReelSelector" : {
+        "optional" : true,
+        "module" : "Cheats.JMXReelSelector",
+        "view" : "Dazzle.JMXReelSelectorView",
+        "controller" : "Dazzle.JMXReelSelectorController"
+    },
+    "JMXQueueViewer" : {
+        "optional" : true,
+        "module" : "Cheats.JMXQueueViewer"
+    },
+    "DebugInformation" : {
+        "optional" : true,
+        "module" : "Cheats.DebugInformation"
+    },
+    "g4" : {
+        "global" : "Game",
+        "module" : "Core.G4",
+        "model" : {
+            "desktop" : "Core.G4DesktopModel"
+        }
+    },
+    "slowRequestAnimation" : {
+        "module" : "Core.SlowRequestAnimation",
+        "view" : {
+          "desktop" : "Core.SlowRequestAnimationDesktopView"
+        }
+    },
+    "ambienceManager" : {
+        "module" : "Game.AmbienceManager",
+        "controller" : "Dazzle.AmbienceManagerController"
+    },
+    "audioPlayer" : {
+        "global"     : "Game",
+        "module"     : "Dazzle.AudioPlayer"
+    },
+    "homeButton" : {
+        "platforms" : ["mobile", "mobileLow", "tablet", "tabletLow"],
+        "module" : "Interface.HomeButton",
+        "view" : {
+            "mobile" : "Interface.HomeButtonMobileView",
+            "tablet" : "Interface.HomeButtonTabletView"
+        }
+    },
+    "soundOnOffButton" : {
+        "platforms" : ["mobile", "mobileLow", "tablet", "tabletLow"],
+        "module" : "Interface.SoundOnOffButton",
+        "view" : {
+            "mobile" : "Interface.SoundOnOffButtonMobileView",
+            "tablet" : "Interface.SoundOnOffButtonTabletView"
+        }
+    },
+    "balanceDisplay" : {
+        "module": "Interface.BalanceDisplay",
+        "view" : {
+            "desktop" : "Interface.BalanceDisplayDesktopView",
+            "mobile" : "Interface.BalanceDisplayMobileView",
+            "tablet" : "Interface.BalanceDisplayBaseView"
+        }
+    },
+    "coinsField" : {
+        "module": "Interface.Slots.CoinsField",
+        "model": "Dazzle.CoinsFieldModel",
+        "controller" : "Dazzle.CoinsFieldController",
+        "view": {
+            "mobile" : "Interface.Slots.CoinsFieldMobileView",
+            "tablet" : "Interface.Slots.CoinsFieldBaseView",
+            "desktop" : "Dazzle.CoinsFieldDesktopView"
+        }
+    },
+    "cashField" : {
+        "module": "Interface.CashField",
+        "view" : {
+            "desktop" : "Interface.CashFieldDesktopView",
+            "mobile" : "Interface.CashFieldMobileView",
+            "tablet" : "Interface.CashFieldTabletView"
+        }
+    },
+    "coinsFieldCountUp" : {
+        "module" : "Core.AbstractCountUp"
+    },
+    "settingsWindow" : {
+        "module" : "Interface.SettingsWindow",
+        "view" : {
+            "mobile" : "Interface.SettingsWindowMobileView",
+            "tablet" : "Interface.SettingsWindowTabletView",
+            "desktop": "Interface.SettingsWindowDesktopView"
+        }
+    },
+    "settingsMenu" : {
+        "platforms" : ["mobile", "mobileLow", "tablet", "tabletLow"],
+        "module" : "Interface.SettingsMenu",
+        "view" : {
+            "mobile": "Interface.SettingsMenuMobileView",
+            "tablet": "Interface.SettingsMenuTabletView"
+        }
+    },
+    "desktopSettingsMenu" : {
+        "platforms" : ["desktop"],
+        "module" : "Interface.DesktopSettingsMenu"
+    },
+    "settingsButton" : {
+        "platforms" : ["mobile", "mobileLow", "tablet", "tabletLow"],
+        "module" : "Interface.SettingsButton",
+        "view" : {
+            "mobile" : "Interface.SettingsButtonMobileView",
+            "tablet" : "Interface.SettingsButtonTabletView"
+        }
+    },
+    "betSettings" : {
+        "module" : "Interface.BetSettings",
+        "view" : {
+            "mobile" : "Interface.BetSettingsBaseView",
+            "tablet" : "Interface.BetSettingsBaseView",
+            "desktop" : "Dazzle.BetSettingsDesktopView"
+        }
+    },
+    "systemClock" : {
+        "module" : "Interface.SystemClock",
+        "view": {
+            "mobile" : "Interface.SystemClockBaseView",
+            "tablet" : "Interface.SystemClockTabletView",
+            "desktop" : "Interface.SystemClockDesktopView"
+        }
+    },
+    "netEntLogo" : {
+        "platforms" : ["mobile", "mobileLow", "tablet", "tabletLow"],
+        "module" : "Interface.NetEntLogo"
+    },
+    "gameHistory" : {
+        "module" : "Interface.GameHistory",
+        "view" : {
+            "mobile" : "Interface.GameHistoryBaseView",
+            "tablet" : "Interface.GameHistoryBaseView"
+        }
+    },
+    "gameRules" : {
+        "module" : "Interface.GameRules",
+        "controller": "Dazzle.GameRulesController",
+        "view" : {
+            "mobile" : "Interface.GameRulesBaseView",
+            "tablet" : "Interface.GameRulesBaseView",
+            "desktop" : "Dazzle.GameRulesDesktopView"
+        }
+    },
+    "paytable" : {
+        "module" : "Interface.Paytable",
+        "controller": "Dazzle.PaytableController",
+        "view" : {
+            "mobile" : "Dazzle.PaytableBaseView",
+            "desktop" : "Dazzle.PaytableDesktopView"
+        }
+    },
+    "spinSettings" : {
+        "platforms" : ["mobile", "mobileLow", "tablet", "tabletLow"],
+        "module" : "Interface.SpinSettings"
+    },
+    "autoplaySettings" : {
+        "platforms" : ["desktop"],
+        "module" : "Interface.AutoplaySettings",
+        "view" : {
+          "desktop" : "Dazzle.AutoplaySettingsView"
+        }
+    },
+    "gameSettings" : {
+        "platforms" : ["desktop"],
+        "module" : "Interface.GameSettings",
+        "view" : {
+            "desktop" : "Dazzle.GameSettingsDesktopView"
+        }
+    },
+    "soundSettings" : {
+        "module" : "Interface.SoundSettings",
+        "view" : {
+            "mobile" : "Interface.SoundSettingsBaseView",
+            "tablet" : "Interface.SoundSettingsBaseView",
+            "desktop" : "Interface.SoundSettingsDesktopView"
+        }
+    },
+    "logo" : {
+      "global" : "Game",
+      "module" : "Game.Logo",
+      "controller" : "Dazzle.LogoController",
+      "view"       : {
+        "mobile" : "Dazzle.LogoView",
+        "tablet" : "Dazzle.LogoView",
+        "desktop": "Dazzle.LogoDesktopView"
+      }
+
+    },
+    "freeSpinIntro" : {
+      "global"     : "Game",
+      "module"     : "Game.Slots.FreeSpinIntro",
+      "controller" : "Dazzle.FreeSpinIntroController",
+      "view"       : {
+        "mobile" : "Dazzle.FreeSpinIntroView",
+        "tablet" : "Dazzle.FreeSpinIntroView",
+        "desktop": "Dazzle.FreeSpinIntroDesktopView"
+      }
+
+    },
+    "freeSpinSymbolAttentionAnimation": {
+      "module": "Game.Slots.FreeSpinSymbolAttentionAnimation",
+      "model" : "Dazzle.FreeSpinSymbolAttentionAnimationModel",
+      "controller" : "Dazzle.ReelStopAnimationsController",
+      "view" : "Dazzle.FreeSpinSymbolAttentionAnimationView"
+    },
+    "freeSpinOutro" : {
+      "global"     : "Game",
+      "module"     : "Game.Slots.FreeSpinOutro",
+      "controller" : "Dazzle.FreeSpinOutroController",
+      "view"       :  {
+        "mobile" : "Dazzle.FreeSpinOutroView",
+        "tablet" : "Dazzle.FreeSpinOutroView",
+        "desktop": "Dazzle.FreeSpinOutroDesktopView"
+      }
+    },
+    "wildReels" :{
+      "module" : "Dazzle.WildReels"
+    },
+    "linkedReels" :{
+      "module" : "Dazzle.LinkedReels"
+    },
+    "whiteOutTransition" :{
+      "module" : "Dazzle.WhiteOutTransition"
+    },
+    "keyboardManager" : {
+        "module" : "Core.KeyboardManager"
+    },
+    "freeRounds" : {
+        "module" : "Core.Slots.FreeRounds"
+    },
+    "bonusProgramWidget": {
+        "module": "Game.BonusProgramWidget"
+    },
+    "countDownFreespins" : {
+        "platforms": ["mobile", "mobileLow", "tablet", "tabletLow"],
+        "module" : "Game.Slots.CountDownFreespins",
+        "view" : "Dazzle.CountDownFreespinsView",
+        "controller" : "Dazzle.CountDownFreespinsController"
+    },
+    "ticker" : {
+      "module" : "Interface.Ticker",
+      "view": {
+            "mobile": "Interface.TickerMobileView",
+            "tablet": "Interface.TickerMobileView"
+      }
+    },
+    "customMessages": {
+        "module": "Core.CustomMessages"
+    },
+    "freeSpinOutroDelay" : {
+      "module" : "Dazzle.FreeSpinOutroDelay"
+    },
+    "freespinsLeft": {
+        "platforms" : ["desktop"],
+        "module": "Dazzle.FreespinsLeft"
+    },
+    "tickerTape": {
+        "module": "Dazzle.TickerTape",
+        "view"       : {
+            "mobile" : "Dazzle.TickerTapeView",
+            "tablet" : "Dazzle.TickerTapeView",
+            "desktop": "Dazzle.TickerTapeView"
+        }
+    },
+    "featureSplash": {
+        "platforms" : ["desktop"],
+      "module": "Dazzle.FeatureSplash"
+    },
+    "darkenReels": {
+        "module": "Dazzle.DarkenReels"
+    },
+    "symbolCombiner" : {
+        "module" : "Dazzle.RuntimeGraphicCreator"
+    },
+    "lensFlare": {
+        "module": "Dazzle.LensFlare"
+    },
+    "pluginMenu": {
+        "platforms": ["mobile", "mobileLow", "tablet", "tabletLow"],
+        "module": "Integration.PluginMenu",
+        "view": {
+            "mobile": "Integration.PluginMenuMobileView",
+            "tablet": "Integration.PluginMenuBaseView"
+        }
+    },
+    "keyboard": {
+        "platforms": ["mobile", "mobileLow", "tablet", "tabletLow"],
+        "module": "Interface.Keyboard"
+    },
+    "bonusMessage": {
+        "module": "Core.BonusMessage"
+    },
+    "disclaimer": {
+        "module": "Integration.Disclaimer"
+    }
+}

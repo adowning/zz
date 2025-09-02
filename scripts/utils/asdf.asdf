@@ -1,0 +1,519 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "./generated"
+}
+
+datasource db {
+  provider = "postgres"
+  url      = env("DATABASE_URL")
+}
+
+model VipLevel {
+  id     Int @id
+  level     Int 
+  rank_id     Int 
+  name     String 
+  xpForNext Int
+  @@map("vip_levels")
+}
+
+model VipRank {
+  id                   Int     @id
+  name                 String  @unique(map: "VipRank_name_unique")
+  minXp                Int     @unique(map: "VipRank_minXp_unique")
+  dailyBonusCoinPct    Int
+  hourlyBonusCoinPct   Int
+  purchaseBonusCoinPct Int
+  levelUpBonusCoinPct  Int
+  hasConcierge         Boolean
+  hasVipLoungeAccess   Boolean
+  isInvitationOnly     Boolean
+  @@map("vip_rank")
+
+}
+
+model AuthSessions {
+  id           String         @id @db.VarChar
+  userId       String         @map("user_id")
+  status       session_status @default(ACTIVE)
+  ipAddress    String?        @map("ip_address")
+  userAgent    String?        @map("user_agent")
+  deviceId     String?        @map("device_id")
+  createdAt    DateTime       @default(now()) @map("created_at") @db.Timestamptz(6)
+  expiresAt    DateTime?      @map("expires_at") @db.Timestamptz(6)
+  lastSeen     DateTime       @default(now()) @map("last_seen") @db.Timestamptz(6)
+  otp          String?
+  users        Users          @relation(fields: [userId], references: [id], onDelete: Cascade, onUpdate: NoAction, map: "auth_sessions_user_id_users_id_fk")
+  gameSessions GameSessions[]
+
+  @@index([status], map: "auth_session_status_idx")
+  @@index([userId, createdAt], map: "auth_session_user_idx")
+  @@map("auth_sessions")
+}
+
+model Deposits {
+  id         String    @id @db.VarChar
+  userId     String?   @map("user_id") @db.VarChar
+  amount     Int?
+  status     String?
+  idNumber   String?   @map("id_number")
+  firstName  String?   @map("first_name")
+  lastName   String?   @map("last_name")
+  channelsId String?   @map("channels_id")
+  note       String?
+  currency   String?
+  createdAt  DateTime? @default(now()) @map("created_at") @db.Timestamp(6)
+  updatedAt  DateTime? @default(now()) @map("updated_at") @db.Timestamp(6)
+  users      Users?    @relation(fields: [userId], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "deposits_user_id_users_id_fk")
+
+  @@map("deposits")
+}
+
+model GameSessions {
+  id              String         @id @db.VarChar
+  authSessionId   String         @map("auth_session_id")
+  userId          String         @map("user_id")
+  gameId          String?        @map("game_id")
+  status          session_status @default(ACTIVE)
+  totalWagered    Int            @default(0) @map("total_wagered")
+  totalWon        Int            @default(0) @map("total_won")
+  totalXpGained   Int            @default(0) @map("total_xp_gained")
+  rtp             Decimal?       @db.Decimal(5, 2)
+  duration        Int            @default(0)
+  createdAt       DateTime       @default(now()) @map("created_at") @db.Timestamptz(6)
+  endAt           DateTime?      @map("end_at") @db.Timestamptz(6)
+  startingBalance Int            @default(0) @map("starting_balance")
+  authSessions    AuthSessions   @relation(fields: [authSessionId], references: [id], onDelete: Cascade, onUpdate: NoAction, map: "game_sessions_auth_session_id_auth_sessions_id_fk")
+  users           Users          @relation(fields: [userId], references: [id], onDelete: Cascade, onUpdate: NoAction, map: "game_sessions_user_id_users_id_fk")
+
+  @@index([authSessionId], map: "game_session_auth_session_idx")
+  @@index([userId], map: "game_session_user_idx")
+  @@map("game_sessions")
+}
+
+model GameSpins {
+  id                        String   @id @db.VarChar
+  playerName                String?  @map("player_name")
+  gameName                  String?  @map("game_name")
+  gameId                    String?  @map("game_id")
+  spinData                  Json?    @map("spin_data")
+  grossWinAmount            Float    @map("gross_win_amount")
+  wagerAmount               Float    @map("wager_amount")
+  spinNumber                Int?     @default(0) @map("spin_number")
+  playerAvatar              String?  @map("player_avatar")
+  currencyId                String?  @map("currency_id")
+  sessionId                 String   @map("session_id")
+  userId                    String?  @map("user_id")
+  createdAt                 DateTime @default(now()) @map("created_at")
+  updatedAt                 DateTime @default(now()) @map("updated_at")
+  occurredAt                DateTime @map("occurred_at")
+  sessionDataId             String?
+  type                      String?
+  operatorId                String?  @map("operator_id")
+  status                    String?
+  playerBalanceAtStart      Int      @default(0) @map("player_balance_at_start")
+  playerBalance             Int      @default(0) @map("player_balance")
+  gamePlayerWinTotalTodayid Int      @default(0) @map("game_player_win_total_todayid")
+  playerBetTotalToday       Int      @default(0) @map("player_bet_total_today")
+  sessionTotalWinAmount     Int      @default(0) @map("session_total_win_amount")
+  sessionTotalBetAmount     Int      @default(0) @map("session_total_bet_amount")
+  gameSessionRtp            Int      @default(0) @map("game_session_rtp")
+  playerRtpToday            Int      @default(0) @map("player_rtp_today")
+  winAmount                 Int      @default(0) @map("win_amount")
+  betAmount                 Int      @default(0) @map("bet_amount")
+
+  @@map("game_spins")
+}
+
+model Games {
+  id                   String     @id @db.VarChar
+  name                 String     @unique
+  title                String
+  configuration        Json?
+  description          String?
+  category             String     @default("slots")
+  tags                 String
+  thumbnailUrl         String?    @map("thumbnail_url")
+  bannerUrl            String?    @map("banner_url")
+  developer            String
+  providerId           String?    @map("provider_id")
+  totalWagered         Int        @map("total_wagered")
+  totalWon             Int        @map("total_won")
+  targetRtp            Int?       @map("target_rtp")
+  isFeatured           Boolean    @map("is_featured")
+  isActive             Boolean    @default(true) @map("is_active")
+  operatorId           String?    @map("operator_id")
+  tournamentDirectives Json?      @map("tournament_directives")
+  createdAt            DateTime   @default(now()) @map("created_at")
+  updatedAt            DateTime   @default(now()) @map("updated_at")
+  gameLogic            Json?      @map("game_logic")
+  status               Int        @default(0)
+  operators            Operators? @relation(fields: [operatorId], references: [id], map: "games_operator_fkey")
+
+  @@map("games")
+}
+
+model JackpotContributions {
+  id                      String   @id @db.VarChar
+  jackpotId               String   @map("jackpot_id")
+  userId                  String?  @map("user_id")
+  gameSpinId              String   @map("game_spin_id")
+  contributionAmountCoins Int      @map("contribution_amount_coins")
+  createdAt               DateTime @default(now()) @map("created_at")
+
+  @@unique([jackpotId, gameSpinId], map: "JackpotContribution_jackpotId_gameSpinId_key")
+  @@map("jackpot_contributions")
+}
+
+model JackpotWins {
+  id             String   @id @db.VarChar
+  jackpotId      String   @map("jackpot_id")
+  winnerId       String   @map("winner_id")
+  winAmountCoins Int      @map("win_amount_coins")
+  gameSpinId     String   @unique(map: "jackpot_wins_game_spin_id_unique") @map("game_spin_id")
+  transactionId  String?  @map("transaction_id")
+  createdAt      DateTime @default(now()) @map("created_at")
+  sessionDataId  String?  @map("session_data_id")
+
+  @@map("jackpot_wins")
+}
+
+model Jackpots {
+  id                            String    @id @db.VarChar
+  type                          String
+  currentAmountCoins            Int       @map("current_amount_coins")
+  seedAmountCoins               Int       @map("seed_amount_coins")
+  minimumBetCoins               Int       @default(1) @map("minimum_bet_coins")
+  contributionRateBasisPoints   Int       @map("contribution_rate_basis_points")
+  probabilityPerMillion         Int       @map("probability_per_million")
+  minimumTimeBetweenWinsMinutes Int       @map("minimum_time_between_wins_minutes")
+  lastWonAt                     DateTime? @map("last_won_at")
+  lastWonBy                     String?   @map("last_won_by")
+  isActive                      Boolean   @default(true) @map("is_active")
+  createdAt                     DateTime  @default(now()) @map("created_at")
+  updatedAt                     DateTime  @default(now()) @map("updated_at")
+
+  @@map("jackpots")
+}
+
+model Operators {
+  id               String     @id @db.VarChar
+  name             String     @unique(map: "operators_name_unique")
+  operatorSecret   String     @map("operator_secret")
+  operatorAccess   String     @map("operator_access")
+  callbackUrl      String     @map("callback_url")
+  isActive         Boolean    @default(true) @map("is_active")
+  allowedIps       String     @map("allowed_ips")
+  description      String?
+  productIds       String?    @map("product_ids")
+  balance          Int
+  netRevenue       Int        @map("net_revenue") @default(0)
+  acceptedPayments String[]   @map("accepted_payments")
+  ownerId          String?    @map("owner_id")
+  lastUsedAt       DateTime?  @map("last_used_at")
+  createdAt        DateTime   @default(now()) @map("created_at")
+  updatedAt        DateTime   @default(now()) @map("updated_at")
+  games            Games[]
+  products         Products[]
+  users            Users[]
+
+  @@map("operators")
+}
+
+model Products {
+  id                       String         @id @db.VarChar
+  title                    String         @default("default")
+  productType              String         @default("bundle") @map("product_type")
+  bonusTotalInCredits      Int            @map("bonus_total_in_credits")
+  isActive                 Boolean?       @map("is_active")
+  priceInCents             Int            @map("price_in_cents")
+  amountToReceiveInCredits Int            @map("amount_to_receive_in_credits")
+  bestValue                Int            @map("best_value")
+  discountInCents          Int            @map("discount_in_cents")
+  bonusSpins               Int            @map("bonus_spins")
+  isPromo                  Boolean?       @map("is_promo")
+  totalDiscountInCents     Int            @map("total_discount_in_cents")
+  operatorId               String?        @map("operator_id")
+  createdAt                DateTime       @default(now()) @map("created_at")
+  updatedAt                DateTime       @default(now()) @map("updated_at")
+  operators                Operators?     @relation(fields: [operatorId], references: [id], onDelete: Cascade, map: "products_operator_fkey")
+  transactions             Transactions[]
+
+  @@map("products")
+}
+
+model Transactions {
+  id                  String    @id @db.VarChar
+  processedAt         DateTime? @map("processed_at")
+  walletId            String?   @map("wallet_id")
+  type                String
+  status              String    @default("PENDING")
+  amount              Int
+  netAmount           Int?      @map("net_amount")
+  feeAmount           Int?      @map("fee_amount")
+  productId           String?   @map("product_id")
+  paymentMethod       String?   @map("payment_method")
+  balanceBefore       Int?      @map("balance_before")
+  balanceAfter        Int?      @map("balance_after")
+  bonusBalanceBefore  Int?      @map("bonus_balance_before")
+  bonusBalanceAfter   Int?      @map("bonus_balance_after")
+  bonusAmount         Int?      @map("bonus_amount")
+  wageringRequirement Int?      @map("wagering_requirement")
+  wageringProgress    Int?      @map("wagering_progress")
+  description         String?
+  provider            String?
+  providerTxId        String?   @map("provider_tx_id")
+  relatedGameId       String?   @map("related_game_id")
+  relatedRoundId      String?   @map("related_round_id")
+  createdAt           DateTime  @default(now()) @map("created_at")
+  updatedAt           DateTime  @default(now()) @map("updated_at")
+  operatorId          String?   @map("operator_id")
+  userId              String?   @map("user_id")
+  products            Products? @relation(fields: [productId], references: [id], map: "transactions_product_fkey")
+  wallets             Wallets?  @relation(fields: [walletId], references: [id], onDelete: Cascade, map: "transactions_wallet_fkey")
+
+  @@map("transactions")
+}
+
+model Users {
+  id                       String         @id @db.VarChar
+  username                 String         @unique(map: "users_username_unique")
+  email                    String?        @unique(map: "users_email_unique")
+  passwordHash             String?        @map("password_hash")
+  accessToken              String?        @map("access_token")
+  refreshToken             String?        @map("refresh_token")
+  accessTokenExpiresAt     DateTime?      @map("access_token_expires_at")
+  refreshTokenExpiresAt    DateTime?      @map("refresh_token_expires_at")
+  currentGameSessionDataId String?        @unique(map: "users_current_game_session_data_id_unique") @map("current_game_session_data_id")
+  currentAuthSessionDataId String?        @unique(map: "users_current_auth_session_data_id_unique") @map("current_auth_session_data_id")
+  avatarUrl                String?        @default("avatar-01") @map("avatar_url")
+  role                     String         @default("USER")
+  isActive                 Boolean        @default(true) @map("is_active")
+  lastLoginAt              DateTime?      @map("last_login_at")
+  totalXpGained            Int            @map("total_xp_gained")
+  activeWalletId           String?        @unique(map: "users_active_wallet_id_unique") @map("active_wallet_id")
+  vipInfoId                String?        @unique(map: "users_vip_info_id_unique") @map("vip_info_id")
+  createdAt                DateTime       @default(now()) @map("created_at")
+  updatedAt                DateTime       @default(now()) @map("updated_at")
+  deletedAt                DateTime?      @map("deleted_at")
+  lastSeen                 DateTime?      @map("last_seen")
+  rtgBlockTime             Int            @default(0) @map("rtg_block_time")
+  phone                    String?        @unique(map: "users_phone_unique")
+  activeOperatorId         String?        @map("active_operator_id")
+  authSessions             AuthSessions[]
+  // blackjack_bets               blackjack_bets[]
+  deposits                 Deposits[]
+  gameSessions             GameSessions[]
+  operators                Operators?     @relation(fields: [activeOperatorId], references: [id], onDelete: Cascade, onUpdate: NoAction, map: "favorite_user_operators_id_active_operator_id_fk")
+  wallets                  Wallets[]
+  withdrawals              Withdrawals[]
+
+  @@map("users")
+}
+
+model VipInfo {
+  id            String   @id @db.VarChar
+  level         Int      @default(1)
+  xp            Int
+  totalXp       Int
+  userId        String   @unique(map: "vip_info_userId_unique")
+  currentRankid Int?
+  createdAt     DateTime @default(now()) @map("created_at")
+  updatedAt     DateTime @default(now()) @map("updated_at")
+
+  @@map("vip_info")
+}
+
+model VipLevelUpHistory {
+  id            String   @id @db.VarChar
+  previousLevel Int      @map("previous_level")
+  newLevel      Int      @map("new_level")
+  timestamp     DateTime @default(now())
+  vipInfoId     String   @map("vip_info_id")
+
+  @@map("vip_level_up_history")
+}
+
+model Wallets {
+  id            String         @id @db.VarChar
+  balance       Int
+  paymentMethod String         @default("INSTORE_CASH") @map("payment_method")
+  currency      String         @default("USD")
+  isActive      Boolean        @default(true) @map("is_active")
+  isDefault     Boolean        @map("is_default")
+  address       String?        @unique(map: "wallets_address_unique")
+  cashtag       String?        @unique(map: "wallets_cashtag_unique")
+  userId        String         @map("user_id")
+  operatorId    String         @map("operator_id")
+  lastUsedAt    DateTime?      @map("last_used_at")
+  createdAt     DateTime       @default(now()) @map("created_at")
+  updatedAt     DateTime       @default(now()) @map("updated_at")
+  transactions  Transactions[]
+  users         Users          @relation(fields: [userId], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "withdrawals_user_id_users_id_fk")
+
+  @@unique([userId, operatorId], map: "wallets_user_operator_unique")
+  @@map("wallets")
+}
+
+model Withdrawals {
+  id           String    @id @db.VarChar
+  userId       String?   @map("user_id") @db.VarChar
+  amount       Int?
+  status       String?
+  idNumber     String?   @map("id_number")
+  firstName    String?   @map("first_name")
+  lastName     String?   @map("last_name")
+  channelsId   String?   @map("channels_id")
+  note         String?
+  currencyType String?   @map("currency_type")
+  currency     String?
+  createdAt    DateTime? @default(now()) @map("created_at") @db.Timestamp(6)
+  updatedAt    DateTime? @default(now()) @map("updated_at") @db.Timestamp(6)
+  users        Users?    @relation(fields: [userId], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "withdrawals_user_id_users_id_fk")
+
+  @@map("withdrawals")
+}
+
+enum GameProviderName {
+  pragmaticplay
+  evoplay
+  netent
+  playngo
+  relaxgaming
+  hacksaw
+  bgaming
+  spribe
+  internal
+  redtiger
+  netgame
+  bigfishgames
+  cqnine
+  nolimit
+  kickass
+}
+
+enum PaymentMethod {
+  INSTORE_CASH
+  INSTORE_CARD
+  CASH_APP
+}
+
+enum Permission {
+  read
+  write
+  upload
+  manage_users
+  manage_settings
+  launch_game
+}
+
+enum Role {
+  USER
+  ADMIN
+  VIP
+  MODERATOR
+  SYSTEM
+  OWNER
+  MEMBER
+  OPERATOR
+  SUPPORT_AGENT
+}
+
+enum TournamentStatus {
+  PENDING
+  ACTIVE
+  COMPLETED
+  CANCELLED
+}
+
+enum TransactionStatus {
+  PENDING
+  PROCESSING
+  COMPLETED
+  FAILED
+  CANCELLED
+  REFUNDED
+  EXPIRED
+  REJECTED
+  REQUIRES_ACTION
+  ON_HOLD
+}
+
+enum TypeOfJackpot {
+  MINOR
+  MAJOR
+  GRAND
+}
+
+enum TypeOfTransaction {
+  DEPOSIT
+  WITHDRAWAL
+  BET
+  WIN
+  TRANSFER_SENT
+  TRANSFER_RECEIVED
+  SYSTEM_ADJUSTMENT_CREDIT
+  SYSTEM_ADJUSTMENT_DEBIT
+  TOURNAMENT_BUYIN
+  TOURNAMENT_PRIZE
+  AFFILIATE_COMMISSION
+  REFUND
+  FEE
+  BONUS_AWARD
+  BET_PLACE
+  BET_WIN
+  BET_LOSE
+  BET_REFUND
+  BONUS_WAGER
+  BONUS_CONVERT
+  BONUS_EXPIRED
+  XP_AWARD
+  ADJUSTMENT_ADD
+  ADJUSTMENT_SUB
+  INTERNAL_TRANSFER
+  PRODUCT_PURCHASE
+  REBATE_PAYOUT
+  JACKPOT_WIN
+  JACKPOT_CONTRIBUTION
+}
+
+enum UserRole {
+  USER
+  ADMIN
+  MODERATOR
+  SUPPORT
+  BOT
+  SYSTEM
+}
+
+enum game_categories {
+  slots
+  fish
+  table
+  live
+  poker
+  lottery
+  virtual
+  other
+}
+
+enum message_type {
+  update_wallet      @map("update:wallet")
+  update_vip         @map("update:vip")
+  update_balance     @map("update:balance")
+  update_gameSession @map("update:gameSession")
+}
+
+enum session_status {
+  ACTIVE
+  COMPLETED
+  EXPIRED
+  ABANDONED
+  TIMEOUT
+  OTP_PENDING
+}
+
+enum update_type {
+  BINARY
+  OTA
+}

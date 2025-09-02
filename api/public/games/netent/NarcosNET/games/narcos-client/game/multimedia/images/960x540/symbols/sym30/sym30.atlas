@@ -1,0 +1,34 @@
+
+sym30.png
+size: 942,238
+format: RGBA8888
+filter: Linear,Linear
+repeat: xy
+frame
+  rotate: false
+  xy: 238, 6
+  size: 234, 230
+  orig: 234, 230
+  offset: 0, 0
+  index: -1
+transBG
+  rotate: false
+  xy: 474, 6
+  size: 234, 230
+  orig: 234, 230
+  offset: 0, 0
+  index: -1
+transBG_b
+  rotate: false
+  xy: 2, 6
+  size: 234, 230
+  orig: 234, 230
+  offset: 0, 0
+  index: -1
+winglow
+  rotate: true
+  xy: 710, 2
+  size: 234, 230
+  orig: 234, 230
+  offset: 0, 0
+  index: -1

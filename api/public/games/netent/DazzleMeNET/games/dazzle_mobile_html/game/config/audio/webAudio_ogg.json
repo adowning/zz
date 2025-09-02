@@ -1,0 +1,187 @@
+{
+    "clips": {"main": {
+        "dazzleAnticipationCoolDown": {"volume": 0.6},
+        "dazzlePreWildStart": {"volume": 0.5},
+        "dazzleBigWinIntro": {
+            "volume": 0.8,
+            "duck": {
+                "ambienceGeneral": {
+                    "attack": 0.3,
+                    "release": 0.3,
+                    "value": 0
+                },
+                "ambienceFreeSpin": {
+                    "attack": 0.3,
+                    "release": 0.3,
+                    "value": 0
+                }
+            }
+        },
+        "dazzleFreeSpinIntroLoop": {"volume": 0.4},
+        "quickStop": {"volume": 0.9},
+        "smallWin": {"volume": 0.6},
+        "dazzleScatterHit2": {"volume": 0.9},
+        "outroFreeSpin": {"volume": 0.9},
+        "ambienceGeneral": {"volume": 0.6},
+        "dazzleWinningSymbolsRampUp": {
+            "volume": 0.6,
+            "duck": {
+                "ambienceGeneral": {
+                    "attack": 0.3,
+                    "release": 0.3,
+                    "value": 0.15
+                },
+                "ambienceFreeSpin": {
+                    "attack": 0.3,
+                    "release": 0.3,
+                    "value": 0.15
+                }
+            }
+        },
+        "dazzleWinningSymbolsBlast2": {"volume": 0.6},
+        "dazzleWinningSymbolsBlast1": {"volume": 0.6},
+        "dazzleWildStart": {"volume": 0.65},
+        "dazzleLinkedReels": {"volume": 0.9},
+        "reelBounce": {"volume": 0.9},
+        "mediumWin": {"volume": 0.6},
+        "bigWinLoopEnd": {
+            "volume": 0.7,
+            "duck": {
+                "ambienceGeneral": {
+                    "duration": 2.2,
+                    "attack": 0.01,
+                    "release": 0.8,
+                    "value": 0
+                },
+                "ambienceFreeSpin": {
+                    "duration": 2.2,
+                    "attack": 0.01,
+                    "release": 0.8,
+                    "value": 0
+                }
+            }
+        },
+        "dazzleWinningSymbolsBlast3": {"volume": 0.6},
+        "dazzleScatterHit3": {"volume": 0.9},
+        "dazzleWildmusic": {"volume": 0.8},
+        "dazzleNearwin": {
+            "volume": 0.8,
+            "duck": {"ambienceGeneral": {
+                "duration": 5.5,
+                "attack": 2,
+                "release": 0.3,
+                "value": 0.1
+            }}
+        },
+        "bigWinStart": {"volume": 0.5},
+        "buttonClick": {"volume": 0.9},
+        "bigWinLoop": {
+            "volume": 0.7,
+            "duck": {
+                "ambienceGeneral": {
+                    "attack": 0.01,
+                    "release": 0.2,
+                    "value": 0
+                },
+                "ambienceFreeSpin": {
+                    "attack": 0.01,
+                    "release": 0.2,
+                    "value": 0
+                }
+            }
+        },
+        "dazzleFreeSpinOutroEnterTransition": {"volume": 0.7},
+        "introFreeSpin": {"volume": 0.9},
+        "dazzleFreeSpinOutroLoop": {"volume": 0.9},
+        "dazzleContinueButtonPress": {"volume": 0.5},
+        "dazzleNearwinCooldown": {"volume": 0.8},
+        "ambienceFreeSpin": {"volume": 0.9},
+        "reelSpin": {"volume": 0.45},
+        "dazzleAnticipationStart": {"volume": 0.9},
+        "dazzleStartFreeSpinButtonPress": {
+            "volume": 0.9,
+            "duck": {"ambienceFreeSpin": {
+                "duration": 1,
+                "attack": 0.1,
+                "release": 1,
+                "value": 0.65
+            }}
+        },
+        "spinButtonClick": {"volume": 0.9},
+        "largeWin": {"volume": 0.6}
+    }},
+    "files": {"main": {
+        "dazzleAnticipationCoolDown": "multimedia/audio/webAudio/main/ogg/dazzleAnticipationCoolDown.ogg",
+        "dazzlePreWildStart": "multimedia/audio/webAudio/main/ogg/dazzlePreWildStart.ogg",
+        "dazzleBigWinIntro": "multimedia/audio/webAudio/main/ogg/dazzleBigWinIntro.ogg",
+        "dazzleFreeSpinIntroLoop": "multimedia/audio/webAudio/main/ogg/dazzleFreeSpinIntroLoop.ogg",
+        "quickStop": "multimedia/audio/webAudio/main/ogg/quickStop.ogg",
+        "smallWin": "multimedia/audio/webAudio/main/ogg/smallWin.ogg",
+        "dazzleScatterHit2": "multimedia/audio/webAudio/main/ogg/dazzleScatterHit2.ogg",
+        "outroFreeSpin": "multimedia/audio/webAudio/main/ogg/outroFreeSpin.ogg",
+        "ambienceGeneral": "multimedia/audio/webAudio/main/ogg/ambienceGeneral.ogg",
+        "dazzleWinningSymbolsRampUp": "multimedia/audio/webAudio/main/ogg/dazzleWinningSymbolsRampUp.ogg",
+        "dazzleWinningSymbolsBlast2": "multimedia/audio/webAudio/main/ogg/dazzleWinningSymbolsBlast2.ogg",
+        "dazzleWinningSymbolsBlast1": "multimedia/audio/webAudio/main/ogg/dazzleWinningSymbolsBlast1.ogg",
+        "dazzleWildStart": "multimedia/audio/webAudio/main/ogg/dazzleWildStart.ogg",
+        "dazzleLinkedReels": "multimedia/audio/webAudio/main/ogg/dazzleLinkedReels.ogg",
+        "reelBounce": "multimedia/audio/webAudio/main/ogg/reelBounce.ogg",
+        "mediumWin": "multimedia/audio/webAudio/main/ogg/mediumWin.ogg",
+        "bigWinLoopEnd": "multimedia/audio/webAudio/main/ogg/bigWinLoopEnd.ogg",
+        "dazzleWinningSymbolsBlast3": "multimedia/audio/webAudio/main/ogg/dazzleWinningSymbolsBlast3.ogg",
+        "dazzleScatterHit3": "multimedia/audio/webAudio/main/ogg/dazzleScatterHit3.ogg",
+        "dazzleWildmusic": "multimedia/audio/webAudio/main/ogg/dazzleWildmusic.ogg",
+        "dazzleNearwin": "multimedia/audio/webAudio/main/ogg/dazzleNearwin.ogg",
+        "bigWinStart": "multimedia/audio/webAudio/main/ogg/bigWinStart.ogg",
+        "buttonClick": "multimedia/audio/webAudio/main/ogg/buttonClick.ogg",
+        "bigWinLoop": "multimedia/audio/webAudio/main/ogg/bigWinLoop.ogg",
+        "dazzleFreeSpinOutroEnterTransition": "multimedia/audio/webAudio/main/ogg/dazzleFreeSpinOutroEnterTransition.ogg",
+        "introFreeSpin": "multimedia/audio/webAudio/main/ogg/introFreeSpin.ogg",
+        "dazzleFreeSpinOutroLoop": "multimedia/audio/webAudio/main/ogg/dazzleFreeSpinOutroLoop.ogg",
+        "dazzleContinueButtonPress": "multimedia/audio/webAudio/main/ogg/dazzleContinueButtonPress.ogg",
+        "dazzleNearwinCooldown": "multimedia/audio/webAudio/main/ogg/dazzleNearwinCooldown.ogg",
+        "ambienceFreeSpin": "multimedia/audio/webAudio/main/ogg/ambienceFreeSpin.ogg",
+        "reelSpin": "multimedia/audio/webAudio/main/ogg/reelSpin.ogg",
+        "dazzleAnticipationStart": "multimedia/audio/webAudio/main/ogg/dazzleAnticipationStart.ogg",
+        "dazzleStartFreeSpinButtonPress": "multimedia/audio/webAudio/main/ogg/dazzleStartFreeSpinButtonPress.ogg",
+        "spinButtonClick": "multimedia/audio/webAudio/main/ogg/spinButtonClick.ogg",
+        "largeWin": "multimedia/audio/webAudio/main/ogg/largeWin.ogg"
+    }},
+    "fileSizes": {"main": {
+        "dazzleAnticipationCoolDown": 35753,
+        "dazzlePreWildStart": 36818,
+        "dazzleBigWinIntro": 19938,
+        "dazzleFreeSpinIntroLoop": 31428,
+        "quickStop": 20701,
+        "smallWin": 40549,
+        "dazzleScatterHit2": 38982,
+        "outroFreeSpin": 96605,
+        "ambienceGeneral": 898956,
+        "dazzleWinningSymbolsRampUp": 125951,
+        "dazzleWinningSymbolsBlast2": 44430,
+        "dazzleWinningSymbolsBlast1": 45567,
+        "dazzleWildStart": 52595,
+        "dazzleLinkedReels": 53492,
+        "reelBounce": 7712,
+        "mediumWin": 42097,
+        "bigWinLoopEnd": 63012,
+        "dazzleWinningSymbolsBlast3": 43234,
+        "dazzleScatterHit3": 45701,
+        "dazzleWildmusic": 238699,
+        "dazzleNearwin": 92339,
+        "bigWinStart": 55431,
+        "buttonClick": 7064,
+        "bigWinLoop": 221830,
+        "dazzleFreeSpinOutroEnterTransition": 48317,
+        "introFreeSpin": 92137,
+        "dazzleFreeSpinOutroLoop": 49194,
+        "dazzleContinueButtonPress": 60056,
+        "dazzleNearwinCooldown": 26197,
+        "ambienceFreeSpin": 441064,
+        "reelSpin": 57773,
+        "dazzleAnticipationStart": 78959,
+        "dazzleStartFreeSpinButtonPress": 59769,
+        "spinButtonClick": 29762,
+        "largeWin": 42651
+    }}
+}

@@ -1,0 +1,1140 @@
+
+freespin.png
+size: 2048,2048
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Lhouse
+  rotate: false
+  xy: 604, 1296
+  size: 368, 750
+  orig: 368, 750
+  offset: 0, 0
+  index: -1
+LhouseGunflash
+  rotate: false
+  xy: 1540, 1135
+  size: 78, 184
+  orig: 79, 200
+  offset: 0, 8
+  index: -1
+Lhouseneon01off
+  rotate: false
+  xy: 955, 956
+  size: 35, 338
+  orig: 39, 341
+  offset: 0, 3
+  index: -1
+Lhouseneon02off
+  rotate: false
+  xy: 929, 846
+  size: 24, 448
+  orig: 45, 475
+  offset: 9, 14
+  index: -1
+Linterior
+  rotate: false
+  xy: 604, 820
+  size: 221, 474
+  orig: 237, 506
+  offset: 0, 0
+  index: -1
+Rhouse
+  rotate: false
+  xy: 974, 1483
+  size: 189, 563
+  orig: 197, 567
+  offset: 8, 0
+  index: -1
+RhouseNeon
+  rotate: false
+  xy: 794, 501
+  size: 29, 317
+  orig: 197, 567
+  offset: 117, 199
+  index: -1
+Rhouseglow
+  rotate: true
+  xy: 533, 508
+  size: 272, 85
+  orig: 272, 85
+  offset: 0, 0
+  index: -1
+Rhouseoff
+  rotate: true
+  xy: 2, 329
+  size: 189, 521
+  orig: 197, 567
+  offset: 8, 5
+  index: -1
+Rhouseshadow
+  rotate: true
+  xy: 404, 162
+  size: 165, 143
+  orig: 197, 567
+  offset: 32, 0
+  index: -1
+Shooter01body
+  rotate: true
+  xy: 2, 4
+  size: 164, 333
+  orig: 433, 400
+  offset: 172, 8
+  index: -1
+Shooter01gunarms
+  rotate: true
+  xy: 1519, 1551
+  size: 201, 87
+  orig: 433, 400
+  offset: 90, 220
+  index: -1
+bardesk
+  rotate: true
+  xy: 437, 16
+  size: 25, 143
+  orig: 35, 161
+  offset: 0, 11
+  index: -1
+beerdrinker
+  rotate: false
+  xy: 827, 913
+  size: 100, 381
+  orig: 100, 400
+  offset: 0, 4
+  index: -1
+bholecar01
+  rotate: false
+  xy: 1635, 623
+  size: 12, 10
+  orig: 12, 10
+  offset: 0, 0
+  index: -1
+bholecar02
+  rotate: false
+  xy: 879, 450
+  size: 12, 9
+  orig: 12, 10
+  offset: 0, 0
+  index: -1
+bholeflash03
+  rotate: false
+  xy: 827, 848
+  size: 95, 63
+  orig: 100, 73
+  offset: 1, 5
+  index: -1
+bholeglascar01
+  rotate: false
+  xy: 674, 192
+  size: 13, 13
+  orig: 13, 13
+  offset: 0, 0
+  index: -1
+bholeglascar02
+  rotate: true
+  xy: 1620, 1135
+  size: 11, 12
+  orig: 13, 13
+  offset: 1, 0
+  index: -1
+bholehead02
+  rotate: false
+  xy: 1638, 1455
+  size: 31, 33
+  orig: 31, 33
+  offset: 0, 0
+  index: -1
+bholewall01
+  rotate: true
+  xy: 437, 2
+  size: 12, 18
+  orig: 12, 18
+  offset: 0, 0
+  index: -1
+bholewall02
+  rotate: true
+  xy: 1215, 1098
+  size: 9, 16
+  orig: 12, 18
+  offset: 1, 1
+  index: -1
+bholewall03
+  rotate: false
+  xy: 1960, 1319
+  size: 12, 18
+  orig: 12, 18
+  offset: 0, 0
+  index: -1
+bholewall04
+  rotate: true
+  xy: 620, 508
+  size: 9, 16
+  orig: 9, 16
+  offset: 0, 0
+  index: -1
+bholewall05
+  rotate: true
+  xy: 457, 2
+  size: 12, 17
+  orig: 12, 17
+  offset: 0, 0
+  index: -1
+bholewall06
+  rotate: true
+  xy: 775, 501
+  size: 10, 17
+  orig: 10, 17
+  offset: 0, 0
+  index: -1
+blooddropsrfloor01
+  rotate: true
+  xy: 967, 450
+  size: 54, 35
+  orig: 54, 39
+  offset: 0, 2
+  index: -1
+bloodspray
+  rotate: true
+  xy: 1587, 1392
+  size: 41, 45
+  orig: 41, 45
+  offset: 0, 0
+  index: -1
+bloodspraybar01
+  rotate: false
+  xy: 879, 461
+  size: 20, 96
+  orig: 20, 96
+  offset: 0, 0
+  index: -1
+bloodspraybarfloor01
+  rotate: true
+  xy: 827, 822
+  size: 24, 52
+  orig: 24, 52
+  offset: 0, 0
+  index: -1
+bloodspraybarfloor02
+  rotate: true
+  xy: 909, 8
+  size: 48, 21
+  orig: 48, 21
+  offset: 0, 0
+  index: -1
+bloodspraycar
+  rotate: true
+  xy: 955, 562
+  size: 134, 62
+  orig: 134, 62
+  offset: 0, 0
+  index: -1
+bloodthugspray02
+  rotate: false
+  xy: 1789, 1278
+  size: 117, 111
+  orig: 117, 111
+  offset: 0, 0
+  index: -1
+bloodwall01
+  rotate: false
+  xy: 614, 407
+  size: 58, 99
+  orig: 77, 138
+  offset: 14, 20
+  index: -1
+bloodwall02
+  rotate: true
+  xy: 1655, 352
+  size: 71, 58
+  orig: 87, 91
+  offset: 14, 9
+  index: -1
+bluelights
+  rotate: false
+  xy: 2, 782
+  size: 600, 625
+  orig: 600, 648
+  offset: 0, 23
+  index: -1
+bulletDebris01
+  rotate: true
+  xy: 1542, 1754
+  size: 28, 24
+  orig: 35, 33
+  offset: 1, 3
+  index: -1
+cop03arm
+  rotate: true
+  xy: 587, 42
+  size: 127, 100
+  orig: 222, 400
+  offset: 0, 257
+  index: -1
+cop1arms
+  rotate: true
+  xy: 1505, 450
+  size: 101, 65
+  orig: 128, 300
+  offset: 9, 198
+  index: -1
+cop1body
+  rotate: false
+  xy: 1073, 1075
+  size: 79, 284
+  orig: 128, 300
+  offset: 35, 8
+  index: -1
+cop3body
+  rotate: true
+  xy: 2, 170
+  size: 157, 400
+  orig: 222, 400
+  offset: 65, 0
+  index: -1
+copcar
+  rotate: false
+  xy: 2, 520
+  size: 529, 260
+  orig: 719, 300
+  offset: 84, 40
+  index: -1
+copcarfrontpiece
+  rotate: true
+  xy: 549, 171
+  size: 162, 123
+  orig: 162, 132
+  offset: 0, 0
+  index: -1
+copcarlight
+  rotate: false
+  xy: 1620, 1172
+  size: 134, 147
+  orig: 186, 192
+  offset: 35, 17
+  index: -1
+copcarshadow
+  rotate: false
+  xy: 1165, 1956
+  size: 529, 90
+  orig: 719, 300
+  offset: 64, 23
+  index: -1
+copcarwheel
+  rotate: false
+  xy: 932, 31
+  size: 114, 119
+  orig: 719, 300
+  offset: 234, 24
+  index: -1
+copcarwheelB1
+  rotate: true
+  xy: 1136, 572
+  size: 134, 115
+  orig: 719, 300
+  offset: 235, 26
+  index: -1
+copcarwheelB2
+  rotate: true
+  xy: 1172, 1362
+  size: 135, 115
+  orig: 719, 300
+  offset: 234, 26
+  index: -1
+copcarwheelB3
+  rotate: true
+  xy: 1019, 568
+  size: 135, 115
+  orig: 719, 300
+  offset: 234, 26
+  index: -1
+danceloop02/danceloop2_00000
+  rotate: true
+  xy: 1696, 1768
+  size: 59, 263
+  orig: 230, 360
+  offset: 74, 45
+  index: -1
+danceloop02/danceloop2_00001
+  rotate: false
+  xy: 1154, 1098
+  size: 59, 261
+  orig: 230, 360
+  offset: 75, 44
+  index: -1
+danceloop02/danceloop2_00002
+  rotate: false
+  xy: 825, 559
+  size: 61, 259
+  orig: 230, 360
+  offset: 74, 43
+  index: -1
+danceloop02/danceloop2_00003
+  rotate: false
+  xy: 955, 698
+  size: 61, 256
+  orig: 230, 360
+  offset: 74, 43
+  index: -1
+danceloop02/danceloop2_00004
+  rotate: true
+  xy: 1289, 1321
+  size: 62, 256
+  orig: 230, 360
+  offset: 74, 43
+  index: -1
+danceloop02/danceloop2_00005
+  rotate: true
+  xy: 1288, 1065
+  size: 62, 255
+  orig: 230, 360
+  offset: 75, 43
+  index: -1
+danceloop02/danceloop2_00006
+  rotate: false
+  xy: 1440, 712
+  size: 62, 254
+  orig: 230, 360
+  offset: 76, 43
+  index: -1
+danceloop02/danceloop2_00007
+  rotate: false
+  xy: 1504, 809
+  size: 63, 254
+  orig: 230, 360
+  offset: 76, 43
+  index: -1
+danceloop02/danceloop2_00008
+  rotate: false
+  xy: 1569, 879
+  size: 63, 254
+  orig: 230, 360
+  offset: 77, 43
+  index: -1
+danceloop02/danceloop2_00009
+  rotate: true
+  xy: 1634, 1391
+  size: 62, 254
+  orig: 230, 360
+  offset: 79, 43
+  index: -1
+danceloop02/danceloop2_00010
+  rotate: false
+  xy: 1728, 916
+  size: 63, 254
+  orig: 230, 360
+  offset: 80, 43
+  index: -1
+danceloop02/danceloop2_00011
+  rotate: false
+  xy: 1439, 457
+  size: 64, 253
+  orig: 230, 360
+  offset: 81, 44
+  index: -1
+danceloop02/danceloop2_00012
+  rotate: false
+  xy: 888, 590
+  size: 65, 254
+  orig: 230, 360
+  offset: 81, 44
+  index: -1
+danceloop02/danceloop2_00013
+  rotate: false
+  xy: 1505, 553
+  size: 63, 254
+  orig: 230, 360
+  offset: 84, 44
+  index: -1
+danceloop02/danceloop2_00014
+  rotate: false
+  xy: 1570, 623
+  size: 63, 254
+  orig: 230, 360
+  offset: 85, 45
+  index: -1
+danceloop02/danceloop2_00015
+  rotate: false
+  xy: 1726, 661
+  size: 66, 253
+  orig: 230, 360
+  offset: 84, 47
+  index: -1
+danceloop02/danceloop2_00016
+  rotate: false
+  xy: 1215, 1109
+  size: 71, 251
+  orig: 230, 360
+  offset: 82, 49
+  index: -1
+danceloop02/danceloop2_00017
+  rotate: false
+  xy: 1892, 1027
+  size: 80, 249
+  orig: 230, 360
+  offset: 81, 51
+  index: -1
+danceloop02/danceloop2_00018
+  rotate: false
+  xy: 1885, 779
+  size: 87, 246
+  orig: 230, 360
+  offset: 79, 54
+  index: -1
+danceloop02/danceloop2_00019
+  rotate: true
+  xy: 1693, 1455
+  size: 91, 243
+  orig: 230, 360
+  offset: 79, 57
+  index: -1
+danceloop02/danceloop2_00020
+  rotate: false
+  xy: 1253, 476
+  size: 89, 241
+  orig: 230, 360
+  offset: 81, 58
+  index: -1
+danceloop02/danceloop2_00021
+  rotate: false
+  xy: 1572, 382
+  size: 81, 239
+  orig: 230, 360
+  offset: 86, 59
+  index: -1
+danceloop02/danceloop2_00022
+  rotate: true
+  xy: 689, 130
+  size: 75, 240
+  orig: 230, 360
+  offset: 94, 58
+  index: -1
+danceloop02/danceloop2_00023
+  rotate: true
+  xy: 1547, 1321
+  size: 68, 240
+  orig: 230, 360
+  offset: 102, 58
+  index: -1
+danceloop02/danceloop2_00024
+  rotate: false
+  xy: 1724, 419
+  size: 65, 240
+  orig: 230, 360
+  offset: 105, 58
+  index: -1
+danceloop02/danceloop2_00025
+  rotate: false
+  xy: 674, 207
+  size: 64, 241
+  orig: 230, 360
+  offset: 106, 58
+  index: -1
+danceloop02/danceloop2_00026
+  rotate: false
+  xy: 740, 207
+  size: 61, 241
+  orig: 230, 360
+  offset: 108, 58
+  index: -1
+danceloop02/danceloop2_00027
+  rotate: false
+  xy: 803, 207
+  size: 60, 241
+  orig: 230, 360
+  offset: 111, 58
+  index: -1
+danceloop02/danceloop2_00028
+  rotate: false
+  xy: 1655, 425
+  size: 67, 241
+  orig: 230, 360
+  offset: 107, 58
+  index: -1
+danceloop02/danceloop2_00029
+  rotate: false
+  xy: 1974, 736
+  size: 71, 241
+  orig: 230, 360
+  offset: 106, 58
+  index: -1
+danceloop02/danceloop2_00030
+  rotate: false
+  xy: 865, 207
+  size: 73, 241
+  orig: 230, 360
+  offset: 107, 58
+  index: -1
+danceloop02/danceloop2_00031
+  rotate: false
+  xy: 1974, 1222
+  size: 72, 241
+  orig: 230, 360
+  offset: 108, 58
+  index: -1
+danceloop02/danceloop2_00032
+  rotate: true
+  xy: 689, 58
+  size: 70, 241
+  orig: 230, 360
+  offset: 109, 58
+  index: -1
+danceloop02/danceloop2_00033
+  rotate: false
+  xy: 940, 207
+  size: 70, 241
+  orig: 230, 360
+  offset: 110, 58
+  index: -1
+danceloop02/danceloop2_00034
+  rotate: false
+  xy: 1974, 979
+  size: 72, 241
+  orig: 230, 360
+  offset: 109, 58
+  index: -1
+danceloop02/danceloop2_00035
+  rotate: false
+  xy: 1869, 295
+  size: 75, 241
+  orig: 230, 360
+  offset: 108, 58
+  index: -1
+danceloop02/danceloop2_00036
+  rotate: false
+  xy: 1968, 494
+  size: 78, 240
+  orig: 230, 360
+  offset: 105, 58
+  index: -1
+danceloop02/danceloop2_00037
+  rotate: false
+  xy: 1884, 538
+  size: 82, 239
+  orig: 230, 360
+  offset: 102, 59
+  index: -1
+danceloop02/danceloop2_00038
+  rotate: false
+  xy: 1961, 1713
+  size: 85, 238
+  orig: 230, 360
+  offset: 99, 59
+  index: -1
+danceloop02/danceloop2_00039
+  rotate: false
+  xy: 1794, 543
+  size: 88, 240
+  orig: 230, 360
+  offset: 96, 57
+  index: -1
+danceloop02/danceloop2_00040
+  rotate: false
+  xy: 1344, 474
+  size: 93, 241
+  orig: 230, 360
+  offset: 91, 56
+  index: -1
+danceloop02/danceloop2_00041
+  rotate: false
+  xy: 1793, 1034
+  size: 97, 242
+  orig: 230, 360
+  offset: 87, 55
+  index: -1
+danceloop02/danceloop2_00042
+  rotate: true
+  xy: 1289, 1385
+  size: 102, 243
+  orig: 230, 360
+  offset: 81, 54
+  index: -1
+danceloop02/danceloop2_00043
+  rotate: true
+  xy: 1693, 1548
+  size: 106, 244
+  orig: 230, 360
+  offset: 76, 54
+  index: -1
+danceloop02/danceloop2_00044
+  rotate: true
+  xy: 1693, 1656
+  size: 110, 245
+  orig: 230, 360
+  offset: 70, 54
+  index: -1
+danceloop02/danceloop2_00045
+  rotate: false
+  xy: 1134, 708
+  size: 110, 246
+  orig: 230, 360
+  offset: 66, 54
+  index: -1
+danceloop02/danceloop2_00046
+  rotate: false
+  xy: 1940, 1465
+  size: 106, 246
+  orig: 230, 360
+  offset: 64, 54
+  index: -1
+danceloop02/danceloop2_00047
+  rotate: false
+  xy: 1246, 719
+  size: 96, 247
+  orig: 230, 360
+  offset: 66, 54
+  index: -1
+danceloop02/danceloop2_00048
+  rotate: true
+  xy: 1696, 1829
+  size: 122, 247
+  orig: 230, 360
+  offset: 33, 54
+  index: -1
+danceloop02/danceloop2_00049
+  rotate: true
+  xy: 337, 43
+  size: 117, 248
+  orig: 230, 360
+  offset: 33, 54
+  index: -1
+danceloop02/danceloop2_00050
+  rotate: false
+  xy: 1018, 705
+  size: 114, 249
+  orig: 230, 360
+  offset: 33, 54
+  index: -1
+danceloop02/danceloop2_00051
+  rotate: true
+  xy: 992, 956
+  size: 112, 250
+  orig: 230, 360
+  offset: 33, 54
+  index: -1
+danceloop02/danceloop2_00052
+  rotate: false
+  xy: 1791, 291
+  size: 76, 250
+  orig: 230, 360
+  offset: 66, 54
+  index: -1
+danceloop02/danceloop2_00053
+  rotate: false
+  xy: 1608, 1532
+  size: 83, 250
+  orig: 230, 360
+  offset: 56, 54
+  index: -1
+danceloop02/danceloop2_00054
+  rotate: false
+  xy: 1635, 668
+  size: 89, 250
+  orig: 230, 360
+  offset: 48, 54
+  index: -1
+danceloop02/danceloop2_00055
+  rotate: false
+  xy: 1634, 920
+  size: 92, 250
+  orig: 230, 360
+  offset: 42, 54
+  index: -1
+danceloop02/danceloop2_00056
+  rotate: true
+  xy: 1288, 1225
+  size: 94, 250
+  orig: 230, 360
+  offset: 39, 54
+  index: -1
+danceloop02/danceloop2_00057
+  rotate: true
+  xy: 1288, 1129
+  size: 94, 250
+  orig: 230, 360
+  offset: 39, 54
+  index: -1
+danceloop02/danceloop2_00058
+  rotate: true
+  xy: 1244, 968
+  size: 95, 249
+  orig: 230, 360
+  offset: 39, 54
+  index: -1
+danceloop02/danceloop2_00059
+  rotate: false
+  xy: 1344, 717
+  size: 94, 249
+  orig: 230, 360
+  offset: 40, 54
+  index: -1
+danceloop02/danceloop2_00060
+  rotate: false
+  xy: 1794, 785
+  size: 89, 247
+  orig: 230, 360
+  offset: 45, 55
+  index: -1
+discolight
+  rotate: false
+  xy: 1908, 1287
+  size: 50, 50
+  orig: 50, 50
+  offset: 0, 0
+  index: -1
+glas
+  rotate: false
+  xy: 712, 513
+  size: 80, 305
+  orig: 98, 314
+  offset: 12, 5
+  index: -1
+glasBHdebris
+  rotate: true
+  xy: 1940, 1727
+  size: 39, 14
+  orig: 50, 24
+  offset: 5, 5
+  index: -1
+glasbhole01
+  rotate: false
+  xy: 1004, 456
+  size: 35, 48
+  orig: 77, 136
+  offset: 26, 85
+  index: -1
+glasbhole02
+  rotate: false
+  xy: 967, 506
+  size: 45, 54
+  orig: 77, 136
+  offset: 23, 40
+  index: -1
+glasbhole03
+  rotate: true
+  xy: 1890, 1406
+  size: 47, 46
+  orig: 77, 136
+  offset: 10, 12
+  index: -1
+glascracks
+  rotate: false
+  xy: 992, 1070
+  size: 79, 289
+  orig: 98, 314
+  offset: 11, 12
+  index: -1
+glasframe
+  rotate: true
+  xy: 1696, 1953
+  size: 93, 300
+  orig: 98, 314
+  offset: 1, 4
+  index: -1
+glaspiece01
+  rotate: false
+  xy: 901, 471
+  size: 30, 86
+  orig: 98, 314
+  offset: 56, 200
+  index: -1
+glaspiece02
+  rotate: true
+  xy: 582, 3
+  size: 37, 101
+  orig: 98, 314
+  offset: 36, 190
+  index: -1
+glaspiece03
+  rotate: true
+  xy: 689, 8
+  size: 48, 108
+  orig: 98, 314
+  offset: 11, 194
+  index: -1
+glaspiece04
+  rotate: false
+  xy: 1587, 1435
+  size: 44, 52
+  orig: 98, 314
+  offset: 7, 197
+  index: -1
+glaspiece05
+  rotate: false
+  xy: 1638, 1490
+  size: 47, 40
+  orig: 98, 314
+  offset: 7, 186
+  index: -1
+glaspiece06
+  rotate: false
+  xy: 933, 482
+  size: 32, 75
+  orig: 98, 314
+  offset: 58, 188
+  index: -1
+glaspiece07
+  rotate: true
+  xy: 1635, 635
+  size: 31, 17
+  orig: 98, 314
+  offset: 59, 186
+  index: -1
+glaspiece08
+  rotate: false
+  xy: 1568, 1758
+  size: 31, 24
+  orig: 98, 314
+  offset: 58, 175
+  index: -1
+glaspiece09
+  rotate: false
+  xy: 1585, 1489
+  size: 51, 41
+  orig: 98, 314
+  offset: 8, 155
+  index: -1
+glaspiece10
+  rotate: true
+  xy: 1715, 336
+  size: 29, 50
+  orig: 98, 314
+  offset: 53, 155
+  index: -1
+glaspiece11
+  rotate: true
+  xy: 1908, 1339
+  size: 53, 64
+  orig: 98, 314
+  offset: 4, 126
+  index: -1
+glaspiece12
+  rotate: true
+  xy: 1003, 4
+  size: 25, 36
+  orig: 98, 314
+  offset: 60, 152
+  index: -1
+glaspiece13
+  rotate: false
+  xy: 1938, 1394
+  size: 34, 69
+  orig: 98, 314
+  offset: 56, 114
+  index: -1
+glaspiece14
+  rotate: true
+  xy: 775, 463
+  size: 36, 48
+  orig: 98, 314
+  offset: 22, 122
+  index: -1
+glaspiece15
+  rotate: true
+  xy: 1509, 1489
+  size: 60, 74
+  orig: 98, 314
+  offset: 30, 83
+  index: -1
+glaspiece16
+  rotate: true
+  xy: 888, 559
+  size: 29, 56
+  orig: 98, 314
+  offset: 11, 75
+  index: -1
+glaspiece17
+  rotate: false
+  xy: 614, 335
+  size: 50, 70
+  orig: 98, 314
+  offset: 40, 64
+  index: -1
+glaspiece18
+  rotate: false
+  xy: 1998, 1963
+  size: 48, 83
+  orig: 98, 314
+  offset: 8, 35
+  index: -1
+glaspiece19
+  rotate: true
+  xy: 1715, 367
+  size: 50, 70
+  orig: 98, 314
+  offset: 3, 12
+  index: -1
+glaspiece20
+  rotate: false
+  xy: 825, 450
+  size: 52, 107
+  orig: 98, 314
+  offset: 26, 15
+  index: -1
+glaspiece21
+  rotate: true
+  xy: 337, 2
+  size: 39, 98
+  orig: 98, 314
+  offset: 52, 21
+  index: -1
+glaswhiteout
+  rotate: false
+  xy: 620, 519
+  size: 90, 299
+  orig: 98, 314
+  offset: 1, 5
+  index: -1
+gunmoke02
+  rotate: true
+  xy: 1318, 1563
+  size: 189, 199
+  orig: 200, 216
+  offset: 0, 17
+  index: -1
+lamp01off
+  rotate: false
+  xy: 974, 1331
+  size: 16, 28
+  orig: 43, 108
+  offset: 13, 80
+  index: -1
+lamp01on
+  rotate: true
+  xy: 799, 13
+  size: 43, 108
+  orig: 43, 108
+  offset: 0, 0
+  index: -1
+lamp02off
+  rotate: true
+  xy: 1534, 1391
+  size: 15, 25
+  orig: 26, 98
+  offset: 3, 73
+  index: -1
+lamp02on
+  rotate: true
+  xy: 1154, 1070
+  size: 26, 98
+  orig: 26, 98
+  offset: 0, 0
+  index: -1
+lamp03off
+  rotate: false
+  xy: 1620, 1148
+  size: 12, 22
+  orig: 25, 69
+  offset: 3, 47
+  index: -1
+lamp03on
+  rotate: true
+  xy: 932, 4
+  size: 25, 69
+  orig: 25, 69
+  offset: 0, 0
+  index: -1
+muzzleflash01
+  rotate: false
+  xy: 974, 1361
+  size: 196, 120
+  orig: 198, 136
+  offset: 2, 11
+  index: -1
+muzzleflash02
+  rotate: true
+  xy: 525, 335
+  size: 171, 87
+  orig: 198, 136
+  offset: 27, 28
+  index: -1
+neonsignattacment
+  rotate: true
+  xy: 931, 152
+  size: 53, 98
+  orig: 100, 150
+  offset: 23, 26
+  index: -1
+neonsignbluearcs
+  rotate: true
+  xy: 674, 459
+  size: 52, 99
+  orig: 100, 150
+  offset: 24, 26
+  index: -1
+neonsignblueglow
+  rotate: true
+  xy: 1165, 1499
+  size: 66, 138
+  orig: 100, 150
+  offset: 17, 10
+  index: -1
+neonsignoff
+  rotate: true
+  xy: 1534, 1408
+  size: 79, 51
+  orig: 100, 150
+  offset: 10, 50
+  index: -1
+neonsignon
+  rotate: false
+  xy: 1946, 299
+  size: 97, 70
+  orig: 100, 150
+  offset: 1, 40
+  index: -1
+neonsignredglow
+  rotate: false
+  xy: 1946, 371
+  size: 100, 121
+  orig: 100, 150
+  offset: 0, 19
+  index: -1
+redlights
+  rotate: false
+  xy: 2, 1409
+  size: 600, 637
+  orig: 600, 648
+  offset: 0, 6
+  index: -1
+thugarm02
+  rotate: false
+  xy: 1305, 1489
+  size: 202, 72
+  orig: 219, 118
+  offset: 7, 16
+  index: -1
+thugbody02
+  rotate: false
+  xy: 1165, 1567
+  size: 151, 387
+  orig: 365, 520
+  offset: 56, 9
+  index: -1
+thugleg02
+  rotate: false
+  xy: 1542, 1784
+  size: 152, 170
+  orig: 176, 187
+  offset: 0, 3
+  index: -1
+thuglegshadow02
+  rotate: true
+  xy: 1756, 1197
+  size: 122, 29
+  orig: 180, 98
+  offset: 22, 32
+  index: -1
+thugshooting02
+  rotate: false
+  xy: 1318, 1754
+  size: 222, 200
+  orig: 355, 200
+  offset: 57, 0
+  index: -1
+tracerbullet01
+  rotate: true
+  xy: 1945, 1866
+  size: 85, 11
+  orig: 99, 17
+  offset: 8, 4
+  index: -1

@@ -1,0 +1,76 @@
+
+sym5_spin.png
+size: 1182,470
+format: RGBA8888
+filter: Linear,Linear
+repeat: xy
+bholeflash1
+  rotate: false
+  xy: 2, 238
+  size: 234, 230
+  orig: 234, 230
+  offset: 0, 0
+  index: -1
+spark1
+  rotate: true
+  xy: 2, 2
+  size: 234, 230
+  orig: 234, 230
+  offset: 0, 0
+  index: -1
+sym1
+  rotate: true
+  xy: 234, 2
+  size: 234, 230
+  orig: 234, 230
+  offset: 0, 0
+  index: -1
+sym1Lside
+  rotate: true
+  xy: 466, 2
+  size: 234, 230
+  orig: 234, 230
+  offset: 0, 0
+  index: -1
+sym1Rside
+  rotate: false
+  xy: 474, 238
+  size: 234, 230
+  orig: 234, 230
+  offset: 0, 0
+  index: -1
+sym1spin
+  rotate: true
+  xy: 698, 2
+  size: 234, 230
+  orig: 234, 230
+  offset: 0, 0
+  index: -1
+sym5
+  rotate: false
+  xy: 238, 238
+  size: 234, 230
+  orig: 234, 230
+  offset: 0, 0
+  index: -1
+sym5Rside
+  rotate: true
+  xy: 930, 2
+  size: 234, 230
+  orig: 234, 230
+  offset: 0, 0
+  index: -1
+sym5blur
+  rotate: false
+  xy: 710, 238
+  size: 234, 230
+  orig: 234, 230
+  offset: 0, 0
+  index: -1
+sym5lside
+  rotate: false
+  xy: 946, 238
+  size: 234, 230
+  orig: 234, 230
+  offset: 0, 0
+  index: -1

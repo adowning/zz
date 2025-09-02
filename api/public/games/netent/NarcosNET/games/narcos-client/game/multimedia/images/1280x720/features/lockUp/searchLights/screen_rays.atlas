@@ -1,0 +1,20 @@
+
+screen_rays.png
+size: 512,256
+format: RGBA8888
+filter: Linear,Linear
+repeat: xy
+spotlight
+  rotate: false
+  xy: 2, 2
+  size: 234, 230
+  orig: 234, 230
+  offset: 0, 0
+  index: -1
+spotlight2
+  rotate: false
+  xy: 238, 2
+  size: 234, 230
+  orig: 234, 230
+  offset: 0, 0
+  index: -1

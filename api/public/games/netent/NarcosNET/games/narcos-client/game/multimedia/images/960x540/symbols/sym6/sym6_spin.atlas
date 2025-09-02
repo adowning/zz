@@ -1,0 +1,97 @@
+
+sym6_spin.png
+size: 2048,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: xy
+bholeflash1
+  rotate: false
+  xy: 2, 234
+  size: 234, 230
+  orig: 234, 230
+  offset: 0, 0
+  index: -1
+spark1
+  rotate: false
+  xy: 2, 2
+  size: 234, 230
+  orig: 234, 230
+  offset: 0, 0
+  index: -1
+sym1
+  rotate: false
+  xy: 238, 234
+  size: 234, 230
+  orig: 234, 230
+  offset: 0, 0
+  index: -1
+sym1Lside
+  rotate: false
+  xy: 474, 234
+  size: 234, 230
+  orig: 234, 230
+  offset: 0, 0
+  index: -1
+sym1Rside
+  rotate: false
+  xy: 474, 2
+  size: 234, 230
+  orig: 234, 230
+  offset: 0, 0
+  index: -1
+sym1spin
+  rotate: false
+  xy: 710, 234
+  size: 234, 230
+  orig: 234, 230
+  offset: 0, 0
+  index: -1
+sym6
+  rotate: false
+  xy: 238, 2
+  size: 234, 230
+  orig: 234, 230
+  offset: 0, 0
+  index: -1
+sym6Rside
+  rotate: false
+  xy: 710, 2
+  size: 234, 230
+  orig: 234, 230
+  offset: 0, 0
+  index: -1
+sym6bg
+  rotate: false
+  xy: 1418, 259
+  size: 155, 205
+  orig: 155, 205
+  offset: 0, 0
+  index: -1
+sym6blur
+  rotate: false
+  xy: 946, 234
+  size: 234, 230
+  orig: 234, 230
+  offset: 0, 0
+  index: -1
+sym6char
+  rotate: false
+  xy: 946, 2
+  size: 234, 230
+  orig: 234, 230
+  offset: 0, 0
+  index: -1
+sym6frame
+  rotate: false
+  xy: 1182, 234
+  size: 234, 230
+  orig: 234, 230
+  offset: 0, 0
+  index: -1
+sym6lside
+  rotate: false
+  xy: 1182, 2
+  size: 234, 230
+  orig: 234, 230
+  offset: 0, 0
+  index: -1

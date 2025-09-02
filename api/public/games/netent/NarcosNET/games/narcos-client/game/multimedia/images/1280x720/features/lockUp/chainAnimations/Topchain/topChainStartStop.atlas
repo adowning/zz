@@ -1,0 +1,20 @@
+
+topChainStartStop.png
+size: 512,64
+format: RGBA8888
+filter: Linear,Linear
+repeat: xy
+chaintop
+  rotate: false
+  xy: 238, 9
+  size: 204, 40
+  orig: 234, 240
+  offset: 16, 200
+  index: -1
+chaintopblur01
+  rotate: false
+  xy: 2, 2
+  size: 234, 47
+  orig: 234, 240
+  offset: 0, 193
+  index: -1

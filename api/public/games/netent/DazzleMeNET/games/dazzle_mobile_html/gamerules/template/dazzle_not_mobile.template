@@ -1,0 +1,257 @@
+<link rel="stylesheet" href="../../../gamerules/styles/desktopstyle.css" type="text/css"/>
+<h1><#dazzleMeIntroHeader#/></h1>
+<!-- Dazzle Me™ Game Rules -->
+
+<h2><a name="Overview"></a><#RTgameOverview#/></h2>
+<!-- Game Overview -->
+<ul>
+<li><#dazzleMeIntro#/></li>
+    <!--Dazzle Me™ is a dazzling video slot with 5 unusual reels and an extraordinary 76 bet lines. The game features Mystery Stacked Wild Reels, Free Spins and Linked Reels. -->
+<li><#betLines76#/></li>
+    <!-- The game is played with 76 bet lines (fixed), 1-10 bet levels (20 coins per level) and different coin values. -->
+<li><#RTbetLevelInstruction#/></li>
+    <!-- The bet level is set using the LEVEL selector. -->
+<li><#RTcoinValueInstruction#/></li>
+		<!-- The coin value is set using the COIN VALUE selector. -->
+<li><#RTcoinsDisplayValues#/></li>
+		<!-- COINS displays the number of coins the player has available to wager.-->
+<li><#RTmaxbetPlaysOneCode#/></li>
+		<!-- When playing at the highest bet level,MAX BET plays the game at the maximum bet lines, and the current coin value. When playing at any lower bet level, MAX BET must be clicked twice to play the round at the selected level. -->
+<li><#RTautoPlays#/></li>
+		<!-- AUTOPLAY automatically plays the game for the selected number of rounds. -->
+<li><#RTwinCombinationPaytablenoBold#/></li>
+		<!-- Winning combinations and payouts are made according to the PAYTABLE. -->
+<li><#RTCalcBetLineCoinNoMultiplierTransNew#/></li>
+		<!-- A bet line win in coins is equal to the value shown in the paytable multiplied by the bet level. -->
+<li><#RTbetLevel#/></li>
+		<!-- Bet level is the number of coins bet per bet line. -->
+<li><#RTwinCalculationBetLinesCurrency#/></li>
+		<!-- A bet line win in currency is equal to the win in coins multiplied by the coin value. -->
+<li><#RTbetLineWinsLeftToRightOnly#/></li>
+		<!-- Bet line wins pay if in succession from the leftmost reel to the rightmost reel. -->
+<li><#RTpaytableHighestNoActive#/></li>
+		<!-- Only the highest win per bet line is paid. -->
+<li><#RTsimultaneousWinsAdded#/></li>
+		<!-- Simultaneous wins on different bet lines are added. -->
+<li><#RTallWinsBetLineOnly#/></li>
+		<!-- All coin wins pay on bet lines only. -->
+</ul>
+
+
+<h2><a name="Dazzling Wild Reels"></a><#dazzlingWildReelsHead#/></h2>
+<ul>
+	<!-- The Dazzle Feature™ -->
+<li><#dazzlingWildTrig#/></li>
+    <!-- Dazzling Wild Reels are randomly triggered during the main game. -->
+<li><#upTo5DazzSymChange#/></li>
+    <!-- Up to five reels can turn into Dazzling Wild Reels. -->
+<li><#wildSubstituteExceptFS#/></li>
+	<!-- Dazzling Wild Reels substitute for all symbols except Free Spin symbols and pay the highest possible winning combination on a bet line according to the PAYTABLE. -->
+</ul>
+
+
+<h2><a name="Free Spins"></a><#RTfreeSpinsHead#/></h2>
+<ul>
+	<!-- Free Spins -->
+<li><#RTfreeSpinIsScatter#/></li>
+	<!-- The Free Spin symbol is a Scatter symbol. -->
+<li><#threeOrMoreFreeSpinsMainGame#/></li>
+	<!-- 3 or more Free Spin symbols appearing anywhere on the reels in the main game activate Free Spins according to the PAYTABLE. -->
+<li><#3FSsym8FS#/></li>
+    <!-- 3 Scatters = 8 Free Spins -->
+<li><#4FSsym12FS#/></li>
+    <!-- 4 Scatters = 12 Free Spins -->
+<li><#5FSsym16FS#/></li>
+    <!-- 5 Scatters = 16 Free Spins -->
+<li><#RTFreeSpinsWinsAdded#/></li>
+    <!-- Free Spin wins are added to any bet line wins. -->
+<li><#RTreturnActivRound#/></li>
+    <!-- At the end of Free Spins, the game returns to the round that activated Free Spins. -->
+<li><#RTfreeSpinsBetCoinActivatingRound#/></li>
+	<!-- Free Spins are played at the same bet level and coin value as the round that activated Free Spins. -->
+<li><#RTnoAddFspinInFSpins#/></li>
+	<!--Additional Free Spins cannot be won during Free Spins. -->
+</ul>
+
+
+<h2><a name="Linked Reels"></a><#linkedReels#/></h2>
+<ul>
+	<!-- Linked Reels -->
+<li><#linkedReelsTrig#/></li>
+	<!-- The Linked Reels feature appears during Free Spins only. -->
+<li><#linkedReelsOnReel#/></li>
+	<!-- The Linked Reels feature appears during Free Spins only. -->
+<li><#reel1link2reel3link4#/></li>
+    <!-- Reel 1 is linked to reel 2 and/or reel 3 is linked to reel 4 during each spin, with the right reel as a copy of the left reel. -->
+</ul>
+
+
+<h2><a name="Functions"></a><#RTgameFunctionsHeading#/></h2>
+	<!-- Game Functions -->
+<ul>
+	<li><#RTtableDescribes#/></li>
+</ul>
+
+<table border="1" cellpadding="3" style="margin-left:55px;" >
+    <tr bgcolor="#FFF">
+        <th align="left">
+           <#RTbuttonTableHead#/>
+        </th>
+        <th align="left">
+           <#RTfunctionTableHead#/>
+        </th>
+    </tr>
+
+   <tr>
+       <td width="100" align="center">
+           <img src="../gamerules/images/spin_button.png" />
+       </td>
+       <td width="400">
+           <#RTstartGameRound#/>
+       </td>
+   </tr>
+
+   <tr>
+<td align="center"><img src="../gamerules/images/information_button.png" /></td>
+<td><#RTinformationIconButtonNoBold#/></td>
+</tr>
+
+<tr>
+<td align="center"><img src="../gamerules/images/paytable_buttons.png" /></td>
+<td><#RTpaytableNavDescr#/></td>
+</tr>
+
+<tr>
+<td align="center"><img src="../gamerules/images/back_btn.png" /></td>
+<td><#RTbackButton#/></td>
+</tr>
+
+<tr>
+<td align="center"><img src="../gamerules/images/spanner_button.png" /></td>
+<td><#RTopenSettingsMenu#/></td>
+</tr>
+
+<tr>
+<td align="center"><img src="../gamerules/images/speaker_button.png" /></td>
+<td><#RTmuteSoundSliderRev#/></td>
+</tr>
+
+<tr>
+<td align="center"><img src="../gamerules/images/questionmark_button.png" /></td>
+<td><#RTopenGameRules#/></td>
+</tr>
+
+<tr>
+<td align="center"><img src="../gamerules/images/auto_button.png" /></td>
+<td><#RTopenAutoplayMenu#/> <#RTautoplaySelectSpins#/></td>
+</tr>
+
+</table>
+
+<h2><a name="GameSettings"></a><#gameSettingOptionsHeading#/></h2>
+	<!-- Game Setting Options -->
+<ul>
+<li><#gameSettingIntro#/></li>
+    <!-- Advanced autoplay options -->
+<li><b><#quickSpinGameSetting#/></b>.&#160;<#RTquickSpinDescRev#/>&#160;<#RTquickSpinDisclaimer#/></li>
+    <!-- Quick spin. Turns the quick spin option on or off. (Not available in all casinos.) -->
+<li><b><#introScreeGameSetting#/></b>.&#160;<#RTintroOffRev#/></li>
+    <!-- Intro screen. Turns the intro screen on or off. -->
+<li><b><#spaceSpin#/></b>.&#160;<#RTspacebarspin#/></li>
+    <!-- Spacebar to spin. Turns the spacebar function on or off.-->
+<li><b><#gameHistory#/></b>.&#160;<#RTgameHistoryDesc#/>&#160;<#RTGameHistNoPlayForFun#/></li>
+    <!-- Game history. Click to view your latest game history. (Not available when PLAYING FOR FUN.) -->
+</ul>
+
+<h2><a name="AdvancedAutoplayOptions"></a><#advancedAutoplayOptionsHeading#/></h2>
+    <!-- Advanced autoplay options -->
+<ul>
+<li><#RTadvancedAutoplayButton#/></li>
+    <!-- To set advanced autoplay options click AUTOPLAY, and then click Advanced settings. -->
+<li><b><#onAnyWin#/></b>.&#160;<#RTanyWinRev#/></li>
+    <!-- On any win. Stops Autoplay when you win in a round. -->
+<li><b><#RTifFreeSpinsIsStarted#/></b>&#160;<#RTfreeSpinsWonStop#/></li>
+    <!-- If Free Spins is won. Stops Autoplay when Free Spins is won. -->
+<li><b><#ifWinExeeds#/></b>.&#160;<#RTsingleWinDescRev#/></li>
+    <!-- If single win exceeds. Stops Autoplay when the amount you win exceeds or equals the amount you specify. -->
+<li><b><#ifCashIncreasesBy#/></b>.&#160;<#RTcashIncreasesDescRev#/></li>
+    <!-- If cash increases by. Stop Autoplay if cash increases by the amount you specify. -->
+<li><b><#ifCashDecreasesBy#/></b>.&#160;<#RTcashDecreasesDescRev#/></li>
+    <!-- If cash decreases by. Stops Autoplay if cash decreases by the amount you specify. -->
+<li><#RTclickResetToClear#/></li>
+	<!-- Click Reset to clear all selected Stop Autoplay options. -->
+</ul>
+
+<ul>
+	<li><#RTautoplayDuringGameRev#/></li>
+	<!-- Note: When changing Autoplay settings during a game round, all settings will take effect once the game round or feature is completed. -->
+</ul>
+<ul>
+	<li><#RTAutoplayDisconnect#/></li>
+	<!-- Note: If you are disconnected while playing, all Autoplay settings will return to default when you reload the game. -->
+</ul>
+
+<ul>
+<li><#RTautoplayNote#/></li>
+<!-- Note: Some autoplay options are mandatory for some jurisdictions. -->
+</ul>
+
+<h2><a name="rtp"></a><#RTreturnToPlayer#/></h2>
+	<!-- Return to Player -->
+<ul>
+<li><#RTtheoreticalReturn#/> 96.90%</li>
+	<!-- The theoretical return to player for this game is 96.90% -->
+</ul>
+
+<h2><a name="addinfo"></a><#RTadditionalInformation#/></h2>
+	<!-- Additional information -->
+<ul>
+<li><#RTreferWebSite#/></li>
+	<!-- The following game features and settings may be subject to the terms and conditions of the gaming site. For more information on the following, refer to the gaming website: -->
+<ul>
+<li><#RTunfinishedGameSession2#/></li>
+	<!-- The procedures used to manage unfinished game rounds. -->
+<li><#RTgameSessions2#/></li>
+	<!-- The time after which inactive game sessions automatically end. -->
+</ul>
+<li><#RTmalfunction#/></li>
+	<!-- In the event of malfunction of the gaming hardware/software, all affected game bets and payouts are rendered void and all affected bets refunded. -->
+</ul>
+
+<h2><a name="GameTerms"></a><#RTtransGameTerms#/></h2>
+<p><#RTtablePlayLangThnEng#/></p>
+
+<table border="1" cellpadding="3" style="margin-left:55px;" >
+    <tr bgcolor="#FFF">
+        <th align="left">
+           <#termEnglish#/>
+	</th>
+	<th align="left">
+            <#termTranslatedTerm#/>
+        </th>
+    </tr>
+
+	<tr>
+        <td>Dazzling Wild Reels</td>
+        <td><#termDazzlingWildReels#/></td>
+    </tr>
+
+	<tr>
+    	<td>Linked Reels</td>
+    	<td><#termLinkedReels#/></td>
+    </tr>
+
+	<tr>
+    	<td>Free Spins</td>
+    	<td><#termFreeSpins#/></td>
+    </tr>
+
+	<tr>
+    	<td>Scatter</td>
+    	<td><#termScatter#/></td>
+    </tr>
+
+ </table>
+
+
+<p></p><p><b><#RTrulesGenerated#/></b></p>

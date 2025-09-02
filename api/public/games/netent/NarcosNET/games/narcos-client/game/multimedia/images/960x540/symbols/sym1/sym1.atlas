@@ -1,0 +1,111 @@
+
+sym1.png
+size: 1633,522
+format: RGBA8888
+filter: Linear,Linear
+repeat: xy
+burn01
+  rotate: true
+  xy: 2, 238
+  size: 282, 277
+  orig: 282, 277
+  offset: 0, 0
+  index: -1
+burn02
+  rotate: true
+  xy: 281, 238
+  size: 282, 277
+  orig: 282, 277
+  offset: 0, 0
+  index: -1
+edge
+  rotate: true
+  xy: 1397, 253
+  size: 18, 12
+  orig: 18, 12
+  offset: 0, 0
+  index: -1
+ember
+  rotate: false
+  xy: 1397, 273
+  size: 15, 15
+  orig: 15, 15
+  offset: 0, 0
+  index: -1
+frame
+  rotate: true
+  xy: 234, 2
+  size: 234, 230
+  orig: 234, 230
+  offset: 0, 0
+  index: -1
+glow
+  rotate: true
+  xy: 560, 238
+  size: 282, 277
+  orig: 282, 277
+  offset: 0, 0
+  index: -1
+smolder
+  rotate: true
+  xy: 839, 238
+  size: 282, 277
+  orig: 282, 277
+  offset: 0, 0
+  index: -1
+smolder2
+  rotate: true
+  xy: 1118, 238
+  size: 282, 277
+  orig: 282, 277
+  offset: 0, 0
+  index: -1
+sym1
+  rotate: true
+  xy: 466, 2
+  size: 234, 230
+  orig: 234, 230
+  offset: 0, 0
+  index: -1
+sym1Bright
+  rotate: true
+  xy: 698, 2
+  size: 234, 230
+  orig: 234, 230
+  offset: 0, 0
+  index: -1
+sym1b
+  rotate: true
+  xy: 2, 2
+  size: 234, 230
+  orig: 234, 230
+  offset: 0, 0
+  index: -1
+sym1front
+  rotate: true
+  xy: 930, 2
+  size: 234, 230
+  orig: 234, 230
+  offset: 0, 0
+  index: -1
+sym1side
+  rotate: true
+  xy: 1162, 2
+  size: 234, 230
+  orig: 234, 230
+  offset: 0, 0
+  index: -1
+transBG
+  rotate: true
+  xy: 1394, 2
+  size: 234, 230
+  orig: 234, 230
+  offset: 0, 0
+  index: -1
+winglow
+  rotate: false
+  xy: 1397, 290
+  size: 234, 230
+  orig: 234, 230
+  offset: 0, 0
+  index: -1

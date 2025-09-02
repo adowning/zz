@@ -1,0 +1,1019 @@
+generator client {
+  provider = "prisma-client-js"
+  // output   = "./generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+// generator json {
+//   provider  = "prisma-json-types-generator"
+//   namespace = "PrismaJson"
+//   allowAny  = false
+//   output = "./rtg.ts"
+
+//   // etc...
+// }
+
+generator drizzle {
+  provider = "prisma-generator-drizzle"
+  // Specify the output file (or directory)
+  output = "../api/db/schema.ts"
+}
+generator zero {
+  provider       = "prisma-generator-zero"
+  // Specify output dir
+  output   = "../shared"
+  // When true, the output will be formatted using prettier
+  prettier = true
+  // When true, the generator will remap table names to camel case using Zero's `.from()` method.
+  // You can read more about it here https://zero.rocicorp.dev/docs/zero-schema#name-mapping
+  remapTablesToCamelCase = true
+  // Optional list of Prisma Model names you want to exclude from the generated schema.
+  // Helpful if you want to exclude Views (not supported by Zero) or other tables
+  // you don't want Zero client to have access to
+  // excludeTables = ["VipLevel", "VipRank", "AppVersions", "AuthSessions", "BlackjackBets", "BlackjackGames", "BlackjackMessage", "Deposits", "GameSessions", "GameSpins", "Games", "JackpotContributions", "JackpotWins", "Jackpots", "Operators", "Products", "Transactions", "VipInfo", "VipLevelUpHistory",  "Withdrawals"]
+  // Produce union type for Enums instead of TypeScript Enums
+  // enumAsUnion = true
+}
+generator zod {
+  provider                         = "zod-prisma-types"
+  output                           = "../api/db/zod" // default is ./generated/zod
+  useMultipleFiles                 = true // default is false
+  writeBarrelFiles                 = true // default is true
+  createInputTypes                 = false // default is true
+  createModelTypes                 = true // default is true
+  addInputTypeValidation           = false // default is true
+  addIncludeType                   = false // default is true
+  addSelectType                    = true // default is true
+  validateWhereUniqueInput         = true // default is true
+  createOptionalDefaultValuesTypes = true // default is false
+  createRelationValuesTypes        = true // default is false
+  createPartialTypes               = false // default is false
+  useDefaultValidators             = false // default is true
+  coerceDate                       = true // default is true
+  writeNullishInModelTypes         = false // default is false
+  // prismaClientPath                 = "./generated/prisma" // default is client output path
+}
+
+
+model AppVersions {
+  id          Int      @id @default(autoincrement())
+  appId       String   @map("app_id")
+  version     String
+  platform    String
+  updateType  String   @map("update_type")
+  downloadUrl String   @map("download_url")
+  changelog   String[]
+  mandatory   Boolean  @default(false)
+  releaseDate DateTime @map("release_date") @db.Timestamptz(6)
+  fileSize    Int      @map("file_size")
+  checksum    String
+
+  @@unique([appId, platform, version], map: "version_unique_idx")
+  @@map("app_versions")
+}
+
+model AuthSessions {
+  /// drizzle.default nanoid::nanoid
+  id           String         @id @db.VarChar
+  userId       String         @map("user_id")
+  status       session_status @default(ACTIVE)
+  ipAddress    String?        @map("ip_address")
+  userAgent    String?        @map("user_agent")
+  deviceId     String?        @map("device_id")
+  createdAt    DateTime       @default(now()) @map("created_at") @db.Timestamptz(6)
+  expiresAt    DateTime?      @map("expires_at") @db.Timestamptz(6)
+  lastSeen     DateTime       @default(now()) @map("last_seen") @db.Timestamptz(6)
+  otp          String?
+  users        Users          @relation(fields: [userId], references: [id], onDelete: Cascade, onUpdate: NoAction, map: "auth_sessions_user_id_users_id_fk")
+  gameSessions GameSessions[]
+
+  @@index([status], map: "auth_session_status_idx")
+  @@index([userId, createdAt], map: "auth_session_user_idx")
+  @@map("auth_sessions")
+}
+
+model BlackjackBets {
+  /// drizzle.default nanoid::nanoid
+  id             String         @id @db.VarChar
+  userId         String         @map("user_id") @db.VarChar
+  gameId         String         @map("game_id") @db.VarChar
+  seat           Int
+  amount         Json
+  cards          Json?
+  cardsLeft      Json?          @map("cards_left")
+  cardsRight     Json?          @map("cards_right")
+  actions        Json?
+  createdAt      DateTime       @default(now()) @map("created_at")
+  blackjackGames BlackjackGames @relation(fields: [gameId], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "blackjack_bets_game_id_blackjack_games_id_fk")
+  users          Users          @relation(fields: [userId], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "blackjack_bets_user_id_users_id_fk")
+
+  @@map("blackjack_bets")
+}
+
+model BlackjackGames {
+  /// drizzle.default nanoid::nanoid
+  id            String          @id @db.VarChar
+  table         Int
+  type          String
+  state         String
+  deck          Json?
+  dealerCards   Json?           @map("dealer_cards")
+  fair          Json?
+  createdAt     DateTime        @default(now()) @map("created_at")
+  updatedAt     DateTime        @default(now()) @map("updated_at")
+  blackjackBets BlackjackBets[]
+
+  @@map("blackjack_games")
+}
+
+model BlackjackMessage {
+  /// drizzle.default nanoid::nanoid
+  id        String   @id @db.VarChar
+  event     String?
+  requestId String?  @map("request_id")
+  payload   Json?
+  createdAt DateTime @default(now()) @map("created_at")
+
+  @@map("blackjack_message")
+}
+
+model Deposits {
+  /// drizzle.default nanoid::nanoid
+  id         String    @id @db.VarChar
+  userId     String?   @map("user_id") @db.VarChar
+  amount     Int?
+  status     String?
+  idNumber   String?   @map("id_number")
+  firstName  String?   @map("first_name")
+  lastName   String?   @map("last_name")
+  channelsId String?   @map("channels_id")
+  note       String?
+  currency   String?
+  createdAt  DateTime? @default(now()) @map("created_at") @db.Timestamp(6)
+  updatedAt  DateTime? @default(now()) @map("updated_at") @db.Timestamp(6)
+  users      Users?    @relation(fields: [userId], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "deposits_user_id_users_id_fk")
+
+  @@map("deposits")
+}
+
+model GameSessions {
+  /// drizzle.default nanoid::nanoid
+  id              String         @id @db.VarChar
+  authSessionId   String         @map("auth_session_id")
+  userId          String         @map("user_id")
+  gameId          String?        @map("game_id")
+  status          session_status @default(ACTIVE)
+  totalWagered    Int            @default(0) @map("total_wagered")
+  totalWon        Int            @default(0) @map("total_won")
+  totalXpGained   Int            @default(0) @map("total_xp_gained")
+  rtp             Decimal?       @db.Decimal(5, 2)
+  duration        Int            @default(0)
+  createdAt       DateTime       @default(now()) @map("created_at") @db.Timestamptz(6)
+  endAt           DateTime?      @map("end_at") @db.Timestamptz(6)
+  startingBalance Int            @default(0) @map("starting_balance")
+  authSessions    AuthSessions   @relation(fields: [authSessionId], references: [id], onDelete: Cascade, onUpdate: NoAction, map: "game_sessions_auth_session_id_auth_sessions_id_fk")
+  users           Users          @relation(fields: [userId], references: [id], onDelete: Cascade, onUpdate: NoAction, map: "game_sessions_user_id_users_id_fk")
+
+  @@index([authSessionId], map: "game_session_auth_session_idx")
+  @@index([userId], map: "game_session_user_idx")
+  @@map("game_sessions")
+}
+
+model GameSpins {
+  /// drizzle.default nanoid::nanoid
+  id                        String                 @id @db.VarChar
+  playerName                String?                @map("player_name")
+  gameName                  String?                @map("game_name")
+  gameId                    String?                @map("game_id")
+  spinData                  String?                  @map("spin_data")
+  grossWinAmount            Float                  @map("gross_win_amount")
+  wagerAmount               Float                  @map("wager_amount")
+  spinNumber                Int?                   @default(0) @map("spin_number")
+  playerAvatar              String?                @map("player_avatar")
+  currencyId                String?                @map("currency_id")
+  sessionId                 String                 @map("session_id")
+  userId                    String?                @map("user_id")
+  createdAt                 DateTime               @default(now()) @map("created_at")
+  updatedAt                 DateTime               @default(now()) @map("updated_at")
+  occurredAt                DateTime               @map("occurred_at")
+  sessionDataId             String?
+  type                      String?
+  operatorId                String?                @map("operator_id")
+  status                    String?
+  playerBalanceAtStart      Int                    @default(0) @map("player_balance_at_start")
+  playerBalance             Int                    @default(0) @map("player_balance")
+  gamePlayerWinTotalTodayid Int                    @default(0) @map("game_player_win_total_todayid")
+  playerBetTotalToday       Int                    @default(0) @map("player_bet_total_today")
+  sessionTotalWinAmount     Int                    @default(0) @map("session_total_win_amount")
+  sessionTotalBetAmount     Int                    @default(0) @map("session_total_bet_amount")
+  gameSessionRtp            Int                    @default(0) @map("game_session_rtp")
+  playerRtpToday            Int                    @default(0) @map("player_rtp_today")
+  winAmount                 Int                    @default(0) @map("win_amount")
+  betAmount                 Int                    @default(0) @map("bet_amount")
+  jackpotContributions      JackpotContributions[]
+  jackpotWins               JackpotWins?
+
+  @@map("game_spins")
+}
+
+model Games {
+  /// drizzle.default nanoid::nanoid
+  id                   String                 @id @db.VarChar
+  name                 String                 @unique
+  title                String
+  // configuration        Json?
+  description          String?
+  category             String                 @default("slots")
+  tags                 String
+  thumbnailUrl         String?                @map("thumbnail_url")
+  bannerUrl            String?                @map("banner_url")
+  developer            String
+  providerId           String?                @map("provider_id")
+  totalWagered         Int                    @map("total_wagered")
+  totalWon             Int                    @map("total_won")
+  targetRtp            Int?                   @map("target_rtp")
+  isFeatured           Boolean                @map("is_featured")
+  isActive             Boolean                @default(true) @map("is_active")
+  operatorId           String?                @map("operator_id")
+  // tournamentDirectives Json?                  @map("tournament_directives")
+  createdAt            DateTime               @default(now()) @map("created_at")
+  updatedAt            DateTime               @default(now()) @map("updated_at")
+  // gameLogic            Json?                  @map("game_logic")
+  status               Int                    @default(0)
+  // favoriteGames        FavoriteGames[]
+  // gameHistory          GameHistory[]
+  operators            Operators?             @relation(fields: [operatorId], references: [id], map: "games_operator_fkey")
+  // rtgSettingsResponses RtgSettingsResponses[]
+  // rtgSpinResults       RtgSpinResults[]
+
+  @@map("games")
+}
+
+model JackpotContributions {
+  /// drizzle.default nanoid::nanoid
+  id                      String    @id @db.VarChar
+  jackpotId               String    @map("jackpot_id")
+  userId                  String?   @map("user_id")
+  gameSpinId              String    @map("game_spin_id")
+  contributionAmountCoins Int       @map("contribution_amount_coins")
+  createdAt               DateTime  @default(now()) @map("created_at")
+  gameSpins               GameSpins @relation(fields: [gameSpinId], references: [id], onDelete: Cascade, map: "jackpot_contributions_gameSpin_fkey")
+  jackpots                Jackpots  @relation(fields: [jackpotId], references: [id], onDelete: Cascade, map: "jackpot_contributions_jackpot_fkey")
+
+  @@unique([jackpotId, gameSpinId], map: "JackpotContribution_jackpotId_gameSpinId_key")
+  @@map("jackpot_contributions")
+}
+
+model JackpotWins {
+  /// drizzle.default nanoid::nanoid
+  id             String    @id @db.VarChar
+  jackpotId      String    @map("jackpot_id")
+  winnerId       String    @map("winner_id")
+  winAmountCoins Int       @map("win_amount_coins")
+  gameSpinId     String    @unique(map: "jackpot_wins_game_spin_id_unique") @map("game_spin_id")
+  transactionId  String?   @map("transaction_id")
+  createdAt      DateTime  @default(now()) @map("created_at")
+  sessionDataId  String?   @map("session_data_id")
+  gameSpins      GameSpins @relation(fields: [gameSpinId], references: [id], onDelete: Cascade, map: "jackpot_wins_gameSpin_fkey")
+  jackpots       Jackpots  @relation(fields: [jackpotId], references: [id], onDelete: Cascade, map: "jackpot_wins_jackpot_fkey")
+  user          Users     @relation(fields: [winnerId], references: [id], onDelete: Cascade, map: "jackpot_wins_winner_fkey")
+
+  @@map("jackpot_wins")
+}
+
+model Jackpots {
+  /// drizzle.default nanoid::nanoid
+  id                            String                 @id @db.VarChar
+  type                          String
+  currentAmountCoins            Int                    @map("current_amount_coins")
+  seedAmountCoins               Int                    @map("seed_amount_coins")
+  minimumBetCoins               Int                    @default(1) @map("minimum_bet_coins")
+  contributionRateBasisPoints   Int                    @map("contribution_rate_basis_points")
+  probabilityPerMillion         Int                    @map("probability_per_million")
+  minimumTimeBetweenWinsMinutes Int                    @map("minimum_time_between_wins_minutes")
+  lastWonAt                     DateTime?              @map("last_won_at")
+  lastWonBy                     String?                @map("last_won_by")
+  isActive                      Boolean                @default(true) @map("is_active")
+  createdAt                     DateTime               @default(now()) @map("created_at")
+  updatedAt                     DateTime               @default(now()) @map("updated_at")
+  jackpotContributions          JackpotContributions[]
+  jackpotWins                   JackpotWins[]
+  // users                         Users?                 @relation(fields: [lastWonBy], references: [id], map: "jackpots_lastWinner_fkey")
+
+  @@map("jackpots")
+}
+
+model Operators {
+  /// drizzle.default nanoid::nanoid
+  id               String     @id @db.VarChar
+  name             String     @unique(map: "operators_name_unique")
+  operatorSecret   String     @map("operator_secret")
+  operatorAccess   String     @map("operator_access")
+  callbackUrl      String     @map("callback_url")
+  isActive         Boolean    @default(true) @map("is_active")
+  allowedIps       String     @map("allowed_ips")
+  description      String?
+  productIds       String?    @map("product_ids")
+  balance          Int
+  netRevenue       Int        @map("net_revenue") @default(0)
+  acceptedPayments String[]   @map("accepted_payments")
+  ownerId          String?    @map("owner_id")
+  lastUsedAt       DateTime?  @map("last_used_at")
+  createdAt        DateTime   @default(now()) @map("created_at")
+  updatedAt        DateTime   @default(now()) @map("updated_at")
+  games            Games[]
+  products         Products[]
+  users            Users[]
+  switchedFromHistory OperatorSwitchHistory[] @relation("SwitchedFrom")
+  switchedToHistory   OperatorSwitchHistory[] @relation("SwitchedTo")
+  Wallets Wallets[] 
+  
+  @@map("operators")
+}
+
+model OperatorSwitchHistory {
+  /// drizzle.default nanoid::nanoid
+    id               String     @id @db.VarChar
+  userId          String   @map("user_id")
+  fromOperatorId  String?  @map("from_operator_id") // Nullable for the very first operator selection
+  toOperatorId    String   @map("to_operator_id")
+  switchedAt      DateTime @default(now()) @map("switched_at")
+
+  user         Users      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  fromOperator Operators? @relation("SwitchedFrom", fields: [fromOperatorId], references: [id], onDelete:SetNull)
+  toOperator   Operators  @relation("SwitchedTo", fields: [toOperatorId], references: [id], onDelete:Cascade)
+
+  @@map("operator_switch_history")
+}
+
+model Products {
+  /// drizzle.default nanoid::nanoid
+  id                       String         @id @db.VarChar
+  title                    String         @default("default")
+  productType              String         @default("bundle") @map("product_type")
+  bonusTotalInCredits      Int            @map("bonus_total_in_credits")
+  isActive                 Boolean?       @map("is_active")
+  priceInCents             Int            @map("price_in_cents")
+  amountToReceiveInCredits Int            @map("amount_to_receive_in_credits")
+  bestValue                Int            @map("best_value")
+  discountInCents          Int            @map("discount_in_cents")
+  bonusSpins               Int            @map("bonus_spins")
+  isPromo                  Boolean?       @map("is_promo")
+  totalDiscountInCents     Int            @map("total_discount_in_cents")
+  operatorId               String?        @map("operator_id")
+  createdAt                DateTime       @default(now()) @map("created_at")
+  updatedAt                DateTime       @default(now()) @map("updated_at")
+  operators                Operators?     @relation(fields: [operatorId], references: [id], onDelete: Cascade, map: "products_operator_fkey")
+  transactions             Transactions[]
+
+  @@map("products")
+}
+
+model Transactions {
+  /// drizzle.default nanoid::nanoid
+  id                  String    @id @db.VarChar
+  processedAt         DateTime? @map("processed_at")
+  walletId            String?   @map("wallet_id")
+  type                String
+  status              String    @default("PENDING")
+  amount              Int
+  netAmount           Int?      @map("net_amount")
+  feeAmount           Int?      @map("fee_amount")
+  productId           String?   @map("product_id")
+  paymentMethod       String?   @map("payment_method")
+  balanceBefore       Int?      @map("balance_before")
+  balanceAfter        Int?      @map("balance_after")
+  bonusBalanceBefore  Int?      @map("bonus_balance_before")
+  bonusBalanceAfter   Int?      @map("bonus_balance_after")
+  bonusAmount         Int?      @map("bonus_amount")
+  wageringRequirement Int?      @map("wagering_requirement")
+  wageringProgress    Int?      @map("wagering_progress")
+  description         String?
+  provider            String?
+  providerTxId        String?   @map("provider_tx_id")
+  relatedGameId       String?   @map("related_game_id")
+  relatedRoundId      String?   @map("related_round_id")
+  createdAt           DateTime  @default(now()) @map("created_at")
+  updatedAt           DateTime  @default(now()) @map("updated_at")
+  operatorId          String?   @map("operator_id")
+  userId              String?   @map("user_id")
+  products            Products? @relation(fields: [productId], references: [id], map: "transactions_product_fkey")
+  wallets             Wallets?  @relation(fields: [walletId], references: [id], onDelete: Cascade, map: "transactions_wallet_fkey")
+
+  @@map("transactions")
+}
+
+model Users {
+  /// drizzle.default nanoid::nanoid
+  id                       String                   @id @db.VarChar
+  username                 String                   @unique(map: "users_username_unique")
+  email                    String?                  @unique(map: "users_email_unique")
+  passwordHash             String?                  @map("password_hash")
+  accessToken              String?                  @map("access_token")
+  refreshToken             String?                  @map("refresh_token")
+  accessTokenExpiresAt     DateTime?                @map("access_token_expires_at")
+  refreshTokenExpiresAt    DateTime?                @map("refresh_token_expires_at")
+  currentGameSessionDataId String?                  @unique(map: "users_current_game_session_data_id_unique") @map("current_game_session_data_id")
+  currentAuthSessionDataId String?                  @unique(map: "users_current_auth_session_data_id_unique") @map("current_auth_session_data_id")
+  avatarUrl                String?                  @default("avatar-01") @map("avatar_url")
+  role                     String                   @default("USER")
+  isActive                 Boolean                  @default(true) @map("is_active")
+  lastLoginAt              DateTime?                @map("last_login_at")
+  totalXpGained            Int                      @map("total_xp_gained")
+  vipInfoId                String?                  @unique(map: "users_VipInfo_id_unique") @map("vip_info_id")
+  createdAt                DateTime                 @default(now()) @map("created_at")
+  updatedAt                DateTime                 @default(now()) @map("updated_at")
+  deletedAt                DateTime?                @map("deleted_at")
+  lastSeen                 DateTime?                @map("last_seen")
+  rtgBlockTime             Int                      @default(0) @map("rtg_block_time")
+  phone                    String?                  @unique(map: "users_phone_unique")
+  authSessions             AuthSessions[]
+  blackjackBets            BlackjackBets[]
+  deposits                 Deposits[]
+  // favoriteGames            FavoriteGames[]
+  // gameHistory              GameHistory[]
+  gameSessions             GameSessions[]
+  jackpotWins              JackpotWins[]
+  // jackpots                 Jackpots[]
+  // tournamentParticipants   TournamentParticipants[]
+   // This is the NEW part: An explicit foreign key to the active wallet.
+  // The @unique constraint ensures a wallet can only be the active one for a single user.
+  activeWalletId String?   @unique @map("active_wallet_id")
+
+  // RELATION 1: A direct one-to-one link to the single active wallet.
+  // This is what you will use in your Drizzle query.
+  activeWallet   Wallets?  @relation("ActiveWalletForUser", fields: [activeWalletId], references: [id], onDelete: SetNull)
+
+  // RELATION 2: The existing one-to-many link to ALL wallets owned by the user.
+  wallets        Wallets[] @relation("AllWalletsForUser")
+  // wallets_users_active_wallet_idTowallets wallets?                  @relation("users_active_wallet_idTowallets", fields: [activeWalletId], references: [id], map: "users_active_wallet_id_wallets_id_fk")
+  vipInfo                  VipInfo?
+  // wallets_wallets_user_idTousers          wallets[]                 @relation("wallets_user_idTousers")
+  withdrawals              Withdrawals[]
+  // operators                               operators[]
+  activeOperatorId       String? //@unique(map: "users_active_operator_id_unique" )   
+  ops                      Operators?               @relation(fields: [activeOperatorId], references: [id], onDelete: Cascade, onUpdate: NoAction, map: "favorite_user_operators_id_active_operator_id_fk")
+
+  operatorSwitchHistory OperatorSwitchHistory[]
+
+  @@map("users")
+}
+// model VipLevel {
+//   level     Int @id
+//   xpForNext Int
+//   @@map("vip_levels")
+// }
+
+model VipRank {
+  id                   Int        @id
+  name                 String     @unique(map: "VipRank_name_unique")
+  minXp                Int        @unique(map: "VipRank_minXp_unique")
+  dailyBonusCoinPct    Int
+  hourlyBonusCoinPct   Int
+  purchaseBonusCoinPct Int
+  levelUpBonusCoinPct  Int
+  hasConcierge         Boolean
+  hasVipLoungeAccess   Boolean
+  isInvitationOnly     Boolean
+  VipInfo             VipInfo[]
+  @@map("vip_ranks")
+}
+
+model VipInfo {
+  /// drizzle.default nanoid::nanoid
+  id                String              @id @db.VarChar
+  level             Int                 @default(1)
+  xp                Int
+  totalXp           Int
+  userId            String              @unique(map: "VipInfo_userId_unique")
+  currentRankid     Int?
+  createdAt         DateTime            @default(now()) @map("created_at")
+  updatedAt         DateTime            @default(now()) @map("updated_at")
+  vipRank           VipRank?            @relation(fields: [currentRankid], references: [id], onDelete: Cascade, map: "VipInfo_currentRank_fkey")
+  users             Users               @relation(fields: [userId], references: [id], onDelete: Cascade, map: "VipInfo_user_fkey")
+  vipLevelUpHistory VipLevelUpHistory[]
+
+  @@map("vip_info")
+}
+
+model VipLevelUpHistory {
+  /// drizzle.default nanoid::nanoid
+  id            String   @id @db.VarChar
+  previousLevel Int      @map("previous_level")
+  newLevel      Int      @map("new_level")
+  timestamp     DateTime @default(now())
+  VipInfoId     String   @map("VipInfo_id")
+  VipInfo       VipInfo  @relation(fields: [VipInfoId], references: [id], onDelete: Cascade, map: "vip_level_up_history_VipInfo_fkey")
+
+  @@map("vip_level_up_history")
+}
+
+model Wallets {
+  /// drizzle.default nanoid::nanoid
+  id            String         @id @db.VarChar
+  balance       Int @default(0)
+  paymentMethod String         @default("INSTORE_CASH") @map("payment_method")
+  currency      String         @default("USD")
+  // isActive      Boolean        @default(true) @map("is_active")
+  // isDefault     Boolean        @map("is_default")
+  address       String?        @unique(map: "wallets_address_unique")
+  cashtag       String?        @unique(map: "wallets_cashtag_unique")
+  operatorId    String         @map("operator_id")
+  operator    Operators     @relation(fields: [operatorId], references: [id], onDelete: Cascade, onUpdate: NoAction, map: "wallets_operator_fkey")
+  lastUsedAt    DateTime?      @map("last_used_at")
+  createdAt     DateTime       @default(now()) @map("created_at")
+  updatedAt     DateTime       @default(now()) @map("updated_at")
+  transactions  Transactions[]
+  // users_users_active_wallet_idTowallets users?         @relation("users_active_wallet_idTowallets")
+  // users_wallets_user_idTousers          users          @relation("wallets_user_idTousers", fields: [userId], references: [id], onDelete: Cascade, onUpdate: NoAction, map: "wallets_user_id_users_id_fk")
+  userId        String         @map("user_id")
+  // users         Users?         @relation(fields: [userId], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "withdrawals_user_id_users_id_fk")
+  // This is the standard foreign key that makes every wallet belong to a user.
+  
+  // This is the back-relation for the one-to-many link (user.wallets)
+  user          Users     @relation("AllWalletsForUser", fields: [userId], references: [id], onDelete: Cascade)
+
+  // This is the back-relation for the one-to-one link (user.activeWallet)
+  activeForUser Users?    @relation("ActiveWalletForUser")
+
+  @@unique([userId, operatorId], map: "wallets_user_operator_unique")
+  @@map("wallets")
+}
+
+model Withdrawals {
+  /// drizzle.default nanoid::nanoid
+  id           String    @id @db.VarChar
+  userId       String?   @map("user_id") @db.VarChar
+  amount       Int?
+  status       String?
+  idNumber     String?   @map("id_number")
+  firstName    String?   @map("first_name")
+  lastName     String?   @map("last_name")
+  channelsId   String?   @map("channels_id")
+  note         String?
+  currencyType String?   @map("currency_type")
+  currency     String?
+  createdAt    DateTime? @default(now()) @map("created_at") @db.Timestamp(6)
+  updatedAt    DateTime? @default(now()) @map("updated_at") @db.Timestamp(6)
+  users        Users?    @relation(fields: [userId], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "withdrawals_user_id_users_id_fk")
+
+  @@map("withdrawals")
+}
+
+enum GameProviderName {
+  pragmaticplay
+  evoplay
+  netent
+  playngo
+  relaxgaming
+  hacksaw
+  bgaming
+  spribe
+  internal
+  redtiger
+  netgame
+  bigfishgames
+  cqnine
+  nolimit
+  kickass
+}
+
+enum PaymentMethod {
+  INSTORE_CASH
+  INSTORE_CARD
+  CASH_APP
+}
+
+enum Permission {
+  read
+  write
+  upload
+  manage_users
+  manage_settings
+  launch_game
+}
+
+enum Role {
+  USER
+  ADMIN
+  VIP
+  MODERATOR
+  SYSTEM
+  OWNER
+  MEMBER
+  OPERATOR
+  SUPPORT_AGENT
+}
+
+enum TournamentStatus {
+  PENDING
+  ACTIVE
+  COMPLETED
+  CANCELLED
+}
+
+enum TransactionStatus {
+  PENDING
+  PROCESSING
+  COMPLETED
+  FAILED
+  CANCELLED
+  REFUNDED
+  EXPIRED
+  REJECTED
+  REQUIRES_ACTION
+  ON_HOLD
+}
+
+enum TypeOfJackpot {
+  MINOR
+  MAJOR
+  GRAND
+}
+
+enum TypeOfTransaction {
+  DEPOSIT
+  WITHDRAWAL
+  BET
+  WIN
+  TRANSFER_SENT
+  TRANSFER_RECEIVED
+  SYSTEM_ADJUSTMENT_CREDIT
+  SYSTEM_ADJUSTMENT_DEBIT
+  TOURNAMENT_BUYIN
+  TOURNAMENT_PRIZE
+  AFFILIATE_COMMISSION
+  REFUND
+  FEE
+  BONUS_AWARD
+  BET_PLACE
+  BET_WIN
+  BET_LOSE
+  BET_REFUND
+  BONUS_WAGER
+  BONUS_CONVERT
+  BONUS_EXPIRED
+  XP_AWARD
+  ADJUSTMENT_ADD
+  ADJUSTMENT_SUB
+  INTERNAL_TRANSFER
+  PRODUCT_PURCHASE
+  REBATE_PAYOUT
+  JACKPOT_WIN
+  JACKPOT_CONTRIBUTION
+}
+
+enum UserRole {
+  USER
+  ADMIN
+  MODERATOR
+  SUPPORT
+  BOT
+  SYSTEM
+}
+
+enum game_categories {
+  slots
+  fish
+  table
+  live
+  poker
+  lottery
+  virtual
+  other
+}
+
+enum message_type {
+  update_wallet      @map("update:wallet")
+  update_vip         @map("update:vip")
+  update_balance     @map("update:balance")
+  update_gameSession @map("update:gameSession")
+}
+
+enum session_status {
+  ACTIVE
+  COMPLETED
+  EXPIRED
+  ABANDONED
+  TIMEOUT
+  OTP_PENDING
+}
+
+enum update_type {
+  BINARY
+  OTA
+}
+
+// model FavoriteGames {
+//   /// drizzle.default nanoid::nanoid
+//   id     String @id @db.VarChar
+//   userId String @map("user_id")
+//   gameId String @map("game_id")
+//   games  Games  @relation(fields: [gameId], references: [id], onDelete: Cascade, onUpdate: NoAction, map: "favorite_games_game_id_games_id_fk")
+//   users  Users  @relation(fields: [userId], references: [id], onDelete: Cascade, onUpdate: NoAction, map: "favorite_games_user_id_users_id_fk")
+
+//   @@map("favorite_games")
+// }
+
+// model GameHistory {
+//   /// drizzle.default nanoid::nanoid
+//   id        String   @id @db.VarChar
+//   userId    String   @map("user_id")
+//   gameId    String   @map("game_id")
+//   createdAt DateTime @default(now()) @map("created_at")
+//   games     Games    @relation(fields: [gameId], references: [id], onDelete: Cascade, onUpdate: NoAction, map: "game_history_game_id_games_id_fk")
+//   users     Users    @relation(fields: [userId], references: [id], onDelete: Cascade, onUpdate: NoAction, map: "game_history_user_id_users_id_fk")
+
+//   @@map("game_history")
+// }
+
+// model PragmaticPlayerStates {
+//   /// drizzle.default nanoid::nanoid
+//   id                                      String   @id @db.VarChar
+//   token                                   String?  @unique(map: "players_token_unique")
+//   agentCode                               String   @map("agent_code")
+//   userCode                                String   @map("user_code")
+//   gameCode                                String   @map("game_code")
+//   balance                                 Float    @default(0)
+//   curIndex                                Int      @default(0) @map("cur_index")
+//   txnId                                   String?  @map("txn_id")
+//   connected                               String?
+//   gameMode                                Int      @default(0) @map("game_mode")
+//   patRequested                            Int      @default(0) @map("pat_requested")
+//   lastJackpotIndex                        Int      @default(0) @map("last_jackpot_index")
+//   nextJackpot                             Int      @default(0) @map("next_jackpot")
+//   totalDebit                              Float    @default(0) @map("total_debit")
+//   totalCredit                             Float    @default(0) @map("total_credit")
+//   realRtp                                 Float    @default(100) @map("real_rtp")
+//   spinHistId                              String   @default("0") @map("spin_hist_id")
+//   spinStatus                              String?  @map("spin_status")
+//   jackpotCome                             Int      @default(0) @map("jackpot_come")
+//   baseWinCome                             Int      @default(0) @map("base_win_come")
+//   highBaseCome                            Int      @default(0) @map("high_base_come")
+//   jackpotLimit                            Int      @default(90) @map("jackpot_limit")
+//   highBaseLimit                           Int      @default(50) @map("high_base_limit")
+//   betPerLine                              Float    @default(0) @map("bet_per_line")
+//   totalBet                                Float    @default(0) @map("total_bet")
+//   virtualBet                              Float    @default(0) @map("virtual_bet")
+//   totalWin                                Float    @default(0) @map("total_win")
+//   freeSpins                               Int      @default(0) @map("free_spins")
+//   freeSpinsWin                            Float    @default(0) @map("free_spins_win")
+//   freeSpinsBalance                        Float    @default(0) @map("free_spins_balance")
+//   freeSpinsTotalWin                       Float    @default(0) @map("free_spins_total_win")
+//   freeSpinsTotalBet                       Float    @default(0) @map("free_spins_total_bet")
+//   freeSpinsTotalWinBalance                Float    @default(0) @map("free_spins_total_win_balance")
+//   freeSpinsTotalWinBalanceBefore          Float    @default(0) @map("free_spins_total_win_balance_before")
+//   freeSpinsTotalWinBalanceBeforeFreeSpins Float    @default(0) @map("free_spins_total_win_balance_before_free_spins")
+//   machine                                 String?
+//   lastPattern                             String?  @map("last_pattern")
+//   viewStack                               String?  @map("view_stack")
+//   fsStack                                 String?  @map("fs_stack")
+//   viewHistory                             String?  @map("view_history")
+//   replayLogList                           String?  @map("replay_log_list")
+//   callPattern                             String?  @map("call_pattern")
+//   purchaseCallPattern                     String?  @map("purchase_call_pattern")
+//   settings                                String?
+//   createdAt                               DateTime @default(now()) @map("created_at")
+//   updatedAt                               DateTime @default(now()) @map("updated_at")
+
+//   @@index([agentCode, userCode, gameCode], map: "players_agent_user_game_idx")
+//   @@map("pragmatic_player_states")
+// }
+
+// model Replays {
+//   /// drizzle.default nanoid::nanoid
+//   id         String   @id @db.VarChar
+//   agentCode  String?  @map("agent_code")
+//   userCode   String?  @map("user_code")
+//   gameCode   String?  @map("game_code")
+//   roundId    String   @unique(map: "replays_round_id_unique") @map("round_id")
+//   bet        Int?
+//   data       String?
+//   sharedLink String?  @map("shared_link")
+//   createdAt  DateTime @default(now()) @map("created_at")
+//   updatedAt  DateTime @default(now()) @map("updated_at")
+
+//   @@index([userCode, gameCode], map: "idx_replays_user_game")
+//   @@map("replays")
+// }
+
+// model RtgSettingsRequestCustomData {
+//   /// drizzle.default nanoid::nanoid
+//   id                  String              @id @db.VarChar
+//   requestId           String              @map("request_id")
+//   siteId              String              @map("site_id")
+//   extras              String
+//   rtgSettingsRequests RtgSettingsRequests @relation(fields: [requestId], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "rtg_settings_request_custom_data_request_id_rtg_settings_reques")
+
+//   @@map("rtg_settings_request_custom_data")
+// }
+
+// model RtgSettingsRequestUserData {
+//   /// drizzle.default nanoid::nanoid
+//   id                  String              @id @db.VarChar
+//   requestId           String              @map("request_id")
+//   userId              String              @map("user_id")
+//   hash                String
+//   affiliate           String
+//   lang                String
+//   channel             String
+//   userType            String              @map("user_type")
+//   fingerprint         String
+//   rtgSettingsRequests RtgSettingsRequests @relation(fields: [requestId], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "rtg_settings_request_user_data_request_id_rtg_settings_requests")
+
+//   @@map("rtg_settings_request_user_data")
+// }
+
+// model RtgSettingsRequests {
+//   /// drizzle.default nanoid::nanoid
+//   id                           String                         @id @db.VarChar
+//   token                        String?
+//   sessionId                    String                         @map("session_id")
+//   playMode                     String                         @map("play_mode")
+//   gameId                       String                         @map("game_id")
+//   createdAt                    DateTime?                      @default(now()) @map("created_at") @db.Timestamp(6)
+//   rtgSettingsRequestCustomData RtgSettingsRequestCustomData[]
+//   rtgSettingsRequestUserData   RtgSettingsRequestUserData[]
+
+//   @@map("rtg_settings_requests")
+// }
+// model RtgSettingsResponses {
+//   gameId                 String   @map("game_id") @db.VarChar @id
+//   success                Boolean
+//   /// [RtgSettingsResult]
+//   result                Json
+
+// }
+// model RtgSettingsResponses {
+//   /// drizzle.default nanoid::nanoid
+//   id                     String    @id
+//   gameId                 String?   @map("game_id") @db.VarChar
+//   gameName               String    @unique(map: "rtg_settings_responses_game_name_unique") @map("game_name")
+//   success                Boolean
+//   userId                 Int?      @map("user_id")
+//   userToken              String?   @map("user_token")
+//   userSessionId          String?   @map("user_session_id")
+//   userCanGamble          Boolean?  @map("user_can_gamble")
+//   userCountry            String?   @map("user_country")
+//   userCasino             String?   @map("user_casino")
+//   userCurrencyCode       String?   @map("user_currency_code")
+//   userCurrencySymbol     String?   @map("user_currency_symbol")
+//   userServerTime         DateTime? @map("user_server_time") @db.Timestamp(6)
+//   userBalanceCash        Decimal?  @map("user_balance_cash") @db.Decimal
+//   userBalanceFreeBets    Decimal?  @map("user_balance_free_bets") @db.Decimal
+//   userBalanceBonus       Decimal?  @map("user_balance_bonus") @db.Decimal
+//   userStakesDefaultIndex Int?      @map("user_stakes_default_index")
+//   userStakesLastIndex    Int?      @map("user_stakes_last_index")
+//   gameCols               Int?      @map("game_cols")
+//   gameRows               Int?      @map("game_rows")
+//   gamePaysType           String?   @map("game_pays_type")
+//   gameVersion            String?   @map("game_version")
+//   gameVolatilityIndex    String?   @map("game_volatility_index")
+//   gameRtpDefault         Decimal?  @map("game_rtp_default") @db.Decimal
+//   gameHasGamble          Boolean?  @map("game_has_gamble")
+//   gameHasFeatureBuy      Boolean?  @map("game_has_feature_buy")
+//   launcherVersion        String?   @map("launcher_version")
+//   userBonuses            Json?     @map("user_bonuses") @db.Json
+//   userAutoplay           Json?     @map("user_autoplay") @db.Json
+//   gameLines              Json?     @map("game_lines") @db.Json
+//   gameTiles              Json?     @map("game_tiles") @db.Json
+//   gameFeatures           Json?     @map("game_features") @db.Json
+//   gameMultiplierSequence Json?     @map("game_multiplier_sequence") @db.Json
+//   createdAt              DateTime  @default(now()) @map("created_at") @db.Timestamp(6)
+//   games                  Games?    @relation(fields: [gameId], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "rtg_settings_responses_game_id_games_id_fk")
+
+//   @@map("rtg_settings_responses")
+// }
+
+// model RtgSpinRequestCustomData {
+//   /// drizzle.default nanoid::nanoid
+//   id              String          @id @db.VarChar
+//   requestId       String          @map("request_id")
+//   siteId          String          @map("site_id")
+//   extras          String
+//   rtgSpinRequests RtgSpinRequests @relation(fields: [requestId], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "rtg_spin_request_custom_data_request_id_rtg_spin_requests_id_fk")
+
+//   @@map("rtg_spin_request_custom_data")
+// }
+
+// model RtgSpinRequestUserData {
+//   /// drizzle.default nanoid::nanoid
+//   id              String          @id @db.VarChar
+//   requestId       String          @map("request_id")
+//   userId          Int             @map("user_id")
+//   affiliate       String
+//   lang            String
+//   channel         String
+//   userType        String          @map("user_type")
+//   fingerprint     String
+//   rtgSpinRequests RtgSpinRequests @relation(fields: [requestId], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "rtg_spin_request_user_data_request_id_rtg_spin_requests_id_fk")
+
+//   @@map("rtg_spin_request_user_data")
+// }
+
+// model RtgSpinRequests {
+//   /// drizzle.default nanoid::nanoid
+//   id                       String                     @id @db.VarChar
+//   token                    String
+//   sessionId                String                     @map("session_id")
+//   playMode                 String                     @map("play_mode")
+//   gameId                   String                     @map("game_id")
+//   stake                    Int
+//   bonusId                  String?                    @map("bonus_id")
+//   extras                   String?
+//   gameMode                 Int                        @map("game_mode")
+//   createdAt                DateTime?                  @default(now()) @map("created_at") @db.Timestamp(6)
+//   rtgSpinRequestCustomData RtgSpinRequestCustomData[]
+//   rtgSpinRequestUserData   RtgSpinRequestUserData[]
+
+//   @@map("rtg_spin_requests")
+// }
+
+// model RtgSpinResults {
+//   /// drizzle.default nanoid::nanoid
+//   id                      String    @id
+//   gameId                  String?   @map("game_id") @db.VarChar
+//   gameName                String    @map("game_name")
+//   success                 Boolean
+//   userId                  Int       @map("user_id")
+//   sessionId               String?   @map("session_id")
+//   canGamble               Boolean?  @map("can_gamble")
+//   token                   String?
+//   sessionNetPosition      Decimal?  @map("session_net_position") @db.Decimal
+//   serverTime              DateTime? @map("server_time") @db.Timestamp(6)
+//   balanceCashAtStart      Decimal?  @map("balance_cash_at_start") @db.Decimal
+//   balanceCashAfterBet     Decimal?  @map("balance_cash_after_bet") @db.Decimal
+//   balanceCashAtEnd        Decimal?  @map("balance_cash_at_end") @db.Decimal
+//   balanceFreeBetsAtStart  Decimal?  @map("balance_free_bets_at_start") @db.Decimal
+//   balanceFreeBetsAfterBet Decimal?  @map("balance_free_bets_after_bet") @db.Decimal
+//   balanceFreeBetsAtEnd    Decimal?  @map("balance_free_bets_at_end") @db.Decimal
+//   balanceBonusAtStart     Decimal?  @map("balance_bonus_at_start") @db.Decimal
+//   balanceBonusAfterBet    Decimal?  @map("balance_bonus_after_bet") @db.Decimal
+//   balanceBonusAtEnd       Decimal?  @map("balance_bonus_at_end") @db.Decimal
+//   limitsBetThresholdTime  Int?      @map("limits_bet_threshold_time")
+//   bonuses                 Json?     @db.Json
+//   tournaments             Json?     @db.Json
+//   vouchers                Json?     @db.Json
+//   messages                Json?     @db.Json
+//   stake                   Decimal?  @db.Decimal
+//   multiplier              Decimal?  @db.Decimal
+//   winTotal                Decimal?  @map("win_total") @db.Decimal
+//   winsMultipliersTotal    Decimal?  @map("wins_multipliers_total") @db.Decimal
+//   winsMultipliersLines    Decimal?  @map("wins_multipliers_lines") @db.Decimal
+//   spinMode                String?   @map("spin_mode")
+//   hasState                Boolean?  @map("has_state")
+//   winLines                Json?     @map("win_lines") @db.Json
+//   fatTiles                Json?     @map("fat_tiles") @db.Json
+//   scatters                Json?     @db.Json
+//   features                Json?     @db.Json
+//   reelsBuffer             Json?     @map("reels_buffer") @db.Json
+//   createdAt               DateTime  @default(now()) @map("created_at") @db.Timestamp(6)
+//   games                   Games?    @relation(fields: [gameId], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "rtg_spin_results_game_id_games_id_fk")
+
+//   @@map("rtg_spin_results")
+// }
+
+// model Settings {
+//   /// drizzle.default nanoid::nanoid
+//   id                        String   @id @db.VarChar
+//   generalMaintenanceEnabled Boolean  @default(false) @map("general_maintenance_enabled")
+//   generalRainEnabled        Boolean? @default(false) @map("general_rain_enabled")
+//   generalTipEnabled         Boolean? @default(false) @map("general_tip_enabled")
+//   gameBlackjackEnabled      Boolean? @default(true) @map("game_blackjack_enabled")
+//   blackjackMinBetStandard   Int      @default(100) @map("blackjack_min_bet_standard")
+//   blackjackMaxBetStandard   Int      @default(50000) @map("blackjack_max_bet_standard")
+//   blackjackMinBetWhale      Int      @default(1000) @map("blackjack_min_bet_whale")
+//   blackjackMaxBetWhale      Int      @default(250000) @map("blackjack_max_bet_whale")
+//   blackjackDeckCount        Int      @default(6) @map("blackjack_deck_count")
+//   createdAt                 DateTime @default(now()) @map("created_at")
+//   updatedAt                 DateTime @default(now()) @map("updated_at")
+
+//   @@map("settings")
+// }
+
+// model Tasks {
+//   /// drizzle.default nanoid::nanoid
+//   id        String    @id @db.VarChar
+//   name      String
+//   done      Boolean   @default(false)
+//   createdAt DateTime? @map("created_at") @db.Timestamp(6)
+//   updatedAt DateTime? @map("updated_at") @db.Timestamp(6)
+
+//   @@map("tasks")
+// }
+
+// model TournamentParticipants {
+//   /// drizzle.default nanoid::nanoid
+//   id           String   @id @db.VarChar
+//   tournamentId String   @map("tournament_id")
+//   userId       String   @map("user_id")
+//   score        Int
+//   rank         Int?
+//   joinedAt     DateTime @default(now()) @map("joined_at")
+//   users        Users    @relation(fields: [userId], references: [id], onDelete: Cascade, onUpdate: NoAction, map: "tournament_participants_user_id_users_id_fk")
+
+//   @@map("tournament_participants")
+// }

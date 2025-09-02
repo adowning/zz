@@ -1,0 +1,953 @@
+{
+  "desktopResourceToVirtualScale": 1,
+  "mobileResourceToVirtualScale": 1,
+  "expectedReelSetOrder": ["basic", "freespin"],
+  "bonusProgramWidgetPath": "widget/bonusProgramWidget/genericBonusProgramWidget/widget.html",
+  "gameRules": {
+        "desktop" : "dazzle_not_mobile",
+        "touch" : "dazzle_mobile_html"
+    },
+    "clientConfig" : {
+        "coinsfieldscroller" : {
+            "element" : [
+                {
+                    "id" : "winUpto",
+                    "duration" : 3000,
+                    "value" : 480000
+                },
+                {
+                    "id" : "coins",
+                    "duration" : 8000
+                },
+                {
+                    "id" : "win",
+                    "duration" : 3000
+                }
+            ]
+        },
+        "autoplay" : {
+            "availability" : {
+                "enabled" : true
+            },
+            "basic" : {
+                "spins" : [10,25,50,100,250,500,750,1000]
+            },
+            "delays" : {
+                "delay" : 500,
+                "g4delay" : 3000
+            }
+        },
+        "staticsharedurl" : "http://static-shared.casinomodule.com/gameclient_html/devicedetection/current"
+    },
+    "reelGroups" : {
+        "default" : {
+            "numberOfReels" : 5,
+            "reelLayout" : {
+                "0" : {
+                    "left" : 136,
+                    "top" : 136,
+                    "visibleLength": 348,
+                    "numberOfOutcomeSymbols" : 3
+                },
+                "1" : {
+                    "left" : 340,
+                    "top" : 136,
+                    "visibleLength": 348,
+                    "numberOfOutcomeSymbols" : 3
+                },
+                "2" : {
+                    "left" : 544,
+                    "top" : 78,
+                    "visibleLength": 464,
+                    "numberOfOutcomeSymbols" : 4
+                },
+                "3" : {
+                    "left" : 748,
+                    "top" : 78,
+                    "visibleLength": 464,
+                    "numberOfOutcomeSymbols" : 4
+                },
+                "4" : {
+                    "left" : 952,
+                    "top" : 20,
+                    "visibleLength": 580,
+                    "numberOfOutcomeSymbols" : 5
+                },
+                "standard" : {
+                    "symbolWidths": {
+                        "standard": 188
+                    },
+                    "symbolHeights": {
+                        "standard": 116
+                    },
+                    "blurredSymbolWidths": {
+                        "standard": 188
+                    },
+                    "blurredSymbolHeights": {
+                        "standard": 147
+                    },
+                    "depthDistribution": {
+                        "type": "increasing",
+                        "step": 1
+                    },
+                    "baseDepth" : 1,
+                    "symbolSpecificDepthModifiers": {},
+                    "symbolCenterToCenter": 116,
+                    "timeToMoveOneSlot": 57,
+                    "startBounceSupportPointOffset": -58,
+                    "endBounceSupportPointOffsets": [20,-8,4],
+                    "endBounceDurations": [110,90,40]
+                }
+            },
+            "fillers" : [
+                "Dazzle.LinkedOutcomeFiller",
+                "Dazzle.LinkedFakeReelFiller"
+            ],
+            "reelSets" : ["basic", "wildFeature", "freespin"],
+            "spinTimes" : {
+                "standard" : {
+                    "minimumSpinTime" : 1000,
+                    "nearWinDelay" : 1500,
+                    "reelStopDelays" : [0,400,800,1150,1300]
+                },
+                "quickSpin" : {
+                    "minimumSpinTime" : 0,
+                    "nearWinDelay" : 1500,
+                    "reelStopDelays" : [0,210,370,370,370]
+                },
+                "gameModes" : {
+                    "basic" : {
+                        "timeToMoveOneSlot": 35,
+                        "standard": {
+                            "minimumSpinTime": 1000,
+                            "nearWinDelay": 1500,
+                            "reelStopDelays" : [0,400,800,1150,1300]
+                        },
+                        "quickSpin": {
+                            "minimumSpinTime": 0,
+                            "nearWinDelay": 1500,
+                            "reelStopDelays" : [0,210,370,370,370]
+                        }
+                    },
+                    "wildFeature" : {
+                        "timeToMoveOneSlot": 35,
+                        "standard": {
+                            "minimumSpinTime": 1000,
+                            "nearWinDelay": 1500,
+                            "reelStopDelays" : [0,400,800,1150,1300]
+                        },
+                        "quickSpin": {
+                            "minimumSpinTime": 0,
+                            "nearWinDelay": 1500,
+                            "reelStopDelays" : [0,210,370,370,370]
+                        }
+                    },
+                    "freespin" : {
+                        "timeToMoveOneSlot": 50,
+                        "standard": {
+                            "minimumSpinTime": 100,
+                            "nearWinDelay": 1500,
+                            "reelStopDelays": [0,500,1000,1300,1450]
+                        },
+                        "quickSpin": {
+                            "minimumSpinTime": 100,
+                            "nearWinDelay": 1500,
+                            "reelStopDelays": [0,500,1000,1300,1450]
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "reelSets" : {
+        "basic" : {
+            "fakeReels" : [
+                ["SYM8","SYM8","SYM8","SYM6","SYM6","SYM6","SYM3","SYM3","SYM8","SYM8","SYM8","SYM5","SYM5","SYM7","SYM7","SYM7","SYM8","SYM8","SYM8","SYM0","SYM4","SYM4","SYM5","SYM5","SYM8","SYM8","SYM8","SYM6","SYM6","SYM6","SYM5","SYM5","SYM5","SYM7","SYM7","SYM7","SYM8","SYM8","SYM8","SYM5","SYM5","SYM3","SYM3","SYM4","SYM4","SYM8","SYM8","SYM8","SYM7","SYM7","SYM7","SYM6","SYM6","SYM8","SYM8","SYM8","SYM7","SYM7","SYM7","SYM5","SYM5","SYM8","SYM8","SYM8","SYM6","SYM6","SYM6","SYM7","SYM7","SYM7","SYM8","SYM8","SYM8","SYM5","SYM5","SYM4","SYM4","SYM8","SYM8","SYM8","SYM6","SYM6","SYM6","SYM7","SYM7","SYM7","SYM8","SYM8","SYM8","SYM6","SYM6","SYM6","SYM5","SYM5","SYM5","SYM4","SYM4","SYM6","SYM6","SYM3","SYM3","SYM3","SYM5","SYM5","SYM5","SYM6","SYM6","SYM6","SYM7","SYM7","SYM7","SYM0","SYM4","SYM4","SYM4","SYM6","SYM6","SYM3","SYM3","SYM8","SYM8","SYM8","SYM6","SYM6","SYM5","SYM5","SYM7","SYM7","SYM7","SYM4","SYM4","SYM8","SYM8","SYM8","SYM7","SYM7","SYM7","SYM5","SYM5","SYM5","SYM8","SYM8","SYM8","SYM6","SYM6","SYM4","SYM4","SYM4","SYM7","SYM7","SYM7","SYM8","SYM8","SYM8","SYM5","SYM5","SYM5","SYM7","SYM7","SYM7","SYM4","SYM4","SYM6","SYM6","SYM6","SYM7","SYM7","SYM7","SYM4","SYM4","SYM6","SYM6","SYM6","SYM5","SYM5","SYM3","SYM3","SYM3","SYM8","SYM8","SYM8","SYM6","SYM6","SYM6","SYM5","SYM5","SYM8","SYM8","SYM8","SYM4","SYM4","SYM5","SYM5","SYM5","SYM8","SYM8","SYM8","SYM6","SYM6","SYM5","SYM5","SYM8","SYM8","SYM8","SYM7","SYM7","SYM7","SYM6","SYM6","SYM6","SYM8","SYM8","SYM8","SYM4","SYM4","SYM6","SYM6","SYM3","SYM3","SYM8","SYM8","SYM8","SYM6","SYM6","SYM6"],
+                ["SYM8","SYM8","SYM8","SYM5","SYM5","SYM5","SYM3","SYM3","SYM3","SYM6","SYM6","SYM6","SYM5","SYM5","SYM5","SYM8","SYM8","SYM8","SYM4","SYM4","SYM6","SYM6","SYM7","SYM7","SYM7","SYM4","SYM4","SYM3","SYM3","SYM5","SYM5","SYM5","SYM6","SYM6","SYM6","SYM8","SYM8","SYM8","SYM5","SYM5","SYM3","SYM3","SYM4","SYM4","SYM4","SYM8","SYM8","SYM8","SYM7","SYM7","SYM7","SYM3","SYM3","SYM6","SYM6","SYM6","SYM7","SYM7","SYM7","SYM5","SYM5","SYM5","SYM4","SYM4","SYM4","SYM7","SYM7","SYM7","SYM6","SYM6","SYM6","SYM3","SYM3","SYM8","SYM8","SYM8","SYM5","SYM5","SYM5","SYM6","SYM6","SYM6","SYM7","SYM7","SYM7","SYM5","SYM5","SYM8","SYM8","SYM8","SYM6","SYM6","SYM6","SYM7","SYM7","SYM7","SYM0","SYM8","SYM8","SYM8","SYM7","SYM7","SYM7","SYM5","SYM5","SYM6","SYM6","SYM6","SYM8","SYM8","SYM8","SYM0","SYM7","SYM7","SYM7","SYM5","SYM5","SYM5","SYM3","SYM3","SYM6","SYM6","SYM5","SYM5","SYM7","SYM7","SYM7","SYM3","SYM3","SYM5","SYM5","SYM5","SYM7","SYM7","SYM7","SYM8","SYM8","SYM8","SYM6","SYM6","SYM6","SYM5","SYM5","SYM4","SYM4","SYM6","SYM6","SYM5","SYM5","SYM5","SYM7","SYM7","SYM7","SYM4","SYM4","SYM5","SYM5","SYM8","SYM8","SYM8","SYM7","SYM7","SYM7","SYM3","SYM3","SYM4","SYM4","SYM4","SYM7","SYM7","SYM7","SYM6","SYM6","SYM6","SYM4","SYM4","SYM7","SYM7","SYM7","SYM3","SYM3","SYM3","SYM5","SYM5","SYM6","SYM6","SYM7","SYM7","SYM7","SYM5","SYM5","SYM5","SYM6","SYM6","SYM6","SYM7","SYM7","SYM7","SYM3","SYM3","SYM5","SYM5","SYM5","SYM4","SYM4","SYM7","SYM7","SYM7","SYM5","SYM5","SYM8","SYM8","SYM8","SYM6","SYM6","SYM6","SYM7","SYM7","SYM7","SYM3","SYM3","SYM8","SYM8","SYM8","SYM7","SYM7","SYM7","SYM5","SYM5","SYM8","SYM8","SYM8","SYM7","SYM7","SYM7","SYM3","SYM3","SYM5","SYM5","SYM8","SYM8","SYM8","SYM7","SYM7","SYM7","SYM5","SYM5","SYM8","SYM8","SYM8","SYM7","SYM7","SYM7","SYM5","SYM5"],
+                ["SYM6","SYM6","SYM6","SYM6","SYM0","SYM5","SYM5","SYM5","SYM5","SYM8","SYM8","SYM8","SYM7","SYM7","SYM7","SYM7","SYM8","SYM8","SYM8","SYM3","SYM3","SYM3","SYM7","SYM7","SYM7","SYM7","SYM0","SYM6","SYM6","SYM6","SYM5","SYM5","SYM5","SYM3","SYM3","SYM3","SYM3","SYM5","SYM5","SYM5","SYM0","SYM7","SYM7","SYM7","SYM7","SYM6","SYM6","SYM6","SYM8","SYM8","SYM8","SYM8","SYM7","SYM7","SYM7","SYM3","SYM3","SYM3","SYM3","SYM6","SYM6","SYM6","SYM6","SYM7","SYM7","SYM7","SYM7","SYM6","SYM6","SYM6","SYM3","SYM3","SYM3","SYM8","SYM8","SYM8","SYM8","SYM7","SYM7","SYM7","SYM7","SYM0","SYM8","SYM8","SYM8","SYM8","SYM5","SYM5","SYM5","SYM6","SYM6","SYM6","SYM6","SYM7","SYM7","SYM7","SYM5","SYM5","SYM5","SYM4","SYM4","SYM4","SYM8","SYM8","SYM8","SYM7","SYM7","SYM7","SYM7","SYM6","SYM6","SYM6","SYM6","SYM4","SYM4","SYM4","SYM8","SYM8","SYM8","SYM8","SYM5","SYM5","SYM5","SYM0","SYM4","SYM4","SYM4","SYM4","SYM6","SYM6","SYM6","SYM6","SYM8","SYM8","SYM8","SYM7","SYM7","SYM7","SYM7","SYM8","SYM8","SYM8","SYM8","SYM7","SYM7","SYM7","SYM7","SYM3","SYM3","SYM3","SYM3","SYM5","SYM5","SYM5","SYM5","SYM8","SYM8","SYM8","SYM7","SYM7","SYM7","SYM7","SYM8","SYM8","SYM8","SYM8","SYM0","SYM5","SYM5","SYM5","SYM6","SYM6","SYM6","SYM6","SYM8","SYM8","SYM8","SYM8","SYM4","SYM4","SYM4","SYM4","SYM0","SYM8","SYM8","SYM8","SYM8","SYM0","SYM4","SYM4","SYM4","SYM4","SYM8","SYM8","SYM8"],
+                ["SYM5","SYM5","SYM5","SYM5","SYM4","SYM4","SYM4","SYM8","SYM8","SYM8","SYM5","SYM5","SYM5","SYM3","SYM3","SYM3","SYM3","SYM5","SYM5","SYM5","SYM7","SYM7","SYM7","SYM7","SYM8","SYM8","SYM8","SYM8","SYM0","SYM5","SYM5","SYM5","SYM5","SYM0","SYM7","SYM7","SYM7","SYM7","SYM8","SYM8","SYM8","SYM4","SYM4","SYM4","SYM7","SYM7","SYM7","SYM7","SYM4","SYM4","SYM4","SYM4","SYM7","SYM7","SYM7","SYM7","SYM6","SYM6","SYM6","SYM6","SYM8","SYM8","SYM8","SYM4","SYM4","SYM4","SYM4","SYM6","SYM6","SYM6","SYM7","SYM7","SYM7","SYM7","SYM5","SYM5","SYM5","SYM8","SYM8","SYM8","SYM8","SYM7","SYM7","SYM7","SYM7","SYM5","SYM5","SYM5","SYM8","SYM8","SYM8","SYM0","SYM7","SYM7","SYM7","SYM7","SYM6","SYM6","SYM6","SYM6","SYM5","SYM5","SYM5","SYM5","SYM7","SYM7","SYM7","SYM7","SYM5","SYM5","SYM5","SYM5","SYM7","SYM7","SYM7","SYM8","SYM8","SYM8","SYM8","SYM4","SYM4","SYM4","SYM4","SYM6","SYM6","SYM6","SYM6","SYM3","SYM3","SYM3","SYM3","SYM5","SYM5","SYM5","SYM5","SYM6","SYM6","SYM6","SYM6","SYM7","SYM7","SYM7","SYM8","SYM8","SYM8","SYM8","SYM6","SYM6","SYM6","SYM3","SYM3","SYM3","SYM8","SYM8","SYM8","SYM8","SYM7","SYM7","SYM7","SYM7","SYM4","SYM4","SYM4","SYM6","SYM6","SYM6","SYM6","SYM8","SYM8","SYM8","SYM8","SYM5","SYM5","SYM5","SYM6","SYM6","SYM6","SYM6","SYM7","SYM7","SYM7","SYM5","SYM5","SYM5","SYM5","SYM8","SYM8","SYM8","SYM8","SYM0","SYM7","SYM7","SYM7","SYM4","SYM4","SYM4","SYM4","SYM0","SYM7","SYM7","SYM7","SYM7","SYM0","SYM8","SYM8","SYM8","SYM7","SYM7","SYM7","SYM7","SYM8","SYM8","SYM8","SYM8","SYM7","SYM7","SYM7"],
+                ["SYM3","SYM3","SYM3","SYM3","SYM3","SYM7","SYM7","SYM7","SYM7","SYM7","SYM6","SYM6","SYM6","SYM6","SYM6","SYM0","SYM8","SYM8","SYM8","SYM8","SYM8","SYM7","SYM7","SYM7","SYM7","SYM7","SYM4","SYM4","SYM4","SYM4","SYM4","SYM5","SYM5","SYM5","SYM5","SYM5","SYM7","SYM7","SYM7","SYM7","SYM7","SYM0","SYM6","SYM6","SYM6","SYM6","SYM6","SYM8","SYM8","SYM8","SYM8","SYM8","SYM7","SYM7","SYM7","SYM7","SYM7","SYM0","SYM8","SYM8","SYM8","SYM8","SYM8","SYM6","SYM6","SYM6","SYM6","SYM6","SYM5","SYM5","SYM5","SYM5","SYM5","SYM8","SYM8","SYM8","SYM8","SYM8","SYM4","SYM4","SYM4","SYM4","SYM4","SYM8","SYM8","SYM8","SYM8","SYM8","SYM7","SYM7","SYM7","SYM7","SYM7","SYM8","SYM8","SYM8","SYM8","SYM8","SYM4","SYM4","SYM4","SYM4","SYM4","SYM3","SYM3","SYM3","SYM3","SYM3","SYM0","SYM5","SYM5","SYM5","SYM5","SYM5","SYM0","SYM6","SYM6","SYM6","SYM6","SYM6","SYM3","SYM3","SYM3","SYM3","SYM3","SYM7","SYM7","SYM7","SYM7","SYM7","SYM8","SYM8","SYM8","SYM8","SYM8","SYM5","SYM5","SYM5","SYM5","SYM5","SYM4","SYM4","SYM4","SYM4","SYM4","SYM7","SYM7","SYM7","SYM7","SYM7","SYM8","SYM8","SYM8","SYM8","SYM8","SYM0","SYM5","SYM5","SYM5","SYM5","SYM5","SYM4","SYM4","SYM4","SYM4","SYM4","SYM6","SYM6","SYM6","SYM6","SYM6","SYM5","SYM5","SYM5","SYM5","SYM5","SYM3","SYM3","SYM3","SYM3","SYM3","SYM6","SYM6","SYM6","SYM6","SYM6","SYM3","SYM3","SYM3","SYM3","SYM3","SYM8","SYM8","SYM8","SYM8","SYM8","SYM5","SYM5","SYM5","SYM5","SYM5","SYM7","SYM7","SYM7","SYM7","SYM7","SYM3","SYM3","SYM3","SYM3","SYM3","SYM0","SYM7","SYM7","SYM7","SYM7","SYM7","SYM8","SYM8","SYM8","SYM8","SYM8","SYM6","SYM6","SYM6","SYM6","SYM6","SYM4","SYM4","SYM4","SYM4","SYM4","SYM6","SYM6","SYM6","SYM6","SYM6","SYM7","SYM7","SYM7","SYM7","SYM7","SYM8","SYM8","SYM8","SYM8","SYM8","SYM4","SYM4","SYM4","SYM4","SYM4","SYM6","SYM6","SYM6","SYM6","SYM6","SYM7","SYM7","SYM7","SYM7","SYM7","SYM8","SYM8","SYM8","SYM8","SYM8","SYM0","SYM7","SYM7","SYM7","SYM7","SYM7","SYM8","SYM8","SYM8","SYM8","SYM8","SYM7","SYM7","SYM7","SYM7","SYM7","SYM8","SYM8","SYM8","SYM8","SYM8","SYM6","SYM6","SYM6","SYM6","SYM6","SYM7","SYM7","SYM7","SYM7","SYM7","SYM5","SYM5","SYM5","SYM5","SYM5","SYM7","SYM7","SYM7","SYM7","SYM7","SYM8","SYM8","SYM8","SYM8","SYM8","SYM5","SYM5","SYM5","SYM5","SYM5"]
+            ],
+            "noWinOutcome" : [
+                { "symbols" : ["SYM7","SYM7","SYM5","SYM5","SYM5"], "overlaySymbols" : [] },
+                { "symbols" : ["SYM8","SYM5","SYM7","SYM7","SYM7"], "overlaySymbols" : [] },
+                { "symbols" : ["SYM4","SYM0","SYM7","SYM7","SYM7"], "overlaySymbols" : [] },
+                { "symbols" : ["SYM7","SYM8","SYM8","SYM8","SYM8"], "overlaySymbols" : [] },
+                { "symbols" : ["SYM6","SYM6","SYM6","SYM6","SYM6"], "overlaySymbols" : [] }
+            ],
+            "lowWinSymbols" : [5,6,7,8]
+        },
+        "wildFeature" : {
+            "fakeReels" : [
+          ["SYM8","SYM8","SYM8","SYM4","SYM4","SYM4","SYM7","SYM7","SYM7","SYM6","SYM6","SYM4","SYM4","SYM4","SYM8","SYM8","SYM8","SYM4","SYM4","SYM6","SYM6","SYM6","SYM5","SYM5","SYM5","SYM7","SYM7","SYM7","SYM5","SYM5","SYM5","SYM4","SYM4","SYM8","SYM8","SYM8","SYM7","SYM7","SYM7","SYM6","SYM6","SYM7","SYM7","SYM7","SYM6","SYM6","SYM6","SYM8","SYM8","SYM8","SYM7","SYM7","SYM7","SYM4","SYM4","SYM7","SYM7","SYM7","SYM5","SYM5","SYM8","SYM8","SYM8","SYM5","SYM5","SYM5","SYM7","SYM7","SYM7","SYM6","SYM6","SYM6","SYM5","SYM5","SYM7","SYM7","SYM7","SYM6","SYM6","SYM6","SYM5","SYM5","SYM5","SYM3","SYM3","SYM8","SYM8","SYM8","SYM4","SYM4","SYM8","SYM8","SYM8","SYM5","SYM5","SYM3","SYM3","SYM3","SYM7","SYM7","SYM7","SYM5","SYM5","SYM8","SYM8","SYM8","SYM5","SYM5","SYM6","SYM6","SYM6","SYM4","SYM4","SYM8","SYM8","SYM8","SYM6","SYM6","SYM6","SYM3","SYM3","SYM5","SYM5","SYM5","SYM7","SYM7","SYM7","SYM6","SYM6","SYM6","SYM5","SYM5","SYM7","SYM7","SYM7","SYM6","SYM6","SYM6","SYM5","SYM5","SYM5"],
+          ["SYM5","SYM5","SYM3","SYM3","SYM6","SYM6","SYM6","SYM8","SYM8","SYM8","SYM4","SYM4","SYM6","SYM6","SYM6","SYM8","SYM8","SYM8","SYM5","SYM5","SYM7","SYM7","SYM7","SYM3","SYM3","SYM3","SYM5","SYM5","SYM8","SYM8","SYM8","SYM5","SYM5","SYM5","SYM6","SYM6","SYM6","SYM3","SYM3","SYM3","SYM7","SYM7","SYM7","SYM6","SYM6","SYM6","SYM5","SYM5","SYM8","SYM8","SYM8","SYM5","SYM5","SYM5","SYM5","SYM5","SYM7","SYM7","SYM7","SYM4","SYM4","SYM6","SYM6","SYM6","SYM4","SYM4","SYM7","SYM7","SYM7","SYM6","SYM6","SYM4","SYM4","SYM7","SYM7","SYM7","SYM8","SYM8","SYM8","SYM4","SYM4","SYM5","SYM5","SYM5","SYM7","SYM7","SYM7","SYM5","SYM5","SYM5","SYM6","SYM6","SYM6","SYM8","SYM8","SYM8","SYM6","SYM6","SYM7","SYM7","SYM7","SYM8","SYM8","SYM8","SYM7","SYM7","SYM6","SYM6","SYM6","SYM8","SYM8","SYM8","SYM7","SYM7","SYM7","SYM4","SYM4","SYM7","SYM7","SYM7","SYM5","SYM5","SYM8","SYM8"],
+          ["SYM4","SYM4","SYM4","SYM4","SYM8","SYM8","SYM8","SYM3","SYM3","SYM3","SYM7","SYM7","SYM7","SYM3","SYM3","SYM3","SYM3","SYM6","SYM6","SYM6","SYM6","SYM8","SYM8","SYM8","SYM4","SYM4","SYM4","SYM4","SYM8","SYM8","SYM8","SYM8","SYM4","SYM4","SYM4","SYM7","SYM7","SYM7","SYM7","SYM8","SYM8","SYM8","SYM5","SYM5","SYM5","SYM5","SYM7","SYM7","SYM7","SYM4","SYM4","SYM4","SYM4","SYM7","SYM7","SYM7","SYM7","SYM8","SYM8","SYM8","SYM8","SYM5","SYM5","SYM5","SYM7","SYM7","SYM7","SYM7","SYM4","SYM4","SYM4","SYM7","SYM7","SYM7","SYM7","SYM4","SYM4","SYM4","SYM4","SYM7","SYM7","SYM7","SYM7","SYM6","SYM6","SYM6","SYM6","SYM7","SYM7","SYM7","SYM7","SYM8","SYM8","SYM8","SYM6","SYM6","SYM6","SYM3","SYM3","SYM3","SYM3","SYM7","SYM7","SYM7","SYM8","SYM8","SYM8","SYM8","SYM7","SYM7","SYM7","SYM7","SYM8","SYM8","SYM8","SYM5","SYM5","SYM5","SYM5","SYM6","SYM6","SYM6","SYM7","SYM7","SYM7","SYM7","SYM5","SYM5","SYM5","SYM8","SYM8","SYM8","SYM8","SYM5","SYM5","SYM5","SYM6","SYM6","SYM6","SYM6","SYM8","SYM8","SYM8","SYM8","SYM7","SYM7","SYM7","SYM7","SYM5","SYM5","SYM5","SYM5","SYM8","SYM8","SYM8","SYM8","SYM5","SYM5","SYM5","SYM7","SYM7","SYM7","SYM4","SYM4","SYM4","SYM8","SYM8","SYM8","SYM8","SYM6","SYM6","SYM6","SYM6","SYM8","SYM8","SYM8","SYM8","SYM5","SYM5","SYM5","SYM6","SYM6","SYM6","SYM6","SYM8","SYM8","SYM8","SYM7","SYM7","SYM7","SYM7","SYM6","SYM6","SYM6","SYM6","SYM7","SYM7","SYM7","SYM7","SYM8","SYM8","SYM8","SYM6","SYM6","SYM6"],
+          ["SYM8","SYM8","SYM8","SYM6","SYM6","SYM6","SYM6","SYM5","SYM5","SYM5","SYM8","SYM8","SYM8","SYM8","SYM6","SYM6","SYM6","SYM6","SYM8","SYM8","SYM8","SYM8","SYM5","SYM5","SYM5","SYM7","SYM7","SYM7","SYM8","SYM8","SYM8","SYM8","SYM5","SYM5","SYM5","SYM5","SYM7","SYM7","SYM7","SYM7","SYM8","SYM8","SYM8","SYM8","SYM6","SYM6","SYM6","SYM6","SYM5","SYM5","SYM5","SYM7","SYM7","SYM7","SYM7","SYM8","SYM8","SYM8","SYM8","SYM5","SYM5","SYM5","SYM7","SYM7","SYM7","SYM7","SYM4","SYM4","SYM4","SYM6","SYM6","SYM6","SYM5","SYM5","SYM5","SYM5","SYM8","SYM8","SYM8","SYM7","SYM7","SYM7","SYM7","SYM8","SYM8","SYM8","SYM8","SYM7","SYM7","SYM7","SYM3","SYM3","SYM3","SYM3","SYM7","SYM7","SYM7","SYM7","SYM6","SYM6","SYM6","SYM8","SYM8","SYM8","SYM7","SYM7","SYM7","SYM7","SYM6","SYM6","SYM6","SYM6","SYM7","SYM7","SYM7","SYM7","SYM4","SYM4","SYM4","SYM4","SYM7","SYM7","SYM7","SYM7","SYM4","SYM4","SYM4","SYM6","SYM6","SYM6","SYM6","SYM5","SYM5","SYM5","SYM8","SYM8","SYM8","SYM8","SYM7","SYM7","SYM7","SYM7","SYM4","SYM4","SYM4","SYM6","SYM6","SYM6","SYM6","SYM5","SYM5","SYM5","SYM8","SYM8","SYM8","SYM8","SYM7","SYM7","SYM7","SYM5","SYM5","SYM5","SYM5","SYM8","SYM8","SYM8","SYM4","SYM4","SYM4","SYM7","SYM7","SYM7","SYM7","SYM8","SYM8","SYM8","SYM8","SYM4","SYM4","SYM4","SYM4","SYM8","SYM8","SYM8","SYM3","SYM3","SYM3","SYM3","SYM7","SYM7","SYM7","SYM4","SYM4","SYM4","SYM4","SYM3","SYM3","SYM3","SYM8","SYM8","SYM8","SYM4","SYM4","SYM4","SYM4"],
+          ["SYM6","SYM6","SYM6","SYM6","SYM6","SYM7","SYM7","SYM7","SYM7","SYM7","SYM8","SYM8","SYM8","SYM8","SYM8","SYM5","SYM5","SYM5","SYM5","SYM5","SYM3","SYM3","SYM3","SYM3","SYM3","SYM4","SYM4","SYM4","SYM4","SYM4","SYM6","SYM6","SYM6","SYM6","SYM6","SYM4","SYM4","SYM4","SYM4","SYM4","SYM7","SYM7","SYM7","SYM7","SYM7","SYM8","SYM8","SYM8","SYM8","SYM8","SYM7","SYM7","SYM7","SYM7","SYM7","SYM5","SYM5","SYM5","SYM5","SYM5","SYM8","SYM8","SYM8","SYM8","SYM8","SYM7","SYM7","SYM7","SYM7","SYM7","SYM8","SYM8","SYM8","SYM8","SYM8","SYM4","SYM4","SYM4","SYM4","SYM4","SYM8","SYM8","SYM8","SYM8","SYM8","SYM6","SYM6","SYM6","SYM6","SYM6","SYM5","SYM5","SYM5","SYM5","SYM5","SYM7","SYM7","SYM7","SYM7","SYM7","SYM4","SYM4","SYM4","SYM4","SYM4","SYM7","SYM7","SYM7","SYM7","SYM7","SYM8","SYM8","SYM8","SYM8","SYM8","SYM6","SYM6","SYM6","SYM6","SYM6","SYM5","SYM5","SYM5","SYM5","SYM5","SYM8","SYM8","SYM8","SYM8","SYM8","SYM6","SYM6","SYM6","SYM6","SYM6","SYM3","SYM3","SYM3","SYM3","SYM3","SYM8","SYM8","SYM8","SYM8","SYM8","SYM7","SYM7","SYM7","SYM7","SYM7","SYM3","SYM3","SYM3","SYM3","SYM3","SYM8","SYM8","SYM8","SYM8","SYM8","SYM6","SYM6","SYM6","SYM6","SYM6","SYM7","SYM7","SYM7","SYM7","SYM7","SYM8","SYM8","SYM8","SYM8","SYM8","SYM5","SYM5","SYM5","SYM5","SYM5","SYM3","SYM3","SYM3","SYM3","SYM3","SYM4","SYM4","SYM4","SYM4","SYM4","SYM6","SYM6","SYM6","SYM6","SYM6","SYM4","SYM4","SYM4","SYM4","SYM4","SYM7","SYM7","SYM7","SYM7","SYM7","SYM8","SYM8","SYM8","SYM8","SYM8","SYM7","SYM7","SYM7","SYM7","SYM7","SYM5","SYM5","SYM5","SYM5","SYM5","SYM8","SYM8","SYM8","SYM8","SYM8","SYM7","SYM7","SYM7","SYM7","SYM7","SYM8","SYM8","SYM8","SYM8","SYM8","SYM4","SYM4","SYM4","SYM4","SYM4","SYM6","SYM6","SYM6","SYM6","SYM6","SYM5","SYM5","SYM5","SYM5","SYM5","SYM7","SYM7","SYM7","SYM7","SYM7","SYM4","SYM4","SYM4","SYM4","SYM4","SYM7","SYM7","SYM7","SYM7","SYM7","SYM8","SYM8","SYM8","SYM8","SYM8","SYM6","SYM6","SYM6","SYM6","SYM6","SYM5","SYM5","SYM5","SYM5","SYM5","SYM6","SYM6","SYM6","SYM6","SYM6","SYM3","SYM3","SYM3","SYM3","SYM3","SYM8","SYM8","SYM8","SYM8","SYM8","SYM7","SYM7","SYM7","SYM7","SYM7","SYM3","SYM3","SYM3","SYM3","SYM3","SYM8","SYM8","SYM8","SYM8","SYM8","SYM3","SYM3","SYM3","SYM3","SYM3","SYM4","SYM4","SYM4","SYM4","SYM4","SYM6","SYM6","SYM6","SYM6","SYM6","SYM4","SYM4","SYM4","SYM4","SYM4"]
+            ],
+            "noWinOutcome" : [
+              { "symbols" : ["SYM7","SYM7","SYM5","SYM5","SYM5"], "overlaySymbols" : [] },
+              { "symbols" : ["SYM8","SYM5","SYM7","SYM7","SYM7"], "overlaySymbols" : [] },
+              { "symbols" : ["SYM4","SYM0","SYM7","SYM7","SYM7"], "overlaySymbols" : [] },
+              { "symbols" : ["SYM7","SYM8","SYM8","SYM8","SYM8"], "overlaySymbols" : [] },
+              { "symbols" : ["SYM6","SYM6","SYM6","SYM6","SYM6"], "overlaySymbols" : [] }
+            ],
+            "lowWinSymbols" : [5,6,7,8]
+        },
+        "freespin" : {
+            "fakeReels" : [
+                ["SYM5","SYM5","SYM3","SYM3","SYM6","SYM6","SYM6","SYM8","SYM8","SYM8","SYM4","SYM4","SYM5","SYM5","SYM6","SYM6","SYM6","SYM8","SYM8","SYM7","SYM7","SYM7","SYM5","SYM5","SYM5","SYM3","SYM3","SYM3","SYM5","SYM5","SYM8","SYM8","SYM8","SYM4","SYM4","SYM8","SYM8","SYM8","SYM5","SYM5","SYM5","SYM6","SYM6","SYM6","SYM7","SYM7","SYM7","SYM6","SYM6","SYM6","SYM8","SYM8","SYM5","SYM5","SYM5","SYM4","SYM4","SYM4","SYM5","SYM5","SYM7","SYM7","SYM7","SYM4","SYM4","SYM8","SYM8","SYM6","SYM6","SYM6","SYM7","SYM7","SYM7","SYM6","SYM6","SYM7","SYM7","SYM7","SYM6","SYM6","SYM6","SYM7","SYM7","SYM7","SYM6","SYM6","SYM6","SYM8","SYM8","SYM5","SYM5","SYM5","SYM4","SYM4","SYM5","SYM5","SYM7","SYM7","SYM7","SYM8","SYM8","SYM8","SYM4","SYM4","SYM5","SYM5","SYM5","SYM7","SYM7","SYM7","SYM3","SYM3","SYM3","SYM4","SYM4","SYM6","SYM6","SYM6","SYM8","SYM8","SYM8","SYM3","SYM3","SYM3","SYM6","SYM6","SYM7","SYM7","SYM7","SYM8","SYM8","SYM8","SYM4","SYM4","SYM4","SYM6","SYM6","SYM6","SYM7","SYM7","SYM7","SYM6","SYM6","SYM6","SYM8","SYM8","SYM5","SYM5","SYM5","SYM4","SYM4","SYM5","SYM5","SYM7","SYM7","SYM7"],
+                ["SYM8","SYM8","SYM8","SYM5","SYM5","SYM3","SYM3","SYM6","SYM6","SYM6","SYM7","SYM7","SYM7","SYM6","SYM6","SYM6","SYM8","SYM8","SYM5","SYM5","SYM5","SYM5","SYM5","SYM7","SYM7","SYM7","SYM6","SYM6","SYM6","SYM8","SYM8","SYM8","SYM4","SYM4","SYM5","SYM5","SYM6","SYM6","SYM6","SYM8","SYM8","SYM7","SYM7","SYM7","SYM3","SYM3","SYM3","SYM5","SYM5","SYM8","SYM8","SYM8","SYM4","SYM4","SYM8","SYM8","SYM8","SYM5","SYM5","SYM5","SYM6","SYM6","SYM6","SYM7","SYM7","SYM7","SYM6","SYM6","SYM6","SYM8","SYM8","SYM5","SYM5","SYM5","SYM5","SYM5","SYM7","SYM7","SYM7","SYM4","SYM4","SYM8","SYM8","SYM6","SYM6","SYM6","SYM3","SYM3","SYM3","SYM7","SYM7","SYM7","SYM6","SYM6","SYM7","SYM7","SYM7","SYM8","SYM8","SYM8","SYM4","SYM4","SYM5","SYM5","SYM5","SYM7","SYM7","SYM7","SYM4","SYM4","SYM6","SYM6","SYM6","SYM8","SYM8","SYM8","SYM6","SYM6","SYM7","SYM7","SYM7","SYM8","SYM8","SYM8","SYM4","SYM4","SYM4","SYM6","SYM6","SYM6","SYM7","SYM7","SYM7","SYM6","SYM6","SYM6","SYM8","SYM8","SYM5","SYM5","SYM5","SYM5","SYM5","SYM7","SYM7","SYM7"],
+                ["SYM4","SYM4","SYM4","SYM4","SYM3","SYM3","SYM3","SYM4","SYM4","SYM4","SYM4","SYM7","SYM7","SYM7","SYM3","SYM3","SYM3","SYM3","SYM8","SYM8","SYM8","SYM4","SYM4","SYM4","SYM4","SYM8","SYM8","SYM8","SYM8","SYM7","SYM7","SYM7","SYM7","SYM4","SYM4","SYM4","SYM8","SYM8","SYM8","SYM5","SYM5","SYM5","SYM5","SYM7","SYM7","SYM7","SYM7","SYM8","SYM8","SYM8","SYM3","SYM3","SYM3","SYM3","SYM7","SYM7","SYM7","SYM8","SYM8","SYM8","SYM7","SYM7","SYM7","SYM8","SYM8","SYM8","SYM8","SYM5","SYM5","SYM5","SYM6","SYM6","SYM6","SYM6","SYM4","SYM4","SYM4","SYM7","SYM7","SYM7","SYM7","SYM4","SYM4","SYM4","SYM4","SYM7","SYM7","SYM7","SYM7","SYM6","SYM6","SYM6","SYM6","SYM7","SYM7","SYM7","SYM7","SYM8","SYM8","SYM8","SYM3","SYM3","SYM3","SYM3","SYM7","SYM7","SYM7","SYM8","SYM8","SYM8","SYM8","SYM7","SYM7","SYM7","SYM7","SYM8","SYM8","SYM8","SYM5","SYM5","SYM5","SYM5","SYM6","SYM6","SYM6","SYM4","SYM4","SYM4","SYM7","SYM7","SYM7","SYM7","SYM5","SYM5","SYM5","SYM6","SYM6","SYM6","SYM5","SYM5","SYM5","SYM6","SYM6","SYM6","SYM6","SYM8","SYM8","SYM8","SYM8","SYM7","SYM7","SYM7","SYM7","SYM5","SYM5","SYM5","SYM5","SYM8","SYM8","SYM8","SYM8","SYM7","SYM7","SYM7","SYM8","SYM8","SYM8","SYM8","SYM6","SYM6","SYM6","SYM6","SYM5","SYM5","SYM5","SYM8","SYM8","SYM8","SYM8","SYM5","SYM5","SYM5","SYM6","SYM6","SYM6","SYM6","SYM8","SYM8","SYM8","SYM7","SYM7","SYM7","SYM7","SYM8","SYM8","SYM8","SYM3","SYM3","SYM3","SYM3","SYM7","SYM7","SYM7","SYM8","SYM8","SYM8"],
+                ["SYM4","SYM4","SYM4","SYM4","SYM8","SYM8","SYM8","SYM3","SYM3","SYM3","SYM5","SYM5","SYM5","SYM5","SYM7","SYM7","SYM7","SYM8","SYM8","SYM8","SYM8","SYM5","SYM5","SYM5","SYM6","SYM6","SYM6","SYM6","SYM4","SYM4","SYM4","SYM4","SYM7","SYM7","SYM7","SYM3","SYM3","SYM3","SYM3","SYM8","SYM8","SYM8","SYM4","SYM4","SYM4","SYM4","SYM8","SYM8","SYM8","SYM8","SYM7","SYM7","SYM7","SYM7","SYM4","SYM4","SYM4","SYM8","SYM8","SYM8","SYM5","SYM5","SYM5","SYM5","SYM7","SYM7","SYM7","SYM8","SYM8","SYM8","SYM8","SYM5","SYM5","SYM5","SYM6","SYM6","SYM6","SYM6","SYM4","SYM4","SYM4","SYM7","SYM7","SYM7","SYM7","SYM4","SYM4","SYM4","SYM4","SYM7","SYM7","SYM7","SYM7","SYM6","SYM6","SYM6","SYM6","SYM7","SYM7","SYM7","SYM7","SYM8","SYM8","SYM8","SYM6","SYM6","SYM6","SYM3","SYM3","SYM3","SYM3","SYM7","SYM7","SYM7","SYM8","SYM8","SYM8","SYM8","SYM7","SYM7","SYM7","SYM7","SYM8","SYM8","SYM8","SYM5","SYM5","SYM5","SYM5","SYM6","SYM6","SYM6","SYM4","SYM4","SYM4","SYM7","SYM7","SYM7","SYM7","SYM5","SYM5","SYM5","SYM8","SYM8","SYM8","SYM8","SYM5","SYM5","SYM5","SYM6","SYM6","SYM6","SYM6","SYM8","SYM8","SYM8","SYM8","SYM7","SYM7","SYM7","SYM7","SYM5","SYM5","SYM5","SYM5","SYM8","SYM8","SYM8","SYM8","SYM7","SYM7","SYM7","SYM8","SYM8","SYM8","SYM8","SYM6","SYM6","SYM6","SYM6","SYM5","SYM5","SYM5","SYM5","SYM5","SYM5","SYM6","SYM6","SYM6","SYM6","SYM8","SYM8","SYM8","SYM5","SYM5","SYM5","SYM5","SYM7","SYM7","SYM7","SYM8","SYM8","SYM8","SYM8","SYM5","SYM5","SYM5","SYM6","SYM6","SYM6","SYM6"],
+                ["SYM6","SYM6","SYM6","SYM6","SYM6","SYM7","SYM7","SYM7","SYM7","SYM7","SYM8","SYM8","SYM8","SYM8","SYM8","SYM5","SYM5","SYM5","SYM5","SYM5","SYM3","SYM3","SYM3","SYM3","SYM3","SYM4","SYM4","SYM4","SYM4","SYM4","SYM6","SYM6","SYM6","SYM6","SYM6","SYM4","SYM4","SYM4","SYM4","SYM4","SYM7","SYM7","SYM7","SYM7","SYM7","SYM5","SYM5","SYM5","SYM5","SYM5","SYM8","SYM8","SYM8","SYM8","SYM8","SYM7","SYM7","SYM7","SYM7","SYM7","SYM8","SYM8","SYM8","SYM8","SYM8","SYM4","SYM4","SYM4","SYM4","SYM4","SYM8","SYM8","SYM8","SYM8","SYM8","SYM7","SYM7","SYM7","SYM7","SYM7","SYM5","SYM5","SYM5","SYM5","SYM5","SYM8","SYM8","SYM8","SYM8","SYM8","SYM7","SYM7","SYM7","SYM7","SYM7","SYM8","SYM8","SYM8","SYM8","SYM8","SYM4","SYM4","SYM4","SYM4","SYM4","SYM6","SYM6","SYM6","SYM6","SYM6","SYM5","SYM5","SYM5","SYM5","SYM5","SYM7","SYM7","SYM7","SYM7","SYM7","SYM4","SYM4","SYM4","SYM4","SYM4","SYM7","SYM7","SYM7","SYM7","SYM7","SYM8","SYM8","SYM8","SYM8","SYM8","SYM6","SYM6","SYM6","SYM6","SYM6","SYM5","SYM5","SYM5","SYM5","SYM5","SYM6","SYM6","SYM6","SYM6","SYM6","SYM3","SYM3","SYM3","SYM3","SYM3","SYM8","SYM8","SYM8","SYM8","SYM8","SYM7","SYM7","SYM7","SYM7","SYM7","SYM3","SYM3","SYM3","SYM3","SYM3","SYM8","SYM8","SYM8","SYM8","SYM8","SYM5","SYM5","SYM5","SYM5","SYM5","SYM8","SYM8","SYM8","SYM8","SYM8","SYM7","SYM7","SYM7","SYM7","SYM7","SYM8","SYM8","SYM8","SYM8","SYM8","SYM4","SYM4","SYM4","SYM4","SYM4"]
+            ],
+            "noWinOutcome" : [
+                { "symbols" : ["SYM4","SYM4","SYM5","SYM5","SYM3"], "overlaySymbols" : [] },
+                { "symbols" : ["SYM4","SYM4","SYM8","SYM8","SYM5"], "overlaySymbols" : [] },
+                { "symbols" : ["SYM6","SYM4","SYM4","SYM4","SYM7"], "overlaySymbols" : [] },
+                { "symbols" : ["SYM8","SYM4","SYM4","SYM4","SYM4"], "overlaySymbols" : [] },
+                { "symbols" : ["SYM6","SYM6","SYM6","SYM6","SYM6"], "overlaySymbols" : [] }
+            ],
+            "lowWinSymbols" : [5,6,7,8]
+        }
+    },
+    "linkDelays" : [1,1],
+    "reel": {
+        "reelFrame" : {
+            "left" : 136,
+            "top" : 20,
+            "width" : 672,
+            "height" : 465
+        },
+        "symbolWidths": {
+            "standard": 188
+        },
+        "symbolHeights": {
+            "standard": 116
+        },
+        "symbolWidth": 188,
+        "symbolHeight": 116,
+        "symbolRows": 5,
+        "symbolCols": 5,
+        "symbolSpacing": 0,
+        "reelSpacing": 16,
+        "reelAreaTop": 20,
+        "reelAreaLeft": 136
+    },
+    "sprites" : {
+        "wildSymbolSprite" :{
+          "sequence" : ["0-59"]
+        },
+        "SYM1" :{
+          "sequence" : ["0-28"]
+        },
+        "winBlastAnimationHigh" :{
+          "sequence" : ["0-7"]
+        },
+        "winBlastAnimationLow" :{
+          "sequence" : ["0-7"]
+        },
+        "winBlastAnimationLowReverse" :{
+          "sequence" : ["7-0"]
+        },
+        "logoGlowSprite":{
+          "sequence" : ["0-33"]
+        }
+    },
+    "winSituationsDisplay" : {
+        "allWinsDisplayTime" : 1000,
+        "winSituationMinimumDisplayTime" : 1000,
+        "betlines": {
+            "lines": {
+                "amount": 76,
+                "defaultColor": "#182e02",
+                "drawingOperations": [
+                    {
+                        "lineWidth": 12,
+                        "lineCap": "square",
+                        "strokeStyle": "#FFFFFF"
+                    },
+                    {
+                        "lineWidth": 6,
+                        "lineCap": "square"
+                    }
+                ],
+              "1": {
+                "color": "rgba(0,126,248, 1)",
+                "lineCoordinates": [136, 194, 230, 194, 434, 194, 638, 136, 842, 136, 1046, 78]
+              },
+              "2": {
+                "color": "rgba(0,126,248, 1)",
+                "lineCoordinates": [136, 194, 230, 194, 434, 194, 638, 136, 842, 136, 1046, 194]
+              },
+              "3": {
+                "color": "rgba(0,126,248, 1)",
+                "lineCoordinates": [136, 194, 230, 194, 434, 194, 638, 136, 842, 252, 1046, 194]
+              },
+              "4": {
+                "color": "rgba(0,126,248, 1)",
+                "lineCoordinates": [136, 194, 230, 194, 434, 194, 638, 136, 842, 252, 1046, 310]
+              },
+              "5": {
+                "color": "rgba(0,126,248, 1)",
+                "lineCoordinates": [136, 194, 230, 194, 434, 194, 638, 252, 842, 136, 1046, 78]
+              },
+              "6": {
+                "color": "rgba(0,126,248, 1)",
+                "lineCoordinates": [136, 194, 230, 194, 434, 194, 638, 252, 842, 136, 1046, 194]
+              },
+              "7": {
+                "color": "rgba(0,126,248, 1)",
+                "lineCoordinates": [136, 194, 230, 194, 434, 194, 638, 252, 842, 252, 1046, 194]
+              },
+              "8": {
+                "color": "rgba(0,126,248, 1)",
+                "lineCoordinates": [136, 194, 230, 194, 434, 194, 638, 252, 842, 252, 1046, 310]
+              },
+              "9": {
+                "color": "rgba(0,126,248, 1)",
+                "lineCoordinates": [136, 194, 230, 194, 434, 194, 638, 252, 842, 368, 1046, 310]
+              },
+              "10": {
+                "color": "rgba(0,126,248, 1)",
+                "lineCoordinates": [136, 194, 230, 194, 434, 194, 638, 252, 842, 368, 1046, 426]
+              },
+              "11": {
+                "color": "rgba(0,126,248, 1)",
+                "lineCoordinates": [136, 194, 230, 194, 434, 310, 638, 252, 842, 136, 1046, 78]
+              },
+              "12": {
+                "color": "rgba(0,126,248, 1)",
+                "lineCoordinates": [136, 194, 230, 194, 434, 310, 638, 252, 842, 136, 1046, 194]
+              },
+              "13": {
+                "color": "rgba(0,126,248, 1)",
+                "lineCoordinates": [136, 194, 230, 194, 434, 310, 638, 252, 842, 252, 1046, 194]
+              },
+              "14": {
+                "color": "rgba(0,126,248, 1)",
+                "lineCoordinates": [136, 194, 230, 194, 434, 310, 638, 252, 842, 252, 1046, 310]
+              },
+              "15": {
+                "color": "rgba(0,126,248, 1)",
+                "lineCoordinates": [136, 194, 230, 194, 434, 310, 638, 252, 842, 368, 1046, 310]
+              },
+              "16": {
+                "color": "rgba(0,126,248, 1)",
+                "lineCoordinates": [136, 194, 230, 194, 434, 310, 638, 252, 842, 368, 1046, 426]
+              },
+              "17": {
+                "color": "rgba(0,126,248, 1)",
+                "lineCoordinates": [136, 194, 230, 194, 434, 310, 638, 368, 842, 252, 1046, 194]
+              },
+              "18": {
+                "color": "rgba(0,126,248, 1)",
+                "lineCoordinates": [136, 194, 230, 194, 434, 310, 638, 368, 842, 252, 1046, 310]
+              },
+              "19": {
+                "color": "rgba(0,126,248, 1)",
+                "lineCoordinates": [136, 194, 230, 194, 434, 310, 638, 368, 842, 368, 1046, 310]
+              },
+              "20": {
+                "color": "rgba(0,126,248, 1)",
+                "lineCoordinates": [136, 194, 230, 194, 434, 310, 638, 368, 842, 368, 1046, 426]
+              },
+              "21": {
+                "color": "rgba(0,126,248, 1)",
+                "lineCoordinates": [136, 194, 230, 194, 434, 310, 638, 368, 842, 484, 1046, 426]
+              },
+              "22": {
+                "color": "rgba(0,126,248, 1)",
+                "lineCoordinates": [136, 194, 230, 194, 434, 310, 638, 368, 842, 484, 1046, 542]
+              },
+              "23": {
+                "color": "rgba(0,126,248, 1)",
+                "lineCoordinates": [136, 310, 230, 310, 434, 194, 638, 136, 842, 136, 1046, 78]
+              },
+              "24": {
+                "color": "rgba(0,126,248, 1)",
+                "lineCoordinates": [136, 310, 230, 310, 434, 194, 638, 136, 842, 136, 1046, 194]
+              },
+              "25": {
+                "color": "rgba(0,126,248, 1)",
+                "lineCoordinates": [136, 310, 230, 310, 434, 194, 638, 136, 842, 252, 1046, 194]
+              },
+              "26": {
+                "color": "rgba(0,126,248, 1)",
+                "lineCoordinates": [136, 310, 230, 310, 434, 194, 638, 136, 842, 252, 1046, 310]
+              },
+              "27": {
+                "color": "rgba(0,126,248, 1)",
+                "lineCoordinates": [136, 310, 230, 310, 434, 194, 638, 252, 842, 136, 1046, 78]
+              },
+              "28": {
+                "color": "rgba(0,126,248, 1)",
+                "lineCoordinates": [136, 310, 230, 310, 434, 194, 638, 252, 842, 136, 1046, 194]
+              },
+              "29": {
+                "color": "rgba(0,126,248, 1)",
+                "lineCoordinates": [136, 310, 230, 310, 434, 194, 638, 252, 842, 252, 1046, 194]
+              },
+              "30": {
+                "color": "rgba(0,126,248, 1)",
+                "lineCoordinates": [136, 310, 230, 310, 434, 194, 638, 252, 842, 252, 1046, 310]
+              },
+              "31": {
+                "color": "rgba(0,126,248, 1)",
+                "lineCoordinates": [136, 310, 230, 310, 434, 194, 638, 252, 842, 368, 1046, 310]
+              },
+              "32": {
+                "color": "rgba(0,126,248, 1)",
+                "lineCoordinates": [136, 310, 230, 310, 434, 194, 638, 252, 842, 368, 1046, 426]
+              },
+              "33": {
+                "color": "rgba(0,126,248, 1)",
+                "lineCoordinates": [136, 310, 230, 310, 434, 310, 638, 252, 842, 136, 1046, 78]
+              },
+              "34": {
+                "color": "rgba(0,126,248, 1)",
+                "lineCoordinates": [136, 310, 230, 310, 434, 310, 638, 252, 842, 136, 1046, 194]
+              },
+              "35": {
+                "color": "rgba(0,126,248, 1)",
+                "lineCoordinates": [136, 310, 230, 310, 434, 310, 638, 252, 842, 252, 1046, 194]
+              },
+              "36": {
+                "color": "rgba(0,126,248, 1)",
+                "lineCoordinates": [136, 310, 230, 310, 434, 310, 638, 252, 842, 252, 1046, 310]
+              },
+              "37": {
+                "color": "rgba(0,126,248, 1)",
+                "lineCoordinates": [136, 310, 230, 310, 434, 310, 638, 252, 842, 368, 1046, 310]
+              },
+              "38": {
+                "color": "rgba(0,126,248, 1)",
+                "lineCoordinates": [136, 310, 230, 310, 434, 310, 638, 252, 842, 368, 1046, 426]
+              },
+              "39": {
+                "color": "rgba(0,126,248, 1)",
+                "lineCoordinates": [136, 310, 230, 310, 434, 310, 638, 368, 842, 252, 1046, 194]
+              },
+              "40": {
+                "color": "rgba(0,126,248, 1)",
+                "lineCoordinates": [136, 310, 230, 310, 434, 310, 638, 368, 842, 252, 1046, 310]
+              },
+              "41": {
+                "color": "rgba(0,126,248, 1)",
+                "lineCoordinates": [136, 310, 230, 310, 434, 310, 638, 368, 842, 368, 1046, 310]
+              },
+              "42": {
+                "color": "rgba(0,126,248, 1)",
+                "lineCoordinates": [136, 310, 230, 310, 434, 310, 638, 368, 842, 368, 1046, 426]
+              },
+              "43": {
+                "color": "rgba(0,126,248, 1)",
+                "lineCoordinates": [136, 310, 230, 310, 434, 310, 638, 368, 842, 484, 1046, 426]
+              },
+              "44": {
+                "color": "rgba(0,126,248, 1)",
+                "lineCoordinates": [136, 310, 230, 310, 434, 310, 638, 368, 842, 484, 1046, 542]
+              },
+              "45": {
+                "color": "rgba(0,126,248, 1)",
+                "lineCoordinates": [136, 310, 230, 310, 434, 426, 638, 368, 842, 252, 1046, 194]
+              },
+              "46": {
+                "color": "rgba(0,126,248, 1)",
+                "lineCoordinates": [136, 310, 230, 310, 434, 426, 638, 368, 842, 252, 1046, 310]
+              },
+              "47": {
+                "color": "rgba(0,126,248, 1)",
+                "lineCoordinates": [136, 310, 230, 310, 434, 426, 638, 368, 842, 368, 1046, 310]
+              },
+              "48": {
+                "color": "rgba(0,126,248, 1)",
+                "lineCoordinates": [136, 310, 230, 310, 434, 426, 638, 368, 842, 368, 1046, 426]
+              },
+              "49": {
+                "color": "rgba(0,126,248, 1)",
+                "lineCoordinates": [136, 310, 230, 310, 434, 426, 638, 368, 842, 484, 1046, 426]
+              },
+              "50": {
+                "color": "rgba(0,126,248, 1)",
+                "lineCoordinates": [136, 310, 230, 310, 434, 426, 638, 368, 842, 484, 1046, 542]
+              },
+              "51": {
+                "color": "rgba(0,126,248, 1)",
+                "lineCoordinates": [136, 310, 230, 310, 434, 426, 638, 484, 842, 368, 1046, 310]
+              },
+              "52": {
+                "color": "rgba(0,126,248, 1)",
+                "lineCoordinates": [136, 310, 230, 310, 434, 426, 638, 484, 842, 368, 1046, 426]
+              },
+              "53": {
+                "color": "rgba(0,126,248, 1)",
+                "lineCoordinates": [136, 310, 230, 310, 434, 426, 638, 484, 842, 484, 1046, 426]
+              },
+              "54": {
+                "color": "rgba(0,126,248, 1)",
+                "lineCoordinates": [136, 310, 230, 310, 434, 426, 638, 484, 842, 484, 1046, 542]
+              },
+              "55": {
+                "color": "rgba(0,126,248, 1)",
+                "lineCoordinates": [136, 426, 230, 426, 434, 310, 638, 252, 842, 136, 1046, 78]
+              },
+              "56": {
+                "color": "rgba(0,126,248, 1)",
+                "lineCoordinates": [136, 426, 230, 426, 434, 310, 638, 252, 842, 136, 1046, 194]
+              },
+              "57": {
+                "color": "rgba(0,126,248, 1)",
+                "lineCoordinates": [136, 426, 230, 426, 434, 310, 638, 252, 842, 252, 1046, 194]
+              },
+              "58": {
+                "color": "rgba(0,126,248, 1)",
+                "lineCoordinates": [136, 426, 230, 426, 434, 310, 638, 252, 842, 252, 1046, 310]
+              },
+              "59": {
+                "color": "rgba(0,126,248, 1)",
+                "lineCoordinates": [136, 426, 230, 426, 434, 310, 638, 252, 842, 368, 1046, 310]
+              },
+              "60": {
+                "color": "rgba(0,126,248, 1)",
+                "lineCoordinates": [136, 426, 230, 426, 434, 310, 638, 252, 842, 368, 1046, 426]
+              },
+              "61": {
+                "color": "rgba(0,126,248, 1)",
+                "lineCoordinates": [136, 426, 230, 426, 434, 310, 638, 368, 842, 252, 1046, 194]
+              },
+              "62": {
+                "color": "rgba(0,126,248, 1)",
+                "lineCoordinates": [136, 426, 230, 426, 434, 310, 638, 368, 842, 252, 1046, 310]
+              },
+              "63": {
+                "color": "rgba(0,126,248, 1)",
+                "lineCoordinates": [136, 426, 230, 426, 434, 310, 638, 368, 842, 368, 1046, 310]
+              },
+              "64": {
+                "color": "rgba(0,126,248, 1)",
+                "lineCoordinates": [136, 426, 230, 426, 434, 310, 638, 368, 842, 368, 1046, 426]
+              },
+              "65": {
+                "color": "rgba(0,126,248, 1)",
+                "lineCoordinates": [136, 426, 230, 426, 434, 310, 638, 368, 842, 484, 1046, 426]
+              },
+              "66": {
+                "color": "rgba(0,126,248, 1)",
+                "lineCoordinates": [136, 426, 230, 426, 434, 310, 638, 368, 842, 484, 1046, 542]
+              },
+              "67": {
+                "color": "rgba(0,126,248, 1)",
+                "lineCoordinates": [136, 426, 230, 426, 434, 426, 638, 368, 842, 252, 1046, 194]
+              },
+              "68": {
+                "color": "rgba(0,126,248, 1)",
+                "lineCoordinates": [136, 426, 230, 426, 434, 426, 638, 368, 842, 252, 1046, 310]
+              },
+              "69": {
+                "color": "rgba(0,126,248, 1)",
+                "lineCoordinates": [136, 426, 230, 426, 434, 426, 638, 368, 842, 368, 1046, 310]
+              },
+              "70": {
+                "color": "rgba(0,126,248, 1)",
+                "lineCoordinates": [136, 426, 230, 426, 434, 426, 638, 368, 842, 368, 1046, 426]
+              },
+              "71": {
+                "color": "rgba(0,126,248, 1)",
+                "lineCoordinates": [136, 426, 230, 426, 434, 426, 638, 368, 842, 484, 1046, 426]
+              },
+              "72": {
+                "color": "rgba(0,126,248, 1)",
+                "lineCoordinates": [136, 426, 230, 426, 434, 426, 638, 368, 842, 484, 1046, 542]
+              },
+              "73": {
+                "color": "rgba(0,126,248, 1)",
+                "lineCoordinates": [136, 426, 230, 426, 434, 426, 638, 484, 842, 368, 1046, 310]
+              },
+              "74": {
+                "color": "rgba(0,126,248, 1)",
+                "lineCoordinates": [136, 426, 230, 426, 434, 426, 638, 484, 842, 368, 1046, 426]
+              },
+              "75": {
+                "color": "rgba(0,126,248, 1)",
+                "lineCoordinates": [136, 426, 230, 426, 434, 426, 638, 484, 842, 484, 1046, 426]
+              },
+              "76": {
+                "color": "rgba(0,126,248, 1)",
+                "lineCoordinates": [136, 426, 230, 426, 434, 426, 638, 484, 842, 484, 1046, 542]
+              }
+            },
+            "numbers": {
+                "style" : {
+                    "NUMBER_WIDTH" : 47,
+                    "NUMBER_HEIGHT" : 60,
+                    "NUMBER_FONT" : "bold 50px PFDinDisplayProBold",
+                    "NUMBER_OFFSET" : -24,
+                    "NUMBER_TEXT_OPERATIONS" : [
+                      {
+                        "fillStyle" : "#007ef8",
+                        "lineJoin" : "round"
+                      }
+                    ]
+                },
+                "panelArea": {
+                    "left": {
+                        "left": 128,
+                        "top": 73,
+                        "width": 35,
+                        "height": 504
+                    },
+                    "right": {
+                        "left": 1117,
+                        "top": 73,
+                        "width": 35,
+                        "height": 504
+                    }
+                },
+                "hoverArea": {
+                    "offsetX" : -10,
+                    "offsetY" : -19,
+                    "width" : 25,
+                    "height" : 25
+                },
+                "configurations": {
+                  "1": {
+                    "left": 116,
+                    "top": 194
+                  },
+                  "2": {
+                    "left": 116,
+                    "top": 194
+                  },
+                  "3": {
+                    "left": 116,
+                    "top": 194
+                  },
+                  "4": {
+                    "left": 116,
+                    "top": 194
+                  },
+                  "5": {
+                    "left": 116,
+                    "top": 194
+                  },
+                  "6": {
+                    "left": 116,
+                    "top": 194
+                  },
+                  "7": {
+                    "left": 116,
+                    "top": 194
+                  },
+                  "8": {
+                    "left": 116,
+                    "top": 194
+                  },
+                  "9": {
+                    "left": 116,
+                    "top": 194
+                  },
+                  "10": {
+                    "left": 116,
+                    "top": 194
+                  },
+                  "11": {
+                    "left": 116,
+                    "top": 194
+                  },
+                  "12": {
+                    "left": 116,
+                    "top": 194
+                  },
+                  "13": {
+                    "left": 116,
+                    "top": 194
+                  },
+                  "14": {
+                    "left": 116,
+                    "top": 194
+                  },
+                  "15": {
+                    "left": 116,
+                    "top": 194
+                  },
+                  "16": {
+                    "left": 116,
+                    "top": 194
+                  },
+                  "17": {
+                    "left": 116,
+                    "top": 194
+                  },
+                  "18": {
+                    "left": 116,
+                    "top": 194
+                  },
+                  "19": {
+                    "left": 116,
+                    "top": 194
+                  },
+                  "20": {
+                    "left": 116,
+                    "top": 194
+                  },
+                  "21": {
+                    "left": 116,
+                    "top": 194
+                  },
+                  "22": {
+                    "left": 116,
+                    "top": 194
+                  },
+                  "23": {
+                    "left": 116,
+                    "top": 310
+                  },
+                  "24": {
+                    "left": 116,
+                    "top": 310
+                  },
+                  "25": {
+                    "left": 116,
+                    "top": 310
+                  },
+                  "26": {
+                    "left": 116,
+                    "top": 310
+                  },
+                  "27": {
+                    "left": 116,
+                    "top": 310
+                  },
+                  "28": {
+                    "left": 116,
+                    "top": 310
+                  },
+                  "29": {
+                    "left": 116,
+                    "top": 310
+                  },
+                  "30": {
+                    "left": 116,
+                    "top": 310
+                  },
+                  "31": {
+                    "left": 116,
+                    "top": 310
+                  },
+                  "32": {
+                    "left": 116,
+                    "top": 310
+                  },
+                  "33": {
+                    "left": 116,
+                    "top": 310
+                  },
+                  "34": {
+                    "left": 116,
+                    "top": 310
+                  },
+                  "35": {
+                    "left": 116,
+                    "top": 310
+                  },
+                  "36": {
+                    "left": 116,
+                    "top": 310
+                  },
+                  "37": {
+                    "left": 116,
+                    "top": 310
+                  },
+                  "38": {
+                    "left": 116,
+                    "top": 310
+                  },
+                  "39": {
+                    "left": 116,
+                    "top": 310
+                  },
+                  "40": {
+                    "left": 116,
+                    "top": 310
+                  },
+                  "41": {
+                    "left": 116,
+                    "top": 310
+                  },
+                  "42": {
+                    "left": 116,
+                    "top": 310
+                  },
+                  "43": {
+                    "left": 116,
+                    "top": 310
+                  },
+                  "44": {
+                    "left": 116,
+                    "top": 310
+                  },
+                  "45": {
+                    "left": 116,
+                    "top": 310
+                  },
+                  "46": {
+                    "left": 116,
+                    "top": 310
+                  },
+                  "47": {
+                    "left": 116,
+                    "top": 310
+                  },
+                  "48": {
+                    "left": 116,
+                    "top": 310
+                  },
+                  "49": {
+                    "left": 116,
+                    "top": 310
+                  },
+                  "50": {
+                    "left": 116,
+                    "top": 310
+                  },
+                  "51": {
+                    "left": 116,
+                    "top": 310
+                  },
+                  "52": {
+                    "left": 116,
+                    "top": 310
+                  },
+                  "53": {
+                    "left": 116,
+                    "top": 310
+                  },
+                  "54": {
+                    "left": 116,
+                    "top": 310
+                  },
+                  "55": {
+                    "left": 116,
+                    "top": 426
+                  },
+                  "56": {
+                    "left": 116,
+                    "top": 426
+                  },
+                  "57": {
+                    "left": 116,
+                    "top": 426
+                  },
+                  "58": {
+                    "left": 116,
+                    "top": 426
+                  },
+                  "59": {
+                    "left": 116,
+                    "top": 426
+                  },
+                  "60": {
+                    "left": 116,
+                    "top": 426
+                  },
+                  "61": {
+                    "left": 116,
+                    "top": 426
+                  },
+                  "62": {
+                    "left": 116,
+                    "top": 426
+                  },
+                  "63": {
+                    "left": 116,
+                    "top": 426
+                  },
+                  "64": {
+                    "left": 116,
+                    "top": 426
+                  },
+                  "65": {
+                    "left": 116,
+                    "top": 426
+                  },
+                  "66": {
+                    "left": 116,
+                    "top": 426
+                  },
+                  "67": {
+                    "left": 116,
+                    "top": 426
+                  },
+                  "68": {
+                    "left": 116,
+                    "top": 426
+                  },
+                  "69": {
+                    "left": 116,
+                    "top": 426
+                  },
+                  "70": {
+                    "left": 116,
+                    "top": 426
+                  },
+                  "71": {
+                    "left": 116,
+                    "top": 426
+                  },
+                  "72": {
+                    "left": 116,
+                    "top": 426
+                  },
+                  "73": {
+                    "left": 116,
+                    "top": 426
+                  },
+                  "74": {
+                    "left": 116,
+                    "top": 426
+                  },
+                  "75": {
+                    "left": 116,
+                    "top": 426
+                  },
+                  "76": {
+                    "left": 116,
+                    "top": 426
+                  }
+                }
+            }
+        }
+    },
+    "winTypes" : {
+        "smallWin"  : {"from":0, "to":2},
+        "mediumWin" : {"from":2, "to":5},
+        "largeWin"  : {"from":5, "to":15},
+        "bigWin"    : {"from":15 }
+    },
+  "stateOrder" : {
+    "Stopped": [
+      {
+        "modules": ["freeSpinOutroDelay"],
+        "insertBefore": "freeSpinIntro"
+      },
+      {
+        "modules": ["whiteOutTransition"],
+        "insertBefore": "freeSpinIntro"
+      }
+    ],
+    "ProcessServerResponse": [
+      {
+        "modules": ["wildReels"]
+      }
+    ],
+    "BeforeLoaderClose": [
+      {
+        "modules": [ "featureSplash" ],
+        "insertBefore": "freeSpinIntro"
+      }
+    ]
+  },
+  "useLetterboxing": true
+}

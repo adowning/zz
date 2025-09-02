@@ -1,0 +1,13 @@
+
+bottomChainGlow.png
+size: 256,64
+format: RGBA8888
+filter: Linear,Linear
+repeat: xy
+chainsbottomglow
+  rotate: false
+  xy: 2, 2
+  size: 216, 50
+  orig: 234, 240
+  offset: 3, 16
+  index: -1

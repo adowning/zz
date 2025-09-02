@@ -1,0 +1,202 @@
+
+lockupAnticFire.jpg
+size: 2048,512
+format: RGB888
+filter: Linear,Linear
+repeat: none
+lockupanticloop/lockupanticloop_00000
+  rotate: true
+  xy: 204, 306
+  size: 150, 200
+  orig: 150, 200
+  offset: 0, 0
+  index: -1
+lockupanticloop/lockupanticloop_00001
+  rotate: true
+  xy: 406, 306
+  size: 150, 200
+  orig: 150, 200
+  offset: 0, 0
+  index: -1
+lockupanticloop/lockupanticloop_00002
+  rotate: true
+  xy: 608, 306
+  size: 150, 200
+  orig: 150, 200
+  offset: 0, 0
+  index: -1
+lockupanticloop/lockupanticloop_00003
+  rotate: true
+  xy: 810, 306
+  size: 150, 200
+  orig: 150, 200
+  offset: 0, 0
+  index: -1
+lockupanticloop/lockupanticloop_00004
+  rotate: true
+  xy: 1012, 306
+  size: 150, 200
+  orig: 150, 200
+  offset: 0, 0
+  index: -1
+lockupanticloop/lockupanticloop_00005
+  rotate: true
+  xy: 1214, 306
+  size: 150, 200
+  orig: 150, 200
+  offset: 0, 0
+  index: -1
+lockupanticloop/lockupanticloop_00006
+  rotate: true
+  xy: 1416, 306
+  size: 150, 200
+  orig: 150, 200
+  offset: 0, 0
+  index: -1
+lockupanticloop/lockupanticloop_00007
+  rotate: true
+  xy: 1618, 306
+  size: 150, 200
+  orig: 150, 200
+  offset: 0, 0
+  index: -1
+lockupanticloop/lockupanticloop_00008
+  rotate: true
+  xy: 1820, 306
+  size: 150, 200
+  orig: 150, 200
+  offset: 0, 0
+  index: -1
+lockupanticloop/lockupanticloop_00009
+  rotate: true
+  xy: 2, 154
+  size: 150, 200
+  orig: 150, 200
+  offset: 0, 0
+  index: -1
+lockupanticloop/lockupanticloop_00010
+  rotate: true
+  xy: 204, 154
+  size: 150, 200
+  orig: 150, 200
+  offset: 0, 0
+  index: -1
+lockupanticloop/lockupanticloop_00011
+  rotate: true
+  xy: 406, 154
+  size: 150, 200
+  orig: 150, 200
+  offset: 0, 0
+  index: -1
+lockupanticloop/lockupanticloop_00012
+  rotate: true
+  xy: 608, 154
+  size: 150, 200
+  orig: 150, 200
+  offset: 0, 0
+  index: -1
+lockupanticloop/lockupanticloop_00013
+  rotate: true
+  xy: 810, 154
+  size: 150, 200
+  orig: 150, 200
+  offset: 0, 0
+  index: -1
+lockupanticloop/lockupanticloop_00014
+  rotate: true
+  xy: 1012, 154
+  size: 150, 200
+  orig: 150, 200
+  offset: 0, 0
+  index: -1
+lockupanticloop/lockupanticloop_00015
+  rotate: true
+  xy: 1214, 154
+  size: 150, 200
+  orig: 150, 200
+  offset: 0, 0
+  index: -1
+lockupanticloop/lockupanticloop_00016
+  rotate: true
+  xy: 1416, 154
+  size: 150, 200
+  orig: 150, 200
+  offset: 0, 0
+  index: -1
+lockupanticloop/lockupanticloop_00017
+  rotate: true
+  xy: 1618, 154
+  size: 150, 200
+  orig: 150, 200
+  offset: 0, 0
+  index: -1
+lockupanticloop/lockupanticloop_00018
+  rotate: true
+  xy: 1820, 154
+  size: 150, 200
+  orig: 150, 200
+  offset: 0, 0
+  index: -1
+lockupanticloop/lockupanticloop_00019
+  rotate: true
+  xy: 2, 2
+  size: 150, 200
+  orig: 150, 200
+  offset: 0, 0
+  index: -1
+lockupanticloop/lockupanticloop_00020
+  rotate: true
+  xy: 204, 2
+  size: 150, 200
+  orig: 150, 200
+  offset: 0, 0
+  index: -1
+lockupanticloop/lockupanticloop_00021
+  rotate: true
+  xy: 406, 2
+  size: 150, 200
+  orig: 150, 200
+  offset: 0, 0
+  index: -1
+lockupanticloop/lockupanticloop_00022
+  rotate: true
+  xy: 608, 2
+  size: 150, 200
+  orig: 150, 200
+  offset: 0, 0
+  index: -1
+lockupanticloop/lockupanticloop_00023
+  rotate: true
+  xy: 810, 2
+  size: 150, 200
+  orig: 150, 200
+  offset: 0, 0
+  index: -1
+lockupanticloop/lockupanticloop_00024
+  rotate: true
+  xy: 1012, 2
+  size: 150, 200
+  orig: 150, 200
+  offset: 0, 0
+  index: -1
+lockupanticloop/lockupanticloop_00025
+  rotate: true
+  xy: 1214, 2
+  size: 150, 200
+  orig: 150, 200
+  offset: 0, 0
+  index: -1
+lockupanticloop/lockupanticloop_00026
+  rotate: true
+  xy: 1416, 2
+  size: 150, 200
+  orig: 150, 200
+  offset: 0, 0
+  index: -1
+lockupanticloop/lockupanticloop_00027
+  rotate: true
+  xy: 2, 306
+  size: 150, 200
+  orig: 150, 200
+  offset: 0, 0
+  index: -1

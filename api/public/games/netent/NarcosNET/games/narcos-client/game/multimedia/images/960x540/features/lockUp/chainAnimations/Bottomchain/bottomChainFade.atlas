@@ -1,0 +1,13 @@
+
+bottomChainFade.png
+size: 256,64
+format: RGBA8888
+filter: Linear,Linear
+repeat: xy
+chainsbottom
+  rotate: false
+  xy: 2, 2
+  size: 204, 39
+  orig: 234, 240
+  offset: 7, 0
+  index: -1

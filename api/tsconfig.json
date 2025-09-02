@@ -1,0 +1,38 @@
+{
+  "compilerOptions": {
+    "module": "ESNext",
+    "target": "ESNext",
+    "lib": [
+      "DOM",
+      "ESNext"
+    ],
+    "moduleResolution": "Bundler",
+    "jsx": "preserve",
+    "outDir": "./dist",
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "baseUrl": ".",
+    "allowJs": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "strict": true,
+    "noUnusedLocals": true,
+    "strictNullChecks": true,
+  
+    "paths": {
+    
+      "#/*": [
+        "./*"
+      ],
+      "~/*": [
+        "../shared/*"
+      ]
+    }
+  },
+  "include": [
+    "./**/*.ts", "../shared/types.ts", "../shared/zero.ts",
+   
+  ],
+
+}

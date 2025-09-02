@@ -1,0 +1,43 @@
+<div xmlns="http://www.w3.org/1999/xhtml" class="utils_center_text {{CLASS}}" style="display: block;">
+    <div class="header paytable-header">{{HEADER}}</div>
+    <div class="page paytable-content">
+        <div class="interface-paytable_symbols">
+            <div class="interface-paytable_symbols_row">
+                {{#firstRowSymbols}}
+                    <div class="interface-paytable_symbols_item">
+                        <div class="SYM-image">
+                            <img src="{{image}}" class="SYM-image"/>
+                        </div>
+                        <ul class="interface-paytable_symbolValues">
+                            {{#coins}}
+                                <li class="symbolNumbers">
+                                    <div class="symbolCount" style="display: inline-block;">{{number}}</div>
+                                    <div class="symbolPayout" style="display: inline-block;">{{amount}}</div>
+                                </li>
+                                <br/>
+                            {{/coins}}
+                        </ul>
+                    </div>
+                {{/firstRowSymbols}}
+            </div>
+            <div class="interface-paytable_symbols_row">
+                {{#secondRowSymbols}}
+                    <div class="interface-paytable_symbols_item">
+                        <div class="SYM-image">
+                            <img src="{{image}}" class="SYM-image"/>
+                        </div>
+                        <ul class="interface-paytable_symbolValues">
+                            {{#coins}}
+                                <li class="symbolNumbers">
+                                    <div class="symbolCount" style="display: inline-block;">{{number}}</div>
+                                    <div class="symbolPayout" style="display: inline-block;">{{amount}}</div>
+                                </li>
+                                <br/>
+                            {{/coins}}
+                        </ul>
+                    </div>
+                {{/secondRowSymbols}}
+            </div>
+        </div>
+    </div>
+</div>

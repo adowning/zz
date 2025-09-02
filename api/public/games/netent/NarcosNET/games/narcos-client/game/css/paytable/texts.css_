@@ -1,0 +1,60 @@
+/*PAYTABLE TEXT*/
+.paytable-text {
+    font-family: NetentStandardUI;
+    text-align: left;
+    font-size: 22px;
+    color: #cfcfcf;
+    margin-bottom: 16px;
+}
+
+.golden-feature-template .paytable-list-item {
+    margin-bottom: 8px;
+}
+
+.golden-feature-template ul {
+    margin: 0px;
+}
+
+.mobile-version .paytable-text {
+    color: #cfcfcf;
+    font-size: 24px;
+}
+
+.paytable-text.paytable-symbol-text {
+    text-align: center;
+    margin-left: 10px;
+}
+
+.paytable-header {
+    font-family: "Cinzel-Bold", bebasneue, Tahoma, sans-serif;
+    font-size: 51px;
+    font-weight: bold;
+    height: fit-content;
+    width: fit-content;
+    max-width: 1080px;
+    margin: 10px auto;
+    text-transform: uppercase;
+    color: #ff9933;
+}
+
+.mobile-version .paytable-header {
+    font-size: 40px;
+    color: white;
+    width: 100%;
+    max-width: none;
+    margin: 30px auto 0;
+}
+
+.interface-paytableDesktop_base .interface-settingsWindow_base {
+    font-family: "Cinzel-Bold", NetentStandardUI, Tahoma, sans-serif;
+    color: #573C32;
+}
+
+.mobile-version .paytable-text,
+.mobile-version .paytable-header,
+.mobile-version .paytable-scatter-title,
+.mobile-version .symbolCount,
+.mobile-version .symbolPayout {
+    font-family: "Cinzel-Bold", NetentStandardUI, Tahoma, sans-serif;
+}
+/*PAYTABLE TEXT*/

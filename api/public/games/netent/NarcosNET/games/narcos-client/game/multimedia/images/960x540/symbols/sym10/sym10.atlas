@@ -1,0 +1,48 @@
+
+sym10.png
+size: 1394,238
+format: RGBA8888
+filter: Linear,Linear
+repeat: xy
+K
+  rotate: true
+  xy: 2, 2
+  size: 234, 230
+  orig: 234, 230
+  offset: 0, 0
+  index: -1
+frame
+  rotate: true
+  xy: 466, 2
+  size: 234, 230
+  orig: 234, 230
+  offset: 0, 0
+  index: -1
+sym10
+  rotate: true
+  xy: 698, 2
+  size: 234, 230
+  orig: 234, 230
+  offset: 0, 0
+  index: -1
+sym10b
+  rotate: true
+  xy: 234, 2
+  size: 234, 230
+  orig: 234, 230
+  offset: 0, 0
+  index: -1
+transBG
+  rotate: true
+  xy: 930, 2
+  size: 234, 230
+  orig: 234, 230
+  offset: 0, 0
+  index: -1
+winglow
+  rotate: true
+  xy: 1162, 2
+  size: 234, 230
+  orig: 234, 230
+  offset: 0, 0
+  index: -1

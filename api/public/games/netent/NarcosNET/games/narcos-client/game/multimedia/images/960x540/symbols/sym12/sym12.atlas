@@ -1,0 +1,48 @@
+
+sym12.png
+size: 2048,256
+format: RGBA8888
+filter: Linear,Linear
+repeat: xy
+J
+  rotate: false
+  xy: 2, 2
+  size: 234, 230
+  orig: 234, 230
+  offset: 0, 0
+  index: -1
+frame
+  rotate: false
+  xy: 474, 2
+  size: 234, 230
+  orig: 234, 230
+  offset: 0, 0
+  index: -1
+sym12
+  rotate: false
+  xy: 710, 2
+  size: 234, 230
+  orig: 234, 230
+  offset: 0, 0
+  index: -1
+sym12b
+  rotate: false
+  xy: 238, 2
+  size: 234, 230
+  orig: 234, 230
+  offset: 0, 0
+  index: -1
+transBG
+  rotate: false
+  xy: 946, 2
+  size: 234, 230
+  orig: 234, 230
+  offset: 0, 0
+  index: -1
+winglow
+  rotate: false
+  xy: 1182, 2
+  size: 234, 230
+  orig: 234, 230
+  offset: 0, 0
+  index: -1

@@ -1,0 +1,21 @@
+<div class="utils_center_text paytable-content golden-feature-template" >
+    <div class="header paytable-header">{{HEADER}}</div>
+    <div class="paytable-page">
+        <div>
+            <div class="feature-symbol paytable-feature-symbol">
+                <img src="{{IMAGE}}" class="SYM-image"/>
+                <div class="paytable-text paytable-symbol-text">{{IMAGETEXT}}</div>
+            </div>
+        </div>
+        <div class="paytable-feature-body">
+            {{#BODY}}
+                <div class="paytable-text">{{.}}</div>
+            {{/BODY}}
+            <ul>
+                {{#LIST}}
+                    <li class="paytable-list-item paytable-text">{{.}}</li>
+                {{/LIST}}
+            </ul>
+        </div>
+    </div>
+</div>

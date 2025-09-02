@@ -1,0 +1,1042 @@
+[
+    {
+        "id": "advancedAutoplayOptionsHeading",
+        "text": "Advanced Autoplay Options"
+    },
+    {
+        "id": "anyWinDesc",
+        "text": "Stops Autoplay when you win in a round."
+    },
+    {
+        "id": "clus3ScatNoteContinue",
+        "text": "This extra spin will be played after the current spin."
+    },
+    {
+        "id": "enterButton",
+        "text": "Enter Button"
+    },
+    {
+        "id": "exitButton",
+        "text": "Exit Button"
+    },
+    {
+        "id": "freeSpinsWonDescNew",
+        "text": "Stops Autoplay when Free Spins is won."
+    },
+    {
+        "id": "gameSettingIntro",
+        "text": "To access game settings, click the spanner icon in the game panel."
+    },
+    {
+        "id": "gameSettingOptionsHeading",
+        "text": "Game Setting Options"
+    },
+    {
+        "id": "lockUpAssign",
+        "text": "During the Locked Up feature, only Locked Up symbols and Golden Locked Up symbols will appear on the reels. \r\n3 or more connected Locked Up or Golden Locked Up symbols form a winning cluster.\r\nThe Locked Up symbols on the row are grouped together on the same row and assigned a random coin value of 1-10 x bet value."
+    },
+    {
+        "id": "RT1to10betLevel20coins",
+        "text": "The game is played with 1-10 bet levels (20 coins per level) and different coin values."
+    },
+    {
+        "id": "RT3plusScatterWin10FreeSpinsRev",
+        "text": "3 or more Scatter symbols appearing anywhere on the reels activate 10 Free Spins."
+    },
+    {
+        "id": "RT3Scat10FS",
+        "text": "3 Scatter symbols appearing anywhere on reels 1, 3, and 5 in the main game activate 10 Free Spins."
+    },
+    {
+        "id": "RT3WildTransAct",
+        "text": "In Free Spins, the Drive-by feature activates on every spin if 3 Wild symbols appear on the reels."
+    },
+    {
+        "id": "RTadditionalInformation",
+        "text": "Additional Information"
+    },
+    {
+        "id": "RTadvancedAutoplayButton",
+        "text": "To set advanced autoplay options click \u003cb\u003eAUTOPLAY\u003c/b\u003e, and then click \u003cb\u003eAdvanced settings\u003c/b\u003e."
+    },
+    {
+        "id": "RTadvancedAutoplaySettings",
+        "text": "Advanced Autoplay Settings"
+    },
+    {
+        "id": "RTAutoplayDisconnect",
+        "text": "\u003cb\u003eNote:\u003c/b\u003e If you are disconnected while playing, all Autoplay settings will return to default when you reload the game."
+    },
+    {
+        "id": "RTautoplayDuringGame",
+        "text": "\u003cb\u003eNote:\u003c/b\u003e When changing Autoplay settings during a game round or Free Spins, all settings will take effect once the game round or feature is completed."
+    },
+    {
+        "id": "RTautoplayDuringGameAsianMarket",
+        "text": "\u003cb\u003eNote:\u003c/b\u003e When changing Autoplay settings during a game round or Free Spins, all settings will take effect once the game round or feature is completed."
+    },
+    {
+        "id": "RTautoplayNote",
+        "text": "\u003cb\u003eNote:\u003c/b\u003e Some autoplay options are mandatory for some jurisdictions."
+    },
+    {
+        "id": "RTautoplayNoteSettings",
+        "text": "\u003cb\u003eNote:\u003c/b\u003e Some Autoplay settings are mandatory for some jurisdictions."
+    },
+    {
+        "id": "RTautoPlays",
+        "text": "\u003cb\u003eAUTOPLAY\u003c/b\u003e automatically plays the game for the selected number of rounds."
+    },
+    {
+        "id": "RTautoplaySelectSpins",
+        "text": "Select the number of spins to Autoplay or view the Advanced Settings to configure stop Autoplay options."
+    },
+    {
+        "id": "RTbackButton",
+        "text": "Click to go back to the main game."
+    },
+    {
+        "id": "RTbetLevel",
+        "text": "Bet level is the number of coins bet per bet line."
+    },
+    {
+        "id": "RTbetLevelBetWay",
+        "text": "Bet level is the number of coins bet per bet way."
+    },
+    {
+        "id": "RTbetLevelInstruction",
+        "text": "The bet level is set using the \u003cb\u003eLEVEL\u003c/b\u003e selector."
+    },
+    {
+        "id": "RTbetTotalCoins",
+        "text": "\u003cb\u003eBET\u003c/b\u003e shows the total bet in coins."
+    },
+    {
+        "id": "RTbetWaysCoinsNoBold",
+        "text": "A bet way win in coins is equal to the value shown in the Paytable multiplied by the bet level. This amount is also multiplied by any applicable multipliers."
+    },
+    {
+        "id": "RTbetWaysExplanation",
+        "text": "Example as follows:"
+    },
+    {
+        "id": "RTbonusBetButtonTable",
+        "text": "The text on the button is displayed in the current game language."
+    },
+    {
+        "id": "RTbuttonTableHead",
+        "text": "Button"
+    },
+    {
+        "id": "RTcashDecreasesDescRev",
+        "text": "Stops Autoplay if cash decreases by the amount you specify."
+    },
+    {
+        "id": "RTcashDisplayBalance",
+        "text": "\u003cb\u003eBALANCE\u003c/b\u003e displays the amount of cash available to bet."
+    },
+    {
+        "id": "RTcashIncreasesDescRev",
+        "text": "Stops Autoplay if cash increases by the amount you specify."
+    },
+    {
+        "id": "RTclickResetToClear",
+        "text": "Click \u003cb\u003eReset\u003c/b\u003e to clear all selected Stop Autoplay options."
+    },
+    {
+        "id": "RTcluster110BetLevel20coins",
+        "text": "The game is played with clusters of symbols, 1-10 bet levels (20 coins per level) and different coin values."
+    },
+    {
+        "id": "RTcluster3ScatNoteContinue",
+        "text": "This extra spin will be played after the current spin and will be counted as the last Free Spin."
+    },
+    {
+        "id": "RTcluster9OrMore",
+        "text": "9 or more symbols appearing in a cluster award a win according to the Paytable."
+    },
+    {
+        "id": "RTcoinsDisplayValuesNew",
+        "text": "\u003cb\u003eCOINS\u003c/b\u003e displays the number of coins available to wager."
+    },
+    {
+        "id": "RTcoinsDisplayValuesNewPUIBalance",
+        "text": "\u003cb\u003eBALANCE\u003c/b\u003e displays the amount of cash or coins available to bet."
+    },
+    {
+        "id": "RTcoinValueInstruction",
+        "text": "The coin value is set using the \u003cb\u003eCOIN VALUE\u003c/b\u003e selector."
+    },
+    {
+        "id": "RTdriveByaddedToBalance",
+        "text": "At the end of the Drive-by feature, the total win resulted from Drive-by is added to the balance."
+    },
+    {
+        "id": "RTexplanationBetLinesPartThree",
+        "text": "More bet line wins are created when additional instances of the symbol appear on the same reels that create the longest bet line win."
+    },
+    {
+        "id": "RTexplanationBetWaysPartThree",
+        "text": "More bet way wins are created when additional instances of the symbol appear on the same reels that create the longest bet way win."
+    },
+    {
+        "id": "RTexplanationBetWaysPartTwo",
+        "text": "Only the longest matching combination per symbol is paid."
+    },
+    {
+        "id": "RTfreeSpinContinue",
+        "text": "This upgrade can happen 7-15 times for each time the feature is activated."
+    },
+    {
+        "id": "RTfreeSpinEnd",
+        "text": "Click to exit Free Spins."
+    },
+    {
+        "id": "RTfreeSpinEndTouch",
+        "text": "Tap to exit Free Spins."
+    },
+    {
+        "id": "RTfreeSpinsaddedToBalance",
+        "text": "At the end of Free Spins, the total win from Free Spins is added to any wins from the round that activated Free Spins."
+    },
+    {
+        "id": "RTfreeSpinsBetCoinActivatingRound",
+        "text": "Free Spins are played at the same bet level and coin value as the round that activated Free Spins."
+    },
+    {
+        "id": "RTfreeSpinsHead",
+        "text": "Free Spins"
+    },
+    {
+        "id": "RTfreeSpinsSameBetPUI",
+        "text": "Free Spins are played at the same bet as the round that activated Free Spins."
+    },
+    {
+        "id": "RTfreeSpinStart",
+        "text": "Click to enter Free Spins."
+    },
+    {
+        "id": "RTfreeSpinStartTouch",
+        "text": "Tap to enter Free Spins."
+    },
+    {
+        "id": "RTfreeSpinsWonDescRev",
+        "text": "Stops Autoplay when Free Spins are won."
+    },
+    {
+        "id": "RTfsWildMain",
+        "text": "During Free Spins, the Wild symbols have the same behavior as in the main game. This means that if there is a win on the Wild symbols, the Wild symbols move one reel to the left on the next spin."
+    },
+    {
+        "id": "RTfunctionTableHead",
+        "text": "Function"
+    },
+    {
+        "id": "RTgameFunctionsHeading",
+        "text": "Game Functions"
+    },
+    {
+        "id": "RTGameHistNoPlayForFun",
+        "text": "(not available when \u003cb\u003ePLAYING FOR FUN\u003c/b\u003e)."
+    },
+    {
+        "id": "RTgameHistoryDesc",
+        "text": "Click to view your latest game history."
+    },
+    {
+        "id": "RTgameOverview",
+        "text": "Game Overview"
+    },
+    {
+        "id": "RTgameRulesDesc",
+        "text": "Click to view the game rules."
+    },
+    {
+        "id": "RTgameSessions2",
+        "text": "The time after which inactive game sessions automatically end."
+    },
+    {
+        "id": "RTgameSettingIntroPUI",
+        "text": "Click to access the game settings and game information."
+    },
+    {
+        "id": "RTgHistoryNotAvailableForFun",
+        "text": "Game History is not available when \u003cb\u003ePLAYING FOR FUN\u003c/b\u003e."
+    },
+    {
+        "id": "RTgoldLockExp",
+        "text": "If multiple Golden Locked Up symbols appear simultaneously then the value is updated between them. This means that all the Golden Locked Up symbols are assigned a value before the symbols start revealing the value."
+    },
+    {
+        "id": "RTgoldLockFeature",
+        "text": "During the Locked Up feature, the Golden Locked Up symbols can unlock one of the following features: Multiplier, Upgrade symbols and Big starting value."
+    },
+    {
+        "id": "RTgoldLockShow",
+        "text": "If more than one Golden Locked Up symbol appears during the same spin, the symbol starts revealing the value horizontally from leftmost to rightmost."
+    },
+    {
+        "id": "RTgoldLockVal",
+        "text": "At the start of the feature, the bet values for the Golden Locked Up symbols are the same as for the regular Locked Up symbols. This value can change."
+    },
+    {
+        "id": "RTinformationIconButtonDesc",
+        "text": "Click to view the Paytable."
+    },
+    {
+        "id": "RTIntroMovieOnOff",
+        "text": "Turns the intro movie on or off."
+    },
+    {
+        "id": "RTintroNarcos",
+        "text": "Narcos is a 5-reel, 3-row video slot with 243 bet ways. The game features Free Spins, Walking Wilds, Drive-by, and a Locked Up feature with a Golden Locked Up symbol."
+    },
+    {
+        "id": "RTintroNarcosTouch",
+        "text": "Narcos Touch is a 5-reel, 3-row video slot with 243 bet ways. The game features Free Spins, Walking Wilds, Drive-by, and a Locked Up feature with a Golden Locked Up symbol."
+    },
+    {
+        "id": "RTintroOffRev",
+        "text": "Turns the intro screen on or off."
+    },
+    {
+        "id": "RTlockemActivate",
+        "text": "During the main game, the Locked Up feature is activated when 3 or more Locked Up symbols appear on the same row."
+    },
+    {
+        "id": "RTlockemAddBal",
+        "text": "At the end of the Locked Up feature, the total win from Locked Up feature is added to any wins from the round that activated the Locked Up feature."
+    },
+    {
+        "id": "RTlockemButton",
+        "text": "Locked Up Button"
+    },
+    {
+        "id": "RTlockemCluster",
+        "text": "During the Locked Up feature, the symbols form clusters to award coin wins."
+    },
+    {
+        "id": "RTlockemFeatDesc",
+        "text": "The Locked Up feature is played at the same bet level and coin value as the spin that activated the feature. The bet level and coin value cannot be changed during the Locked Up feature."
+    },
+    {
+        "id": "RTlockemReturActiv",
+        "text": "At the end of the Locked Up feature, the game returns to the round that activated the Locked Up feature."
+    },
+    {
+        "id": "RTlockemSpin",
+        "text": "When no more spins are left or the game area is completely filled with Locked Up or Golden Locked Up symbols, the Locked Up feature ends and the wins are awarded."
+    },
+    {
+        "id": "RTlockemStart3Spin",
+        "text": "The player starts the Locked Up feature with 3 spins."
+    },
+    {
+        "id": "RTlockitBigStartingValue",
+        "text": "Additionally, Golden Locked Up symbols with Big starting value have an additional amount of Coins assigned to them, which can be 11, 12, 13, 16 or 26 times the total bet."
+    },
+    {
+        "id": "RTlockitCluster",
+        "text": "After the feature is activated, the Locked Up symbols move together in the form of a cluster."
+    },
+    {
+        "id": "RTlockitMoveMG",
+        "text": "All Locked Up symbols from the main game stay on the game area and move towards the center forming a cluster."
+    },
+    {
+        "id": "RTlockitNoWin",
+        "text": "Locked Up and Golden Locked Up symbols that land on the reels but are not part of a winning cluster stay on the reels. These symbols will have no value until they are connected to a winning cluster."
+    },
+    {
+        "id": "RTlockitSpinReset",
+        "text": "During every spin if new Locked Up or Golden Locked Up symbols appear, creating a new winning cluster or adding to an existing cluster, the number of remaining spins resets to 3."
+    },
+    {
+        "id": "RTlockitvalue",
+        "text": "Each Locked Up and Golden Locked Up symbol in a cluster is assigned a value. The value assigned to the symbols  can be 1, 2, 3, 5 or 10 times the total bet."
+    },
+    {
+        "id": "RTmalfunction",
+        "text": "In the event of malfunction of the gaming hardware/software, all affected game bets are rendered void and all affected bets are refunded."
+    },
+    {
+        "id": "RTmaxbetBetWays2",
+        "text": "MAX BET plays the game at 243 bet ways, the highest bet level, and the current coin value. When playing at any lower bet level, MAX BET must be clicked twice to play the round at the selected level."
+    },
+    {
+        "id": "RTMGautoOptions",
+        "text": "Drag or tap the slider to enable autoplay to set the autoplay options and the number of rounds. Autoplay plays the game for the selected number of spins."
+    },
+    {
+        "id": "RTMGautoplayDisconnect",
+        "text": "\u003cb\u003eNote:\u003c/b\u003e If you are disconnected while playing, all Autoplay settings will return to default when you reload the game."
+    },
+    {
+        "id": "RTMGautoplayPanelLabel",
+        "text": "Autoplay"
+    },
+    {
+        "id": "RTMGautoplayPlays",
+        "text": "Bet way wins pay if in succession from leftmost reel to right."
+    },
+    {
+        "id": "RTMGautoplayQuickSpinHeading",
+        "text": "Autoplay and Quick Spin"
+    },
+    {
+        "id": "RTMGAutoplaySpins",
+        "text": "The number of spins selected is displayed on the button."
+    },
+    {
+        "id": "RTMGautoplayUI",
+        "text": "Tap to turn Autoplay on or off without going to the settings menu. Sets 50  rounds by default."
+    },
+    {
+        "id": "RTMGback",
+        "text": "Back"
+    },
+    {
+        "id": "RTMGbackMainGame",
+        "text": "Tap to go back to the main game."
+    },
+    {
+        "id": "RTMGbetInCash",
+        "text": "Bet in cash"
+    },
+    {
+        "id": "RTMGbetInCoins",
+        "text": "Bet in coins"
+    },
+    {
+        "id": "RTMGbetlevel",
+        "text": "Bet level"
+    },
+    {
+        "id": "RTMGbetSettings",
+        "text": "Bet Settings"
+    },
+    {
+        "id": "RTMGbuttonsMainGame",
+        "text": "Main Game"
+    },
+    {
+        "id": "RTMGcoinvalue",
+        "text": "Coin value"
+    },
+    {
+        "id": "RTMGexit",
+        "text": "Exit"
+    },
+    {
+        "id": "RTMGgameHistoryDesc",
+        "text": "Tap to view your latest game history."
+    },
+    {
+        "id": "RTMGgameHistoryHeading",
+        "text": "Game History"
+    },
+    {
+        "id": "RTMGgameRules",
+        "text": "Game Rules"
+    },
+    {
+        "id": "RTMGgameSettingIntroDevNew",
+        "text": "Tap to access the game settings and game information."
+    },
+    {
+        "id": "RTMGgameSettings",
+        "text": "Game Settings and Game Information"
+    },
+    {
+        "id": "RTMGgameSoundDesc",
+        "text": "Tap to turn the game sounds on or off."
+    },
+    {
+        "id": "RTMGhistoryNotAvailable",
+        "text": "The game history is available only when playing for money."
+    },
+    {
+        "id": "RTMGleaveGame",
+        "text": "Tap to leave the game."
+    },
+    {
+        "id": "RTMGleaveGamePUI2",
+        "text": "Tap to leave the game"
+    },
+    {
+        "id": "RTMGleftHandMode",
+        "text": "Left Hand Mode"
+    },
+    {
+        "id": "RTMGmenu",
+        "text": "Menu"
+    },
+    {
+        "id": "RTMGnoAutoplayLeft",
+        "text": "The number of spins remaining is displayed on the button."
+    },
+    {
+        "id": "RTMGpaytable",
+        "text": "Paytable"
+    },
+    {
+        "id": "RTMGquickSettings",
+        "text": "Quick settings menu"
+    },
+    {
+        "id": "RTMGquickSettingsMenu",
+        "text": "Tap the plus sign to access the Quick settings menu."
+    },
+    {
+        "id": "RTMGquickSpin",
+        "text": "Quick Spin"
+    },
+    {
+        "id": "RTMGquickSpinGameSetting",
+        "text": "Quick spin"
+    },
+    {
+        "id": "RTMGquickSpinUI",
+        "text": "Tap to turn Quick spin on or off without going to the settings menu."
+    },
+    {
+        "id": "RTMGquickStop",
+        "text": "Quick Stop"
+    },
+    {
+        "id": "RTMGselectBetLevelBetWays",
+        "text": "Drag or tap the slider to select the number of coins to bet."
+    },
+    {
+        "id": "RTMGselectBetLevelRevNew",
+        "text": "Drag or tap the slider to select the number of coins to bet per bet line."
+    },
+    {
+        "id": "RTMGselectBetWays",
+        "text": "Drag or tap the slider to select the number of bet ways."
+    },
+    {
+        "id": "RTMGselectCoinValueRevNew",
+        "text": "Drag or tap the slider to select the coin value."
+    },
+    {
+        "id": "RTMGsettingsDisclaimer",
+        "text": "\u003cb\u003eNote:\u003c/b\u003e Some operators may not offer all of the listed game settings."
+    },
+    {
+        "id": "RTMGshowsBetCoins",
+        "text": "Shows your bet amount in coins."
+    },
+    {
+        "id": "RTMGshowsBetCurrency",
+        "text": "Shows your bet amount in selected currency."
+    },
+    {
+        "id": "RTMGsoundOnOffRev",
+        "text": "Tap the switch to turn sounds on or off."
+    },
+    {
+        "id": "RTMGsounds",
+        "text": "Game Sounds"
+    },
+    {
+        "id": "RTMGsoundSettings",
+        "text": "Sound Settings"
+    },
+    {
+        "id": "RTMGsoundSettingsUI",
+        "text": "Tap to turn Sound on or off without going to the settings menu."
+    },
+    {
+        "id": "RTMGspinButton",
+        "text": "Spin Button"
+    },
+    {
+        "id": "RTMGspinButtonLeft",
+        "text": "Tap to turn the left-hand mode on or off."
+    },
+    {
+        "id": "RTMGspinSettingsRev",
+        "text": "Spin Settings"
+    },
+    {
+        "id": "RTMGstartAutoplay",
+        "text": "Tap to start Autoplay."
+    },
+    {
+        "id": "RTMGstartQuickSpin",
+        "text": "Tap to start Quick spin."
+    },
+    {
+        "id": "RTMGstopAutoplay",
+        "text": "Tap to stop Autoplay."
+    },
+    {
+        "id": "RTMGstopAutoplayOnOff",
+        "text": "Stop Autoplay"
+    },
+    {
+        "id": "RTMGtapDuringSpin",
+        "text": "Tap the game area during a spin to stop the reels."
+    },
+    {
+        "id": "RTMGtapOnOffRev",
+        "text": "Tap the switch to turn Quick spin on or off."
+    },
+    {
+        "id": "RTMGtapSpinButton",
+        "text": "Tap to start playing at the current bet level and coin value."
+    },
+    {
+        "id": "RTMGtapSpinButtonRev",
+        "text": "Tap to start playing at the current bet lines, bet level and coin value."
+    },
+    {
+        "id": "RTMGtouchMainGameNew",
+        "text": "In landscape mode, touch the game area to hide the Spin button."
+    },
+    {
+        "id": "RTMGviewGamesRules",
+        "text": "Tap to view the game rules."
+    },
+    {
+        "id": "RTMGwinComb",
+        "text": "Tap to view winning combinations and payouts."
+    },
+    {
+        "id": "RTmuteSoundSlider",
+        "text": "Click to mute the game sound or use the slider to adjust the sound volume."
+    },
+    {
+        "id": "RTmuteSoundSliderRev",
+        "text": "Click to mute the game sounds or use the slider to adjust the sound volume."
+    },
+    {
+        "id": "RTnarcosBigStartVal",
+        "text": "Big starting value:  An additional value is added to the Golden Locked Up symbol as a starting value."
+    },
+    {
+        "id": "RTnarcosHeading",
+        "text": "Narcos Game Rules"
+    },
+    {
+        "id": "RTnarcosHeadingTouch",
+        "text": "Narcos Touch Game Rules"
+    },
+    {
+        "id": "RTnarcosMultExp",
+        "text": "Multiplier: All symbol values of the winning cluster are multiplied by either x2 or x3 multiplier."
+    },
+    {
+        "id": "RTnarcosUpgradeExp",
+        "text": "Upgrade Symbols: During this feature, multiple upgrade values in increment of 1 times the total bet can be assigned to symbols that are part of the same cluster as the Golden Locked Up symbol. This upgrade can happen 7-15 times for each time the feature is activated."
+    },
+    {
+        "id": "RTnoBetLines",
+        "text": "There are no bet lines."
+    },
+    {
+        "id": "RTopenAutoplayMenu",
+        "text": "Click to view the Autoplay settings menu and play the game automatically."
+    },
+    {
+        "id": "rtOpenBettingSettingsArcane",
+        "text": "Click to view the game settings menu and select game options. Refer to Game Settings section below."
+    },
+    {
+        "id": "RTopenGameRules",
+        "text": "Click to open the game rules."
+    },
+    {
+        "id": "RTopenSettingsMenu",
+        "text": "Click to view the game settings menu and select game options. Refer to Game Settings section below."
+    },
+    {
+        "id": "RTpaytableButtonsDescRev",
+        "text": "Click the arrows pointing to the left or right to scroll through the Paytable pages. Click the center button to return to the game."
+    },
+    {
+        "id": "RTpaytableButtonsDescRev2",
+        "text": "Click the arrows pointing to the left or right to scroll through the \u003cb\u003ePAYTABLE\u003c/b\u003e pages. Click the x button to return to the game."
+    },
+    {
+        "id": "RTprobWildTrans",
+        "text": "In Free Spins, on every spin there is a chance that one or more high value symbols turn into Wilds. This is in accordance with the game rules for Drive-by feature."
+    },
+    {
+        "id": "RTquickSpinDescClick",
+        "text": "Click to turn quick spin on or off"
+    },
+    {
+        "id": "RTquickSpinDescRev",
+        "text": "Turns the quick spin option on or off"
+    },
+    {
+        "id": "RTquickSpinDisclaimer",
+        "text": "(not available in all casinos)."
+    },
+    {
+        "id": "RTreferWebSite",
+        "text": "The following game features and settings may be subject to the terms and conditions of the Casino Operator’s website. For more information, refer to the Casino Operator’s website:"
+    },
+    {
+        "id": "RTreturnActivRound",
+        "text": "At the end of Free Spins, the game returns to the round that activated Free Spins."
+    },
+    {
+        "id": "RTreturnToPlayer",
+        "text": "Return to Player"
+    },
+    {
+        "id": "RTrulesGenerated",
+        "text": "Game rules generated:"
+    },
+    {
+        "id": "RTsameGameRound",
+        "text": "Free Spins and the Walking Wild feature can be activated in the same game round."
+    },
+    {
+        "id": "RTsettingListIntroScreen",
+        "text": "Intro Screen"
+    },
+    {
+        "id": "RTsettingListQuickSpin",
+        "text": "Quick Spin"
+    },
+    {
+        "id": "RTsettingsDisclaimer",
+        "text": "\u003cb\u003eNote:\u003c/b\u003e Some casinos may operate without all of the listed game settings."
+    },
+    {
+        "id": "RTsimultaneousWinsWays",
+        "text": "Simultaneous wins on different bet ways are added."
+    },
+    {
+        "id": "RTsingleWinDescRev",
+        "text": "Stops Autoplay when the amount you win exceeds or equals the amount you specify."
+    },
+    {
+        "id": "RTsliderBetLevel",
+        "text": "The bet level is set using the Bet level slider."
+    },
+    {
+        "id": "RTsoundButton",
+        "text": "\u003cb\u003eSound\u003c/b\u003e"
+    },
+    {
+        "id": "RTspacebarspin",
+        "text": "Turns the spacebar function on or off."
+    },
+    {
+        "id": "RTstartGameRound",
+        "text": "Click to start a game round at the current bet level and coin value (alternatively, press the spacebar)."
+    },
+    {
+        "id": "RTstartGameRoundPUInoSpacebar",
+        "text": "Click to start a game round at the current bet value."
+    },
+    {
+        "id": "RTstartLockedTouch",
+        "text": "Tap to start the Locked Up round, all rounds are free."
+    },
+    {
+        "id": "RTstartLockemRound",
+        "text": "Click to start the Locked Up round, all rounds are free (alternatively, press the spacebar)."
+    },
+    {
+        "id": "RTstopButton",
+        "text": "Stop Button"
+    },
+    {
+        "id": "RTstopsGameRoundPUI",
+        "text": "Click to stop the game round."
+    },
+    {
+        "id": "RTstopsGameRoundPUITouch",
+        "text": "Tap to stop the game round."
+    },
+    {
+        "id": "RTtableDescribes",
+        "text": "The table below lists the different buttons found in the game and describes their functions."
+    },
+    {
+        "id": "RTtablePlayLangThnEng",
+        "text": "\u003cb\u003eNote\u003c/b\u003e: The following table is only applicable if you are playing in a language other than English."
+    },
+    {
+        "id": "RTtapSpinButtonRevPUI",
+        "text": "Tap to start playing at the current bet value."
+    },
+    {
+        "id": "RTtheoreticalReturn",
+        "text": "The theoretical return to player for this game is"
+    },
+    {
+        "id": "RTtheoreticalReturnRange",
+        "text": "The theoretical return to player for this game is"
+    },
+    {
+        "id": "RTtheoreticalReturnVariant",
+        "text": "The theoretical return to player for this game is"
+    },
+    {
+        "id": "RTtotalWinFieldFreeSpins",
+        "text": "The Total Win field includes any wins during Free Spins added to any wins from the round that activated Free Spins."
+    },
+    {
+        "id": "RTtransGameTerms",
+        "text": "Translations of Game Terminology"
+    },
+    {
+        "id": "RTunfinishedGameSession2",
+        "text": "The procedures used to manage unfinished game rounds."
+    },
+    {
+        "id": "RTwalkWildActive",
+        "text": "During the main game and Free Spins, if any feature gets activated while there are Walking Wilds still present on the reels, the Walking Wilds continue to stay on the reels after the feature is over."
+    },
+    {
+        "id": "RTwalkWildEnd",
+        "text": "The Walking Wild feature ends if there are no longer any wins from the Walking Wilds or if the wager is increased."
+    },
+    {
+        "id": "RTwalkWildFS",
+        "text": "At the end of Free Spins, if there are Walking Wilds still left on the reels, an extra Free Spin is awarded. This continues until there are no Walking Wilds present on the reels."
+    },
+    {
+        "id": "RTWildAnyReelForAll",
+        "text": "Wild symbols can appear anywhere on the reels and substitute for all symbols."
+    },
+    {
+        "id": "RTWildSymSubCluster",
+        "text": "Wild symbol substitution pays the highest possible winning combination in a cluster according to the Paytable."
+    },
+    {
+        "id": "RTwildTransHigh",
+        "text": "The Drive-by feature can activate randomly in the main game."
+    },
+    {
+        "id": "RTwinCalculationBetWaysCoinsTrans",
+        "text": "A bet way win in coins is equal to the value shown in the \u003cb\u003ePAYTABLE \u003c/b\u003e multiplied by the bet level."
+    },
+    {
+        "id": "RTwinCalculationBetWaysCurrency",
+        "text": "A bet way win in currency is equal to the win in coins multiplied by the coin value."
+    },
+    {
+        "id": "scatterHeadingAsianMarket",
+        "text": "Scatter"
+    },
+    {
+        "id": "SetBetValueDesktopPUI",
+        "text": "Click to set the bet value."
+    },
+    {
+        "id": "termdriveBy",
+        "text": "Drive-by"
+    },
+    {
+        "id": "termEnglish",
+        "text": "English Term"
+    },
+    {
+        "id": "termEnter",
+        "text": "Enter"
+    },
+    {
+        "id": "termExit",
+        "text": "Exit"
+    },
+    {
+        "id": "termFreeSpins",
+        "text": "Free Spins"
+    },
+    {
+        "id": "termGoldenLockit",
+        "text": "Golden Locked Up"
+    },
+    {
+        "id": "termLockemUp",
+        "text": "Locked Up"
+    },
+    {
+        "id": "termScatter",
+        "text": "Scatter"
+    },
+    {
+        "id": "termStickyWinTM",
+        "text": "Sticky Win™"
+    },
+    {
+        "id": "termTranslatedTerm",
+        "text": "Translated Term"
+    },
+    {
+        "id": "termWalkingWild",
+        "text": "Walking Wild"
+    },
+    {
+        "id": "termWild",
+        "text": "Wild"
+    },
+    {
+        "id": "RTadditionalInformation",
+        "text": "Additional Information"
+    },
+    {
+        "id": "RTadvancedAutoplayButtonSettings",
+        "text": "To set advanced autoplay settings click \u003cb\u003eAUTOPLAY\u003c/b\u003e, and then click \u003cb\u003eAdvanced settings\u003c/b\u003e."
+    },
+    {
+        "id": "RTadvancedAutoplaySettings",
+        "text": "Advanced Autoplay Settings"
+    },
+    {
+        "id": "RTautoplayNote",
+        "text": "\u003cb\u003eNote:\u003c/b\u003e Some autoplay options are mandatory for some jurisdictions."
+    },
+    {
+        "id": "RTautoplayNoteSettings",
+        "text": "\u003cb\u003eNote:\u003c/b\u003e Some Autoplay settings are mandatory for some jurisdictions."
+    },
+    {
+        "id": "RTCalcBetLineCashNoMultiplier",
+        "text": "A bet line win in cash is equal to the value shown in the Paytable."
+    },
+    {
+        "id": "RTCalcBetLineCoinNoMultiplierTransNew",
+        "text": "A bet line win in coins is equal to the value shown in the Paytable multiplied by the bet level."
+    },
+    {
+        "id": "RTCalcBetWayCashNoMultiplier",
+        "text": "A bet way win in cash is equal to the value shown in the Paytable."
+    },
+    {
+        "id": "RTclickResetToClearSettings",
+        "text": "Click \u003cb\u003eReset\u003c/b\u003e to clear all selected Stop Autoplay settings."
+    },
+    {
+        "id": "RTgameFunctionsHeading",
+        "text": "Game Functions"
+    },
+    {
+        "id": "RTjackpotYesorNo",
+        "text": "This game does not have Jackpot."
+    },
+    {
+        "id": "RTjackpotYesorNoTrans",
+        "text": "This game does not have Jackpot."
+    },
+    {
+        "id": "RTmaxBetNTStandard",
+        "text": "Max bet is"
+    },
+    {
+        "id": "RTmaxWinStandard",
+        "text": "The maximum amount you can win is"
+    },
+    {
+        "id": "RTMGautoSettings",
+        "text": "Drag or tap the slider to enable Autoplay to set the autoplay settings and the number of rounds. Autoplay plays the game for the selected number of spins."
+    },
+    {
+        "id": "RTMGbackMainGame",
+        "text": "Tap to go back to the main game."
+    },
+    {
+        "id": "RTMGmenu",
+        "text": "Menu"
+    },
+    {
+        "id": "RTMGquickStop",
+        "text": "Quick Stop"
+    },
+    {
+        "id": "RTquickSpinDisclaimer",
+        "text": "(not available in all casinos)."
+    },
+    {
+        "id": "RTsingleWinDescRevNew",
+        "text": "Stops Autoplay when the amount you win exceeds or equals the amount you specify."
+    },
+    {
+        "id": "RTskills",
+        "text": "Skills"
+    },
+    {
+        "id": "RTskillsOutcome",
+        "text": "The outcome of this game cannot be affected by the player."
+    },
+    {
+        "id": "RTstartGameRound",
+        "text": "Click to start a game round at the current bet level and coin value (alternatively, press the spacebar)."
+    },
+    {
+        "id": "RTstartGameRoundPUInoSpacebar",
+        "text": "Click to start a game round at the current bet value."
+    },
+    {
+        "id": "RTstopsGameRoundPUITouch",
+        "text": "Tap to stop the game round."
+    },
+    {
+        "id": "RTtableDescribes",
+        "text": "The table below lists the different buttons found in the game and describes their functions."
+    },
+    {
+        "id": "RTtablePlayLangThnEng",
+        "text": "\u003cb\u003eNote\u003c/b\u003e: The following table is only applicable if you are playing in a language other than English."
+    },
+    {
+        "id": "RTtransGameTerms",
+        "text": "Translations of Game Terminology"
+    },
+    {
+        "id": "RTunfinishedGameRoundBetReturn",
+        "text": "Where the game is not decided, the bet will be returned to the player."
+    },
+    {
+        "id": "RTunfinishedGameRoundReason",
+        "text": "An unfinished game round may be due to poor internet connection."
+    },
+    {
+        "id": "RTunfinishedGameRoundResume",
+        "text": "Unfinished game rounds resume either automatically after a short delay or by restarting the game."
+    },
+    {
+        "id": "RTunfinishedGameRoundResumeWin",
+        "text": "If a game round is not resumed by 3:00 AM, the player will get his or her winnings for any settled game."
+    },
+    {
+        "id": "RTunfinishedGameRoundsHeader",
+        "text": "Unfinished Game Rounds"
+    },
+    {
+        "id": "RTunfinishedGameRoundStorage",
+        "text": "Any game rounds that, for some reason, have not been completed, are stored on the server."
+    },
+    {
+        "id": "RTunfinishedGameRoundStoredBet",
+        "text": "An unfinished game round is stored on the server along with the current bet."
+    },
+    {
+        "id": "RTwinCalculationBetWaysCoinsNoBold",
+        "text": "A bet way win in coins is equal to the value shown in the Paytable multiplied by the bet level."
+    },
+    {
+        "id": "RTwinCombinationPaytablenoBold",
+        "text": "Winning combinations and payouts are made according to the Paytable."
+    },
+    {
+        "id": "SetBetValueDesktopPUI",
+        "text": "Click to set the bet value."
+    },
+    {
+        "id": "termEnglish",
+        "text": "English Term"
+    },
+    {
+        "id": "termTranslatedTerm",
+        "text": "Translated Term"
+    }
+]

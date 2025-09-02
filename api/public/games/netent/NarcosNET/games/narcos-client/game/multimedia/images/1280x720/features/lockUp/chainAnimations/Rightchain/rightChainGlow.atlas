@@ -1,0 +1,13 @@
+
+rightChainGlow.png
+size: 64,256
+format: RGBA8888
+filter: Linear,Linear
+repeat: xy
+chainsRsideglow
+  rotate: false
+  xy: 2, 2
+  size: 59, 240
+  orig: 234, 240
+  offset: 167, 0
+  index: -1

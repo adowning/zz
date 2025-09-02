@@ -1,0 +1,188 @@
+
+driveby.png
+size: 2048,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: xy
+newcar/BLtire01
+  rotate: false
+  xy: 1208, 70
+  size: 96, 174
+  orig: 1000, 716
+  offset: 795, 153
+  index: -1
+newcar/BLtire02
+  rotate: true
+  xy: 1499, 65
+  size: 96, 174
+  orig: 1000, 716
+  offset: 795, 153
+  index: -1
+newcar/BLtire03
+  rotate: true
+  xy: 446, 11
+  size: 96, 174
+  orig: 1000, 716
+  offset: 795, 153
+  index: -1
+newcar/Carbackside
+  rotate: true
+  xy: 1306, 70
+  size: 120, 191
+  orig: 1000, 716
+  offset: 777, 211
+  index: -1
+newcar/Carfrontside
+  rotate: false
+  xy: 2, 306
+  size: 1000, 716
+  orig: 1000, 716
+  offset: 0, 0
+  index: -1
+newcar/FLtire01
+  rotate: true
+  xy: 1535, 541
+  size: 130, 231
+  orig: 1000, 716
+  offset: 583, 81
+  index: -1
+newcar/FLtire02
+  rotate: false
+  xy: 1522, 308
+  size: 130, 231
+  orig: 1000, 716
+  offset: 583, 81
+  index: -1
+newcar/FLtire03
+  rotate: false
+  xy: 1654, 308
+  size: 130, 231
+  orig: 1000, 716
+  offset: 583, 81
+  index: -1
+newcar/FRtire01
+  rotate: false
+  xy: 858, 101
+  size: 143, 203
+  orig: 1000, 716
+  offset: 125, 83
+  index: -1
+newcar/FRtire02
+  rotate: true
+  xy: 1003, 101
+  size: 143, 203
+  orig: 1000, 716
+  offset: 125, 83
+  index: -1
+newcar/FRtire03
+  rotate: true
+  xy: 1522, 163
+  size: 143, 203
+  orig: 1000, 716
+  offset: 125, 83
+  index: -1
+newcar/bird
+  rotate: true
+  xy: 1727, 162
+  size: 144, 83
+  orig: 150, 98
+  offset: 0, 8
+  index: -1
+newcar/birdstill
+  rotate: true
+  xy: 1768, 547
+  size: 38, 75
+  orig: 150, 98
+  offset: 56, 20
+  index: -1
+newcar/bulletinair01
+  rotate: false
+  xy: 2, 13
+  size: 206, 94
+  orig: 255, 176
+  offset: 22, 39
+  index: -1
+newcar/carbody
+  rotate: false
+  xy: 1004, 673
+  size: 859, 349
+  orig: 1000, 716
+  offset: 67, 160
+  index: -1
+newcar/carseat
+  rotate: false
+  xy: 210, 70
+  size: 234, 37
+  orig: 1000, 716
+  offset: 472, 378
+  index: -1
+newcar/cartridge01
+  rotate: false
+  xy: 269, 33
+  size: 85, 35
+  orig: 100, 47
+  offset: 8, 4
+  index: -1
+newcar/driver
+  rotate: true
+  xy: 1865, 626
+  size: 396, 165
+  orig: 1000, 716
+  offset: 273, 338
+  index: -1
+newcar/driverarm
+  rotate: false
+  xy: 210, 2
+  size: 57, 66
+  orig: 1000, 716
+  offset: 610, 329
+  index: -1
+newcar/dustball
+  rotate: true
+  xy: 1004, 246
+  size: 305, 318
+  orig: 416, 352
+  offset: 50, 7
+  index: -1
+newcar/interior
+  rotate: false
+  xy: 1004, 553
+  size: 529, 118
+  orig: 1000, 716
+  offset: 290, 382
+  index: -1
+newcar/muzzlefire01
+  rotate: true
+  xy: 1324, 192
+  size: 359, 196
+  orig: 359, 196
+  offset: 0, 0
+  index: -1
+newcar/shadow
+  rotate: false
+  xy: 2, 109
+  size: 854, 195
+  orig: 1000, 716
+  offset: 75, 35
+  index: -1
+newcar/shooter
+  rotate: true
+  xy: 1675, 42
+  size: 118, 125
+  orig: 1000, 716
+  offset: 652, 357
+  index: -1
+newcar/shooterarm
+  rotate: false
+  xy: 622, 34
+  size: 164, 73
+  orig: 1000, 716
+  offset: 682, 360
+  index: -1
+newcar/steeringwheel
+  rotate: false
+  xy: 1768, 587
+  size: 85, 84
+  orig: 1000, 716
+  offset: 545, 336
+  index: -1

@@ -1,0 +1,104 @@
+
+freespins.png
+size: 2048,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+0
+  rotate: false
+  xy: 2, 2
+  size: 222, 169
+  orig: 222, 169
+  offset: 0, 0
+  index: -1
+1
+  rotate: false
+  xy: 700, 177
+  size: 222, 169
+  orig: 222, 169
+  offset: 0, 0
+  index: -1
+10
+  rotate: false
+  xy: 1644, 686
+  size: 222, 169
+  orig: 222, 169
+  offset: 0, 0
+  index: -1
+2
+  rotate: false
+  xy: 1196, 686
+  size: 222, 169
+  orig: 222, 169
+  offset: 0, 0
+  index: -1
+3
+  rotate: false
+  xy: 226, 2
+  size: 222, 169
+  orig: 222, 169
+  offset: 0, 0
+  index: -1
+4
+  rotate: false
+  xy: 924, 177
+  size: 222, 169
+  orig: 222, 169
+  offset: 0, 0
+  index: -1
+5
+  rotate: false
+  xy: 1196, 515
+  size: 222, 169
+  orig: 222, 169
+  offset: 0, 0
+  index: -1
+6
+  rotate: false
+  xy: 1420, 686
+  size: 222, 169
+  orig: 222, 169
+  offset: 0, 0
+  index: -1
+7
+  rotate: false
+  xy: 450, 2
+  size: 222, 169
+  orig: 222, 169
+  offset: 0, 0
+  index: -1
+8
+  rotate: false
+  xy: 1420, 515
+  size: 222, 169
+  orig: 222, 169
+  offset: 0, 0
+  index: -1
+9
+  rotate: false
+  xy: 1644, 515
+  size: 222, 169
+  orig: 222, 169
+  offset: 0, 0
+  index: -1
+freespinstext
+  rotate: false
+  xy: 2, 515
+  size: 696, 340
+  orig: 696, 340
+  offset: 0, 0
+  index: -1
+freespinstextdark
+  rotate: false
+  xy: 2, 173
+  size: 696, 340
+  orig: 696, 340
+  offset: 0, 0
+  index: -1
+ring
+  rotate: false
+  xy: 700, 348
+  size: 494, 507
+  orig: 494, 507
+  offset: 0, 0
+  index: -1

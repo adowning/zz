@@ -1,0 +1,13 @@
+
+leftChainFade.png
+size: 64,256
+format: RGBA8888
+filter: Linear,Linear
+repeat: xy
+chainsLside
+  rotate: false
+  xy: 2, 2
+  size: 41, 232
+  orig: 234, 240
+  offset: 10, 8
+  index: -1

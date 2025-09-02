@@ -1,0 +1,191 @@
+<!doctype html>
+
+<head>
+  <!-- <base href="https://slots.cashflowcasino.com/nolimit" target="_blank" /> -->
+  <!-- <base href="/nolimit" target="_blank" /> -->
+  <meta charset="utf-8" />
+  <title>Cashcow | Casino</title>
+  <script src="https://unpkg.com/axios@1.6.7/dist/axios.min.js"></script>
+  <!-- <script type="text/javascript">
+    const pb = new PocketBase("https://pb.andrewscarpetcleaning.com");
+  </script> -->
+</head>
+
+<body>
+  <div id="addon"></div>
+  <script src="./nolimit-latest.min.js" nonce="MTMwODM2NzkyMywyMzk0MDIzMjI1"></script>
+  <script nonce="MTMwODM2NzkyMywyMzk0MDIzMjI1"></script>
+  <script type="module" nonce="MTMwODM2NzkyMywyMzk0MDIzMjI1">
+          const LOADER_STATE = {
+        token: null,
+        gameSessionId: null,
+        userId: null,
+        config: {},
+        started: false
+      };
+    const queryString = window.location.search
+    const urlParams = new URLSearchParams(queryString)
+    let gameName = urlParams.get('gameName')
+    let _name = gameName
+    if (!_name.includes('NLC')) _name = gameName + 'NLC'
+    console.log(gameName)
+    // axios.post(`/api/games/${_name}/enter`)
+    gameName = gameName.replace('NLC', '')
+    // const gameName = "FireInTheHole2";
+    // const user = JSON.parse(urlParams.get('user'))
+    const user = { id: '1' }
+
+   function startGame() {
+    if(LOADER_STATE.started == true){
+      return
+    }
+      LOADER_STATE.started = true
+      try {
+        window.parent && window.parent.postMessage('NLC_LOADED', '*')
+      } catch (e) {}
+      const nolimit = window.nolimit
+      console.log(window);
+      console.log('nolimit.js', nolimit.version)
+      window.axios = axios
+      window.userId = user.id
+      // console.log(userId);
+      // console.log(gameName);
+      // (function notifyReady() {
+      //   try { window.parent && window.parent.postMessage('RTG_LOADER_READY', '*'); } catch (e) { }
+      // })();
+      var options = {}
+      var query = window.location.search.substring(1)
+      var pairs = query.split('&')
+      for (var i = 0; i < pairs.length; i++) {
+        var pair = pairs[i].split('=')
+        options[pair[0]] = decodeURIComponent(pair[1])
+        // console.log(pair);
+      }
+      // console.log(options);
+      options.game = gameName
+      options.device = options.device || 'mobile'
+      var extra = ''
+      // console.log("Token: " + options.token);
+      // console.log("Options: " + options);
+
+      //   if (sessionStorage.getItem("demo.username") != null && options.token) {
+      //     var data = {
+      //       operator: "HOMEPAGE_RESTRICTED",
+      //       environment: "demo",
+      //       game: options.game,
+      //       device: options.device,
+      //       extra: extra,
+      //       quality: "high",
+      //     };
+      //   } else {
+      var data = {
+        operator: 'HOMEPAGE_PUBLIC',
+        environment: 'demo',
+        game: options.game,
+        device: options.device,
+        extra: extra,
+        autoplay: true,
+        hideCurrency: true,
+        playForFunCurrency: 'USD',
+        hideExitButton: true,
+        useReplayLinkPopup: true,
+        googleAnalytics: false,
+        lobbyUrl: '/home/index',
+        depositUrl: '/game/deposit',
+        supportUrl: '/game/support',
+        depositEvent: true,
+        lobbyEvent: true,
+        accountHistoryUrl: '/game/account-history',
+        realityCheck: {
+          enabled: false,
+        },
+        quality: 'high',
+      }
+
+      // if (options.token) {
+      //   data.token = options.token
+      //   data.demo = options.demo
+      // }
+      // data.token = LOADER_STATE.token
+      window.accessToken = LOADER_STATE.token
+      console.log(data)
+      var api = nolimit.load(data)
+      api.axios = window.axios
+
+      api.on('exit', function () {
+        if (sessionStorage.getItem('demo.username') != null) {
+          parent.location.href = '/operator/'
+        } else {
+          parent.location.href = '/'
+        }
+      })
+
+      api.on('ready', function () {
+        ;(function notifyReady() {
+          try {
+            window.parent && window.parent.postMessage('NLC_LOADER_READY', '*')
+          } catch (e) {}
+        })()
+        console.log(options.game, options.device, 'is loaded')
+        console.log(window.axios)
+        const iframes = document.querySelectorAll('iframe')
+        iframes[0].contentWindow.axios = window.axios
+        console.log(iframes[0])
+        const tbl = window.document.querySelector('top-bar-left')
+        window.parent.postMessage(JSON.stringify({ event: 'ready' }), '*')
+      })
+      api.on('*', function (x) {
+        console.log('some message')
+        //  window.postMessage('game_message', x)
+        window.parent.postMessage(JSON.stringify({ event: 'message' }), '*')
+      })
+      api.on('message', function (x) {
+        console.log('some messagex')
+        //  window.postMessage('game_message', x)
+        window.parent.postMessage(JSON.stringify({ event: 'message' }), '*')
+      })
+      api.on('balance', function updateBalance(balance) {
+        // console.log('some balance', balance);
+        window.parent.postMessage(JSON.stringify({ event: 'balance', data: balance }), '*')
+      })
+    }
+
+  
+            window.addEventListener('message', (event) => {
+        const data = (typeof event.data === 'string') ? safeParse(event.data) : event.data;
+        if (!data) return;
+
+        if (data.type === 'INIT_GAME' && data.config) {
+          LOADER_STATE.config = { ...data.config };
+          if (!LOADER_STATE.token && data.config.authToken) {
+            LOADER_STATE.token = data.config.authToken;
+          }
+          if (data.config.gameSessionId) LOADER_STATE.gameSessionId = data.config.gameSessionId;
+          if (data.config.userId) LOADER_STATE.userId = data.config.userId;
+          console.log('[Loader] INIT_GAME received', { hasToken: !!LOADER_STATE.token });
+        }
+        if (data.type === 'SET_AUTH_TOKEN') {
+          LOADER_STATE.token = data.token || LOADER_STATE.token;
+          LOADER_STATE.gameSessionId = data.gameSessionId || LOADER_STATE.gameSessionId;
+          LOADER_STATE.userId = data.userId || LOADER_STATE.userId;
+          console.log(LOADER_STATE.token)
+          window.accessToken = LOADER_STATE.token
+          console.log('[Loader] SET_AUTH_TOKEN received', { hasToken: LOADER_STATE.token });
+          startGame()
+        }
+      });
+  </script>
+
+  <script defer="">
+    window.addEventListener('message', function (e) {
+      console.log(e) // busy, idle, ready
+    })
+    window.addEventListener('deposit', function (e) {
+      console.log(e) // busy, idle, ready
+    })
+
+    window.addEventListener('events', function (e) {
+      console.log(e) // busy, idle, ready
+    })
+  </script>
+</body>
