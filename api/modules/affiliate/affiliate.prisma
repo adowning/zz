@@ -1,0 +1,61 @@
+// This is a Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// User model is referenced by other models, so a basic definition is needed.
+model User {
+  id                  String         @id @default(cuid())
+    affiliateLogsInvited AffiliateLog[] @relation("Invitor")
+    affiliateLogsReferred  AffiliateLog[] @relation("Child")
+}
+
+model Affiliate {
+  id            String      @id @default(cuid())
+  username      String      @unique
+  firstName     String      @map("first_name")
+  lastName      String      @map("last_name")
+  status        String // active, inactive, blocked
+  email         String      @unique
+  role          String // admin, user
+  referralCode  String      @unique @map("referral_code")
+  parentId      String?     @map("parent_id")
+  path          String[]
+  password      String
+  createdAt     DateTime    @default(now()) @map("created_at")
+  updatedAt     DateTime    @updatedAt @map("updated_at")
+
+  parent        Affiliate?  @relation("AffiliateTree", fields: [parentId], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  children      Affiliate[] @relation("AffiliateTree")
+
+  @@map("affiliates")
+}
+
+model AffiliateLog {
+  id                  String   @id @default(cuid())
+  invitorId           String   @map("invitor_id")
+  childId             String   @map("child_id")
+  currency            String
+  referralCode        String   @map("referral_code")
+  betAmount           Float    @default(0) @map("bet_amount")
+  commissionAmount    Float    @default(0) @map("commission_amount")
+  commissionWager     Float    @default(0) @map("commission_wager")
+  totalReferralAmount Float    @default(0) @map("total_referral_amount")
+  referralAmount      Float    @default(0) @map("referral_amount")
+  referralWager       Float    @default(0) @map("referral_wager")
+  lastVipLevelAmount  Float    @default(0) @map("last_vip_level_amount")
+  createdAt           DateTime @default(now()) @map("created_at")
+  updatedAt           DateTime @updatedAt @map("updated_at")
+
+  invitor             User     @relation("Invitor", fields: [invitorId], references: [id])
+  child               User     @relation("Child", fields: [childId], references: [id])
+
+  @@map("affiliate_logs")
+}

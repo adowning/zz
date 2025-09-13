@@ -1,0 +1,258 @@
+
+scatterPays.png
+size: 2048,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+scatterPaysFire/intro_00155
+  rotate: false
+  xy: 4, 533
+  size: 365, 151
+  orig: 365, 151
+  offset: 0, 0
+  index: -1
+scatterPaysFire/intro_00156
+  rotate: false
+  xy: 4, 378
+  size: 365, 151
+  orig: 365, 151
+  offset: 0, 0
+  index: -1
+scatterPaysFire/intro_00157
+  rotate: true
+  xy: 373, 474
+  size: 365, 151
+  orig: 365, 151
+  offset: 0, 0
+  index: -1
+scatterPaysFire/intro_00158
+  rotate: false
+  xy: 4, 223
+  size: 365, 151
+  orig: 365, 151
+  offset: 0, 0
+  index: -1
+scatterPaysFire/intro_00159
+  rotate: false
+  xy: 4, 68
+  size: 365, 151
+  orig: 365, 151
+  offset: 0, 0
+  index: -1
+scatterPaysFire/intro_00160
+  rotate: true
+  xy: 373, 105
+  size: 365, 151
+  orig: 365, 151
+  offset: 0, 0
+  index: -1
+scatterPaysFire/intro_00161
+  rotate: true
+  xy: 528, 474
+  size: 365, 151
+  orig: 365, 151
+  offset: 0, 0
+  index: -1
+scatterPaysFire/intro_00162
+  rotate: true
+  xy: 528, 105
+  size: 365, 151
+  orig: 365, 151
+  offset: 0, 0
+  index: -1
+scatterPaysFire/intro_00163
+  rotate: false
+  xy: 683, 779
+  size: 365, 151
+  orig: 365, 151
+  offset: 0, 0
+  index: -1
+scatterPaysFire/intro_00164
+  rotate: false
+  xy: 683, 624
+  size: 365, 151
+  orig: 365, 151
+  offset: 0, 0
+  index: -1
+scatterPaysFire/intro_00165
+  rotate: false
+  xy: 1052, 779
+  size: 365, 151
+  orig: 365, 151
+  offset: 0, 0
+  index: -1
+scatterPaysFire/intro_00166
+  rotate: false
+  xy: 683, 469
+  size: 365, 151
+  orig: 365, 151
+  offset: 0, 0
+  index: -1
+scatterPaysFire/loop_00173
+  rotate: false
+  xy: 683, 469
+  size: 365, 151
+  orig: 365, 151
+  offset: 0, 0
+  index: -1
+scatterPaysFire/intro_00167
+  rotate: false
+  xy: 1052, 624
+  size: 365, 151
+  orig: 365, 151
+  offset: 0, 0
+  index: -1
+scatterPaysFire/loop_00174
+  rotate: false
+  xy: 1052, 624
+  size: 365, 151
+  orig: 365, 151
+  offset: 0, 0
+  index: -1
+scatterPaysFire/intro_00168
+  rotate: false
+  xy: 1421, 779
+  size: 365, 151
+  orig: 365, 151
+  offset: 0, 0
+  index: -1
+scatterPaysFire/loop_00175
+  rotate: false
+  xy: 1421, 779
+  size: 365, 151
+  orig: 365, 151
+  offset: 0, 0
+  index: -1
+scatterPaysFire/intro_00169
+  rotate: false
+  xy: 683, 314
+  size: 365, 151
+  orig: 365, 151
+  offset: 0, 0
+  index: -1
+scatterPaysFire/loop_00176
+  rotate: false
+  xy: 683, 314
+  size: 365, 151
+  orig: 365, 151
+  offset: 0, 0
+  index: -1
+scatterPaysFire/intro_00170
+  rotate: false
+  xy: 1052, 469
+  size: 365, 151
+  orig: 365, 151
+  offset: 0, 0
+  index: -1
+scatterPaysFire/loop_00177
+  rotate: false
+  xy: 1052, 469
+  size: 365, 151
+  orig: 365, 151
+  offset: 0, 0
+  index: -1
+scatterPaysFire/intro_00171
+  rotate: false
+  xy: 1421, 624
+  size: 365, 151
+  orig: 365, 151
+  offset: 0, 0
+  index: -1
+scatterPaysFire/loop_00178
+  rotate: false
+  xy: 1421, 624
+  size: 365, 151
+  orig: 365, 151
+  offset: 0, 0
+  index: -1
+scatterPaysFire/loop_00163
+  rotate: false
+  xy: 683, 159
+  size: 365, 151
+  orig: 365, 151
+  offset: 0, 0
+  index: -1
+scatterPaysFire/loop_00164
+  rotate: false
+  xy: 1052, 314
+  size: 365, 151
+  orig: 365, 151
+  offset: 0, 0
+  index: -1
+scatterPaysFire/loop_00165
+  rotate: false
+  xy: 1421, 469
+  size: 365, 151
+  orig: 365, 151
+  offset: 0, 0
+  index: -1
+scatterPaysFire/loop_00166
+  rotate: true
+  xy: 1790, 565
+  size: 365, 151
+  orig: 365, 151
+  offset: 0, 0
+  index: -1
+scatterPaysFire/loop_00167
+  rotate: false
+  xy: 1052, 159
+  size: 365, 151
+  orig: 365, 151
+  offset: 0, 0
+  index: -1
+scatterPaysFire/loop_00168
+  rotate: false
+  xy: 1421, 314
+  size: 365, 151
+  orig: 365, 151
+  offset: 0, 0
+  index: -1
+scatterPaysFire/loop_00169
+  rotate: false
+  xy: 1421, 159
+  size: 365, 151
+  orig: 365, 151
+  offset: 0, 0
+  index: -1
+scatterPaysFire/loop_00170
+  rotate: true
+  xy: 1790, 196
+  size: 365, 151
+  orig: 365, 151
+  offset: 0, 0
+  index: -1
+scatterPaysFire/loop_00171
+  rotate: false
+  xy: 683, 4
+  size: 365, 151
+  orig: 365, 151
+  offset: 0, 0
+  index: -1
+scatterPaysFire/loop_00172
+  rotate: false
+  xy: 1052, 4
+  size: 365, 151
+  orig: 365, 151
+  offset: 0, 0
+  index: -1
+scatterPaysFire/loop_00179
+  rotate: false
+  xy: 4, 688
+  size: 365, 151
+  orig: 365, 151
+  offset: 0, 0
+  index: -1
+scatterPaysFire/intro_00172
+  rotate: false
+  xy: 4, 688
+  size: 365, 151
+  orig: 365, 151
+  offset: 0, 0
+  index: -1
+scatterPaysText
+  rotate: false
+  xy: 4, 843
+  size: 622, 87
+  orig: 622, 87
+  offset: 0, 0
+  index: -1

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+    <dict>
+        <key>frames</key>
+        <dict>
+            <key>ui_counter_font-export.png</key>
+            <dict>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{-4,5}</string>
+                <key>spriteSize</key>
+                <string>{120,54}</string>
+                <key>spriteSourceSize</key>
+                <string>{128,64}</string>
+                <key>textureRect</key>
+                <string>{{1,1},{120,54}}</string>
+                <key>textureRotated</key>
+                <false/>
+            </dict>
+        </dict>
+        <key>metadata</key>
+        <dict>
+            <key>format</key>
+            <integer>3</integer>
+            <key>pixelFormat</key>
+            <string>RGBA8888</string>
+            <key>premultiplyAlpha</key>
+            <false/>
+            <key>realTextureFileName</key>
+            <string>ui_counter_font-export.png</string>
+            <key>size</key>
+            <string>{122,56}</string>
+            <key>smartupdate</key>
+            <string>$TexturePacker:SmartUpdate:ead6a7b68abb0aaccaeee2f878f90dd1:59434716df19bca1329a35da0c2c1b09:9e5fbab1b824e6ab5857d4ba4ce6fcd2$</string>
+            <key>textureFileName</key>
+            <string>ui_counter_font-export.png</string>
+        </dict>
+    </dict>
+</plist>

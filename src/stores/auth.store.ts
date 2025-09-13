@@ -10,6 +10,15 @@ import type { User } from '~/types'
 import { useAppStore } from './app.store'
 import { JackpotContributionsOptionalDefaultsSchema } from '#/db'
 
+// Debounce utility function
+function debounce<T extends (...args: any[]) => any>(fn: T, delay: number): (...args: Parameters<T>) => void {
+  let timeoutId: NodeJS.Timeout | null = null
+  return (...args: Parameters<T>) => {
+    if (timeoutId) clearTimeout(timeoutId)
+    timeoutId = setTimeout(() => fn(...args), delay)
+  }
+}
+
 const TOKEN_KEY = 'accessToken'
 
 export const useAuthStore = defineStore('auth', () => {
@@ -208,7 +217,7 @@ export const useAuthStore = defineStore('auth', () => {
   }
 
   // Check if user is authenticated
-  const isAuthenticated = computed(() => !!currentUser.value)
+  const isAuthenticated = computed(() => currentUser.value !== null)
 
   // Toggle sign up mode
   const toggleSignUpMode = () => {
@@ -263,7 +272,12 @@ export const useAuthStore = defineStore('auth', () => {
 
   // Initialize the store
   const init = async (): Promise<void> => {
+      if (hasRanInit.value === true) return
+    hasRanInit.value = true
+    console.log('Auth store initialization started')
+    
     accessToken.value =  localStorage.getItem('accessToken')
+    try{
      const response = await getApiAuthMe()
       console.debug('[auth][getSession] response ok=', response.data)
       if (response.status === 200 && response.data?.user) {
@@ -278,6 +292,13 @@ export const useAuthStore = defineStore('auth', () => {
       // If no user data, clear auth state
       await clearAuth()
       }
+    }catch(e){
+      console.error('Error fetching user data:', e)
+      currentUser.value = null
+      accessToken.value = null
+      localStorage.removeItem('accessToken')
+    }
+    if (!accessToken.value)
     return
     if (hasRanInit.value === true) return
     hasRanInit.value = true
@@ -323,8 +344,11 @@ export const useAuthStore = defineStore('auth', () => {
     }
   }
 
-  // // Call init on store creation
-  init()
+  // // Call init on store creation with debouncing to prevent rapid calls
+  const debouncedInit = debounce(init, 300) // 300ms delay
+  debouncedInit()
+
+   const user = computed(() => currentUser.value)
 
   return {
     // State
@@ -337,6 +361,7 @@ export const useAuthStore = defineStore('auth', () => {
     logout,
     // Getters
     isAuthenticated,
+    user,
 
     // Actions
     setTokens,

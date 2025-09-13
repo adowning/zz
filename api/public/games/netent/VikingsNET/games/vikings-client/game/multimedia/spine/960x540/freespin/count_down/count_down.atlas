@@ -1,0 +1,18 @@
+count_down.png
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+assets/placeholder
+  rotate: false
+  xy: 196, 2
+  size: 350, 140
+  orig: 350, 140
+  offset: 0, 0
+  index: -1
+assets/shadowglow
+  rotate: false
+  xy: 2, 2
+  size: 192, 192
+  orig: 192, 192
+  offset: 0, 0
+  index: -1

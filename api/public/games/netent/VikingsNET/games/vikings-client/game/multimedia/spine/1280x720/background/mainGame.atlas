@@ -1,0 +1,76 @@
+
+mainGame.png
+size: 2048,2048
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+brafla_mgBackground_720
+  rotate: false
+  xy: 6, 1236
+  size: 1280, 720
+  orig: 1280, 720
+  offset: 0, 0
+  index: -1
+brafla_mgBackground_720_rimlight
+  rotate: false
+  xy: 6, 510
+  size: 1280, 720
+  orig: 1280, 720
+  offset: 0, 0
+  index: -1
+brafla_mgBackground_featuresplash_720
+  rotate: true
+  xy: 1292, 676
+  size: 1280, 720
+  orig: 1280, 720
+  offset: 0, 0
+  index: -1
+lightning/mg_Lightning_Far
+  rotate: false
+  xy: 1604, 581
+  size: 99, 89
+  orig: 99, 89
+  offset: 0, 0
+  index: -1
+lightning/mg_Lightning_Left
+  rotate: false
+  xy: 172, 73
+  size: 207, 176
+  orig: 207, 176
+  offset: 0, 0
+  index: -1
+lightning/mg_Lightning_Middle
+  rotate: false
+  xy: 172, 255
+  size: 347, 249
+  orig: 363, 252
+  offset: 7, 3
+  index: -1
+lightning/mg_Lightning_MiddleRight
+  rotate: false
+  xy: 525, 400
+  size: 123, 104
+  orig: 123, 104
+  offset: 0, 0
+  index: -1
+lightning/mg_Lightning_Right
+  rotate: false
+  xy: 1292, 513
+  size: 306, 157
+  orig: 306, 157
+  offset: 0, 0
+  index: -1
+reel
+  rotate: false
+  xy: 6, 6
+  size: 160, 498
+  orig: 160, 498
+  offset: 0, 0
+  index: -1
+white_texture
+  rotate: false
+  xy: 2018, 1954
+  size: 2, 2
+  orig: 2, 2
+  offset: 0, 0
+  index: -1

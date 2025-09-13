@@ -1,28 +1,25 @@
-import type { Context } from 'hono'
-import type { z } from 'zod'
-import chalk from 'chalk'
-
-import { and, eq, inArray } from 'drizzle-orm'
-
-import db, { GameSessionType, JackpotType, UserWithRelations } from '#/db'
+import db, { GameSession, JackpotType, UserWithRelations } from '#/db'
 import { jackpots } from '#/db/'
+import { getGameSessionFromCache, getSpinResultFromCache, getZeroWinSpinResultFromCache } from '#/lib/cache'
 import { handleGameSpin, updateGameSessionStats } from '#/lib/gameplay'
 import * as jackpotService from '#/lib/jackpot'
 import { sendNotificationToUser } from '#/lib/websocket.service'
-import {
-  addXpTousers,
-  calculateXpForWagerAndWins,
-} from '#/modules/vip/vip.service'
-import {
-  creditTowallets,
-  debitFromwallets,
-} from '#/modules/wallet/wallet.service'
-import { coinsToDollars, dollarsToCoins } from '#/utils/misc.utils'
-
-import { atlantis_settings, atlantis_spin } from './data'
-import { getGameSessionFromCache, getSpinResultFromCache, getZeroWinSpinResultFromCache } from '#/lib/cache'
 import { setUserRTGSettings } from '#/modules/user/user.service'
-import { providerSpinResponseDataSchema, rtgSettingsRequestDtoSchema, rtgSettingsResponseDtoSchema, rtgSpinRequestDtoSchema, rtgSpinResponseDtoSchema } from './rtg.schema'
+import { addXpTousers, calculateXpForWagerAndWins } from '#/modules/vip/vip.service'
+import { creditTowallets, debitFromwallets } from '#/modules/wallet/wallet.service'
+import { coinsToDollars, dollarsToCoins } from '#/utils/misc.utils'
+import chalk from 'chalk'
+import { and, eq, inArray } from 'drizzle-orm'
+import type { Context } from 'hono'
+import type { z } from 'zod'
+import { atlantis_settings, atlantis_spin } from './data'
+import {
+  providerSpinResponseDataSchema,
+  rtgSettingsRequestDtoSchema,
+  rtgSettingsResponseDtoSchema,
+  rtgSpinRequestDtoSchema,
+  rtgSpinResponseDtoSchema,
+} from './rtg.schema'
 
 type ProviderSpinResponseData = z.infer<typeof providerSpinResponseDataSchema>
 type RTGSettingsRequestDto = z.infer<typeof rtgSettingsRequestDtoSchema>
@@ -97,14 +94,11 @@ export async function createRedtigerSettings(
   }
 }
 
-export async function createRedtigerSpin(
-  c: Context,
-  data: RTGSpinRequestDto,
-): Promise<RTGSpinResponseDto> {
+export async function createRedtigerSpin(c: Context, data: RTGSpinRequestDto): Promise<RTGSpinResponseDto> {
   console.log(chalk.magenta('--- createRedtigerSpin ---'))
   const user = c.get('user') as UserWithRelations
   const gameName = `${data.gameId}RTG`
-  const gameSession = c.get('gameSession') as GameSessionType
+  const gameSession = c.get('gameSession') as GameSession
   console.log(chalk.magenta('user', user.id))
   console.log(chalk.magenta('gs', gameSession.id))
   if (!user || !gameSession) {
@@ -118,9 +112,7 @@ export async function createRedtigerSpin(
     }
   }
 
-  const wagerAmountCoins = dollarsToCoins(
-    Number.parseFloat(data.stake as string),
-  )
+  const wagerAmountCoins = dollarsToCoins(Number.parseFloat(data.stake as string))
 
   try {
     await debitFromwallets(user.id, wagerAmountCoins, `Wager for ${gameName}`)
@@ -153,8 +145,8 @@ export async function createRedtigerSpin(
     } else {
       console.log(chalk.magenta('data', JSON.stringify(data)))
       data.sessionId = '0'
-      if(!data.userData.fingerprint) {
-      data.userData!.fingerprint = crypto.randomUUID()
+      if (!data.userData.fingerprint) {
+        data.userData!.fingerprint = crypto.randomUUID()
       }
       const init = {
         body: JSON.stringify(data),
@@ -175,8 +167,8 @@ export async function createRedtigerSpin(
         } else {
           // Use cached spin results when blocked
           const gameResult = await getZeroWinSpinResultFromCache(data.gameId as string)
-          if (gameResult ) {
-            const zeroWin = gameResult.spinData  //gameResults.find((result: { win_total: number }) => result.win_total === 0)
+          if (gameResult) {
+            const zeroWin = gameResult.spinData //gameResults.find((result: { win_total: number }) => result.win_total === 0)
             if (zeroWin) {
               gameResultFromDeveloper = zeroWin as unknown as RTGSpinResponseDto
             } else {
@@ -209,47 +201,36 @@ export async function createRedtigerSpin(
     if (
       gameResultFromDeveloper.success === false &&
       (gameResultFromDeveloper.error?.code === '44' ||
-        (typeof gameResultFromDeveloper.error?.code === 'string' &&
-          Number(gameResultFromDeveloper.error.code) === 44))
+        (typeof gameResultFromDeveloper.error?.code === 'string' && Number(gameResultFromDeveloper.error.code) === 44))
     ) {
       const _user = await setUserRTGSettings(Math.floor(Date.now() / 1000), user.id)
       c.set('user', _user)
 
       const gameResults = await getSpinResultFromCache(data.gameId as string)
       if (gameResults && gameResults.length > 0) {
-            const gameResult = await getZeroWinSpinResultFromCache(data.gameId as string)
-          if (gameResult ) {
-            const zeroWin = gameResult.spinData  //gameResults.find((result: { win_total: number }) => result.win_total === 0)
-            if (zeroWin) {
-              gameResultFromDeveloper = zeroWin as unknown as RTGSpinResponseDto
-            } else {
-              // Fallback to first cached result if exists
-              gameResultFromDeveloper = zeroWin as unknown as RTGSpinResponseDto
-            }
-          } 
+        const gameResult = await getZeroWinSpinResultFromCache(data.gameId as string)
+        if (gameResult) {
+          const zeroWin = gameResult.spinData //gameResults.find((result: { win_total: number }) => result.win_total === 0)
+          if (zeroWin) {
+            gameResultFromDeveloper = zeroWin as unknown as RTGSpinResponseDto
+          } else {
+            // Fallback to first cached result if exists
+            gameResultFromDeveloper = zeroWin as unknown as RTGSpinResponseDto
+          }
+        }
       }
     }
     console.log(JSON.stringify(gameResultFromDeveloper))
 
     if (!gameResultFromDeveloper.success) {
-      await creditTowallets(
-        user.id,
-        wagerAmountCoins,
-        `Refund for failed spin on ${gameName}`,
-      )
+      await creditTowallets(user.id, wagerAmountCoins, `Refund for failed spin on ${gameName}`)
       return gameResultFromDeveloper
     }
 
-    const grossWinAmountCoins = dollarsToCoins(
-      Number.parseFloat(gameResultFromDeveloper.result!.game.win.total),
-    )
+    const grossWinAmountCoins = dollarsToCoins(Number.parseFloat(gameResultFromDeveloper.result!.game.win.total))
 
     if (grossWinAmountCoins > 0) {
-      await creditTowallets(
-        user.id,
-        grossWinAmountCoins,
-        `Win from ${gameName}`,
-      )
+      await creditTowallets(user.id, grossWinAmountCoins, `Win from ${gameName}`)
     }
 
     if (user.vipInfo) {
@@ -261,32 +242,35 @@ export async function createRedtigerSpin(
 
       if (xpResult.totalXp > 0) {
         await addXpTousers(user.id, xpResult.totalXp)
-        gameSession.totalXpGained =
-          (gameSession.totalXpGained || 0) + xpResult.totalXp
+        gameSession.totalXpGained = (gameSession.totalXpGained || 0) + xpResult.totalXp
         c.set('gameSession', gameSession)
       }
 
       if (gameResultFromDeveloper.result?.game) {
-        (gameResultFromDeveloper.result.game as any).xpBreakdown = xpResult
+        ;(gameResultFromDeveloper.result.game as any).xpBreakdown = xpResult
       }
     } else {
       console.warn('No VIP info found for user:', user.id)
     }
 
-    await handleGameSpin(c, {
-      gameId: gameSession.gameId ?? null,
-      gameName,
-      spinData: gameResultFromDeveloper.result as any,
-      sessionId: '',
-      id: '',
-      grossWinAmount: grossWinAmountCoins,
-      wagerAmount: wagerAmountCoins,
-      // spinNumber: 0,
-      occurredAt: new Date()
-    }, {
-      totalSpinWinnings: grossWinAmountCoins,
-      wagerAmount: wagerAmountCoins,
-    })
+    await handleGameSpin(
+      c,
+      {
+        gameId: gameSession.gameId ?? null,
+        gameName,
+        spinData: gameResultFromDeveloper.result as any,
+        sessionId: '',
+        id: '',
+        grossWinAmount: grossWinAmountCoins,
+        wagerAmount: wagerAmountCoins,
+        // spinNumber: 0,
+        occurredAt: new Date(),
+      },
+      {
+        totalSpinWinnings: grossWinAmountCoins,
+        wagerAmount: wagerAmountCoins,
+      },
+    )
     await updateGameSessionStats(c, {
       totalSpinWinnings: grossWinAmountCoins,
       wagerAmount: wagerAmountCoins,
@@ -334,10 +318,7 @@ export async function createRedtigerSpin(
       success: false,
       error: {
         code: 'SPIN_FAILED',
-        message:
-          error instanceof Error
-            ? error.message
-            : 'An unexpected error occurred.',
+        message: error instanceof Error ? error.message : 'An unexpected error occurred.',
       },
     }
   }
@@ -347,14 +328,14 @@ async function enhanceRTGResponseWithJackpots(
   originalResponse: ProviderSpinResponseData,
   jackpotResult: {
     contributions: {
-      jackpotType: string;
-      contributionAmountCoins: number;
-    }[];
+      jackpotType: string
+      contributionAmountCoins: number
+    }[]
     jackpotWin: {
-      id: string;
-      jackpotType: string;
-      winAmountCoins: number;
-    } | null;
+      id: string
+      jackpotType: string
+      winAmountCoins: number
+    } | null
   },
 ): Promise<ProviderSpinResponseData> {
   const enhancedResponse = { ...originalResponse }
@@ -362,10 +343,7 @@ async function enhanceRTGResponseWithJackpots(
   if (jackpotResult?.contributions?.length > 0) {
     enhancedResponse.jackpots = {
       contributions: jackpotResult.contributions.map(
-        (contrib: {
-          jackpotType: string;
-          contributionAmountCoins: number;
-        }) => ({
+        (contrib: { jackpotType: string; contributionAmountCoins: number }) => ({
           type: contrib.jackpotType,
           amount: coinsToDollars(contrib.contributionAmountCoins),
           amountCoins: contrib.contributionAmountCoins,
@@ -373,8 +351,7 @@ async function enhanceRTGResponseWithJackpots(
       ),
       totalContribution: coinsToDollars(
         jackpotResult.contributions.reduce(
-          (acc: number, contrib: { contributionAmountCoins: number }) =>
-            acc + contrib.contributionAmountCoins,
+          (acc: number, contrib: { contributionAmountCoins: number }) => acc + contrib.contributionAmountCoins,
           0,
         ),
       ),
@@ -393,11 +370,8 @@ async function enhanceRTGResponseWithJackpots(
     }
 
     if (enhancedResponse.user?.balance?.cash?.atEnd) {
-      const currentBalance = Number.parseFloat(
-        enhancedResponse.user.balance.cash.atEnd,
-      )
-      const newBalance =
-        currentBalance + coinsToDollars(jackpotWin.winAmountCoins)
+      const currentBalance = Number.parseFloat(enhancedResponse.user.balance.cash.atEnd)
+      const newBalance = currentBalance + coinsToDollars(jackpotWin.winAmountCoins)
       enhancedResponse.user.balance.cash.atEnd = newBalance.toFixed(2)
     }
 
@@ -411,16 +385,13 @@ async function enhanceRTGResponseWithJackpots(
   const eligibleTypes = ['MAJOR', 'MINOR', 'GRAND']
   const currentJackpots = await db.query.jackpots.findMany({
     where: and(
-      inArray(
-        jackpots.type,
-        eligibleTypes as (typeof jackpots.type.enumValues)[number][],
-      ),
+      inArray(jackpots.type, eligibleTypes as (typeof jackpots.type.enumValues)[number][]),
       eq(jackpots.isActive, true),
     ),
-  });
-  (
+  })
+  ;(
     enhancedResponse as ProviderSpinResponseData & {
-      currentJackpots: unknown[];
+      currentJackpots: unknown[]
     }
   ).currentJackpots = currentJackpots.map((jackpot: JackpotType) => ({
     type: jackpot.type,

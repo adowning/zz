@@ -1,0 +1,76 @@
+
+freeSpinBG.png
+size: 2048,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+freeS_Flag
+  rotate: false
+  xy: 1457, 500
+  size: 128, 224
+  orig: 128, 224
+  offset: 0, 0
+  index: -1
+freeS_FlagFire
+  rotate: false
+  xy: 1686, 790
+  size: 99, 145
+  orig: 128, 224
+  offset: 17, 0
+  index: -1
+freeS_Flagpole
+  rotate: true
+  xy: 1686, 939
+  size: 43, 341
+  orig: 43, 341
+  offset: 0, 0
+  index: -1
+freeS_bg
+  rotate: false
+  xy: 4, 442
+  size: 960, 540
+  orig: 960, 540
+  offset: 0, 0
+  index: -1
+freeS_fgL
+  rotate: false
+  xy: 1457, 728
+  size: 225, 254
+  orig: 225, 254
+  offset: 0, 0
+  index: -1
+freeS_fgR
+  rotate: false
+  xy: 4, 193
+  size: 735, 245
+  orig: 735, 254
+  offset: 0, 0
+  index: -1
+freeS_fire_frontLeft
+  rotate: false
+  xy: 968, 482
+  size: 485, 500
+  orig: 488, 500
+  offset: 0, 0
+  index: -1
+freeS_fire_midRight
+  rotate: true
+  xy: 268, 63
+  size: 126, 199
+  orig: 126, 199
+  offset: 0, 0
+  index: -1
+freeS_mg
+  rotate: false
+  xy: 743, 243
+  size: 188, 195
+  orig: 188, 195
+  offset: 0, 0
+  index: -1
+freeS_smoke_frontRight
+  rotate: false
+  xy: 4, 4
+  size: 260, 185
+  orig: 260, 185
+  offset: 0, 0
+  index: -1

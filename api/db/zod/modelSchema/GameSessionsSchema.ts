@@ -1,6 +1,8 @@
 import { z } from 'zod';
+import { JsonValueSchema } from '../inputTypeSchemas/JsonValueSchema'
 import { Prisma } from '@prisma/client'
 import { session_statusSchema } from '../inputTypeSchemas/session_statusSchema'
+import type { JsonValueType } from '../inputTypeSchemas/JsonValueSchema';
 import { AuthSessionsWithRelationsSchema, AuthSessionsOptionalDefaultsWithRelationsSchema } from './AuthSessionsSchema'
 import type { AuthSessionsWithRelations, AuthSessionsOptionalDefaultsWithRelations } from './AuthSessionsSchema'
 import { UsersWithRelationsSchema, UsersOptionalDefaultsWithRelationsSchema } from './UsersSchema'
@@ -19,10 +21,12 @@ export const GameSessionsSchema = z.object({
   authSessionId: z.string(),
   userId: z.string(),
   gameId: z.string().nullable(),
+  gameName: z.string().nullable(),
   totalWagered: z.number(),
   totalWon: z.number(),
   totalXpGained: z.number(),
   rtp: z.instanceof(Prisma.Decimal, { message: "Field 'rtp' must be a Decimal. Location: ['Models', 'GameSessions']"}).nullable(),
+  phpGameData: JsonValueSchema.nullable(),
   duration: z.number(),
   createdAt: z.coerce.date(),
   endAt: z.coerce.date().nullable(),
@@ -56,7 +60,9 @@ export type GameSessionsRelations = {
   users: UsersWithRelations;
 };
 
-export type GameSessionsWithRelations = z.infer<typeof GameSessionsSchema> & GameSessionsRelations
+export type GameSessionsWithRelations = Omit<z.infer<typeof GameSessionsSchema>, "phpGameData"> & {
+  phpGameData?: JsonValueType | null;
+} & GameSessionsRelations
 
 export const GameSessionsWithRelationsSchema: z.ZodType<GameSessionsWithRelations> = GameSessionsSchema.merge(z.object({
   authSessions: z.lazy(() => AuthSessionsWithRelationsSchema),
@@ -72,7 +78,9 @@ export type GameSessionsOptionalDefaultsRelations = {
   users: UsersOptionalDefaultsWithRelations;
 };
 
-export type GameSessionsOptionalDefaultsWithRelations = z.infer<typeof GameSessionsOptionalDefaultsSchema> & GameSessionsOptionalDefaultsRelations
+export type GameSessionsOptionalDefaultsWithRelations = Omit<z.infer<typeof GameSessionsOptionalDefaultsSchema>, "phpGameData"> & {
+  phpGameData?: JsonValueType | null;
+} & GameSessionsOptionalDefaultsRelations
 
 export const GameSessionsOptionalDefaultsWithRelationsSchema: z.ZodType<GameSessionsOptionalDefaultsWithRelations> = GameSessionsOptionalDefaultsSchema.merge(z.object({
   authSessions: z.lazy(() => AuthSessionsOptionalDefaultsWithRelationsSchema),

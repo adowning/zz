@@ -1,0 +1,41 @@
+
+main_game_mg.png
+size: 256,128
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+banner/banner
+  rotate: true
+  xy: 6, 30
+  size: 79, 194
+  orig: 79, 194
+  offset: 0, 0
+  index: -1
+banner/flap
+  rotate: false
+  xy: 206, 47
+  size: 27, 21
+  orig: 27, 21
+  offset: 0, 0
+  index: -1
+banner/skull
+  rotate: false
+  xy: 206, 74
+  size: 37, 35
+  orig: 37, 35
+  offset: 0, 0
+  index: -1
+banner/stick
+  rotate: true
+  xy: 6, 6
+  size: 6, 50
+  orig: 6, 50
+  offset: 0, 0
+  index: -1
+banner/strip
+  rotate: true
+  xy: 6, 18
+  size: 6, 63
+  orig: 6, 63
+  offset: 0, 0
+  index: -1

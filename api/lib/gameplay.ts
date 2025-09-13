@@ -1,24 +1,16 @@
-import type {
-  GameSessionType,
-  GameSpinType,
-  NewgameSpins,
-  UserWithRelations,
-} from '#/db/'
+import type { GameSession, GameSpinType, NewgameSpins, UserWithRelations } from '#/db/'
 import { addSpinToCache, saveGameSessionToCache } from '#/lib/cache'
-import {
-  addXpTousers,
-  calculateXpForWagerAndWins,
-} from '#/modules/vip/vip.service'
+import { addXpTousers, calculateXpForWagerAndWins } from '#/modules/vip/vip.service'
 import chalk from 'chalk'
 import type { Context } from 'hono'
 
 export interface SpinParams {
-  totalSpinWinnings: number;
-  wagerAmount: number;
+  totalSpinWinnings: number
+  wagerAmount: number
 }
 export interface SpinStats {
-  totalSpinWinnings: number;
-  wagerAmount: number;
+  totalSpinWinnings: number
+  wagerAmount: number
 }
 export async function handleGameSpin(
   c: Context,
@@ -26,18 +18,12 @@ export async function handleGameSpin(
   spinParams: SpinParams,
 ): Promise<GameSpinType> {
   const user = c.get('user') as UserWithRelations
-  const gameSession = c.get('gameSession') as GameSessionType
+  const gameSession = c.get('gameSession') as GameSession
 
   if (!user || !gameSession) {
-    throw new Error(
-      'handleGameSpin requires an active game session and authenticated user in the context.',
-    )
+    throw new Error('handleGameSpin requires an active game session and authenticated user in the context.')
   }
-  console.log(
-    chalk.bgCyan(
-      `Handling game spin for user: ${user.id} in session: ${gameSession.id}`,
-    ),
-  )
+  console.log(chalk.bgCyan(`Handling game spin for user: ${user.id} in session: ${gameSession.id}`))
 
   const { totalSpinWinnings, wagerAmount } = spinParams
 
@@ -50,9 +36,7 @@ export async function handleGameSpin(
 
     if (xpGained.totalXp > 0) {
       await addXpTousers(user.id, xpGained.totalXp)
-      console.log(
-        chalk.yellow(`User ${user.id} earned ${xpGained.totalXp} XP.`),
-      )
+      console.log(chalk.yellow(`User ${user.id} earned ${xpGained.totalXp} XP.`))
     }
   }
   const wallet = c.get('wallet')
@@ -91,23 +75,18 @@ export async function handleGameSpin(
     gameSessionRtp: 0,
     playerRtpToday: 0,
     winAmount: 0,
-    betAmount: 0
+    betAmount: 0,
   }
 
   await addSpinToCache(gameSession.id, newSpin)
 
   return newSpin
 }
-export async function updateGameSessionStats(
-  c: Context,
-  spinStats: SpinStats,
-): Promise<void> {
-  const gameSession = c.get('gameSession') as GameSessionType
+export async function updateGameSessionStats(c: Context, spinStats: SpinStats): Promise<void> {
+  const gameSession = c.get('gameSession') as GameSession
 
   if (!gameSession) {
-    console.warn(
-      'Attempted to update game session stats, but no session was found in the context.',
-    )
+    console.warn('Attempted to update game session stats, but no session was found in the context.')
     return
   }
 
@@ -118,9 +97,5 @@ export async function updateGameSessionStats(
 
   await saveGameSessionToCache(gameSession)
 
-  console.log(
-    chalk.gray(
-      `Updated session ${gameSession.id}: Wagered=${wagerAmount}, Won=${totalSpinWinnings}`,
-    ),
-  )
+  console.log(chalk.gray(`Updated session ${gameSession.id}: Wagered=${wagerAmount}, Won=${totalSpinWinnings}`))
 }

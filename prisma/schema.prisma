@@ -165,11 +165,13 @@ model GameSessions {
   authSessionId   String         @map("auth_session_id")
   userId          String         @map("user_id")
   gameId          String?        @map("game_id")
+  gameName          String?        @map("game_name")
   status          session_status @default(ACTIVE)
   totalWagered    Int            @default(0) @map("total_wagered")
   totalWon        Int            @default(0) @map("total_won")
   totalXpGained   Int            @default(0) @map("total_xp_gained")
   rtp             Decimal?       @db.Decimal(5, 2)
+  phpGameData Json?          @map("php_game_data")
   duration        Int            @default(0)
   createdAt       DateTime       @default(now()) @map("created_at") @db.Timestamptz(6)
   endAt           DateTime?      @map("end_at") @db.Timestamptz(6)
@@ -234,10 +236,12 @@ model Games {
   providerId           String?                @map("provider_id")
   totalWagered         Int                    @map("total_wagered")
   totalWon             Int                    @map("total_won")
+  goldsvetData  Json? @map("goldsvet_data")
   targetRtp            Int?                   @map("target_rtp")
   isFeatured           Boolean                @map("is_featured")
   isActive             Boolean                @default(true) @map("is_active")
   operatorId           String?                @map("operator_id")
+  isHorizontal  Boolean @default(false)
   // tournamentDirectives Json?                  @map("tournament_directives")
   createdAt            DateTime               @default(now()) @map("created_at")
   updatedAt            DateTime               @default(now()) @map("updated_at")
@@ -324,6 +328,7 @@ model Operators {
   lastUsedAt       DateTime?  @map("last_used_at")
   createdAt        DateTime   @default(now()) @map("created_at")
   updatedAt        DateTime   @default(now()) @map("updated_at")
+  goldsvetData  Json?       @map("goldsvet_data")
   games            Games[]
   products         Products[]
   users            Users[]
@@ -381,6 +386,7 @@ model Transactions {
   status              String    @default("PENDING")
   amount              Int
   netAmount           Int?      @map("net_amount")
+  currencyName        String?   @map("currency_name")
   feeAmount           Int?      @map("fee_amount")
   productId           String?   @map("product_id")
   paymentMethod       String?   @map("payment_method")
@@ -399,7 +405,7 @@ model Transactions {
   createdAt           DateTime  @default(now()) @map("created_at")
   updatedAt           DateTime  @default(now()) @map("updated_at")
   operatorId          String?   @map("operator_id")
-  userId              String?   @map("user_id")
+  userId              String   @map("user_id")
   products            Products? @relation(fields: [productId], references: [id], map: "transactions_product_fkey")
   wallets             Wallets?  @relation(fields: [walletId], references: [id], onDelete: Cascade, map: "transactions_wallet_fkey")
 
@@ -430,6 +436,10 @@ model Users {
   lastSeen                 DateTime?                @map("last_seen")
   rtgBlockTime             Int                      @default(0) @map("rtg_block_time")
   phone                    String?                  @unique(map: "users_phone_unique")
+    path          String[]               @default([])
+    invitorId  String?                  @map("invitor_id")
+  avatar        String    @default("avatar1.png")
+  status        Status    @default(ACTIVE)
   authSessions             AuthSessions[]
   blackjackBets            BlackjackBets[]
   deposits                 Deposits[]
@@ -441,14 +451,14 @@ model Users {
   // tournamentParticipants   TournamentParticipants[]
    // This is the NEW part: An explicit foreign key to the active wallet.
   // The @unique constraint ensures a wallet can only be the active one for a single user.
-  activeWalletId String?   @unique @map("active_wallet_id")
+  // activeWalletId String?   @unique @map("active_wallet_id")
 
   // RELATION 1: A direct one-to-one link to the single active wallet.
   // This is what you will use in your Drizzle query.
-  activeWallet   Wallets?  @relation("ActiveWalletForUser", fields: [activeWalletId], references: [id], onDelete: SetNull)
+  // activeWallet   Wallets?  @relation("ActiveWalletForUser", fields: [activeWalletId], references: [id], onDelete: SetNull)
 
   // RELATION 2: The existing one-to-many link to ALL wallets owned by the user.
-  wallets        Wallets[] @relation("AllWalletsForUser")
+  wallets                 Wallets[]
   // wallets_users_active_wallet_idTowallets wallets?                  @relation("users_active_wallet_idTowallets", fields: [activeWalletId], references: [id], map: "users_active_wallet_id_wallets_id_fk")
   vipInfo                  VipInfo?
   // wallets_wallets_user_idTousers          wallets[]                 @relation("wallets_user_idTousers")
@@ -456,11 +466,35 @@ model Users {
   // operators                               operators[]
   activeOperatorId       String? //@unique(map: "users_active_operator_id_unique" )   
   ops                      Operators?               @relation(fields: [activeOperatorId], references: [id], onDelete: Cascade, onUpdate: NoAction, map: "favorite_user_operators_id_active_operator_id_fk")
-
+inviteCode String? 
   operatorSwitchHistory OperatorSwitchHistory[]
+  vipCashbacks      VipCashback[]
+  vipLevelUpBonuses VipLevelUpBonus[]
+  vipSpinRewards    VipSpinReward[]
+  affiliateLogsInvited AffiliateLog[]   @relation("Invitor")
+  affiliateLogsReferred  AffiliateLog[]   @relation("Child")
+    referralCodes ReferralCode[]
+
+  balances Balance[]
 
   @@map("users")
 }
+
+model ReferralCode {
+  id             String      @id 
+  code           String   @unique
+  name           String?  @default("")
+  commissionRate Float
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+
+  // Foreign key relationship to the User model
+  userId         String
+  user           Users     @relation(fields: [userId], references: [id])
+
+  @@map("referral_codes")
+}
+
 // model VipLevel {
 //   level     Int @id
 //   xpForNext Int
@@ -534,10 +568,13 @@ model Wallets {
   // This is the standard foreign key that makes every wallet belong to a user.
   
   // This is the back-relation for the one-to-many link (user.wallets)
-  user          Users     @relation("AllWalletsForUser", fields: [userId], references: [id], onDelete: Cascade)
+  // user          Users     @relation("AllWalletsForUser", fields: [userId], references: [id], onDelete: Cascade)
+  user          Users      @relation(fields: [userId], references: [id])
+  isActive      Boolean   @default(false)
 
-  // This is the back-relation for the one-to-one link (user.activeWallet)
-  activeForUser Users?    @relation("ActiveWalletForUser")
+  // // This is the back-relation for the one-to-one link (user.activeWallet)
+  // activeForUser Users?    @relation("ActiveWalletForUser")
+  @@unique([userId, isActive])
 
   @@unique([userId, operatorId], map: "wallets_user_operator_unique")
   @@map("wallets")
@@ -561,6 +598,190 @@ model Withdrawals {
   users        Users?    @relation(fields: [userId], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "withdrawals_user_id_users_id_fk")
 
   @@map("withdrawals")
+}
+
+
+model VipTiers {
+  id                    String       @id @default(cuid())
+  tiersName             String       @map("tiers_name")
+  icon                  String
+  order                 Int
+  weeklyCashback        Boolean      @default(false) @map("weekly_cashback")
+  weeklyCashbackMin     Int          @default(0) @map("weekly_cashback_min")
+  weeklyCashbackPercent Int          @default(0) @map("weekly_cashback_percent")
+  monthlyCashback       Boolean      @default(false) @map("monthly_cashback")
+  monthlyCashbackMin    Int          @default(0) @map("monthly_cashback_min")
+  monthlyCashbackPercent Int         @default(0) @map("monthly_cashback_percent")
+  levelUpBonus          Int          @default(0) @map("level_up_bonus")
+  noFeeWithdrawal       Boolean      @default(false) @map("no_fee_withdrawal")
+  levels                VipLevel[]
+  spinPrizes            VipSpinPrize[]
+
+  @@map("vip_tiers")
+}
+
+model VipLevel {
+  id        String   @id @default(cuid())
+  parentId  String   @map("parent_id")
+  levelName String   @map("level_name")
+  xp        Int
+  parent    VipTiers @relation(fields: [parentId], references: [id])
+  settingId Int
+  setting   Setting @relation(fields: [settingId], references: [id])
+
+  @@map("vip_levels")
+}
+
+model VipCashback {
+  id        String   @id @default(cuid())
+  userId    String   @map("user_id")
+  amount    Int
+  currency  String
+  tiersName String   @map("tiers_name")
+  type      String
+  createdAt DateTime @default(now()) @map("created_at")
+  user      Users     @relation(fields: [userId], references: [id])
+
+  @@map("vip_cashback")
+}
+
+model VipLevelUpBonus {
+  id        String   @id @default(cuid())
+  userId    String   @map("user_id")
+  amount    Int
+  levelName String   @map("level_name")
+  levelXp   Int      @map("level_xp")
+  createdAt DateTime @default(now()) @map("created_at")
+  user      Users     @relation(fields: [userId], references: [id])
+
+  @@map("vip_level_up_bonus")
+}
+
+model VipSpinPrize {
+  id      String   @id @default(cuid())
+  tiersId String   @map("tiers_id")
+  prizes  Json
+  tiers   VipTiers @relation(fields: [tiersId], references: [id])
+
+  @@map("vip_spin_prizes")
+}
+
+model VipSpinReward {
+  id        String   @id @default(cuid())
+  userId    String   @map("user_id")
+  amount    Int
+  currency  String
+  createdAt DateTime @default(now()) @map("created_at")
+  user      Users     @relation(fields: [userId], references: [id])
+
+  @@map("vip_spin_rewards")
+}
+
+model Affiliate {
+  id            String      @id @default(cuid())
+  username      String      @unique
+  firstName     String      @map("first_name")
+  lastName      String      @map("last_name")
+  status        String // active, inactive, blocked
+  email         String      @unique
+  role          String // admin, user
+  referralCode  String      @unique @map("referral_code")
+  parentId      String?     @map("parent_id")
+  path          String[]  @default([])
+  password      String
+  createdAt     DateTime    @default(now()) @map("created_at")
+  updatedAt     DateTime    @updatedAt @map("updated_at")
+
+  parent        Affiliate?  @relation("AffiliateTree", fields: [parentId], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  children      Affiliate[] @relation("AffiliateTree")
+
+  @@map("affiliates")
+}
+
+model AffiliateLog {
+  id                  String   @id @default(cuid())
+  invitorId           String   @map("invitor_id")
+  childId             String   @map("child_id")
+  currency            String
+  referralCode        String   @map("referral_code")
+  betAmount           Float    @default(0) @map("bet_amount")
+  commissionAmount    Float    @default(0) @map("commission_amount")
+  commissionWager     Float    @default(0) @map("commission_wager")
+  totalReferralAmount Float    @default(0) @map("total_referral_amount")
+  referralAmount      Float    @default(0) @map("referral_amount")
+  referralWager       Float    @default(0) @map("referral_wager")
+  lastVipLevelAmount  Float    @default(0) @map("last_vip_level_amount")
+  createdAt           DateTime @default(now()) @map("created_at")
+  updatedAt           DateTime @updatedAt @map("updated_at")
+
+  invitor             Users     @relation("Invitor", fields: [invitorId], references: [id])
+  child               Users     @relation("Child", fields: [childId], references: [id])
+
+  @@map("affiliate_logs")
+}
+
+model Setting {
+  id                      Int      @id @default(autoincrement())
+  name                    String   @default("setting")
+  referralCodeCount       Int      @default(20)
+  referralCommissionRate  Float    @default(0.25)
+  rates                   Json     @default("[{\"USD\": 1}]")
+
+  // One-to-many relationship with VipLevel
+  vipLevels               VipLevel[]
+
+  // One-to-one relationship with Commission
+  commission              Commission?
+
+  createdAt               DateTime @default(now())
+  updatedAt               DateTime @updatedAt
+
+  @@map("settings")
+}
+
+model Commission {
+  id            Int     @id @default(autoincrement())
+  master        Float   @default(30)
+  affiliate     Float   @default(20)
+  subAffiliate  Float   @default(10)
+
+  // Foreign key for the one-to-one relationship
+  settingId     Int     @unique
+  setting       Setting @relation(fields: [settingId], references: [id])
+
+  @@map("commissions")
+}
+
+model Currency {
+  id       String       @id 
+  // ... other currency fields like code, name, etc.
+  balances Balance[]
+}
+
+
+model Balance {
+  id           Int      @id @default(autoincrement())
+
+  // Using Decimal for financial precision
+  amount       Int  @default(0)
+  pending      Int  @default(0)
+  bonus        Int  @default(0)
+  withdrawable Int  @default(0)
+  turnover     Int  @default(0)
+
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  // Foreign key relationships
+  userId       String
+  user         Users     @relation(fields: [userId], references: [id])
+
+  currencyId   String
+  currency     Currency @relation(fields: [currencyId], references: [id])
+
+  // Compound index to optimize queries
+  @@index([userId, currencyId, amount, createdAt, updatedAt])
+  @@map("balances")
 }
 
 enum GameProviderName {
@@ -595,7 +816,11 @@ enum Permission {
   manage_settings
   launch_game
 }
-
+enum Status {
+  ACTIVE
+  INACTIVE
+  BANNED
+}
 enum Role {
   USER
   ADMIN

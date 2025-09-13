@@ -47,6 +47,12 @@ export enum Permission {
   launch_game = 'launch_game',
 }
 
+export enum Status {
+  ACTIVE = 'ACTIVE',
+  INACTIVE = 'INACTIVE',
+  BANNED = 'BANNED',
+}
+
 export enum Role {
   USER = 'USER',
   ADMIN = 'ADMIN',
@@ -259,11 +265,13 @@ export const gameSessionsTable = table('gameSessions')
     authSessionId: string().from('auth_session_id'),
     userId: string().from('user_id'),
     gameId: string().from('game_id').optional(),
+    gameName: string().from('game_name').optional(),
     status: enumeration<session_status>(),
     totalWagered: number().from('total_wagered'),
     totalWon: number().from('total_won'),
     totalXpGained: number().from('total_xp_gained'),
     rtp: number().optional(),
+    phpGameData: json().from('php_game_data').optional(),
     duration: number(),
     createdAt: number().from('created_at'),
     endAt: number().from('end_at').optional(),
@@ -320,10 +328,12 @@ export const gamesTable = table('games')
     providerId: string().from('provider_id').optional(),
     totalWagered: number().from('total_wagered'),
     totalWon: number().from('total_won'),
+    goldsvetData: json().from('goldsvet_data').optional(),
     targetRtp: number().from('target_rtp').optional(),
     isFeatured: boolean().from('is_featured'),
     isActive: boolean().from('is_active'),
     operatorId: string().from('operator_id').optional(),
+    isHorizontal: boolean(),
     createdAt: number().from('created_at'),
     updatedAt: number().from('updated_at'),
     status: number(),
@@ -392,6 +402,7 @@ export const operatorsTable = table('operators')
     lastUsedAt: number().from('last_used_at').optional(),
     createdAt: number().from('created_at'),
     updatedAt: number().from('updated_at'),
+    goldsvetData: json().from('goldsvet_data').optional(),
   })
   .primaryKey('id')
 
@@ -435,6 +446,7 @@ export const transactionsTable = table('transactions')
     status: string(),
     amount: number(),
     netAmount: number().from('net_amount').optional(),
+    currencyName: string().from('currency_name').optional(),
     feeAmount: number().from('fee_amount').optional(),
     productId: string().from('product_id').optional(),
     paymentMethod: string().from('payment_method').optional(),
@@ -453,7 +465,7 @@ export const transactionsTable = table('transactions')
     createdAt: number().from('created_at'),
     updatedAt: number().from('updated_at'),
     operatorId: string().from('operator_id').optional(),
-    userId: string().from('user_id').optional(),
+    userId: string().from('user_id'),
   })
   .primaryKey('id')
 
@@ -481,8 +493,26 @@ export const usersTable = table('users')
     lastSeen: number().from('last_seen').optional(),
     rtgBlockTime: number().from('rtg_block_time'),
     phone: string().optional(),
+    path: json<string[]>(),
+    invitorId: string().from('invitor_id').optional(),
+    avatar: string(),
+    status: enumeration<Status>(),
     activeWalletId: string().from('active_wallet_id').optional(),
     activeOperatorId: string().optional(),
+    inviteCode: string().optional(),
+  })
+  .primaryKey('id')
+
+export const referralCodeTable = table('referralCodes')
+  .from('referral_codes')
+  .columns({
+    id: string(),
+    code: string(),
+    name: string().optional(),
+    commissionRate: number(),
+    createdAt: number(),
+    updatedAt: number(),
+    userId: string(),
   })
   .primaryKey('id')
 
@@ -558,6 +588,162 @@ export const withdrawalsTable = table('withdrawals')
     currency: string().optional(),
     createdAt: number().from('created_at').optional(),
     updatedAt: number().from('updated_at').optional(),
+  })
+  .primaryKey('id')
+
+export const vipTiersTable = table('vipTiers')
+  .from('vip_tiers')
+  .columns({
+    id: string(),
+    tiersName: string().from('tiers_name'),
+    icon: string(),
+    order: number(),
+    weeklyCashback: boolean().from('weekly_cashback'),
+    weeklyCashbackMin: number().from('weekly_cashback_min'),
+    weeklyCashbackPercent: number().from('weekly_cashback_percent'),
+    monthlyCashback: boolean().from('monthly_cashback'),
+    monthlyCashbackMin: number().from('monthly_cashback_min'),
+    monthlyCashbackPercent: number().from('monthly_cashback_percent'),
+    levelUpBonus: number().from('level_up_bonus'),
+    noFeeWithdrawal: boolean().from('no_fee_withdrawal'),
+  })
+  .primaryKey('id')
+
+export const vipLevelTable = table('vipLevels')
+  .from('vip_levels')
+  .columns({
+    id: string(),
+    parentId: string().from('parent_id'),
+    levelName: string().from('level_name'),
+    xp: number(),
+    settingId: number(),
+  })
+  .primaryKey('id')
+
+export const vipCashbackTable = table('vipCashback')
+  .from('vip_cashback')
+  .columns({
+    id: string(),
+    userId: string().from('user_id'),
+    amount: number(),
+    currency: string(),
+    tiersName: string().from('tiers_name'),
+    type: string(),
+    createdAt: number().from('created_at'),
+  })
+  .primaryKey('id')
+
+export const vipLevelUpBonusTable = table('vipLevelUpBonus')
+  .from('vip_level_up_bonus')
+  .columns({
+    id: string(),
+    userId: string().from('user_id'),
+    amount: number(),
+    levelName: string().from('level_name'),
+    levelXp: number().from('level_xp'),
+    createdAt: number().from('created_at'),
+  })
+  .primaryKey('id')
+
+export const vipSpinPrizeTable = table('vipSpinPrizes')
+  .from('vip_spin_prizes')
+  .columns({
+    id: string(),
+    tiersId: string().from('tiers_id'),
+    prizes: json(),
+  })
+  .primaryKey('id')
+
+export const vipSpinRewardTable = table('vipSpinRewards')
+  .from('vip_spin_rewards')
+  .columns({
+    id: string(),
+    userId: string().from('user_id'),
+    amount: number(),
+    currency: string(),
+    createdAt: number().from('created_at'),
+  })
+  .primaryKey('id')
+
+export const affiliateTable = table('affiliates')
+  .columns({
+    id: string(),
+    username: string(),
+    firstName: string().from('first_name'),
+    lastName: string().from('last_name'),
+    status: string(),
+    email: string(),
+    role: string(),
+    referralCode: string().from('referral_code'),
+    parentId: string().from('parent_id').optional(),
+    path: json<string[]>(),
+    password: string(),
+    createdAt: number().from('created_at'),
+    updatedAt: number().from('updated_at'),
+  })
+  .primaryKey('id')
+
+export const affiliateLogTable = table('affiliateLogs')
+  .from('affiliate_logs')
+  .columns({
+    id: string(),
+    invitorId: string().from('invitor_id'),
+    childId: string().from('child_id'),
+    currency: string(),
+    referralCode: string().from('referral_code'),
+    betAmount: number().from('bet_amount'),
+    commissionAmount: number().from('commission_amount'),
+    commissionWager: number().from('commission_wager'),
+    totalReferralAmount: number().from('total_referral_amount'),
+    referralAmount: number().from('referral_amount'),
+    referralWager: number().from('referral_wager'),
+    lastVipLevelAmount: number().from('last_vip_level_amount'),
+    createdAt: number().from('created_at'),
+    updatedAt: number().from('updated_at'),
+  })
+  .primaryKey('id')
+
+export const settingTable = table('settings')
+  .columns({
+    id: number(),
+    name: string(),
+    referralCodeCount: number(),
+    referralCommissionRate: number(),
+    rates: json(),
+    createdAt: number(),
+    updatedAt: number(),
+  })
+  .primaryKey('id')
+
+export const commissionTable = table('commissions')
+  .columns({
+    id: number(),
+    master: number(),
+    affiliate: number(),
+    subAffiliate: number(),
+    settingId: number(),
+  })
+  .primaryKey('id')
+
+export const currencyTable = table('currency')
+  .from('Currency')
+  .columns({
+    id: string(),
+  })
+  .primaryKey('id')
+
+export const balanceTable = table('balances')
+  .columns({
+    id: number(),
+    amount: number(),
+    pending: number(),
+    bonus: number(),
+    withdrawable: number(),
+    turnover: number(),
+    createdAt: number(),
+    updatedAt: number(),
+    userId: string(),
+    currencyId: string(),
   })
   .primaryKey('id')
 
@@ -816,6 +1002,49 @@ export const usersTableRelationships = relationships(usersTable, ({ one, many })
     destField: ['userId'],
     destSchema: operatorSwitchHistoryTable,
   }),
+  vipCashbacks: many({
+    sourceField: ['id'],
+    destField: ['userId'],
+    destSchema: vipCashbackTable,
+  }),
+  vipLevelUpBonuses: many({
+    sourceField: ['id'],
+    destField: ['userId'],
+    destSchema: vipLevelUpBonusTable,
+  }),
+  vipSpinRewards: many({
+    sourceField: ['id'],
+    destField: ['userId'],
+    destSchema: vipSpinRewardTable,
+  }),
+  affiliateLogsInvited: many({
+    sourceField: ['id'],
+    destField: ['invitorId'],
+    destSchema: affiliateLogTable,
+  }),
+  affiliateLogsReferred: many({
+    sourceField: ['id'],
+    destField: ['childId'],
+    destSchema: affiliateLogTable,
+  }),
+  referralCodes: many({
+    sourceField: ['id'],
+    destField: ['userId'],
+    destSchema: referralCodeTable,
+  }),
+  balances: many({
+    sourceField: ['id'],
+    destField: ['userId'],
+    destSchema: balanceTable,
+  }),
+}))
+
+export const referralCodeTableRelationships = relationships(referralCodeTable, ({ one }) => ({
+  user: one({
+    sourceField: ['userId'],
+    destField: ['id'],
+    destSchema: usersTable,
+  }),
 }))
 
 export const vipRankTableRelationships = relationships(vipRankTable, ({ many }) => ({
@@ -883,6 +1112,132 @@ export const withdrawalsTableRelationships = relationships(withdrawalsTable, ({ 
   }),
 }))
 
+export const vipTiersTableRelationships = relationships(vipTiersTable, ({ many }) => ({
+  levels: many({
+    sourceField: ['id'],
+    destField: ['parentId'],
+    destSchema: vipLevelTable,
+  }),
+  spinPrizes: many({
+    sourceField: ['id'],
+    destField: ['tiersId'],
+    destSchema: vipSpinPrizeTable,
+  }),
+}))
+
+export const vipLevelTableRelationships = relationships(vipLevelTable, ({ one }) => ({
+  parent: one({
+    sourceField: ['parentId'],
+    destField: ['id'],
+    destSchema: vipTiersTable,
+  }),
+  setting: one({
+    sourceField: ['settingId'],
+    destField: ['id'],
+    destSchema: settingTable,
+  }),
+}))
+
+export const vipCashbackTableRelationships = relationships(vipCashbackTable, ({ one }) => ({
+  user: one({
+    sourceField: ['userId'],
+    destField: ['id'],
+    destSchema: usersTable,
+  }),
+}))
+
+export const vipLevelUpBonusTableRelationships = relationships(vipLevelUpBonusTable, ({ one }) => ({
+  user: one({
+    sourceField: ['userId'],
+    destField: ['id'],
+    destSchema: usersTable,
+  }),
+}))
+
+export const vipSpinPrizeTableRelationships = relationships(vipSpinPrizeTable, ({ one }) => ({
+  tiers: one({
+    sourceField: ['tiersId'],
+    destField: ['id'],
+    destSchema: vipTiersTable,
+  }),
+}))
+
+export const vipSpinRewardTableRelationships = relationships(vipSpinRewardTable, ({ one }) => ({
+  user: one({
+    sourceField: ['userId'],
+    destField: ['id'],
+    destSchema: usersTable,
+  }),
+}))
+
+export const affiliateTableRelationships = relationships(affiliateTable, ({ one, many }) => ({
+  parent: one({
+    sourceField: ['parentId'],
+    destField: ['id'],
+    destSchema: affiliateTable,
+  }),
+  children: many({
+    sourceField: ['id'],
+    destField: ['parentId'],
+    destSchema: affiliateTable,
+  }),
+}))
+
+export const affiliateLogTableRelationships = relationships(affiliateLogTable, ({ one }) => ({
+  invitor: one({
+    sourceField: ['invitorId'],
+    destField: ['id'],
+    destSchema: usersTable,
+  }),
+  child: one({
+    sourceField: ['childId'],
+    destField: ['id'],
+    destSchema: usersTable,
+  }),
+}))
+
+export const settingTableRelationships = relationships(settingTable, ({ one, many }) => ({
+  vipLevels: many({
+    sourceField: ['id'],
+    destField: ['settingId'],
+    destSchema: vipLevelTable,
+  }),
+  commission: one({
+    sourceField: ['id'],
+    destField: ['settingId'],
+    destSchema: commissionTable,
+  }),
+}))
+
+export const commissionTableRelationships = relationships(commissionTable, ({ one }) => ({
+  setting: one({
+    sourceField: ['settingId'],
+    destField: ['id'],
+    destSchema: settingTable,
+  }),
+}))
+
+export const currencyTableRelationships = relationships(currencyTable, ({ many }) => ({
+  balances: many({
+    sourceField: ['id'],
+    destField: ['currencyId'],
+    destSchema: balanceTable,
+  }),
+}))
+
+export const balanceTableRelationships = relationships(balanceTable, ({ one }) => ({
+  user: one({
+    sourceField: ['userId'],
+    destField: ['id'],
+    destSchema: usersTable,
+  }),
+  currency: one({
+    sourceField: ['currencyId'],
+    destField: ['id'],
+    destSchema: currencyTable,
+  }),
+}))
+
 // Define schema
 
 export const schema = createSchema({
@@ -904,11 +1259,24 @@ export const schema = createSchema({
     productsTable,
     transactionsTable,
     usersTable,
+    referralCodeTable,
     vipRankTable,
     vipInfoTable,
     vipLevelUpHistoryTable,
     walletsTable,
     withdrawalsTable,
+    vipTiersTable,
+    vipLevelTable,
+    vipCashbackTable,
+    vipLevelUpBonusTable,
+    vipSpinPrizeTable,
+    vipSpinRewardTable,
+    affiliateTable,
+    affiliateLogTable,
+    settingTable,
+    commissionTable,
+    currencyTable,
+    balanceTable,
   ],
   relationships: [
     authSessionsTableRelationships,
@@ -926,11 +1294,24 @@ export const schema = createSchema({
     productsTableRelationships,
     transactionsTableRelationships,
     usersTableRelationships,
+    referralCodeTableRelationships,
     vipRankTableRelationships,
     vipInfoTableRelationships,
     vipLevelUpHistoryTableRelationships,
     walletsTableRelationships,
     withdrawalsTableRelationships,
+    vipTiersTableRelationships,
+    vipLevelTableRelationships,
+    vipCashbackTableRelationships,
+    vipLevelUpBonusTableRelationships,
+    vipSpinPrizeTableRelationships,
+    vipSpinRewardTableRelationships,
+    affiliateTableRelationships,
+    affiliateLogTableRelationships,
+    settingTableRelationships,
+    commissionTableRelationships,
+    currencyTableRelationships,
+    balanceTableRelationships,
   ],
 })
 
@@ -953,8 +1334,21 @@ export type OperatorSwitchHistory = Row<typeof schema.tables.operatorSwitchHisto
 export type Products = Row<typeof schema.tables.products>
 export type Transactions = Row<typeof schema.tables.transactions>
 export type Users = Row<typeof schema.tables.users>
+export type ReferralCode = Row<typeof schema.tables.referralCodes>
 export type VipRank = Row<typeof schema.tables.vipRanks>
 export type VipInfo = Row<typeof schema.tables.vipInfo>
 export type VipLevelUpHistory = Row<typeof schema.tables.vipLevelUpHistory>
 export type Wallets = Row<typeof schema.tables.wallets>
 export type Withdrawals = Row<typeof schema.tables.withdrawals>
+export type VipTiers = Row<typeof schema.tables.vipTiers>
+export type VipLevel = Row<typeof schema.tables.vipLevels>
+export type VipCashback = Row<typeof schema.tables.vipCashback>
+export type VipLevelUpBonus = Row<typeof schema.tables.vipLevelUpBonus>
+export type VipSpinPrize = Row<typeof schema.tables.vipSpinPrizes>
+export type VipSpinReward = Row<typeof schema.tables.vipSpinRewards>
+export type Affiliate = Row<typeof schema.tables.affiliates>
+export type AffiliateLog = Row<typeof schema.tables.affiliateLogs>
+export type Setting = Row<typeof schema.tables.settings>
+export type Commission = Row<typeof schema.tables.commissions>
+export type Currency = Row<typeof schema.tables.currency>
+export type Balance = Row<typeof schema.tables.balances>

@@ -39,14 +39,13 @@ router.get('/ws/:topic', async (c) => {
 
     const secret = new TextEncoder().encode(env.ACCESS_TOKEN_SECRET)
     // const { payload } = await jose.jwtVerify(token, secret)
-    const verified = await jose.jwtVerify(token, secret, {
+    const  { payload, protectedHeader }  = await jose.jwtVerify(token, secret, {
       algorithms: ['HS256'],
       issuer: ISSUER,
       audience: AUDIENCE,
     })
     
-    const payload = verified.payload
-    console.log(payload)
+    console.log(protectedHeader)
     if (!payload.userId || !payload.sessionId) {
       console.error(chalk.red('[WS Auth] Invalid token payload.'))
       return new Response('Unauthorized: Invalid token payload', {

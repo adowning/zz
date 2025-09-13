@@ -1,0 +1,143 @@
+
+<h1>Fu Fish Jackpotв„ў</h1>
+<h2>HOW TO PLAY</h2>
+<h3>PLAY MODE AND BALANCE</h3>
+<ul>
+   <li>The game can be played only in a landscape mode on a mobile.</li>
+   <li>You can play the game in either FUN or REAL mode.</li>
+   <li>In fun mode, you are playing just for the fun of the score. In real mode, you are playing with money from your real money balance.</li>
+   <li>Your balance is shown in the BALANCE box both in fun and real mode.</li>
+   <li>When a fish explodes your balance is updated immediately with the full win amount.</li>
+   <li>The tickup animation may be played after that, but does not update the balance.</li>
+{{?it.isBotTextEnabled}}
+   <li>During both modes there may be bots participating in the game as well. However, they cannot affect the playerвЂ™s return.</li>
+{{?}}
+</ul>
+<br/>
+<h3>PLACING BETS</h3>
+<ul>
+{{? !it.hasMinSpinDuration }}
+   <li>This game objective is to obtain coins by shooting different objects and fish. Your total bet per game round is your coin bet multiplied by the number of made shots.</li>
+   <li>To set the bet amount, use theВ '-'В andВ '+'В buttons.</li>
+{{?}}
+{{? it.hasMinSpinDuration }}
+   <li>This game objective is to obtain coins by shooting different objects and fish. </li>
+   <li>One shot equals to coin bet multiplied by coin price.</li>
+   <li>The game starts with empty cartridge. Cost of 15 shots will be reserved from the player's balance to start the shooting. Once the cartridge becomes empty, it will be refilled with the next 15 shots. The process repeats every time the cartridge becomes empty. </li>
+   <li>The coin value can be changed only when the cartridge is empty. </li>
+   <li>Cost of all unfired shots will be refunded to the balance after the player leaves the game.</li>
+   <li>To set the bet amount, use theВ '-'В andВ '+'В buttons.</li>
+{{?}}
+</ul>
+<br/>
+<h3>AUTOPLAY MODE</h3>
+{{? !it.autoPlayLimitEnabled }}
+<ul>
+   <li>To activate the Autofire mode, a player should just double click on empty area.</li>
+{{? !it.autoPlayUntilFeatureEnabled}}
+   <li>Autofire can be enabled only when all player's bullets on the screen hit the target.</li>
+   <li>To select the number of autoshots use the Autofire options panel that opens after Autofire has been activated.</li>
+   <li>Tapping the OK button initiates the Autoplay session. Tapping the CANCEL button closes the panel.</li>
+   <li>The number of remaining shots is displayed on the Autofire field.</li>
+{{?}}
+   <li>You can end the autofire session earlier by clicking on empty area.</li>
+</ul>
+{{?}}
+{{? it.autoPlayLimitEnabled }}
+<ul>
+   <li>To activate the Autofire mode, a player should just double tap on empty area.</li>
+   <li>To select the number of autoshots and set the overall loss limit, use the Autofire options panel that opens after Autofire has been activated.</li>
+   <li>To enable and set up limits for a single win, use the respective field in the Autofire options. </li>
+   <li>Tapping the OK button initiates the Autoplay session. Tapping the CANCEL button closes the panel.</li>
+   <li>You can end the autofire session earlier by double tapping on empty area.</li>
+   <li>The number of remaining shots is displayed on the Autofire field.</li>
+   <li>Autofire can be enabled only when all player's bullets on the screen hit the target.</li>
+</ul>
+{{?}}
+<br/>
+<h2>PAYTABLE</h2>
+<h3>PAYOUTS</h3>
+<ul>
+   <li>To obtain coins a player should shoot fish and other objects. In order to start shooting, a player should tap/click on the chosen fish.</li>
+   <li>When a bullet is fired into empty space and reached a game window borders, it will ricochet. If it doesnвЂ™t reach any fish/object at the first bounce, it will ricochet again and keep doing so until it reaches any.</li>
+   <li>This fixed odds game is a game of chance type of game, where the players' abilities or skills do not influence the game.</li>
+   <li>The maximum win in the game has an upper limit. For more information see the TERMS AND CONDITIONS section.</li>
+</ul>
+<br/>
+<h3>JACKPOT</h3>
+<ul>
+   <li>Progressive Jackpot wheel may be randomly triggered by every revealed Diamond symbol. Each fish may have a hidden Diamond, which is revealed once a fish is killed.
+The higher the bet the bigger chances of entering the Jackpot game.</li>
+   <li>When the Progressive Jackpot game is triggered, the Jackpot Wheel appears on the screen. The Jackpot Wheel contains 16 sections with: 2 Grand, 5 Major and 9 Minor Jackpots. The Jackpot Wheel automatically starts, once it stops the player wins the corresponding Jackpot. </li>
+</ul>
+<br/>
+<table border="1">
+      <tr>
+<td style='text-align: center'>Satellite prize
+(The Jackpot is won together with the satellite prize)
+</td>
+        <td style="text-align: center">{{=it.jpTitleGrand}}: {{=it.currencyCode}} {{=it.valueGrand}}<br>{{=it.jpTitleMajor}}: {{=it.currencyCode}} {{=it.valueMajor}}<br>{{=it.jpTitleMinor}}: {{=it.currencyCode}} {{=it.valueMinor}}
+        </td>
+    </tr>
+    <tr>
+<td style='text-align: cente'>Contribution rate
+(what percentage of each bet goes to the Progressive pot)
+        </td>
+        <td style="text-align: center">
+            <strong>{{=it.jpTitleMinor}}:</strong><br>
+Seed: 0.09%<br/>
+Progressive: 0.12%<br/>
+Total: 0.21%<br/><br/>
+            <strong>{{=it.jpTitleMajor}}:</strong><br>
+Seed: 0.29%<br/>
+Progressive: 0.37%<br/>
+Total: 0.66%<br/><br/>
+<strong>{{=it.jpTitleGrand}}:</strong><br>
+Seed: 0.48%<br/>
+Progressive: 0.63%<br/>
+Total: 1.11%<br/><br/>
+</td>
+</tr>
+<tr>
+<td style='text-align: center'>Win conditions</td>
+<td style='text-align: center'>Progressive Jackpot wheel may be randomly triggered by every revealed Diamond symbol. Once the Jackpot Wheel has been triggered, it automatically starts, and after it stops the player wins the corresponding Jackpot.
+</td>
+ </tr>
+</table>
+<br/>
+<ul>
+   <li>After a progressive jackpot is won, it is reset and begins to accumulate again.</li>
+   <li>If a Player triggers a Jackpot immediately after another Player has triggered the same Jackpot, the Player who triggered it first will win the Jackpot, and the other Player will see the amount plus any contributions made since the Jackpot was reset.</li>
+   <li>Imperfections in the internet connectivity may cause you to experience delays in Jackpot messages or updates, but they do not affect actual Jackpot wins.</li>
+   <li>If the Jackpot is being discontinued (the game is closed and removed from the Casino), you will be notified about it by the Casino.</li>
+   <li>The distribution of prizes on the wheel is not representative of game outcome.</li>
+</ul>
+<br/>
+<h3>FISHING SEASONS</h3>
+<ul>
+   <li>Fishing Season triggers a period of increased win probabilities</li>
+   <li>When returning to the game after getting disconnected during a fishing season, the remaining increased win probabilities at the time of disconnection are restored</li>
+   <li>Fishing seasons may be triggered randomly after any shot at any fish, object or by killing the Bomb.</li>
+   <li>Note that Bomb and Dragon do not appear during Fishing Season feature.</li>
+</ul>
+<br/>
+<h2>DISCONNECTION POLICY</h2>
+<h3>NOTE ON DISCONNECTION</h3>
+<ul>
+   <li>If you are disconnected from the Internet in the middle of the game, log in to the casino again. Once you have reopened the game, you will be able to continue playing from the point where the game was disconnected.</li>
+</ul>
+<br/>
+<h3>NOTE ON MALFUNCTIONS</h3>
+<ul>
+   <li>Malfunction voids all pays and plays.</li>
+</ul>
+<br/>
+<ul>
+{{? it.showRTP }}
+   <li>RTP (return to player):  94.52% + 1.98%</li>
+{{?}}
+   <li>Build:  {{=it.buildNumber}}</li>
+{{? it.rulesDateStamped }}
+   <li>Version date: {{=it.date}}</li>
+{{?}}
+</ul>

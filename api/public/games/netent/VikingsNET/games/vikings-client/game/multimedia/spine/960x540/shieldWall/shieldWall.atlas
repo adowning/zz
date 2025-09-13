@@ -1,0 +1,55 @@
+
+shieldWall.png
+size: 1024,256
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+shields/shield1
+  rotate: false
+  xy: 4, 4
+  size: 150, 149
+  orig: 150, 150
+  offset: 0, 0
+  index: -1
+shields/shield2
+  rotate: false
+  xy: 158, 4
+  size: 150, 149
+  orig: 150, 150
+  offset: 0, 0
+  index: -1
+shields/shield3
+  rotate: false
+  xy: 312, 34
+  size: 150, 149
+  orig: 150, 150
+  offset: 0, 0
+  index: -1
+shields/shield4
+  rotate: false
+  xy: 466, 34
+  size: 150, 149
+  orig: 150, 150
+  offset: 0, 0
+  index: -1
+shields/shield5
+  rotate: false
+  xy: 620, 34
+  size: 150, 149
+  orig: 150, 150
+  offset: 0, 0
+  index: -1
+shields/shield6
+  rotate: false
+  xy: 774, 34
+  size: 150, 149
+  orig: 150, 150
+  offset: 0, 0
+  index: -1
+shields/spear
+  rotate: false
+  xy: 4, 157
+  size: 300, 26
+  orig: 300, 39
+  offset: 0, 6
+  index: -1

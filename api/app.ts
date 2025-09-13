@@ -1,25 +1,28 @@
-import configureOpenAPI from '#/lib/configure-open-api'
-import createApp from '#/lib/create-app'
-import auth from '#/modules/auth/auth.router'
-import game from '#/modules/games/games.router'
-import gameService from '#/modules/game-service.route'
-import gameSpin from '#/modules/gamespins/gamespins.router'
-import index from '#/modules/index.route'
-import redtiger from '#/modules/redtiger/redtiger.router'
-import updates from '#/modules/updates/updates.router'
-import wallet from '#/modules/wallet/wallet.router'
-import users from '#/modules/user/user.router'
-import transactions from '#/modules/transaction/transaction.router'
-import operator from '#/modules/operator/operator.router'
-// import pragmatic from '#/modules/pragmatic/pragmatic.router'
-import vip from '#/modules/vip/vip.router'
-import { serveStatic } from 'hono/bun'
-import { cors } from 'hono/cors'
-
-import { startRtpWorker } from '#/lib/rtp.worker'
-import { extractToken } from './middlewares/auth.middleware'
 import { writeFileSync } from 'fs'
 import { join } from 'path'
+import configureOpenAPI from '#/lib/configure-open-api'
+import createApp from '#/lib/create-app'
+import { startRtpWorker } from '#/lib/rtp.worker'
+import auth from '#/modules/auth/auth.router'
+import gameService from '#/modules/game-service.route'
+import game from '#/modules/games/games.router'
+import gameSpin from '#/modules/gamespins/gamespins.router'
+import index from '#/modules/index.route'
+import operator from '#/modules/operator/operator.router'
+import php from '#/modules/php/php.router'
+import pragmatic from '#/modules/pragmatic/pragmatic.router'
+import redtiger from '#/modules/redtiger/redtiger.router'
+import referrals from '#/modules/referral-code/referral.router'
+import reward from '#/modules/rewards/reward.router'
+import transactions from '#/modules/transaction/transaction.router'
+import updates from '#/modules/updates/updates.router'
+import users from '#/modules/user/user.router'
+// import pragmatic from '#/modules/pragmatic/pragmatic.router'
+import vip from '#/modules/vip/vip.router'
+import wallet from '#/modules/wallet/wallet.router'
+import { serveStatic } from 'hono/bun'
+import { cors } from 'hono/cors'
+import { extractToken } from './middlewares/auth.middleware'
 
 const app = createApp()
 
@@ -93,7 +96,7 @@ app.post('/game/:gameName/server/*', async (c) => {
     wantsreels,
     nocache,
     token,
-    rawAuth
+    rawAuth,
   }
 
   const externalUrl = `http://localhost:8000/game/${gameName}/server?sessionId=${sessionId}&action=${action}&sessId=${sessId}&gameId=${gameId}&wantsfreerounds=${wantsfreerounds}&wantsreels=${wantsreels}&no-cache=${nocache}`
@@ -101,11 +104,11 @@ app.post('/game/:gameName/server/*', async (c) => {
   const response = await fetch(externalUrl, {
     method: 'POST',
     headers: {
-      'Authorization': `Bearer ${token}`,
+      Authorization: `Bearer ${token}`,
       'Content-Type': 'application/json',
-      'Accept': 'application/json'
+      Accept: 'application/json',
     },
-    body: JSON.stringify(body)
+    body: JSON.stringify(body),
     // }).then(response => response.json())
   })
 
@@ -128,23 +131,26 @@ app.post('/game/:gameName/server/*', async (c) => {
   // Instead of returning the original response, return a new response with the text
   return new Response(t, {
     status: response.status,
-    headers: response.headers //Object.fromEntries()
+    headers: response.headers, //Object.fromEntries()
   })
 })
 
 const modules = [
-  auth,
   index,
   updates,
   users,
-  redtiger,
+  transactions,
+  reward,
+  wallet,
+  gameSpin,
+  referrals,
+  pragmatic,
+  auth,
   game,
   vip,
-  gameSpin,
-  wallet,
-  // pragmatic,
   operator,
-  transactions
+  redtiger,
+  php,
 ] as const
 
 modules.forEach((route) => {
@@ -163,14 +169,14 @@ async function downloadOpenAPISpec() {
     if (!response.ok) {
       throw new Error(`Failed to fetch OpenAPI spec: ${response.status} ${response.statusText}`)
     }
-    
+
     const openapiSpec = await response.json()
-    
+
     // Write the specification to openapi.json in the root directory
     const rootDir = process.cwd()
-    const openapiPath = join(rootDir +'/../', 'openapi.json')
+    const openapiPath = join(rootDir + '/../', 'openapi.json')
     writeFileSync(openapiPath, JSON.stringify(openapiSpec, null, 2))
-    
+
     console.log('OpenAPI specification saved to openapi.json')
   } catch (error) {
     console.error('Error downloading OpenAPI specification:', error)

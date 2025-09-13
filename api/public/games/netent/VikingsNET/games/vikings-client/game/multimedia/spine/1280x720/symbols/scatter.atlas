@@ -1,0 +1,636 @@
+
+scatter.png
+size: 512,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+arrow
+  rotate: true
+  xy: 161, 269
+  size: 152, 59
+  orig: 159, 59
+  offset: 4, 0
+  index: -1
+arrowBlur
+  rotate: false
+  xy: 149, 431
+  size: 159, 59
+  orig: 159, 59
+  offset: 0, 0
+  index: -1
+bloodDrip
+  rotate: false
+  xy: 135, 431
+  size: 12, 70
+  orig: 12, 70
+  offset: 0, 0
+  index: -1
+raidSpins
+  rotate: false
+  xy: 1, 431
+  size: 132, 75
+  orig: 132, 75
+  offset: 0, 0
+  index: -1
+scatter_blood3
+  rotate: false
+  xy: 1, 1
+  size: 263, 266
+  orig: 266, 266
+  offset: 3, 0
+  index: -1
+scatter_shield
+  rotate: true
+  xy: 1, 269
+  size: 160, 158
+  orig: 160, 160
+  offset: 0, 0
+  index: -1
+
+  
+scatterFX.jpg
+size: 2048,2048
+format: RGB888
+filter: Linear,Linear
+repeat: none
+arrowFire/arrowFire_00113
+  rotate: false
+  xy: 1977, 593
+  size: 62, 60
+  orig: 62, 60
+  offset: 0, 0
+  index: -1
+arrowFire/arrowFire_00114
+  rotate: false
+  xy: 1977, 655
+  size: 62, 60
+  orig: 62, 60
+  offset: 0, 0
+  index: -1
+arrowFire/arrowFire_00115
+  rotate: false
+  xy: 1977, 717
+  size: 62, 60
+  orig: 62, 60
+  offset: 0, 0
+  index: -1
+arrowFire/arrowFire_00116
+  rotate: false
+  xy: 1977, 779
+  size: 62, 60
+  orig: 62, 60
+  offset: 0, 0
+  index: -1
+arrowFire/arrowFire_00117
+  rotate: false
+  xy: 1977, 841
+  size: 62, 60
+  orig: 62, 60
+  offset: 0, 0
+  index: -1
+arrowFire/arrowFire_00118
+  rotate: false
+  xy: 1977, 903
+  size: 62, 60
+  orig: 62, 60
+  offset: 0, 0
+  index: -1
+arrowFire/arrowFire_00119
+  rotate: false
+  xy: 1977, 965
+  size: 62, 60
+  orig: 62, 60
+  offset: 0, 0
+  index: -1
+arrowFire/arrowFire_00120
+  rotate: false
+  xy: 1977, 1027
+  size: 62, 60
+  orig: 62, 60
+  offset: 0, 0
+  index: -1
+arrowFire/arrowFire_00121
+  rotate: false
+  xy: 1977, 1089
+  size: 62, 60
+  orig: 62, 60
+  offset: 0, 0
+  index: -1
+arrowFire/arrowFire_00122
+  rotate: false
+  xy: 1977, 1151
+  size: 62, 60
+  orig: 62, 60
+  offset: 0, 0
+  index: -1
+arrowFire/arrowFire_00123
+  rotate: true
+  xy: 481, 1901
+  size: 62, 60
+  orig: 62, 60
+  offset: 0, 0
+  index: -1
+arrowFire/arrowFire_00124
+  rotate: true
+  xy: 481, 1965
+  size: 62, 60
+  orig: 62, 60
+  offset: 0, 0
+  index: -1
+nearWinLoop/loop_00027
+  rotate: false
+  xy: 1, 1
+  size: 118, 592
+  orig: 118, 592
+  offset: 0, 0
+  index: -1
+nearWinLoop/loop_00028
+  rotate: false
+  xy: 1, 595
+  size: 118, 592
+  orig: 118, 592
+  offset: 0, 0
+  index: -1
+nearWinLoop/loop_00029
+  rotate: false
+  xy: 1, 1189
+  size: 118, 592
+  orig: 118, 592
+  offset: 0, 0
+  index: -1
+nearWinLoop/loop_00030
+  rotate: false
+  xy: 121, 1
+  size: 118, 592
+  orig: 118, 592
+  offset: 0, 0
+  index: -1
+nearWinLoop/loop_00031
+  rotate: false
+  xy: 121, 595
+  size: 118, 592
+  orig: 118, 592
+  offset: 0, 0
+  index: -1
+nearWinLoop/loop_00032
+  rotate: false
+  xy: 121, 1189
+  size: 118, 592
+  orig: 118, 592
+  offset: 0, 0
+  index: -1
+nearWinLoop/loop_00033
+  rotate: true
+  xy: 297, 1
+  size: 118, 592
+  orig: 118, 592
+  offset: 0, 0
+  index: -1
+nearWinLoop/loop_00034
+  rotate: true
+  xy: 891, 1
+  size: 118, 592
+  orig: 118, 592
+  offset: 0, 0
+  index: -1
+nearWinLoop/loop_00035
+  rotate: true
+  xy: 297, 121
+  size: 118, 592
+  orig: 118, 592
+  offset: 0, 0
+  index: -1
+nearWinLoop/loop_00036
+  rotate: true
+  xy: 891, 121
+  size: 118, 592
+  orig: 118, 592
+  offset: 0, 0
+  index: -1
+nearWinLoop/loop_00037
+  rotate: true
+  xy: 297, 241
+  size: 118, 592
+  orig: 118, 592
+  offset: 0, 0
+  index: -1
+nearWinLoop/loop_00038
+  rotate: true
+  xy: 891, 241
+  size: 118, 592
+  orig: 118, 592
+  offset: 0, 0
+  index: -1
+nearWinLoop/loop_00039
+  rotate: true
+  xy: 297, 361
+  size: 118, 592
+  orig: 118, 592
+  offset: 0, 0
+  index: -1
+nearWinLoop/loop_00040
+  rotate: true
+  xy: 891, 361
+  size: 118, 592
+  orig: 118, 592
+  offset: 0, 0
+  index: -1
+nearWinLoop/loop_00041
+  rotate: true
+  xy: 297, 481
+  size: 118, 592
+  orig: 118, 592
+  offset: 0, 0
+  index: -1
+nearWinLoop/loop_00042
+  rotate: true
+  xy: 891, 481
+  size: 118, 592
+  orig: 118, 592
+  offset: 0, 0
+  index: -1
+nearWinLoop/loop_00043
+  rotate: false
+  xy: 1737, 593
+  size: 118, 592
+  orig: 118, 592
+  offset: 0, 0
+  index: -1
+nearWinLoop/loop_00044
+  rotate: false
+  xy: 241, 1187
+  size: 118, 592
+  orig: 118, 592
+  offset: 0, 0
+  index: -1
+nearWinLoop/loop_00045
+  rotate: false
+  xy: 1857, 593
+  size: 118, 592
+  orig: 118, 592
+  offset: 0, 0
+  index: -1
+nearWinLoop/loop_00046
+  rotate: true
+  xy: 297, 1781
+  size: 118, 592
+  orig: 118, 592
+  offset: 0, 0
+  index: -1
+nearWinLoop/loop_00047
+  rotate: true
+  xy: 891, 601
+  size: 118, 592
+  orig: 118, 592
+  offset: 0, 0
+  index: -1
+nearWinLoop/loop_00048
+  rotate: false
+  xy: 361, 1187
+  size: 118, 592
+  orig: 118, 592
+  offset: 0, 0
+  index: -1
+nearWinLoop/loop_00049
+  rotate: false
+  xy: 481, 1187
+  size: 118, 592
+  orig: 118, 592
+  offset: 0, 0
+  index: -1
+nearWinLoop/loop_00050
+  rotate: false
+  xy: 601, 1187
+  size: 118, 592
+  orig: 118, 592
+  offset: 0, 0
+  index: -1
+nearWinLoop/loop_00051
+  rotate: false
+  xy: 721, 1187
+  size: 118, 592
+  orig: 118, 592
+  offset: 0, 0
+  index: -1
+nearWinLoop/loop_00052
+  rotate: false
+  xy: 841, 1187
+  size: 118, 592
+  orig: 118, 592
+  offset: 0, 0
+  index: -1
+scatterText/raid_00113
+  rotate: true
+  xy: 1, 1783
+  size: 124, 72
+  orig: 124, 72
+  offset: 0, 0
+  index: -1
+scatterText/raid_00114
+  rotate: true
+  xy: 1, 1909
+  size: 124, 72
+  orig: 124, 72
+  offset: 0, 0
+  index: -1
+scatterText/raid_00115
+  rotate: true
+  xy: 75, 1783
+  size: 124, 72
+  orig: 124, 72
+  offset: 0, 0
+  index: -1
+scatterText/raid_00116
+  rotate: true
+  xy: 75, 1909
+  size: 124, 72
+  orig: 124, 72
+  offset: 0, 0
+  index: -1
+scatterText/raid_00117
+  rotate: true
+  xy: 149, 1783
+  size: 124, 72
+  orig: 124, 72
+  offset: 0, 0
+  index: -1
+scatterText/raid_00118
+  rotate: true
+  xy: 149, 1909
+  size: 124, 72
+  orig: 124, 72
+  offset: 0, 0
+  index: -1
+scatterText/raid_00119
+  rotate: true
+  xy: 223, 1783
+  size: 124, 72
+  orig: 124, 72
+  offset: 0, 0
+  index: -1
+scatterText/raid_00120
+  rotate: true
+  xy: 223, 1909
+  size: 124, 72
+  orig: 124, 72
+  offset: 0, 0
+  index: -1
+scatterText/raid_00121
+  rotate: false
+  xy: 1485, 1
+  size: 124, 72
+  orig: 124, 72
+  offset: 0, 0
+  index: -1
+scatterText/raid_00122
+  rotate: false
+  xy: 1611, 1
+  size: 124, 72
+  orig: 124, 72
+  offset: 0, 0
+  index: -1
+scatterText/raid_00123
+  rotate: false
+  xy: 1737, 1
+  size: 124, 72
+  orig: 124, 72
+  offset: 0, 0
+  index: -1
+scatterText/raid_00124
+  rotate: false
+  xy: 1863, 1
+  size: 124, 72
+  orig: 124, 72
+  offset: 0, 0
+  index: -1
+scatterText/raid_00125
+  rotate: false
+  xy: 1485, 75
+  size: 124, 72
+  orig: 124, 72
+  offset: 0, 0
+  index: -1
+scatterText/raid_00126
+  rotate: false
+  xy: 1611, 75
+  size: 124, 72
+  orig: 124, 72
+  offset: 0, 0
+  index: -1
+scatterText/raid_00127
+  rotate: false
+  xy: 1737, 75
+  size: 124, 72
+  orig: 124, 72
+  offset: 0, 0
+  index: -1
+scatterText/raid_00128
+  rotate: false
+  xy: 1863, 75
+  size: 124, 72
+  orig: 124, 72
+  offset: 0, 0
+  index: -1
+scatterText/raid_00129
+  rotate: false
+  xy: 1485, 149
+  size: 124, 72
+  orig: 124, 72
+  offset: 0, 0
+  index: -1
+scatterText/raid_00130
+  rotate: false
+  xy: 1611, 149
+  size: 124, 72
+  orig: 124, 72
+  offset: 0, 0
+  index: -1
+scatterText/raid_00131
+  rotate: false
+  xy: 1737, 149
+  size: 124, 72
+  orig: 124, 72
+  offset: 0, 0
+  index: -1
+scatterText/raid_00132
+  rotate: false
+  xy: 1863, 149
+  size: 124, 72
+  orig: 124, 72
+  offset: 0, 0
+  index: -1
+scatterText/raid_00133
+  rotate: false
+  xy: 1485, 223
+  size: 124, 72
+  orig: 124, 72
+  offset: 0, 0
+  index: -1
+scatterText/raid_00134
+  rotate: false
+  xy: 1611, 223
+  size: 124, 72
+  orig: 124, 72
+  offset: 0, 0
+  index: -1
+scatterText/raid_00135
+  rotate: false
+  xy: 1737, 223
+  size: 124, 72
+  orig: 124, 72
+  offset: 0, 0
+  index: -1
+scatterText/raid_00136
+  rotate: false
+  xy: 1863, 223
+  size: 124, 72
+  orig: 124, 72
+  offset: 0, 0
+  index: -1
+scatterText/raid_00137
+  rotate: false
+  xy: 1485, 297
+  size: 124, 72
+  orig: 124, 72
+  offset: 0, 0
+  index: -1
+scatterText/raid_00138
+  rotate: false
+  xy: 1611, 297
+  size: 124, 72
+  orig: 124, 72
+  offset: 0, 0
+  index: -1
+scatterText/raid_00139
+  rotate: false
+  xy: 1737, 297
+  size: 124, 72
+  orig: 124, 72
+  offset: 0, 0
+  index: -1
+scatterText/raid_00140
+  rotate: false
+  xy: 1863, 297
+  size: 124, 72
+  orig: 124, 72
+  offset: 0, 0
+  index: -1
+scatterText/raid_00141
+  rotate: false
+  xy: 1485, 371
+  size: 124, 72
+  orig: 124, 72
+  offset: 0, 0
+  index: -1
+scatterText/raid_00142
+  rotate: false
+  xy: 1611, 371
+  size: 124, 72
+  orig: 124, 72
+  offset: 0, 0
+  index: -1
+scatterText/raid_00143
+  rotate: false
+  xy: 1737, 371
+  size: 124, 72
+  orig: 124, 72
+  offset: 0, 0
+  index: -1
+scatterText/raid_00144
+  rotate: false
+  xy: 1863, 371
+  size: 124, 72
+  orig: 124, 72
+  offset: 0, 0
+  index: -1
+scatterText/raid_00145
+  rotate: false
+  xy: 1485, 445
+  size: 124, 72
+  orig: 124, 72
+  offset: 0, 0
+  index: -1
+scatterText/raid_00146
+  rotate: false
+  xy: 1611, 445
+  size: 124, 72
+  orig: 124, 72
+  offset: 0, 0
+  index: -1
+scatterText/raid_00147
+  rotate: false
+  xy: 1737, 445
+  size: 124, 72
+  orig: 124, 72
+  offset: 0, 0
+  index: -1
+scatterText/raid_00148
+  rotate: false
+  xy: 1863, 445
+  size: 124, 72
+  orig: 124, 72
+  offset: 0, 0
+  index: -1
+scatterText/raid_00149
+  rotate: false
+  xy: 1485, 519
+  size: 124, 72
+  orig: 124, 72
+  offset: 0, 0
+  index: -1
+scatterText/raid_00150
+  rotate: false
+  xy: 1611, 519
+  size: 124, 72
+  orig: 124, 72
+  offset: 0, 0
+  index: -1
+scatterText/raid_00151
+  rotate: false
+  xy: 1737, 519
+  size: 124, 72
+  orig: 124, 72
+  offset: 0, 0
+  index: -1
+scatterText/raid_00152
+  rotate: false
+  xy: 1863, 519
+  size: 124, 72
+  orig: 124, 72
+  offset: 0, 0
+  index: -1
+scatterText/raid_00153
+  rotate: false
+  xy: 1485, 593
+  size: 124, 72
+  orig: 124, 72
+  offset: 0, 0
+  index: -1
+scatterText/raid_00154
+  rotate: false
+  xy: 1611, 593
+  size: 124, 72
+  orig: 124, 72
+  offset: 0, 0
+  index: -1
+shieldGold1
+  rotate: false
+  xy: 297, 1901
+  size: 90, 90
+  orig: 90, 90
+  offset: 0, 0
+  index: -1
+shieldGold2
+  rotate: false
+  xy: 389, 1901
+  size: 90, 90
+  orig: 90, 90
+  offset: 0, 0
+  index: -1
+shieldShine
+  rotate: true
+  xy: 241, 1
+  size: 37, 42
+  orig: 37, 42
+  offset: 0, 0
+  index: -1

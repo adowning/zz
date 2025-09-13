@@ -1,4 +1,6 @@
 import { z } from 'zod';
+import { JsonValueSchema } from '../inputTypeSchemas/JsonValueSchema'
+import type { JsonValueType } from '../inputTypeSchemas/JsonValueSchema';
 import { OperatorsWithRelationsSchema, OperatorsOptionalDefaultsWithRelationsSchema } from './OperatorsSchema'
 import type { OperatorsWithRelations, OperatorsOptionalDefaultsWithRelations } from './OperatorsSchema'
 
@@ -22,10 +24,12 @@ export const GamesSchema = z.object({
   providerId: z.string().nullable(),
   totalWagered: z.number(),
   totalWon: z.number(),
+  goldsvetData: JsonValueSchema.nullable(),
   targetRtp: z.number().nullable(),
   isFeatured: z.boolean(),
   isActive: z.boolean(),
   operatorId: z.string().nullable(),
+  isHorizontal: z.boolean(),
   createdAt: z.coerce.date(),
   updatedAt: z.coerce.date(),
   status: z.number(),
@@ -40,6 +44,7 @@ export type Games = z.infer<typeof GamesSchema>
 export const GamesOptionalDefaultsSchema = GamesSchema.merge(z.object({
   category: z.string().optional(),
   isActive: z.boolean().optional(),
+  isHorizontal: z.boolean().optional(),
   createdAt: z.coerce.date().optional(),
   updatedAt: z.coerce.date().optional(),
   status: z.number().optional(),
@@ -55,7 +60,9 @@ export type GamesRelations = {
   operators?: OperatorsWithRelations | null;
 };
 
-export type GamesWithRelations = z.infer<typeof GamesSchema> & GamesRelations
+export type GamesWithRelations = Omit<z.infer<typeof GamesSchema>, "goldsvetData"> & {
+  goldsvetData?: JsonValueType | null;
+} & GamesRelations
 
 export const GamesWithRelationsSchema: z.ZodType<GamesWithRelations> = GamesSchema.merge(z.object({
   operators: z.lazy(() => OperatorsWithRelationsSchema).nullable(),
@@ -69,7 +76,9 @@ export type GamesOptionalDefaultsRelations = {
   operators?: OperatorsOptionalDefaultsWithRelations | null;
 };
 
-export type GamesOptionalDefaultsWithRelations = z.infer<typeof GamesOptionalDefaultsSchema> & GamesOptionalDefaultsRelations
+export type GamesOptionalDefaultsWithRelations = Omit<z.infer<typeof GamesOptionalDefaultsSchema>, "goldsvetData"> & {
+  goldsvetData?: JsonValueType | null;
+} & GamesOptionalDefaultsRelations
 
 export const GamesOptionalDefaultsWithRelationsSchema: z.ZodType<GamesOptionalDefaultsWithRelations> = GamesOptionalDefaultsSchema.merge(z.object({
   operators: z.lazy(() => OperatorsOptionalDefaultsWithRelationsSchema).nullable(),

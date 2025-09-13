@@ -47,11 +47,7 @@
     const list = gameStore.games as Array<{ category?: string }>
     const f = selectedFilter.value
     if (f === 'all') {
-      // union of slots + fish only
-      return list.filter(g => {
-        const c = (g.category ?? '').toLowerCase()
-        return c === 'slots' || c === 'fish'
-      })
+      return list
     }
     const wanted = f === 'fish' ? 'fish' : 'slots'
     return list.filter(g => (g.category ?? '').toLowerCase() === wanted)

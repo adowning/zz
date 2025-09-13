@@ -1,0 +1,398 @@
+
+ui.png
+size: 2048,2048
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+source/arrow
+  rotate: false
+  xy: 796, 386
+  size: 150, 58
+  orig: 159, 59
+  offset: 5, 0
+  index: -1
+source/arrowBlur
+  rotate: true
+  xy: 1984, 1469
+  size: 159, 59
+  orig: 159, 59
+  offset: 0, 0
+  index: -1
+source/arrowFire/arrowFire_00113
+  rotate: true
+  xy: 1984, 1403
+  size: 62, 60
+  orig: 62, 60
+  offset: 0, 0
+  index: -1
+source/arrowFire/arrowFire_00114
+  rotate: true
+  xy: 1984, 1337
+  size: 62, 60
+  orig: 62, 60
+  offset: 0, 0
+  index: -1
+source/arrowFire/arrowFire_00115
+  rotate: true
+  xy: 1984, 1271
+  size: 62, 60
+  orig: 62, 60
+  offset: 0, 0
+  index: -1
+source/arrowFire/arrowFire_00116
+  rotate: true
+  xy: 1984, 1205
+  size: 62, 60
+  orig: 62, 60
+  offset: 0, 0
+  index: -1
+source/arrowFire/arrowFire_00117
+  rotate: true
+  xy: 1984, 1139
+  size: 62, 60
+  orig: 62, 60
+  offset: 0, 0
+  index: -1
+source/arrowFire/arrowFire_00118
+  rotate: true
+  xy: 1984, 1073
+  size: 62, 60
+  orig: 62, 60
+  offset: 0, 0
+  index: -1
+source/arrowFire/arrowFire_00119
+  rotate: true
+  xy: 1984, 1007
+  size: 62, 60
+  orig: 62, 60
+  offset: 0, 0
+  index: -1
+source/arrowFire/arrowFire_00120
+  rotate: true
+  xy: 1984, 941
+  size: 62, 60
+  orig: 62, 60
+  offset: 0, 0
+  index: -1
+source/arrowFire/arrowFire_00121
+  rotate: true
+  xy: 1984, 875
+  size: 62, 60
+  orig: 62, 60
+  offset: 0, 0
+  index: -1
+source/arrowFire/arrowFire_00122
+  rotate: true
+  xy: 1984, 809
+  size: 62, 60
+  orig: 62, 60
+  offset: 0, 0
+  index: -1
+source/arrowFire/arrowFire_00123
+  rotate: true
+  xy: 1984, 743
+  size: 62, 60
+  orig: 62, 60
+  offset: 0, 0
+  index: -1
+source/arrowFire/arrowFire_00124
+  rotate: false
+  xy: 1192, 532
+  size: 62, 60
+  orig: 62, 60
+  offset: 0, 0
+  index: -1
+source/btn_fire/btn_fire_00
+  rotate: false
+  xy: 4, 1484
+  size: 392, 144
+  orig: 392, 144
+  offset: 0, 0
+  index: -1
+source/btn_fire/btn_fire_01
+  rotate: false
+  xy: 4, 1336
+  size: 392, 144
+  orig: 392, 144
+  offset: 0, 0
+  index: -1
+source/btn_fire/btn_fire_02
+  rotate: false
+  xy: 400, 1484
+  size: 392, 144
+  orig: 392, 144
+  offset: 0, 0
+  index: -1
+source/btn_fire/btn_fire_03
+  rotate: false
+  xy: 4, 1188
+  size: 392, 144
+  orig: 392, 144
+  offset: 0, 0
+  index: -1
+source/btn_fire/btn_fire_04
+  rotate: false
+  xy: 400, 1336
+  size: 392, 144
+  orig: 392, 144
+  offset: 0, 0
+  index: -1
+source/btn_fire/btn_fire_05
+  rotate: false
+  xy: 796, 1484
+  size: 392, 144
+  orig: 392, 144
+  offset: 0, 0
+  index: -1
+source/btn_fire/btn_fire_06
+  rotate: false
+  xy: 4, 1040
+  size: 392, 144
+  orig: 392, 144
+  offset: 0, 0
+  index: -1
+source/btn_fire/btn_fire_07
+  rotate: false
+  xy: 400, 1188
+  size: 392, 144
+  orig: 392, 144
+  offset: 0, 0
+  index: -1
+source/btn_fire/btn_fire_08
+  rotate: false
+  xy: 796, 1336
+  size: 392, 144
+  orig: 392, 144
+  offset: 0, 0
+  index: -1
+source/btn_fire/btn_fire_09
+  rotate: false
+  xy: 1192, 1484
+  size: 392, 144
+  orig: 392, 144
+  offset: 0, 0
+  index: -1
+source/btn_fire/btn_fire_10
+  rotate: false
+  xy: 4, 892
+  size: 392, 144
+  orig: 392, 144
+  offset: 0, 0
+  index: -1
+source/btn_fire/btn_fire_11
+  rotate: false
+  xy: 400, 1040
+  size: 392, 144
+  orig: 392, 144
+  offset: 0, 0
+  index: -1
+source/btn_fire/btn_fire_12
+  rotate: false
+  xy: 796, 1188
+  size: 392, 144
+  orig: 392, 144
+  offset: 0, 0
+  index: -1
+source/btn_fire/btn_fire_13
+  rotate: false
+  xy: 1192, 1336
+  size: 392, 144
+  orig: 392, 144
+  offset: 0, 0
+  index: -1
+source/btn_fire/btn_fire_14
+  rotate: false
+  xy: 1588, 1484
+  size: 392, 144
+  orig: 392, 144
+  offset: 0, 0
+  index: -1
+source/btn_fire/btn_fire_15
+  rotate: false
+  xy: 4, 744
+  size: 392, 144
+  orig: 392, 144
+  offset: 0, 0
+  index: -1
+source/btn_fire/btn_fire_16
+  rotate: false
+  xy: 400, 892
+  size: 392, 144
+  orig: 392, 144
+  offset: 0, 0
+  index: -1
+source/btn_fire/btn_fire_17
+  rotate: false
+  xy: 796, 1040
+  size: 392, 144
+  orig: 392, 144
+  offset: 0, 0
+  index: -1
+source/btn_fire/btn_fire_18
+  rotate: false
+  xy: 1192, 1188
+  size: 392, 144
+  orig: 392, 144
+  offset: 0, 0
+  index: -1
+source/btn_fire/btn_fire_19
+  rotate: false
+  xy: 1588, 1336
+  size: 392, 144
+  orig: 392, 144
+  offset: 0, 0
+  index: -1
+source/btn_fire/btn_fire_20
+  rotate: false
+  xy: 4, 596
+  size: 392, 144
+  orig: 392, 144
+  offset: 0, 0
+  index: -1
+source/btn_fire/btn_fire_21
+  rotate: false
+  xy: 400, 744
+  size: 392, 144
+  orig: 392, 144
+  offset: 0, 0
+  index: -1
+source/btn_fire/btn_fire_22
+  rotate: false
+  xy: 796, 892
+  size: 392, 144
+  orig: 392, 144
+  offset: 0, 0
+  index: -1
+source/btn_fire/btn_fire_23
+  rotate: false
+  xy: 1192, 1040
+  size: 392, 144
+  orig: 392, 144
+  offset: 0, 0
+  index: -1
+source/btn_fire/btn_fire_24
+  rotate: false
+  xy: 1588, 1188
+  size: 392, 144
+  orig: 392, 144
+  offset: 0, 0
+  index: -1
+source/btn_fire/btn_fire_25
+  rotate: false
+  xy: 4, 448
+  size: 392, 144
+  orig: 392, 144
+  offset: 0, 0
+  index: -1
+source/btn_fire/btn_fire_26
+  rotate: false
+  xy: 400, 596
+  size: 392, 144
+  orig: 392, 144
+  offset: 0, 0
+  index: -1
+source/btn_fire/btn_fire_27
+  rotate: false
+  xy: 796, 744
+  size: 392, 144
+  orig: 392, 144
+  offset: 0, 0
+  index: -1
+source/btn_fire/btn_fire_28
+  rotate: false
+  xy: 1192, 892
+  size: 392, 144
+  orig: 392, 144
+  offset: 0, 0
+  index: -1
+source/btn_fire/btn_fire_29
+  rotate: false
+  xy: 1588, 1040
+  size: 392, 144
+  orig: 392, 144
+  offset: 0, 0
+  index: -1
+source/btn_fire/btn_fire_30
+  rotate: false
+  xy: 4, 300
+  size: 392, 144
+  orig: 392, 144
+  offset: 0, 0
+  index: -1
+source/btn_fire/btn_fire_31
+  rotate: false
+  xy: 400, 448
+  size: 392, 144
+  orig: 392, 144
+  offset: 0, 0
+  index: -1
+source/btn_fire/btn_fire_32
+  rotate: false
+  xy: 796, 596
+  size: 392, 144
+  orig: 392, 144
+  offset: 0, 0
+  index: -1
+source/btn_fire/btn_fire_33
+  rotate: false
+  xy: 1192, 744
+  size: 392, 144
+  orig: 392, 144
+  offset: 0, 0
+  index: -1
+source/btn_fire/btn_fire_34
+  rotate: false
+  xy: 1588, 892
+  size: 392, 144
+  orig: 392, 144
+  offset: 0, 0
+  index: -1
+source/btn_fire/btn_fire_35
+  rotate: false
+  xy: 4, 152
+  size: 392, 144
+  orig: 392, 144
+  offset: 0, 0
+  index: -1
+source/btn_fire/btn_fire_36
+  rotate: false
+  xy: 400, 300
+  size: 392, 144
+  orig: 392, 144
+  offset: 0, 0
+  index: -1
+source/btn_fire/btn_fire_37
+  rotate: false
+  xy: 796, 448
+  size: 392, 144
+  orig: 392, 144
+  offset: 0, 0
+  index: -1
+source/btn_fire/btn_fire_38
+  rotate: false
+  xy: 1192, 596
+  size: 392, 144
+  orig: 392, 144
+  offset: 0, 0
+  index: -1
+source/btn_fire/btn_fire_39
+  rotate: false
+  xy: 1588, 744
+  size: 392, 144
+  orig: 392, 144
+  offset: 0, 0
+  index: -1
+source/btn_fire/btn_fire_40
+  rotate: false
+  xy: 4, 4
+  size: 392, 144
+  orig: 392, 144
+  offset: 0, 0
+  index: -1
+source/btn_fire/continueButton_idle
+  rotate: false
+  xy: 400, 226
+  size: 330, 70
+  orig: 392, 144
+  offset: 24, 32
+  index: -1

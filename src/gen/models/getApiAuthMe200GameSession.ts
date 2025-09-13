@@ -14,6 +14,8 @@ export type GetApiAuthMe200GameSession = {
   userId: string;
   /** @nullable */
   gameId: string | null;
+  /** @nullable */
+  gameName: string | null;
   totalWagered: number;
   totalWon: number;
   totalXpGained: number;

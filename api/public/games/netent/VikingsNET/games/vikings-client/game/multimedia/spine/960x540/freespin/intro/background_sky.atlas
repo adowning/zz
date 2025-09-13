@@ -1,0 +1,48 @@
+
+background_sky.png
+size: 2048,2048
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+bg_sky
+  rotate: false
+  xy: 663, 211
+  size: 721, 302
+  orig: 721, 302
+  offset: 0, 0
+  index: -1
+filter
+  rotate: true
+  xy: 1917, 1647
+  size: 133, 75
+  orig: 133, 75
+  offset: 0, 0
+  index: -1
+thunder_behindboat
+  rotate: false
+  xy: 4, 719
+  size: 814, 1061
+  orig: 815, 1063
+  offset: 0, 1
+  index: -1
+thunder_center
+  rotate: true
+  xy: 822, 517
+  size: 1263, 599
+  orig: 1266, 599
+  offset: 2, 0
+  index: -1
+thunder_right
+  rotate: false
+  xy: 4, 4
+  size: 655, 711
+  orig: 656, 713
+  offset: 1, 1
+  index: -1
+thunder_top
+  rotate: true
+  xy: 1425, 469
+  size: 1311, 488
+  orig: 1311, 489
+  offset: 0, 1
+  index: -1

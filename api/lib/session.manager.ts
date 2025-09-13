@@ -1,20 +1,7 @@
-
 // src/lib/session.manager.ts
-import type { Context } from 'hono'
-
-import chalk from 'chalk'
-import { and, eq } from 'drizzle-orm'
-
-import type { AuthSessionType, GameSessionType, UserType, WalletType } from '#/db/'
-
 import db from '#/db'
-import {
-  authSessions,
-  games,
-  gameSessions,
-  gameSpins,
-  users,
-} from '#/db/'
+import type { AuthSessionType, GameSession, UserType, WalletType } from '#/db/'
+import { authSessions, games, gameSessions, gameSpins, users } from '#/db/'
 import {
   deleteAuthSessionFromCache,
   deleteGameSessionFromCache,
@@ -28,38 +15,31 @@ import {
 } from '#/lib/cache'
 import { publishUserSnapshot } from '#/lib/websocket.service'
 import { nanoid } from '#/utils/nanoid'
+import chalk from 'chalk'
+import { and, eq } from 'drizzle-orm'
+import type { Context } from 'hono'
 
 const IDLE_TIMEOUT = 10 * 60 * 1000 // 10 minutes
 
 export class SessionManager {
   static async startOTPSession(phone: string, otp: string, userId: string): Promise<{ id: string }> {
     const id = nanoid()
-    console.log(
-      chalk.cyan(
-        `[SessionManager] Creating OTP session id=${id} for phone=${phone}`,
-      ),
-    )
+    console.log(chalk.cyan(`[SessionManager] Creating OTP session id=${id} for phone=${phone}`))
 
-    await db
-      .insert(authSessions)
-      .values({
-        id,
-        userId,
-        deviceId: 'phone',
-        status: 'ACTIVE',
-        expiresAt: new Date(Date.now() + 5 * 60 * 1000) // 5 minute expiry
-      })
+    await db.insert(authSessions).values({
+      id,
+      userId,
+      deviceId: 'phone',
+      status: 'ACTIVE',
+      expiresAt: new Date(Date.now() + 5 * 60 * 1000), // 5 minute expiry
+    })
 
     return { id }
   }
 
   static async startAuthSession(user: UserType): Promise<AuthSessionType> {
     const id = nanoid()
-    console.log(
-      chalk.cyan(
-        `[SessionManager] Creating auth session id=${id} for user=${user.id}`,
-      ),
-    )
+    console.log(chalk.cyan(`[SessionManager] Creating auth session id=${id} for user=${user.id}`))
 
     const inserted = await db
       .insert(authSessions)
@@ -72,91 +52,59 @@ export class SessionManager {
 
     const authSession = inserted?.[0]
     if (!authSession) {
-      console.error(
-        chalk.red(`[SessionManager] Insert did not return row for id=${id}`),
-      )
+      console.error(chalk.red(`[SessionManager] Insert did not return row for id=${id}`))
       throw new Error('Failed to create auth session')
     }
 
     // Post-insert verification to ensure persistence and ACTIVE status
     const verified = await db.query.authSessions.findFirst({
-      where: and(
-        eq(authSessions.id, authSession.id),
-        eq(authSessions.status, 'ACTIVE'),
-      ),
+      where: and(eq(authSessions.id, authSession.id), eq(authSessions.status, 'ACTIVE')),
     })
 
     if (!verified) {
       console.error(
-        chalk.red(
-          `[SessionManager] Verification failed: session not found or not ACTIVE id=${authSession.id}`,
-        ),
+        chalk.red(`[SessionManager] Verification failed: session not found or not ACTIVE id=${authSession.id}`),
       )
       // Best-effort: mark as expired to avoid dangling
       try {
-        await db
-          .update(authSessions)
-          .set({ status: 'EXPIRED' })
-          .where(eq(authSessions.id, authSession.id))
-      } catch { }
+        await db.update(authSessions).set({ status: 'EXPIRED' }).where(eq(authSessions.id, authSession.id))
+      } catch {}
       throw new Error('Auth session was not persisted as ACTIVE')
     }
 
     await saveAuthSessionToCache(verified)
-    console.log(
-      chalk.green(
-        `[SessionManager] Auth session ACTIVE and cached id=${verified.id}`,
-      ),
-    )
+    console.log(chalk.green(`[SessionManager] Auth session ACTIVE and cached id=${verified.id}`))
     return verified as AuthSessionType
   }
 
-  static async endAuthSession(
-    authSessionId: string,
-    userId: string,
-  ): Promise<void> {
-    await db
-      .update(authSessions)
-      .set({ status: 'EXPIRED' })
-      .where(eq(authSessions.id, authSessionId))
+  static async endAuthSession(authSessionId: string, userId: string): Promise<void> {
+    await db.update(authSessions).set({ status: 'EXPIRED' }).where(eq(authSessions.id, authSessionId))
     await deleteAuthSessionFromCache(authSessionId)
     await this.endCurrentGameSession(userId)
   }
 
   static async endAllUserSessions(userId: string): Promise<void> {
-    console.log(
-      chalk.yellow(`Ending all previous sessions for user ${userId}...`),
-    )
+    console.log(chalk.yellow(`Ending all previous sessions for user ${userId}...`))
     await this.endCurrentGameSession(userId)
     const activeSessions = await db
       .select({ id: authSessions.id })
       .from(authSessions)
-      .where(
-        and(eq(authSessions.userId, userId), eq(authSessions.status, 'ACTIVE')),
-      )
+      .where(and(eq(authSessions.userId, userId), eq(authSessions.status, 'ACTIVE')))
 
     for (const session of activeSessions) {
-      await db
-        .update(authSessions)
-        .set({ status: 'EXPIRED' })
-        .where(eq(authSessions.id, session.id))
+      await db.update(authSessions).set({ status: 'EXPIRED' }).where(eq(authSessions.id, session.id))
       await deleteAuthSessionFromCache(session.id)
     }
   }
 
-  static async getAuthSession(
-    sessionId: string,
-  ): Promise<AuthSessionType | null> {
+  static async getAuthSession(sessionId: string): Promise<AuthSessionType | null> {
     let session: any = await getAuthSessionFromCache(sessionId)
     if (session) {
       return session
     }
 
     session = await db.query.authSessions.findFirst({
-      where: and(
-        eq(authSessions.id, sessionId),
-        eq(authSessions.status, 'ACTIVE'),
-      ),
+      where: and(eq(authSessions.id, sessionId), eq(authSessions.status, 'ACTIVE')),
     })
 
     if (session) {
@@ -166,10 +114,7 @@ export class SessionManager {
     return session || null
   }
 
-  static async startGameSession(
-    c: Context,
-    gameName: string,
-  ): Promise<GameSessionType | null> {
+  static async startGameSession(c: Context, gameName: string): Promise<GameSession | null> {
     const user = c.get('user') as UserType
     const wallet = c.get('wallet') as WalletType
     const authSession = c.get('authSession') as AuthSessionType
@@ -190,12 +135,13 @@ export class SessionManager {
       return null
     }
     console.log(wallet)
-    const newSessionData: GameSessionType = {
+    const newSessionData: GameSession = {
       id: nanoid(),
       userId: user.id,
       startingBalance: wallet.balance,
       authSessionId: authSession.id,
       gameId: game.id,
+      gameName,
       status: 'ACTIVE',
       createdAt: new Date(),
       endAt: null,
@@ -204,13 +150,11 @@ export class SessionManager {
       totalWon: 0,
       rtp: null,
       totalXpGained: 0,
+      phpGameData: null,
     }
     console.log(newSessionData)
     await db.insert(gameSessions).values(newSessionData)
-    await db
-      .update(users)
-      .set({ currentGameSessionDataId: newSessionData.id })
-      .where(eq(users.id, user.id))
+    await db.update(users).set({ currentGameSessionDataId: newSessionData.id }).where(eq(users.id, user.id))
 
     await saveGameSessionToCache(newSessionData)
     c.set('user', { ...user, currentGameSessionDataId: newSessionData.id })
@@ -225,10 +169,7 @@ export class SessionManager {
 
   static async endCurrentGameSession(userId: string): Promise<void> {
     const activeSession = await db.query.gameSessions.findFirst({
-      where: and(
-        eq(gameSessions.userId, userId),
-        eq(gameSessions.status, 'ACTIVE'),
-      ),
+      where: and(eq(gameSessions.userId, userId), eq(gameSessions.status, 'ACTIVE')),
     })
     console.log(activeSession)
     if (!activeSession) {
@@ -236,18 +177,13 @@ export class SessionManager {
     }
 
     const sessionSpins = await getSpinsFromCache(activeSession.id)
-    const sessionFromCache =
-      (await getGameSessionFromCache(activeSession.id)) || activeSession
+    const sessionFromCache = (await getGameSessionFromCache(activeSession.id)) || activeSession
 
     await db.transaction(async (tx) => {
       const now = new Date()
       const finalRtp =
-        sessionFromCache.totalWagered > 0
-          ? (sessionFromCache.totalWon / sessionFromCache.totalWagered) * 100
-          : 0
-      const duration = Math.round(
-        (now.getTime() - new Date(sessionFromCache.createdAt).getTime()) / 1000,
-      )
+        sessionFromCache.totalWagered > 0 ? (sessionFromCache.totalWon / sessionFromCache.totalWagered) * 100 : 0
+      const duration = Math.round((now.getTime() - new Date(sessionFromCache.createdAt).getTime()) / 1000)
       console.log('finalRtp: ', finalRtp)
       // console.log('sessionFromCache: ', sessionFromCache)
       await tx
@@ -260,7 +196,7 @@ export class SessionManager {
           totalWon: sessionFromCache.totalWon,
           startingBalance: sessionFromCache.startingBalance,
           totalXpGained: sessionFromCache.totalXpGained,
-          rtp: (finalRtp === 0) ? '0' : finalRtp.toFixed(2),
+          rtp: finalRtp === 0 ? '0' : finalRtp.toFixed(2),
         })
         .where(eq(gameSessions.id, sessionFromCache.id))
       console.log('here')
@@ -278,10 +214,7 @@ export class SessionManager {
         await tx.insert(gameSpins).values(spinsToCreate)
       }
 
-      await tx
-        .update(users)
-        .set({ currentGameSessionDataId: null })
-        .where(eq(users.id, userId))
+      await tx.update(users).set({ currentGameSessionDataId: null }).where(eq(users.id, userId))
     })
 
     await deleteGameSessionFromCache(activeSession.id)
@@ -293,9 +226,7 @@ export class SessionManager {
     })
   }
 
-  static async getGameSession(
-    sessionId: string,
-  ): Promise<GameSessionType | null> {
+  static async getGameSession(sessionId: string): Promise<GameSession | null> {
     let session: any = await getGameSessionFromCache(sessionId)
     if (session) {
       return session
@@ -311,14 +242,14 @@ export class SessionManager {
 
     return session || null
   }
-  static async verifyOTP(sessionId: string, otp: string): Promise<{ phone: string, isValid: boolean }> {
+  static async verifyOTP(sessionId: string, otp: string): Promise<{ phone: string; isValid: boolean }> {
     const session = await db.query.authSessions.findFirst({
       where: and(
         eq(authSessions.id, sessionId),
         eq(authSessions.status, 'OTP_PENDING'),
         eq(authSessions.otp, otp),
-        eq(authSessions.expiresAt, new Date(Date.now()))
-      )
+        eq(authSessions.expiresAt, new Date(Date.now())),
+      ),
     })
 
     if (!session) {
@@ -326,18 +257,15 @@ export class SessionManager {
     }
 
     // Mark OTP as verified
-    await db
-      .update(authSessions)
-      .set({ status: 'ACTIVE' })
-      .where(eq(authSessions.id, sessionId))
+    await db.update(authSessions).set({ status: 'ACTIVE' }).where(eq(authSessions.id, sessionId))
 
     return {
       phone: session.deviceId || '',
-      isValid: true
+      isValid: true,
     }
   }
 
-  static async getActiveGameSession(userId: string): Promise<GameSessionType | undefined> {
+  static async getActiveGameSession(userId: string): Promise<GameSession | undefined> {
     const allGameSessions = await getAllGameSessions()
     const activeSession = Array.from(allGameSessions.values()).find(
       (session) => session.userId === userId && session.status === 'ACTIVE',
@@ -345,17 +273,13 @@ export class SessionManager {
     return activeSession
   }
 
-
-
   static async handleIdleSession(c: Context): Promise<void> {
     const user = c.get('user') as UserType
     if (!user?.currentGameSessionDataId) {
       return
     }
 
-    const gameSession = await this.getGameSession(
-      user.currentGameSessionDataId,
-    )
+    const gameSession = await this.getGameSession(user.currentGameSessionDataId)
 
     if (gameSession) {
       const now = new Date()
@@ -368,7 +292,7 @@ export class SessionManager {
         await this.endCurrentGameSession(user.id)
         c.set('gameSession', null)
       } else {
-        (gameSession as any).lastSeen = now
+        ;(gameSession as any).lastSeen = now
         await saveGameSessionToCache(gameSession)
       }
     }

@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import { ref } from 'vue'
 import { useTransactionStore } from '@/stores/transaction.store'
+import { BalanceChangeMessage } from '@/composables/useEventManager'
 // import { setup } from 'mockjs'
 
 const transactionStore = useTransactionStore()
@@ -35,7 +36,7 @@ function openSettings() {
   // Also broadcast a global CustomEvent for listeners that live outside the GameLoader subtree (e.g. HomeView)
   try {
     window.dispatchEvent(new CustomEvent('app:settingsModal', { detail: true }))
-  } catch {}
+  } catch { }
   // Emit via Vue component channel (for any parent chain listeners)
   emit('settingsModal', true)
 }
@@ -61,7 +62,7 @@ const remaining_seconds_display = ref(0)
 
 // Format balance with 2 decimal places
 function formatBalance(balance: number) {
-  if(typeof balance !== 'number') {return balance}
+  if (typeof balance !== 'number') { return balance }
   return balance.toFixed(0)
 }
 const interval = ref()
@@ -126,10 +127,10 @@ onBeforeMount(async () => {
   await transactionStore.dispatchUserWallet()
 })
 onMounted(() => {
-  
+
   const rtu = useRealtimeUpdates()
   rtu.setupEventListeners()
-  rtu.setupZero()
+  // rtu.setupZero()
   eventBus.on(
     'balance:update',
     ((payload: BalanceUpdatePayload) => {
@@ -144,7 +145,19 @@ onMounted(() => {
     }) as EventMessage<'balance:update'>,
     'TopBarMobile',
   )
+  eventBus.on(
+    'balanceChange',
+    ((data: BalanceChangeMessage) => {
+      console.log(`TopBarMobile: BalanceChangeMessage event received with change of ${JSON.stringify(data)}.`)
+      balanceChange.value = data.newBalance - data.oldBalance
+      balanceChangeKey.value++ // Increment key to force re-render of animation element
 
+      // Hide the indicator after the animation
+      setTimeout(() => {
+        balanceChange.value = null
+      }, 2000) // Animation durat
+    })
+  )
   depositItems.value = []
   // console.log(depositItems.value)
 
@@ -166,10 +179,7 @@ onMounted(() => {
       <!-- <PlayerAvatar @click="router.push('/client/profile')" style="z-index: 99; max-height: 60px" /> -->
       <PlayerAvatar style="z-index: 99; width: 55px" current-exp="1000" :sparkle="sparkle" :max-exp="100" />
       <div id="PlayerCredits" class="color-white flex flex-col pb-1 pl-1 text-center">
-        <div
-          v-if="countdownActive"
-          class="flex w-full flex-row items-center"
-          style="
+        <div v-if="countdownActive" class="flex w-full flex-row items-center" style="
             height: 14px;
             font-size: 16px;
             font-weight: 600;
@@ -177,16 +187,13 @@ onMounted(() => {
             margin-left: 8px;
             margin-top: 4px;
             color: white;
-          "
-        >
+          ">
           <img src="/images/layout/cashappicon.avif" width="14px" style="margin-right: 7px; color: white" />
           ends:
           {{ remaining_minutes > 1 ? `${remaining_minutes}m` : `0m:${remaining_seconds_display}` }}
         </div>
         <div v-else class="flex w-full flex-row" style="height: 20px; font-size: 26px; font-weight: 600" />
-        <div
-          class="glow-light flex flex-row items-center justify-center"
-          style="
+        <div class="glow-light flex flex-row items-center justify-center" style="
             z-index: 999;
             text-align: center;
             min-height: 35px;
@@ -199,21 +206,16 @@ onMounted(() => {
             font-weight: 600;
             background-size: cover;
             background-image: url('/images/layout/money_backing.png');
-          "
-        >
-          <div
-            v-if="transactionStore.wallet"
-            class="glow mt--2 pt-.5 flex justify-center leading-[0.5]"
-            style="line-height: 0.8; text-align: center; letter-spacing: 0px; font-weight: 800"
-          >
+          ">
+          <div v-if="transactionStore.wallet" class="glow mt--2 pt-.5 flex justify-center leading-[0.5]"
+            style="line-height: 0.8; text-align: center; letter-spacing: 0px; font-weight: 800">
             {{ formatBalance(transactionStore.wallet.balance) }}
           </div>
         </div>
       </div>
     </div>
 
-    <div
-      style="
+    <div style="
         height: 50px;
         width: 50px;
         right: 38px;
@@ -224,16 +226,11 @@ onMounted(() => {
         padding: 4px;
         background-size: cover;
         z-index: 999999;
-      "
-    >
-      <img
-        style="top: 0px; right: 8px; gap: 0px; margin: 0px; padding: 0px; background-size: cover; z-index: 999999"
-        src="/images/layout/settings.avif"
-        @click="openSettings"
-      />
+      ">
+      <img style="top: 0px; right: 8px; gap: 0px; margin: 0px; padding: 0px; background-size: cover; z-index: 999999"
+        src="/images/layout/settings.avif" @click="openSettings" />
     </div>
-    <div
-      style="
+    <div style="
         height: 50px;
         width: 50px;
         position: absolute;
@@ -244,13 +241,9 @@ onMounted(() => {
         padding: 4px;
         background-size: cover;
         z-index: 999999;
-      "
-    >
-      <img
-        style="top: 0px; right: 8px; gap: 0px; margin: 0px; padding: 0px; background-size: cover; z-index: 999999"
-        src="/images/layout/home.png"
-        @click="goHome()"
-      />
+      ">
+      <img style="top: 0px; right: 8px; gap: 0px; margin: 0px; padding: 0px; background-size: cover; z-index: 999999"
+        src="/images/layout/home.png" @click="goHome()" />
     </div>
     <!-- <div
       class=""

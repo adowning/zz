@@ -4,8 +4,10 @@
  * Tasks API
  * OpenAPI spec version: 0.0.0
  */
+import type { PostApiUserEmail200Status } from './postApiUserEmail200Status';
 
 export type PostApiUserEmail200 = {
+  status: PostApiUserEmail200Status;
   id: string;
   username: string;
   /** @nullable */
@@ -43,8 +45,14 @@ export type PostApiUserEmail200 = {
   rtgBlockTime: number;
   /** @nullable */
   phone: string | null;
+  path: string[];
+  /** @nullable */
+  invitorId: string | null;
+  avatar: string;
   /** @nullable */
   activeWalletId: string | null;
   /** @nullable */
   activeOperatorId: string | null;
+  /** @nullable */
+  inviteCode: string | null;
 };

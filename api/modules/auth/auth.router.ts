@@ -1,11 +1,13 @@
 import { createRoute, z } from '@hono/zod-openapi'
-import * as HttpStatusCodes from 'stoker/http-status-codes'
-import { jsonContent, jsonContentRequired } from 'stoker/openapi/helpers'
 import {
-  createErrorSchema,
-  createMessageObjectSchema,
-} from 'stoker/openapi/schemas'
-
+  AuthSessionsSchema,
+  GameSessionsSchema,
+  OperatorsSchema,
+  UsersSchema,
+  VipInfoSchema,
+  WalletsSchema,
+} from '#/db'
+import { badRequestSchema } from '#/lib/constants'
 // import {
 //   selectAuthSessionSchema,
 //   selectGameSession,
@@ -16,10 +18,10 @@ import {
 import { createRouter } from '#/lib/create-app'
 import { authMiddleware } from '#/middlewares/auth.middleware'
 import { sessionMiddleware } from '#/middlewares/session.middleware'
-
-import { badRequestSchema } from '#/lib/constants'
+import * as HttpStatusCodes from 'stoker/http-status-codes'
+import { jsonContent, jsonContentRequired } from 'stoker/openapi/helpers'
+import { createMessageObjectSchema } from 'stoker/openapi/schemas'
 import * as controller from './auth.controller'
-import { AuthSessionsSchema, GameSessionsSchema, OperatorsSchema, UsersSchema, VipInfoSchema, WalletsSchema } from '#/db'
 
 const tags = ['Auth']
 
@@ -44,10 +46,7 @@ export const login = createRoute({
   },
   tags,
   responses: {
-    [HttpStatusCodes.OK]: jsonContent(
-      UsersSchema,
-      'The user object and sets an access token cookie.',
-    ),
+    [HttpStatusCodes.OK]: jsonContent(UsersSchema, 'The user object and sets an access token cookie.'),
     [HttpStatusCodes.BAD_REQUEST]: jsonContent(badRequestSchema, 'Bad Request'),
     // [HttpStatusCodes.UNAUTHORIZED]: jsonContent(
     //     createErrorSchema(userResponseSchema),
@@ -70,10 +69,7 @@ export const signup = createRoute({
   },
   tags,
   responses: {
-    [HttpStatusCodes.CREATED]: jsonContent(
-      UsersSchema,
-      'The created user object and sets an access token cookie.',
-    ),
+    [HttpStatusCodes.CREATED]: jsonContent(UsersSchema, 'The created user object and sets an access token cookie.'),
     [HttpStatusCodes.BAD_REQUEST]: jsonContent(badRequestSchema, 'Bad Request'),
     // [HttpStatusCodes.UNPROCESSABLE_ENTITY]: jsonContent(
     //     createErrorSchema(insertUserSchema),
@@ -92,17 +88,14 @@ export const sessionRoute = createRoute({
       z.object({
         user: UsersSchema,
         authSession: AuthSessionsSchema,
-        gameSession: GameSessionsSchema.optional(),
+        // gameSession: GameSessionsSchema.optional(),
         wallet: WalletsSchema,
         vipInfo: VipInfoSchema,
-        operator: OperatorsSchema,
+        operator: OperatorsSchema.omit({ goldsvetData: true }),
       }),
       'The current user session',
     ),
-    [HttpStatusCodes.UNAUTHORIZED]: jsonContent(
-      createErrorSchema(UsersSchema),
-      'Invalid id error',
-    ),
+    [HttpStatusCodes.BAD_REQUEST]: jsonContent(badRequestSchema, 'Bad Request'),
   },
 })
 
@@ -112,10 +105,7 @@ const logoutRoute = createRoute({
   tags,
   summary: 'Logout current user',
   responses: {
-    [HttpStatusCodes.OK]: jsonContent(
-      createMessageObjectSchema('Successfully logged out'),
-      'Logout successful',
-    ),
+    [HttpStatusCodes.OK]: jsonContent(createMessageObjectSchema('Successfully logged out'), 'Logout successful'),
     401: jsonContent(z.object({ error: z.string() }), 'Unauthorized'),
   },
 })
@@ -127,14 +117,8 @@ const refreshRoute = createRoute({
   tags,
   summary: 'Mint a new access token using the refresh cookie',
   responses: {
-    [HttpStatusCodes.OK]: jsonContent(
-      z.object({ accessToken: z.string() }),
-      'New access token',
-    ),
-    [HttpStatusCodes.UNAUTHORIZED]: jsonContent(
-      z.object({ error: z.string() }),
-      'Invalid or expired refresh token',
-    ),
+    [HttpStatusCodes.OK]: jsonContent(z.object({ accessToken: z.string() }), 'New access token'),
+    [HttpStatusCodes.UNAUTHORIZED]: jsonContent(z.object({ error: z.string() }), 'Invalid or expired refresh token'),
   },
 })
 
@@ -152,10 +136,7 @@ const otpRoute = createRoute({
     ),
   },
   responses: {
-    [HttpStatusCodes.OK]: jsonContent(
-      createMessageObjectSchema('Successfully logged out'),
-      'Logout successful',
-    ),
+    [HttpStatusCodes.OK]: jsonContent(createMessageObjectSchema('Successfully logged out'), 'Logout successful'),
     401: jsonContent(z.object({ error: z.string() }), 'Unauthorized'),
   },
 })
@@ -173,14 +154,10 @@ const verifyOtp = createRoute({
     ),
   },
   responses: {
-    [HttpStatusCodes.OK]: jsonContent(
-      createMessageObjectSchema('Successfully logged out'),
-      'Logout successful',
-    ),
+    [HttpStatusCodes.OK]: jsonContent(createMessageObjectSchema('Successfully logged out'), 'Logout successful'),
     401: jsonContent(z.object({ error: z.string() }), 'Unauthorized'),
   },
 })
-
 
 const router = createRouter()
 

@@ -38,7 +38,11 @@ export const useGameStore = defineStore('game', () => {
                     },
                     []
                 )
-                games.value = uniqueGames
+                games.value = uniqueGames.sort((a, b) => {
+                    if (a.category === 'fish' && b.category !== 'fish') return -1;
+                    if (a.category !== 'fish' && b.category === 'fish') return 1;
+                    return 0;
+                })
                 return true
             }
             }

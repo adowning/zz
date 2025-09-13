@@ -1,0 +1,153 @@
+
+mainGameFG.png
+size: 2048,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+branch
+  rotate: false
+  xy: 1571, 383
+  size: 242, 122
+  orig: 242, 122
+  offset: 0, 0
+  index: -1
+fence
+  rotate: false
+  xy: 6, 76
+  size: 682, 286
+  orig: 682, 286
+  offset: 0, 0
+  index: -1
+filler
+  rotate: false
+  xy: 6, 6
+  size: 23, 23
+  orig: 23, 23
+  offset: 0, 0
+  index: -1
+fog
+  rotate: false
+  xy: 871, 26
+  size: 170, 129
+  orig: 170, 129
+  offset: 0, 0
+  index: -1
+grass_arc
+  rotate: false
+  xy: 694, 161
+  size: 270, 201
+  orig: 270, 201
+  offset: 0, 0
+  index: -1
+grass_filler_2
+  rotate: false
+  xy: 1279, 274
+  size: 119, 101
+  orig: 119, 101
+  offset: 0, 0
+  index: -1
+grass_filler_3
+  rotate: false
+  xy: 694, 63
+  size: 171, 92
+  orig: 171, 92
+  offset: 0, 0
+  index: -1
+grass_filler_4
+  rotate: true
+  xy: 1404, 302
+  size: 73, 104
+  orig: 73, 104
+  offset: 0, 0
+  index: -1
+mainGameAssets/fgPlate
+  rotate: false
+  xy: 6, 368
+  size: 960, 137
+  orig: 960, 137
+  offset: 0, 0
+  index: -1
+mainGameAssets/g2
+  rotate: false
+  xy: 972, 381
+  size: 593, 124
+  orig: 593, 124
+  offset: 0, 0
+  index: -1
+mainGameAssets/g3
+  rotate: false
+  xy: 1819, 319
+  size: 202, 186
+  orig: 202, 186
+  offset: 0, 0
+  index: -1
+mainGameAssets/g4
+  rotate: false
+  xy: 1145, 249
+  size: 128, 126
+  orig: 128, 126
+  offset: 0, 0
+  index: -1
+mainGameAssets/g5
+  rotate: false
+  xy: 972, 226
+  size: 167, 149
+  orig: 167, 149
+  offset: 0, 0
+  index: -1
+mainGameAssets/tb1
+  rotate: false
+  xy: 2027, 431
+  size: 13, 74
+  orig: 18, 74
+  offset: 5, 0
+  index: -1
+mainGameAssets/tb2
+  rotate: true
+  xy: 1279, 249
+  size: 19, 89
+  orig: 19, 89
+  offset: 0, 0
+  index: -1
+mainGameAssets/tb3
+  rotate: true
+  xy: 6, 35
+  size: 35, 78
+  orig: 35, 78
+  offset: 0, 0
+  index: -1
+mainGameAssets/tb4
+  rotate: true
+  xy: 1404, 274
+  size: 22, 57
+  orig: 22, 57
+  offset: 0, 0
+  index: -1
+mainGameAssets/tb5
+  rotate: true
+  xy: 90, 47
+  size: 23, 41
+  orig: 23, 41
+  offset: 0, 0
+  index: -1
+mainGameAssets/tb6
+  rotate: true
+  xy: 1571, 341
+  size: 36, 47
+  orig: 36, 47
+  offset: 0, 0
+  index: -1
+mainGameAssets/tb7
+  rotate: false
+  xy: 1514, 342
+  size: 51, 33
+  orig: 51, 33
+  offset: 0, 0
+  index: -1
+mainGameAssets/tb8
+  rotate: false
+  xy: 1374, 249
+  size: 26, 19
+  orig: 26, 19
+  offset: 0, 0
+  index: -1

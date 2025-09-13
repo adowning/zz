@@ -1,0 +1,271 @@
+
+bigWinFire.jpg
+size: 2048,2048
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+bigWinFire_00040
+  rotate: false
+  xy: 4, 1609
+  size: 419, 317
+  orig: 419, 317
+  offset: 0, 0
+  index: -1
+bigWinFire_00041
+  rotate: false
+  xy: 4, 1288
+  size: 419, 317
+  orig: 419, 317
+  offset: 0, 0
+  index: -1
+bigWinFire_00042
+  rotate: false
+  xy: 427, 1609
+  size: 419, 317
+  orig: 419, 317
+  offset: 0, 0
+  index: -1
+bigWinFire_00043
+  rotate: false
+  xy: 4, 967
+  size: 419, 317
+  orig: 419, 317
+  offset: 0, 0
+  index: -1
+bigWinFire_00044
+  rotate: false
+  xy: 427, 1288
+  size: 419, 317
+  orig: 419, 317
+  offset: 0, 0
+  index: -1
+bigWinFire_00045
+  rotate: false
+  xy: 850, 1609
+  size: 419, 317
+  orig: 419, 317
+  offset: 0, 0
+  index: -1
+bigWinFire_00046
+  rotate: false
+  xy: 4, 646
+  size: 419, 317
+  orig: 419, 317
+  offset: 0, 0
+  index: -1
+bigWinFire_00047
+  rotate: false
+  xy: 427, 967
+  size: 419, 317
+  orig: 419, 317
+  offset: 0, 0
+  index: -1
+bigWinFire_00048
+  rotate: false
+  xy: 850, 1288
+  size: 419, 317
+  orig: 419, 317
+  offset: 0, 0
+  index: -1
+bigWinFire_00049
+  rotate: false
+  xy: 1273, 1609
+  size: 419, 317
+  orig: 419, 317
+  offset: 0, 0
+  index: -1
+bigWinFire_00050
+  rotate: false
+  xy: 4, 325
+  size: 419, 317
+  orig: 419, 317
+  offset: 0, 0
+  index: -1
+bigWinFire_00051
+  rotate: false
+  xy: 427, 646
+  size: 419, 317
+  orig: 419, 317
+  offset: 0, 0
+  index: -1
+bigWinFire_00052
+  rotate: false
+  xy: 850, 967
+  size: 419, 317
+  orig: 419, 317
+  offset: 0, 0
+  index: -1
+bigWinFire_00053
+  rotate: false
+  xy: 1273, 1288
+  size: 419, 317
+  orig: 419, 317
+  offset: 0, 0
+  index: -1
+bigWinFire_00054
+  rotate: true
+  xy: 1696, 1507
+  size: 419, 317
+  orig: 419, 317
+  offset: 0, 0
+  index: -1
+bigWinFire_00055
+  rotate: false
+  xy: 4, 4
+  size: 419, 317
+  orig: 419, 317
+  offset: 0, 0
+  index: -1
+bigWinFire_00056
+  rotate: false
+  xy: 427, 325
+  size: 419, 317
+  orig: 419, 317
+  offset: 0, 0
+  index: -1
+bigWinFire_00057
+  rotate: false
+  xy: 850, 646
+  size: 419, 317
+  orig: 419, 317
+  offset: 0, 0
+  index: -1
+bigWinFire_00058
+  rotate: false
+  xy: 1273, 967
+  size: 419, 317
+  orig: 419, 317
+  offset: 0, 0
+  index: -1
+bigWinFire_00059
+  rotate: true
+  xy: 1696, 1084
+  size: 419, 317
+  orig: 419, 317
+  offset: 0, 0
+  index: -1
+bigWinFire_00060
+  rotate: false
+  xy: 427, 4
+  size: 419, 317
+  orig: 419, 317
+  offset: 0, 0
+  index: -1
+bigWinFire_00061
+  rotate: false
+  xy: 850, 325
+  size: 419, 317
+  orig: 419, 317
+  offset: 0, 0
+  index: -1
+bigWinFire_00062
+  rotate: false
+  xy: 1273, 646
+  size: 419, 317
+  orig: 419, 317
+  offset: 0, 0
+  index: -1
+bigWinFire_00063
+  rotate: true
+  xy: 1696, 661
+  size: 419, 317
+  orig: 419, 317
+  offset: 0, 0
+  index: -1
+bigWinFire_00064
+  rotate: false
+  xy: 850, 4
+  size: 419, 317
+  orig: 419, 317
+  offset: 0, 0
+  index: -1
+bigWinFire_00065
+  rotate: false
+  xy: 1273, 325
+  size: 419, 317
+  orig: 419, 317
+  offset: 0, 0
+  index: -1
+bigWinFire_00066
+  rotate: false
+  xy: 1273, 4
+  size: 419, 317
+  orig: 419, 317
+  offset: 0, 0
+  index: -1
+bigWinFire_00067
+  rotate: true
+  xy: 1696, 238
+  size: 419, 317
+  orig: 419, 317
+  offset: 0, 0
+  index: -1
+
+bigWinFire2.jpg
+size: 2048,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+bigWinFire_00068
+  rotate: false
+  xy: 4, 646
+  size: 419, 317
+  orig: 419, 317
+  offset: 0, 0
+  index: -1
+bigWinFire_00069
+  rotate: false
+  xy: 4, 325
+  size: 419, 317
+  orig: 419, 317
+  offset: 0, 0
+  index: -1
+bigWinFire_00070
+  rotate: false
+  xy: 427, 646
+  size: 419, 317
+  orig: 419, 317
+  offset: 0, 0
+  index: -1
+bigWinFire_00071
+  rotate: false
+  xy: 4, 4
+  size: 419, 317
+  orig: 419, 317
+  offset: 0, 0
+  index: -1
+bigWinFire_00072
+  rotate: false
+  xy: 427, 325
+  size: 419, 317
+  orig: 419, 317
+  offset: 0, 0
+  index: -1
+bigWinFire_00073
+  rotate: false
+  xy: 850, 646
+  size: 419, 317
+  orig: 419, 317
+  offset: 0, 0
+  index: -1
+bigWinFire_00074
+  rotate: false
+  xy: 427, 4
+  size: 419, 317
+  orig: 419, 317
+  offset: 0, 0
+  index: -1
+bigWinFire_00075
+  rotate: false
+  xy: 850, 325
+  size: 419, 317
+  orig: 419, 317
+  offset: 0, 0
+  index: -1
+bigWinFire_00076
+  rotate: false
+  xy: 1273, 646
+  size: 419, 317
+  orig: 419, 317
+  offset: 0, 0
+  index: -1

@@ -3,7 +3,11 @@
 import { ref, onMounted, onUnmounted, defineProps, defineEmits, defineExpose } from 'vue'
 import GameLauncher from '@/services/GameLauncher'
 import Header from '@/components/Header.vue'
-
+import VHeader from '@/components/games/VHeader.vue'
+import { BalanceChangeMessage } from '@/composables/useEventManager'
+const appStore = useAppStore()
+const eventBus = useEventManager()
+const portrait = ref(false)
 // --- Props and Emits ---
 const props = defineProps<Props>()
 
@@ -32,11 +36,10 @@ const gameContainer = ref<HTMLElement | null>(null)
 let launcher: GameLauncher | null = null // Store the launcher instance
 
 // --- Methods ---
-function handleMessageFromGame(data: Record<string, unknown> | string) {
+function handleMessageFromGame(data: any | string) {
   const authStore = useAuthStore()
   console.log('Message received from iframe:', data)
   if (data === 'gameEnabled') {
-    // Show header once the game signals it is enabled
     showTopBar.value = true
   }
   // *** NEW LOGIC: HANDSHAKE ***
@@ -62,17 +65,26 @@ function handleMessageFromGame(data: Record<string, unknown> | string) {
       )
     }
   }
-    if (data === 'NLC_LOADED') {  return showTopBar.value = true }
-  if(typeof data === 'string'){
-    const parsedData = JSON.parse(data)
-    if(parsedData.event === 'balance'){
+  if (data === 'NLC_LOADED') { return showTopBar.value = true }
+  if (typeof data !== 'string') {
+    data = data as unknown as BalanceChangeMessage
+    // console.log('here')
+    // // const parsedData = JSON.parse(data)
+    // if (data.event === 'balance') {
+    //   const tranStore = useTransactionStore()
+    //   console.log('Setting balance from game message:', data)
+    //   tranStore.setBalance(data as number)
+    // }
+    console.log('here')
+    if (data.type === 'balanceChange') {
+      eventBus.emit('balanceChange', data as unknown as BalanceChangeMessage)
       const tranStore = useTransactionStore()
-      console.log('Setting balance from game message:', parsedData.data)
-      tranStore.setBalance(parsedData.data as number)
+      //   console.log('Setting balance from game message:', data)
+      tranStore.setBalance(data.newBalance)
     }
   }
   // Emit all other messages to the parent component
-  emit('messageFromGame', {data})
+  emit('messageFromGame', { data })
 }
 
 // --- Lifecycle Hooks ---
@@ -138,6 +150,8 @@ onUnmounted(() => {
   if (launcher) {
     launcher.destroy()
   }
+  appStore.hideLoading()
+
 })
 
 // Expose the sendMessage method so the parent component can call it
@@ -151,10 +165,12 @@ defineExpose({
 <template>
   <!-- Fixed header overlays the game (no spacer).
        Ensure it can receive clicks even when iframe underneath tries to capture input. -->
-  <component :is="Header" v-if="showTopBar"
+  <component :is="Header" v-if="showTopBar && portrait"
     class="fixed inset-x-0 top-0 z-[10000] pointer-events-auto will-change-transform"
     style="transform: translateZ(0); -webkit-transform: translateZ(0)" />
-
+  <component :is="VHeader" v-if="showTopBar && !portrait"
+    class="fixed  top-0 right-0 z-[10000] pointer-events-auto will-change-transform"
+    style="transform: translateZ(0); -webkit-transform: translateZ(0)" />
   <!-- Game container kept below header and explicitly lower in stacking -->
   <div ref="gameContainer" class="game-host-container">
     <!--

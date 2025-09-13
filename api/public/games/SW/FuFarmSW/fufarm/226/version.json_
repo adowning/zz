@@ -1,0 +1,11 @@
+{
+    "date": "2020-05-13",
+    "buildNumber": "226",
+    "external-client-api": "4.1.1-develop.59",
+    "sw-arcadia-client-fu-core": "2.1.49",
+    "sw-arcadia-client-fu-core-jp": "2.1.51",
+    "sw-client-env": "1.0.0",
+    "sw-font-parser": "0.2.1",
+    "sw-lang-report": "0.0.5",
+    "sw-size-report": "1.2.4"
+}

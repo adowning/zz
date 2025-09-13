@@ -19,6 +19,7 @@ export const TransactionsSchema = z.object({
   status: z.string(),
   amount: z.number(),
   netAmount: z.number().nullable(),
+  currencyName: z.string().nullable(),
   feeAmount: z.number().nullable(),
   productId: z.string().nullable(),
   paymentMethod: z.string().nullable(),
@@ -37,7 +38,7 @@ export const TransactionsSchema = z.object({
   createdAt: z.coerce.date(),
   updatedAt: z.coerce.date(),
   operatorId: z.string().nullable(),
-  userId: z.string().nullable(),
+  userId: z.string(),
 })
 
 export type Transactions = z.infer<typeof TransactionsSchema>

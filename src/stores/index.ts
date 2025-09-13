@@ -69,7 +69,10 @@ export async function setupStore(app: App) {
   const store = createPinia();
 console.log('running setup yay')
 //   store.use(resetSetupStore);
+
   app.use(store);
+  const appStore = useAppStore()
+appStore.showLoading()
    await init()
 
 }

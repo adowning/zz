@@ -37,7 +37,7 @@ onMounted(() => {
     <div class="min-h-screen bg-gray-900 flex items-center justify-center px-4 relative">
         <div v-if="!isAuthLoading && !isAuthenticated">
             <div class="login-view-container overflow-hidden">
-                <Logo class="logo-main" />
+                <Logo class="logo-main mb-5" />
                 <div class="flex mt-4 justify-center items-center min-h-[20px] w-80 glow text-sm zIndex-1">
                     <div :style="`color: ${!isSignUpMode ? 'white' : 'grey'};`">
                         Login

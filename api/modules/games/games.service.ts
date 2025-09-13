@@ -1,10 +1,9 @@
-import { desc, eq, sql } from 'drizzle-orm'
-import type { Context } from 'hono'
-
 import db, { games } from '#/db'
 // import { nanoid } from '#/utils/nanoid'
 import type { AuthSessionType, UserType } from '#/db/'
 import { SessionManager } from '#/lib/session.manager'
+import { desc, eq, sql } from 'drizzle-orm'
+import type { Context } from 'hono'
 
 // export function findGameCategories() {
 //   return GameCategory.enumValues
@@ -27,14 +26,8 @@ export async function findAllGames() {
   })
 }
 
-export async function searchGames(params: {
-  game_categories_slug?: string;
-  page: number;
-  limit: number;
-}) {
-  const where = params.game_categories_slug
-    ? eq(games.category, params.game_categories_slug)
-    : undefined
+export async function searchGames(params: { game_categories_slug?: string; page: number; limit: number }) {
+  const where = params.game_categories_slug ? eq(games.category, params.game_categories_slug) : undefined
   const _games = await db.query.games.findMany({
     where,
     limit: params.limit,
@@ -111,11 +104,7 @@ export async function searchGames(params: {
 //     .where(eq(favoriteGames.userId, userId))
 //   return favorites.map((f) => f.gameId)
 // }
-export async function checkSession(
-  user: UserType,
-
-): Promise<string | null> {
-
+export async function checkSession(user: UserType): Promise<string | null> {
   if (!user) {
     return null
   }
@@ -136,7 +125,7 @@ export async function enterGame(
   authSession: AuthSessionType,
   gameId: string,
   token: string,
-  balance: number
+  balance: number,
 ): Promise<any | null> {
   let game = await db.query.games.findFirst({ where: eq(games.id, gameId) })
   if (!game) {
@@ -147,7 +136,9 @@ export async function enterGame(
   }
   // await db.insert(GameSession).values(newSession)
   const result = await SessionManager.startGameSession(c, game.name)
-  if (result === null || !result) { return null }
+  if (result === null || !result) {
+    return null
+  }
   const gameConfig = {
     authToken: token,
     gameSessionId: result.id,
@@ -160,13 +151,20 @@ export async function enterGame(
     depositUrl: '/wallet/deposit',
     lobbyUrl: '/',
     mode: 'real',
-    rgsApiBase: `http://localhost:9999/rpc/spin-data/redtiger/platform`,
+    rgsApiBase: `https://apidev.cashflowcasino.com/rpc/spin-data/redtiger/platform`,
     cdn: `https://cdn-eu.cloudedge.info/all/games/slots/${game.name}/`,
     baseCdn: 'https://cdn-eu.cloudedge.info/all/games/',
   }
-
+  console.log(game)
   return {
-    webUrl: (game.developer === 'nolimit') ? `http://localhost:9999/games/nolimit/launcher.html?gameName=${game.name}` : `/games/${game.developer}/launcher.html`,
+    webUrl:
+      game.name === 'FuFarmSW'
+        ? `https://apidev.cashflowcasino.com/games/SW/FuFarmSW/fufarm/226/index.html?startGameToken=${token}&swa=0&history=0&history_url=&hide_play_for_real=true&phantom_version_host=&language=en`
+        : game.developer === 'kickass'
+          ? `https://apidev.cashflowcasino.com/games/kickass/${game.name}/index.html?g=${game.name.replace('KA', '')}&p=x&u=237558600&t=123&ak=accessKey&cr=USD&loc=en&rlv=0&api_exit=/&userId=${user.id}`
+          : game.developer === 'nolimit'
+            ? `https://apidev.cashflowcasino.com/games/nolimit/launcher.html?gameName=${game.name}`
+            : `/games/${game.developer}/launcher.html`,
     gameConfig,
   }
 }

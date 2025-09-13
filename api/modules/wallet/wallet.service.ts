@@ -18,7 +18,7 @@ export async function debitFromwallets(
   if (amountToDebit <= 0) {
     throw new Error('Debit amount must be positive.')
   }
-
+console.log(amountToDebit)
 return  await db.transaction(async (tx) => {
     const user = await tx.query.users.findFirst({
       where: eq(users.id, userId),

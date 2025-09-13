@@ -31,7 +31,7 @@ onMounted(() => {
         overflow: hidden;
 
         padding: 20px;
-        height: 60vh;
+        /* height: 60vh; */
         background-repeat: no-repeat;
         border-image: url('/images/common/cell-2.png') 20 20 20 20 fill / 20px 20px 20px 20px;
         padding: 20px 20px 20px 20px;

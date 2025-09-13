@@ -17,6 +17,8 @@ export type GetApiTransactionsDepositsTop10200Item = {
   /** @nullable */
   netAmount: number | null;
   /** @nullable */
+  currencyName: string | null;
+  /** @nullable */
   feeAmount: number | null;
   /** @nullable */
   productId: string | null;
@@ -52,6 +54,5 @@ export type GetApiTransactionsDepositsTop10200Item = {
   updatedAt: string | null;
   /** @nullable */
   operatorId: string | null;
-  /** @nullable */
-  userId: string | null;
+  userId: string;
 };

@@ -1,0 +1,27 @@
+
+raven.png
+size: 1024,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Body
+  rotate: false
+  xy: 601, 27
+  size: 375, 320
+  orig: 375, 320
+  offset: 0, 0
+  index: -1
+LWing
+  rotate: false
+  xy: 4, 171
+  size: 593, 176
+  orig: 593, 176
+  offset: 0, 0
+  index: -1
+RWing
+  rotate: false
+  xy: 4, 4
+  size: 575, 163
+  orig: 575, 163
+  offset: 0, 0
+  index: -1

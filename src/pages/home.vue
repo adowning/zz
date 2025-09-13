@@ -155,7 +155,7 @@ const visibleGames = computed(() => {
 
   return normalized.filter(g => {
     const c = (g.category ?? '').toLowerCase()
-    if (f === 'all') { return c === 'slots' || c === 'fish' }
+    if (f === 'all') { return true }
     const wanted = f === 'fish' ? 'fish' : 'slots'
     return c === wanted
   })

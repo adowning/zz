@@ -9,7 +9,13 @@
   font-style: normal;
   font-display: swap;
 }
-
+@font-face {
+  font-family: 'FugazOne';
+  src: url('/FugazOne-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
 /* @font-face {
   font-family: 'Roboto';
   font-display: swap;
@@ -36,12 +42,16 @@ body {
     background-color 0.25s,
     color 0.25s;
   color: var(--color-text);
-  background-color: black;
+  background-color: #080b2a;
   /* color-scheme: var(--color-scheme); */
 }
 .onacona {
   font-family: 'onacona', sans-serif;
   letter-spacing: 0.6px;
+}
+.fugazone {
+  font-family: 'fugazone'!;
+  letter-spacing: 1px;
 }
 
 .glow {

@@ -1,0 +1,286 @@
+
+raven_source.png
+size: 2048,128
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+rave_headturn_01
+  rotate: true
+  xy: 1575, 57
+  size: 69, 56
+  orig: 69, 56
+  offset: 0, 0
+  index: -1
+rave_headturn_02
+  rotate: true
+  xy: 1511, 13
+  size: 66, 62
+  orig: 66, 62
+  offset: 0, 0
+  index: -1
+rave_headturn_03
+  rotate: true
+  xy: 1633, 66
+  size: 60, 58
+  orig: 60, 58
+  offset: 0, 0
+  index: -1
+rave_headturn_04
+  rotate: false
+  xy: 1636, 6
+  size: 49, 58
+  orig: 49, 58
+  offset: 0, 0
+  index: -1
+rave_headturn_05
+  rotate: true
+  xy: 1509, 81
+  size: 45, 59
+  orig: 45, 59
+  offset: 0, 0
+  index: -1
+rave_headturn_06
+  rotate: true
+  xy: 530, 2
+  size: 45, 60
+  orig: 45, 60
+  offset: 0, 0
+  index: -1
+rave_headturn_07
+  rotate: true
+  xy: 1441, 79
+  size: 47, 66
+  orig: 47, 66
+  offset: 0, 0
+  index: -1
+rave_headturn_08
+  rotate: true
+  xy: 1374, 78
+  size: 48, 65
+  orig: 48, 65
+  offset: 0, 0
+  index: -1
+rave_headturn_09
+  rotate: true
+  xy: 1308, 77
+  size: 49, 64
+  orig: 49, 64
+  offset: 0, 0
+  index: -1
+rave_headturn_10
+  rotate: true
+  xy: 1242, 76
+  size: 50, 64
+  orig: 50, 64
+  offset: 0, 0
+  index: -1
+rave_headturn_11
+  rotate: false
+  xy: 847, 3
+  size: 81, 59
+  orig: 81, 59
+  offset: 0, 0
+  index: -1
+rave_headturn_12
+  rotate: false
+  xy: 764, 2
+  size: 81, 58
+  orig: 81, 58
+  offset: 0, 0
+  index: -1
+rave_headturn_13
+  rotate: false
+  xy: 930, 7
+  size: 81, 58
+  orig: 81, 58
+  offset: 0, 0
+  index: -1
+rave_headturn_14
+  rotate: false
+  xy: 1098, 10
+  size: 80, 57
+  orig: 80, 57
+  offset: 0, 0
+  index: -1
+rave_headturn_15
+  rotate: false
+  xy: 1073, 69
+  size: 81, 57
+  orig: 81, 57
+  offset: 0, 0
+  index: -1
+rave_headturn_16
+  rotate: false
+  xy: 1180, 14
+  size: 81, 56
+  orig: 81, 56
+  offset: 0, 0
+  index: -1
+rave_headturn_17
+  rotate: false
+  xy: 1263, 18
+  size: 81, 56
+  orig: 81, 56
+  offset: 0, 0
+  index: -1
+rave_headturn_18
+  rotate: false
+  xy: 1346, 19
+  size: 81, 56
+  orig: 81, 56
+  offset: 0, 0
+  index: -1
+rave_headturn_19
+  rotate: false
+  xy: 1429, 20
+  size: 80, 56
+  orig: 80, 56
+  offset: 0, 0
+  index: -1
+rave_headturn_20
+  rotate: true
+  xy: 508, 49
+  size: 77, 70
+  orig: 77, 70
+  offset: 0, 0
+  index: -1
+rave_headturn_21
+  rotate: true
+  xy: 436, 48
+  size: 78, 70
+  orig: 78, 70
+  offset: 0, 0
+  index: -1
+rave_headturn_22
+  rotate: false
+  xy: 662, 59
+  size: 79, 67
+  orig: 79, 67
+  offset: 0, 0
+  index: -1
+rave_headturn_23
+  rotate: false
+  xy: 743, 62
+  size: 80, 64
+  orig: 80, 64
+  offset: 0, 0
+  index: -1
+rave_headturn_24
+  rotate: false
+  xy: 825, 64
+  size: 80, 62
+  orig: 80, 62
+  offset: 0, 0
+  index: -1
+rave_headturn_25
+  rotate: false
+  xy: 907, 67
+  size: 81, 59
+  orig: 81, 59
+  offset: 0, 0
+  index: -1
+rave_headturn_26
+  rotate: false
+  xy: 990, 68
+  size: 81, 58
+  orig: 81, 58
+  offset: 0, 0
+  index: -1
+rave_headturn_27
+  rotate: false
+  xy: 1013, 10
+  size: 83, 56
+  orig: 83, 56
+  offset: 0, 0
+  index: -1
+rave_headturn_28
+  rotate: false
+  xy: 679, 2
+  size: 83, 55
+  orig: 83, 55
+  offset: 0, 0
+  index: -1
+rave_headturn_29
+  rotate: false
+  xy: 1156, 72
+  size: 84, 54
+  orig: 84, 54
+  offset: 0, 0
+  index: -1
+rave_headturn_30
+  rotate: false
+  xy: 592, 3
+  size: 85, 54
+  orig: 85, 54
+  offset: 0, 0
+  index: -1
+rave_wing_mo_01
+  rotate: true
+  xy: 265, 24
+  size: 102, 55
+  orig: 102, 55
+  offset: 0, 0
+  index: -1
+rave_wing_mo_02
+  rotate: true
+  xy: 322, 24
+  size: 102, 55
+  orig: 102, 55
+  offset: 0, 0
+  index: -1
+rave_wing_mo_03
+  rotate: true
+  xy: 379, 25
+  size: 101, 55
+  orig: 101, 55
+  offset: 0, 0
+  index: -1
+rave_wing_mo_04
+  rotate: true
+  xy: 204, 27
+  size: 99, 59
+  orig: 99, 59
+  offset: 0, 0
+  index: -1
+rave_wing_mo_05
+  rotate: true
+  xy: 140, 27
+  size: 99, 62
+  orig: 99, 62
+  offset: 0, 0
+  index: -1
+raven_body
+  rotate: false
+  xy: 2, 8
+  size: 136, 118
+  orig: 136, 118
+  offset: 0, 0
+  index: -1
+raven_legs
+  rotate: false
+  xy: 436, 8
+  size: 60, 38
+  orig: 60, 38
+  offset: 0, 0
+  index: -1
+raven_tail
+  rotate: false
+  xy: 1575, 5
+  size: 59, 50
+  orig: 59, 50
+  offset: 0, 0
+  index: -1
+raven_wing
+  rotate: false
+  xy: 580, 59
+  size: 80, 67
+  orig: 80, 67
+  offset: 0, 0
+  index: -1
+round
+  rotate: false
+  xy: 498, 16
+  size: 30, 30
+  orig: 30, 30
+  offset: 0, 0
+  index: -1

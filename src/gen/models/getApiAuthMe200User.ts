@@ -4,8 +4,10 @@
  * Tasks API
  * OpenAPI spec version: 0.0.0
  */
+import type { GetApiAuthMe200UserStatus } from './getApiAuthMe200UserStatus';
 
 export type GetApiAuthMe200User = {
+  status: GetApiAuthMe200UserStatus;
   id: string;
   username: string;
   /** @nullable */
@@ -43,8 +45,14 @@ export type GetApiAuthMe200User = {
   rtgBlockTime: number;
   /** @nullable */
   phone: string | null;
+  path: string[];
+  /** @nullable */
+  invitorId: string | null;
+  avatar: string;
   /** @nullable */
   activeWalletId: string | null;
   /** @nullable */
   activeOperatorId: string | null;
+  /** @nullable */
+  inviteCode: string | null;
 };

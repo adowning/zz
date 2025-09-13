@@ -1,4 +1,5 @@
 import { z } from 'zod';
+import { StatusSchema } from '../inputTypeSchemas/StatusSchema'
 import { AuthSessionsWithRelationsSchema, AuthSessionsOptionalDefaultsWithRelationsSchema } from './AuthSessionsSchema'
 import type { AuthSessionsWithRelations, AuthSessionsOptionalDefaultsWithRelations } from './AuthSessionsSchema'
 import { BlackjackBetsWithRelationsSchema, BlackjackBetsOptionalDefaultsWithRelationsSchema } from './BlackjackBetsSchema'
@@ -19,12 +20,25 @@ import { OperatorsWithRelationsSchema, OperatorsOptionalDefaultsWithRelationsSch
 import type { OperatorsWithRelations, OperatorsOptionalDefaultsWithRelations } from './OperatorsSchema'
 import { OperatorSwitchHistoryWithRelationsSchema, OperatorSwitchHistoryOptionalDefaultsWithRelationsSchema } from './OperatorSwitchHistorySchema'
 import type { OperatorSwitchHistoryWithRelations, OperatorSwitchHistoryOptionalDefaultsWithRelations } from './OperatorSwitchHistorySchema'
+import { VipCashbackWithRelationsSchema, VipCashbackOptionalDefaultsWithRelationsSchema } from './VipCashbackSchema'
+import type { VipCashbackWithRelations, VipCashbackOptionalDefaultsWithRelations } from './VipCashbackSchema'
+import { VipLevelUpBonusWithRelationsSchema, VipLevelUpBonusOptionalDefaultsWithRelationsSchema } from './VipLevelUpBonusSchema'
+import type { VipLevelUpBonusWithRelations, VipLevelUpBonusOptionalDefaultsWithRelations } from './VipLevelUpBonusSchema'
+import { VipSpinRewardWithRelationsSchema, VipSpinRewardOptionalDefaultsWithRelationsSchema } from './VipSpinRewardSchema'
+import type { VipSpinRewardWithRelations, VipSpinRewardOptionalDefaultsWithRelations } from './VipSpinRewardSchema'
+import { AffiliateLogWithRelationsSchema, AffiliateLogOptionalDefaultsWithRelationsSchema } from './AffiliateLogSchema'
+import type { AffiliateLogWithRelations, AffiliateLogOptionalDefaultsWithRelations } from './AffiliateLogSchema'
+import { ReferralCodeWithRelationsSchema, ReferralCodeOptionalDefaultsWithRelationsSchema } from './ReferralCodeSchema'
+import type { ReferralCodeWithRelations, ReferralCodeOptionalDefaultsWithRelations } from './ReferralCodeSchema'
+import { BalanceWithRelationsSchema, BalanceOptionalDefaultsWithRelationsSchema } from './BalanceSchema'
+import type { BalanceWithRelations, BalanceOptionalDefaultsWithRelations } from './BalanceSchema'
 
 /////////////////////////////////////////
 // USERS SCHEMA
 /////////////////////////////////////////
 
 export const UsersSchema = z.object({
+  status: StatusSchema,
   /**
    * drizzle.default nanoid::nanoid
    */
@@ -50,8 +64,12 @@ export const UsersSchema = z.object({
   lastSeen: z.coerce.date().nullable(),
   rtgBlockTime: z.number(),
   phone: z.string().nullable(),
+  path: z.string().array(),
+  invitorId: z.string().nullable(),
+  avatar: z.string(),
   activeWalletId: z.string().nullable(),
   activeOperatorId: z.string().nullable(),
+  inviteCode: z.string().nullable(),
 })
 
 export type Users = z.infer<typeof UsersSchema>
@@ -61,12 +79,15 @@ export type Users = z.infer<typeof UsersSchema>
 /////////////////////////////////////////
 
 export const UsersOptionalDefaultsSchema = UsersSchema.merge(z.object({
+  status: StatusSchema.optional(),
   avatarUrl: z.string().optional(),
   role: z.string().optional(),
   isActive: z.boolean().optional(),
   createdAt: z.coerce.date().optional(),
   updatedAt: z.coerce.date().optional(),
   rtgBlockTime: z.number().optional(),
+  path: z.string().array().optional(),
+  avatar: z.string().optional(),
 }))
 
 export type UsersOptionalDefaults = z.infer<typeof UsersOptionalDefaultsSchema>
@@ -87,6 +108,13 @@ export type UsersRelations = {
   withdrawals: WithdrawalsWithRelations[];
   ops?: OperatorsWithRelations | null;
   operatorSwitchHistory: OperatorSwitchHistoryWithRelations[];
+  vipCashbacks: VipCashbackWithRelations[];
+  vipLevelUpBonuses: VipLevelUpBonusWithRelations[];
+  vipSpinRewards: VipSpinRewardWithRelations[];
+  affiliateLogsInvited: AffiliateLogWithRelations[];
+  affiliateLogsReferred: AffiliateLogWithRelations[];
+  referralCodes: ReferralCodeWithRelations[];
+  balances: BalanceWithRelations[];
 };
 
 export type UsersWithRelations = z.infer<typeof UsersSchema> & UsersRelations
@@ -103,6 +131,13 @@ export const UsersWithRelationsSchema: z.ZodType<UsersWithRelations> = UsersSche
   withdrawals: z.lazy(() => WithdrawalsWithRelationsSchema).array(),
   ops: z.lazy(() => OperatorsWithRelationsSchema).nullable(),
   operatorSwitchHistory: z.lazy(() => OperatorSwitchHistoryWithRelationsSchema).array(),
+  vipCashbacks: z.lazy(() => VipCashbackWithRelationsSchema).array(),
+  vipLevelUpBonuses: z.lazy(() => VipLevelUpBonusWithRelationsSchema).array(),
+  vipSpinRewards: z.lazy(() => VipSpinRewardWithRelationsSchema).array(),
+  affiliateLogsInvited: z.lazy(() => AffiliateLogWithRelationsSchema).array(),
+  affiliateLogsReferred: z.lazy(() => AffiliateLogWithRelationsSchema).array(),
+  referralCodes: z.lazy(() => ReferralCodeWithRelationsSchema).array(),
+  balances: z.lazy(() => BalanceWithRelationsSchema).array(),
 }))
 
 /////////////////////////////////////////
@@ -121,6 +156,13 @@ export type UsersOptionalDefaultsRelations = {
   withdrawals: WithdrawalsOptionalDefaultsWithRelations[];
   ops?: OperatorsOptionalDefaultsWithRelations | null;
   operatorSwitchHistory: OperatorSwitchHistoryOptionalDefaultsWithRelations[];
+  vipCashbacks: VipCashbackOptionalDefaultsWithRelations[];
+  vipLevelUpBonuses: VipLevelUpBonusOptionalDefaultsWithRelations[];
+  vipSpinRewards: VipSpinRewardOptionalDefaultsWithRelations[];
+  affiliateLogsInvited: AffiliateLogOptionalDefaultsWithRelations[];
+  affiliateLogsReferred: AffiliateLogOptionalDefaultsWithRelations[];
+  referralCodes: ReferralCodeOptionalDefaultsWithRelations[];
+  balances: BalanceOptionalDefaultsWithRelations[];
 };
 
 export type UsersOptionalDefaultsWithRelations = z.infer<typeof UsersOptionalDefaultsSchema> & UsersOptionalDefaultsRelations
@@ -137,6 +179,13 @@ export const UsersOptionalDefaultsWithRelationsSchema: z.ZodType<UsersOptionalDe
   withdrawals: z.lazy(() => WithdrawalsOptionalDefaultsWithRelationsSchema).array(),
   ops: z.lazy(() => OperatorsOptionalDefaultsWithRelationsSchema).nullable(),
   operatorSwitchHistory: z.lazy(() => OperatorSwitchHistoryOptionalDefaultsWithRelationsSchema).array(),
+  vipCashbacks: z.lazy(() => VipCashbackOptionalDefaultsWithRelationsSchema).array(),
+  vipLevelUpBonuses: z.lazy(() => VipLevelUpBonusOptionalDefaultsWithRelationsSchema).array(),
+  vipSpinRewards: z.lazy(() => VipSpinRewardOptionalDefaultsWithRelationsSchema).array(),
+  affiliateLogsInvited: z.lazy(() => AffiliateLogOptionalDefaultsWithRelationsSchema).array(),
+  affiliateLogsReferred: z.lazy(() => AffiliateLogOptionalDefaultsWithRelationsSchema).array(),
+  referralCodes: z.lazy(() => ReferralCodeOptionalDefaultsWithRelationsSchema).array(),
+  balances: z.lazy(() => BalanceOptionalDefaultsWithRelationsSchema).array(),
 }))
 
 export default UsersSchema;

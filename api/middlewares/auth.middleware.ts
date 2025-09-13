@@ -1,12 +1,11 @@
+import db from '#/db'
+import { authSessions, users } from '#/db/'
+import env from '#/env'
 import chalk from 'chalk'
 import { and, eq } from 'drizzle-orm'
 import type { Context, Next } from 'hono'
 import { getCookie } from 'hono/cookie'
 import * as jose from 'jose'
-
-import db from '#/db'
-import { authSessions, users } from '#/db/'
-import env from '#/env'
 
 const ISSUER = 'api.cashflowcasino.com'
 const AUDIENCE = 'web'
@@ -17,8 +16,7 @@ const AUDIENCE = 'web'
  */
 export function extractToken(c: Context): string | null {
   // Authorization header (case-insensitive)
-  const rawAuth =
-    c.req.header('authorization') ?? c.req.header('Authorization')
+  const rawAuth = c.req.header('authorization') ?? c.req.header('Authorization')
   if (rawAuth && typeof rawAuth === 'string') {
     const parts = rawAuth.trim().split(/\s+/)
     if (parts.length === 2 && /^Bearer$/i.test(parts[0])) {
@@ -29,7 +27,9 @@ export function extractToken(c: Context): string | null {
       } catch {
         // ignore decode errors and use raw token
       }
-      if (isCompactJws(t)) { return t }
+      if (isCompactJws(t)) {
+        return t
+      }
     }
   }
 
@@ -42,7 +42,9 @@ export function extractToken(c: Context): string | null {
     } catch {
       // ignore
     }
-    if (isCompactJws(t)) { return t }
+    if (isCompactJws(t)) {
+      return t
+    }
     // If cookie exists but malformed, still return raw so we can respond Unauthorized consistently
     return t
   }
@@ -54,7 +56,9 @@ export function extractToken(c: Context): string | null {
  * Checks that the token is a compact JWS (header.payload.signature).
  */
 function isCompactJws(token: string | undefined | null): boolean {
-  if (!token || typeof token !== 'string') { return false }
+  if (!token || typeof token !== 'string') {
+    return false
+  }
   const parts = token.split('.')
   return parts.length === 3 && parts.every((p) => p.length > 0)
 }
@@ -69,6 +73,9 @@ export async function authMiddleware(c: Context, next: Next) {
   let token = extractToken(c)
   if (!token) {
     token = getCookie(c, 'access_token') || null
+    if (token === null) {
+      token = getCookie(c, 'accessToken') || null
+    }
   }
   if (!isCompactJws(token)) {
     // Log minimal sanitized preview for debugging, avoid leaking full token
@@ -92,10 +99,7 @@ export async function authMiddleware(c: Context, next: Next) {
     }
     console.log(chalk.green('JWT verified successfully:'))
     const authSession = await db.query.authSessions.findFirst({
-      where: and(
-        eq(authSessions.id, payload.sessionId as string),
-        eq(authSessions.status, 'ACTIVE'),
-      ),
+      where: and(eq(authSessions.id, payload.sessionId as string), eq(authSessions.status, 'ACTIVE')),
     })
     if (!authSession) {
       return c.json({ error: 'Session not found or has expired' }, 401)
@@ -114,25 +118,29 @@ export async function authMiddleware(c: Context, next: Next) {
     if (!user) {
       return c.json({ error: 'User not found' }, 401)
     }
+    console.log(user.id)
 
     const userWithRelations = await db.query.users.findFirst({
-  where: eq(users.id, user.id),
-  with: {
-    // This now correctly resolves to a single object or null
-    vipInfo: true,
-    activeWallet: {
+      where: eq(users.id, user.id),
       with: {
-        operator: {
+        // This now correctly resolves to a single object or null
+        vipInfo: true,
+        // activeWallet: true,
+
+        activeWallet: {
           with: {
-            products: true
+            operator: {
+              with: {
+                products: true,
+              },
+            },
           },
         },
+        // You can still query all wallets if you need to
+        // wallets: true,
       },
-    },
-    // You can still query all wallets if you need to
-    wallets: true 
-  }
-});
+    })
+    console.log(userWithRelations)
 
     if (
       !userWithRelations ||

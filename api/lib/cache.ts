@@ -1,4 +1,5 @@
-import type { AuthSessionType, GameSessionType, GameSpinType } from '#/db/'
+import type { AuthSessionType, GameSession, GameSpinType } from '#/db/'
+import { publishUserUpdated } from '#/lib/websocket.service'
 import { nanoid } from '#/utils/nanoid'
 import chalk from 'chalk'
 import { createStorage, prefixStorage } from 'unstorage'
@@ -47,7 +48,7 @@ for await (const game of winSpins.default) {
     sessionTotalBetAmount: 0,
     gameSessionRtp: 0,
     playerRtpToday: 0,
-    winAmount: 0
+    winAmount: 0,
   })
   const list = [game, ...exists].map(mapToGameSpinType)
   await spinResultsStorage.setItem(id, list)
@@ -57,7 +58,7 @@ for await (const game of zeroList.default) {
   const exists = zeroWinSpins.filter((item: any) => item.game_name === game.game_name)
   // const list = [game, ...exists]
   const id = game.game_name
-    const mapToGameSpinType = (item: any): GameSpinType => ({
+  const mapToGameSpinType = (item: any): GameSpinType => ({
     id: item.id ?? nanoid(),
     playerName: item.playerName ?? null,
     gameName: item.game_name ?? item.gameName ?? null,
@@ -86,10 +87,10 @@ for await (const game of zeroList.default) {
     sessionTotalBetAmount: 0,
     gameSessionRtp: 0,
     playerRtpToday: 0,
-    winAmount: 0
+    winAmount: 0,
   })
   const list = [game, ...exists].map(mapToGameSpinType)
-  
+
   await zeroWinSpinsStorage.setItem(id, list)
 }
 
@@ -101,7 +102,7 @@ const storage = createStorage()
 export const spinResults = prefixStorage<GameSpinType[]>(storage, 'spins')
 
 const authSessionCache = prefixStorage<AuthSessionType>(storage, 'sessions:auth')
-const gameSessionCache = prefixStorage<GameSessionType>(storage, 'sessions:game')
+const gameSessionCache = prefixStorage<GameSession>(storage, 'sessions:game')
 const spinCache = prefixStorage<GameSpinType[]>(storage, 'spins')
 const playerGamesCache = prefixStorage<object>(storage, 'player-games')
 
@@ -157,7 +158,7 @@ export async function getSpinResultFromCache(gameName: string): Promise<GameSpin
 }
 export async function getZeroWinSpinResultFromCache(gameName: string): Promise<GameSpinType | null> {
   const item = await zeroWinSpinsStorage.getItem(gameName)
-  if(item === null){
+  if (item === null) {
     console.warn(chalk.yellow(`No zero win spins found for game: ${gameName}`))
     return null
   }
@@ -179,12 +180,12 @@ export async function deleteAuthSessionFromCache(authSessionId: string): Promise
   await authSessionCache.removeItem(authSessionId)
 }
 
-export async function getGameSessionFromCache(sessionId: string): Promise<GameSessionType | null> {
+export async function getGameSessionFromCache(sessionId: string): Promise<GameSession | null> {
   const item = await gameSessionCache.getItem(sessionId)
   return item ? JSON.parse(JSON.stringify(item)) : null
 }
 
-export async function saveGameSessionToCache(session: GameSessionType): Promise<void> {
+export async function saveGameSessionToCache(session: GameSession): Promise<void> {
   console.log(chalk.blue(`Saving game session ${session.id} to cache.`))
   await gameSessionCache.setItem(session.id, session)
 }
@@ -194,9 +195,9 @@ export async function deleteGameSessionFromCache(sessionId: string): Promise<voi
   await gameSessionCache.removeItem(sessionId)
 }
 
-export async function getAllGameSessions(): Promise<Map<string, GameSessionType>> {
+export async function getAllGameSessions(): Promise<Map<string, GameSession>> {
   const keys = await gameSessionCache.getKeys()
-  const allData = new Map<string, GameSessionType>()
+  const allData = new Map<string, GameSession>()
   for (const key of keys) {
     if (key) {
       const session = await gameSessionCache.getItem(key)
@@ -265,5 +266,79 @@ export async function savePlayerGamesToCache(userLogin: string, games: any): Pro
 
 export async function deletePlayerGamesFromCache(userLogin: string): Promise<void> {
   console.log(chalk.blue(`Deleting player games for ${userLogin} from cache.`))
+  //--- Game caches for SpaceCatKA ---
   await playerGamesCache.removeItem(userLogin)
 }
+
+type UserBalanceCache = { balance: number; timestamp: number }
+type BankCache = { amount: number; timestamp: number }
+type JackpotCache = { total: number; timestamp: number }
+type VipXpCache = { totalXp: number; xp: number; level: number; timestamp: number }
+
+const userBalancesCache = prefixStorage<UserBalanceCache>(storage, 'arcade:user-balances')
+const gameBankCache = prefixStorage<BankCache>(storage, 'arcade:banks')
+const jackpotsCache = prefixStorage<JackpotCache>(storage, 'arcade:jackpots')
+const vipXpCache = prefixStorage<VipXpCache>(storage, 'vip:user-xp')
+
+export async function getUserBalanceFromCache(userId: string): Promise<UserBalanceCache | null> {
+  const item = await userBalancesCache.getItem(userId)
+  return item ? JSON.parse(JSON.stringify(item)) : null
+}
+export async function saveUserBalanceToCache(userId: string, balance: number): Promise<void> {
+  console.log(chalk.blue(`Saving user balance ${userId} to cache. ${balance}`))
+  publishUserUpdated(userId, {
+    wallet: {
+      // id: activeWallet?.id,
+      // operatorId: activeWallet?.operatorId,
+      balance: balance,
+      // currency: activeWallet?.currency,
+      // lastUsedAt: activeWallet?.lastUsedAt,
+    },
+  })
+  await userBalancesCache.setItem(userId, { balance, timestamp: Date.now() })
+}
+export async function deleteUserBalanceFromCache(userId: string): Promise<void> {
+  console.log(chalk.blue(`Deleting user balance ${userId} from cache.`))
+  await userBalancesCache.removeItem(userId)
+}
+
+export async function getGameBankFromCache(bankType: string): Promise<BankCache | null> {
+  const item = await gameBankCache.getItem(bankType)
+  return item ? JSON.parse(JSON.stringify(item)) : null
+}
+export async function saveGameBankToCache(bankType: string, amount: number): Promise<void> {
+  console.log(chalk.blue(`Saving game bank ${bankType} to cache.`))
+  await gameBankCache.setItem(bankType, { amount, timestamp: Date.now() })
+}
+export async function deleteGameBankFromCache(bankType: string): Promise<void> {
+  console.log(chalk.blue(`Deleting game bank ${bankType} from cache.`))
+  await gameBankCache.removeItem(bankType)
+}
+
+export async function getJackpotFromCache(jackpotId: string): Promise<JackpotCache | null> {
+  const item = await jackpotsCache.getItem(jackpotId)
+  return item ? JSON.parse(JSON.stringify(item)) : null
+}
+export async function saveJackpotToCache(jackpotId: string, total: number): Promise<void> {
+  console.log(chalk.blue(`Saving jackpot ${jackpotId} to cache.`))
+  await jackpotsCache.setItem(jackpotId, { total, timestamp: Date.now() })
+}
+export async function deleteJackpotFromCache(jackpotId: string): Promise<void> {
+  console.log(chalk.blue(`Deleting jackpot ${jackpotId} from cache.`))
+  await jackpotsCache.removeItem(jackpotId)
+}
+
+export async function getVipXpFromCache(userId: string): Promise<VipXpCache | null> {
+  const item = await vipXpCache.getItem(userId)
+  return item ? JSON.parse(JSON.stringify(item)) : null
+}
+export async function saveVipXpToCache(userId: string, totalXp: number, xp: number, level: number): Promise<void> {
+  console.log(chalk.blue(`Saving VIP XP for ${userId} to cache.`))
+  await vipXpCache.setItem(userId, { totalXp, xp, level, timestamp: Date.now() })
+}
+export async function deleteVipXpFromCache(userId: string): Promise<void> {
+  console.log(chalk.blue(`Deleting VIP XP for ${userId} from cache.`))
+  await vipXpCache.removeItem(userId)
+}
+
+//--- End Game caches ---

@@ -1,10 +1,8 @@
 import { createRoute, z } from '@hono/zod-openapi'
-
+import { OperatorsSchema, ProductsSchema } from '#/db'
 import { createRouter } from '#/lib/create-app'
 import { authMiddleware } from '#/middlewares/auth.middleware'
-
 import * as controller from './operator.controller'
-import { OperatorsSchema, ProductsSchema } from '#/db'
 
 const tags = ['Operator']
 
@@ -18,7 +16,7 @@ const getOperatorsRoute = createRoute({
       description: 'Returns a list of operators.',
       content: {
         'application/json': {
-          schema: z.array(OperatorsSchema),
+          schema: z.array(OperatorsSchema.omit({ goldsvetData: true })),
         },
       },
     },
@@ -36,7 +34,10 @@ const getMyOperatorsProductsRoute = createRoute({
       description: 'Returns a list of products.',
       content: {
         'application/json': {
-          schema: z.object({ operator: OperatorsSchema, product: z.array(ProductsSchema) })
+          schema: z.object({
+            operator: OperatorsSchema.omit({ goldsvetData: true }),
+            product: z.array(ProductsSchema),
+          }),
           // operator: OperatorsSchema,
         },
       },

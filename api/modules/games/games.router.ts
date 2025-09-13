@@ -1,12 +1,12 @@
+import { createRoute, z } from '@hono/zod-openapi'
+import { GamesSchema } from '#/db'
 import { badRequestSchema, notFoundSchema } from '#/lib/constants'
 import { createRouter } from '#/lib/create-app'
 import { authMiddleware } from '#/middlewares/auth.middleware'
 import { sessionMiddleware } from '#/middlewares/session.middleware'
-import { createRoute, z } from '@hono/zod-openapi'
 import * as HttpStatusCodes from 'stoker/http-status-codes'
-import { jsonContent, } from 'stoker/openapi/helpers'
+import { jsonContent } from 'stoker/openapi/helpers'
 import * as controller from './games.controller'
-import { GamesSchema } from '#/db'
 
 const tags = ['Games']
 
@@ -31,13 +31,12 @@ const getAllGames = createRoute({
   path: '/games/all',
   tags,
   responses: {
-      [HttpStatusCodes.OK]: jsonContent(
-  // GamesSchema,
-        z.array(GamesSchema),
-        'Top 10 deposits for the authenticated user',
-      ),
-         [HttpStatusCodes.BAD_REQUEST]: jsonContent(badRequestSchema, 'Bad Request'),
-
+    [HttpStatusCodes.OK]: jsonContent(
+      // GamesSchema,
+      z.array(GamesSchema.omit({ goldsvetData: true })),
+      'Top 10 deposits for the authenticated user',
+    ),
+    [HttpStatusCodes.BAD_REQUEST]: jsonContent(badRequestSchema, 'Bad Request'),
   },
 })
 const checkSession = createRoute({
@@ -46,7 +45,7 @@ const checkSession = createRoute({
   tags,
   responses: {
     [HttpStatusCodes.OK]: jsonContent(
-      z.object({gameId: z.string()}),
+      z.object({ gameId: z.string() }),
       'The user object and sets an access token cookie.',
     ),
     [HttpStatusCodes.BAD_REQUEST]: jsonContent(badRequestSchema, 'Bad Request'),
@@ -70,8 +69,8 @@ const searchGames = createRoute({
       content: {
         'application/json': {
           schema: z.object({
-            gameId: z.string()
-          })
+            gameId: z.string(),
+          }),
         },
       },
     },

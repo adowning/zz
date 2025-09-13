@@ -1,0 +1,481 @@
+
+trippleStacksFire.jpg
+size: 1024,1024
+format: RGB888
+filter: Linear,Linear
+repeat: none
+trippleFire/trippleFire_00060
+  rotate: false
+  xy: 5, 5
+  size: 99, 224
+  orig: 99, 224
+  offset: 0, 0
+  index: -1
+trippleFire/trippleFire_00061
+  rotate: false
+  xy: 5, 235
+  size: 99, 224
+  orig: 99, 224
+  offset: 0, 0
+  index: -1
+trippleFire/trippleFire_00062
+  rotate: false
+  xy: 5, 465
+  size: 99, 224
+  orig: 99, 224
+  offset: 0, 0
+  index: -1
+trippleFire/trippleFire_00063
+  rotate: false
+  xy: 5, 695
+  size: 99, 224
+  orig: 99, 224
+  offset: 0, 0
+  index: -1
+trippleFire/trippleFire_00064
+  rotate: true
+  xy: 110, 5
+  size: 99, 224
+  orig: 99, 224
+  offset: 0, 0
+  index: -1
+trippleFire/trippleFire_00065
+  rotate: true
+  xy: 340, 5
+  size: 99, 224
+  orig: 99, 224
+  offset: 0, 0
+  index: -1
+trippleFire/trippleFire_00066
+  rotate: true
+  xy: 570, 5
+  size: 99, 224
+  orig: 99, 224
+  offset: 0, 0
+  index: -1
+trippleFire/trippleFire_00067
+  rotate: false
+  xy: 800, 5
+  size: 99, 224
+  orig: 99, 224
+  offset: 0, 0
+  index: -1
+trippleFire/trippleFire_00068
+  rotate: false
+  xy: 905, 5
+  size: 99, 224
+  orig: 99, 224
+  offset: 0, 0
+  index: -1
+trippleFire/trippleFire_00069
+  rotate: true
+  xy: 110, 110
+  size: 99, 224
+  orig: 99, 224
+  offset: 0, 0
+  index: -1
+trippleFire/trippleFire_00070
+  rotate: true
+  xy: 340, 110
+  size: 99, 224
+  orig: 99, 224
+  offset: 0, 0
+  index: -1
+trippleFire/trippleFire_00071
+  rotate: true
+  xy: 570, 110
+  size: 99, 224
+  orig: 99, 224
+  offset: 0, 0
+  index: -1
+trippleFire/trippleFire_00072
+  rotate: true
+  xy: 110, 215
+  size: 99, 224
+  orig: 99, 224
+  offset: 0, 0
+  index: -1
+trippleFire/trippleFire_00073
+  rotate: true
+  xy: 340, 215
+  size: 99, 224
+  orig: 99, 224
+  offset: 0, 0
+  index: -1
+trippleFire/trippleFire_00074
+  rotate: true
+  xy: 570, 215
+  size: 99, 224
+  orig: 99, 224
+  offset: 0, 0
+  index: -1
+trippleFire/trippleFire_00075
+  rotate: false
+  xy: 800, 235
+  size: 99, 224
+  orig: 99, 224
+  offset: 0, 0
+  index: -1
+trippleFire/trippleFire_00076
+  rotate: false
+  xy: 905, 235
+  size: 99, 224
+  orig: 99, 224
+  offset: 0, 0
+  index: -1
+trippleFire/trippleFire_00077
+  rotate: false
+  xy: 110, 465
+  size: 99, 224
+  orig: 99, 224
+  offset: 0, 0
+  index: -1
+trippleFire/trippleFire_00078
+  rotate: true
+  xy: 110, 320
+  size: 99, 224
+  orig: 99, 224
+  offset: 0, 0
+  index: -1
+trippleFire/trippleFire_00079
+  rotate: false
+  xy: 110, 695
+  size: 99, 224
+  orig: 99, 224
+  offset: 0, 0
+  index: -1
+trippleFire/trippleFire_00080
+  rotate: true
+  xy: 340, 320
+  size: 99, 224
+  orig: 99, 224
+  offset: 0, 0
+  index: -1
+trippleFire/trippleFire_00081
+  rotate: true
+  xy: 570, 320
+  size: 99, 224
+  orig: 99, 224
+  offset: 0, 0
+  index: -1
+trippleFire/trippleFire_00082
+  rotate: false
+  xy: 215, 465
+  size: 99, 224
+  orig: 99, 224
+  offset: 0, 0
+  index: -1
+trippleFire/trippleFire_00083
+  rotate: false
+  xy: 215, 695
+  size: 99, 224
+  orig: 99, 224
+  offset: 0, 0
+  index: -1
+trippleFire/trippleFire_00084
+  rotate: true
+  xy: 320, 425
+  size: 99, 224
+  orig: 99, 224
+  offset: 0, 0
+  index: -1
+trippleFire/trippleFire_00085
+  rotate: true
+  xy: 550, 425
+  size: 99, 224
+  orig: 99, 224
+  offset: 0, 0
+  index: -1
+
+trippleStacksFire2.jpg
+size: 1024,1024
+format: RGB888
+filter: Linear,Linear
+repeat: none
+trippleFireLoop/trippleLoop_00110
+  rotate: false
+  xy: 5, 5
+  size: 102, 102
+  orig: 102, 102
+  offset: 0, 0
+  index: -1
+trippleFireLoop/trippleLoop_00111
+  rotate: false
+  xy: 5, 113
+  size: 102, 102
+  orig: 102, 102
+  offset: 0, 0
+  index: -1
+trippleFireLoop/trippleLoop_00112
+  rotate: false
+  xy: 5, 221
+  size: 102, 102
+  orig: 102, 102
+  offset: 0, 0
+  index: -1
+trippleFireLoop/trippleLoop_00113
+  rotate: false
+  xy: 5, 329
+  size: 102, 102
+  orig: 102, 102
+  offset: 0, 0
+  index: -1
+trippleFireLoop/trippleLoop_00114
+  rotate: false
+  xy: 5, 437
+  size: 102, 102
+  orig: 102, 102
+  offset: 0, 0
+  index: -1
+trippleFireLoop/trippleLoop_00115
+  rotate: false
+  xy: 5, 545
+  size: 102, 102
+  orig: 102, 102
+  offset: 0, 0
+  index: -1
+trippleFireLoop/trippleLoop_00116
+  rotate: false
+  xy: 5, 653
+  size: 102, 102
+  orig: 102, 102
+  offset: 0, 0
+  index: -1
+trippleFireLoop/trippleLoop_00117
+  rotate: false
+  xy: 5, 761
+  size: 102, 102
+  orig: 102, 102
+  offset: 0, 0
+  index: -1
+trippleFireLoop/trippleLoop_00118
+  rotate: false
+  xy: 5, 869
+  size: 102, 102
+  orig: 102, 102
+  offset: 0, 0
+  index: -1
+trippleFireLoop/trippleLoop_00119
+  rotate: false
+  xy: 113, 5
+  size: 102, 102
+  orig: 102, 102
+  offset: 0, 0
+  index: -1
+trippleFireLoop/trippleLoop_00120
+  rotate: false
+  xy: 221, 5
+  size: 102, 102
+  orig: 102, 102
+  offset: 0, 0
+  index: -1
+trippleFireLoop/trippleLoop_00121
+  rotate: false
+  xy: 329, 5
+  size: 102, 102
+  orig: 102, 102
+  offset: 0, 0
+  index: -1
+trippleFireLoop/trippleLoop_00122
+  rotate: false
+  xy: 437, 5
+  size: 102, 102
+  orig: 102, 102
+  offset: 0, 0
+  index: -1
+trippleFireLoop/trippleLoop_00123
+  rotate: false
+  xy: 545, 5
+  size: 102, 102
+  orig: 102, 102
+  offset: 0, 0
+  index: -1
+trippleFireLoop/trippleLoop_00124
+  rotate: false
+  xy: 653, 5
+  size: 102, 102
+  orig: 102, 102
+  offset: 0, 0
+  index: -1
+trippleFireLoop/trippleLoop_00125
+  rotate: false
+  xy: 761, 5
+  size: 102, 102
+  orig: 102, 102
+  offset: 0, 0
+  index: -1
+trippleFireLoop/trippleLoop_00126
+  rotate: false
+  xy: 869, 5
+  size: 102, 102
+  orig: 102, 102
+  offset: 0, 0
+  index: -1
+trippleFireLoop/trippleLoop_00127
+  rotate: false
+  xy: 113, 113
+  size: 102, 102
+  orig: 102, 102
+  offset: 0, 0
+  index: -1
+trippleFireLoop/trippleLoop_00128
+  rotate: false
+  xy: 113, 221
+  size: 102, 102
+  orig: 102, 102
+  offset: 0, 0
+  index: -1
+trippleFireLoop/trippleLoop_00129
+  rotate: false
+  xy: 113, 329
+  size: 102, 102
+  orig: 102, 102
+  offset: 0, 0
+  index: -1
+trippleFireLoop/trippleLoop_00130
+  rotate: false
+  xy: 113, 437
+  size: 102, 102
+  orig: 102, 102
+  offset: 0, 0
+  index: -1
+trippleFireLoop/trippleLoop_00131
+  rotate: false
+  xy: 113, 545
+  size: 102, 102
+  orig: 102, 102
+  offset: 0, 0
+  index: -1
+trippleFireLoop/trippleLoop_00132
+  rotate: false
+  xy: 113, 653
+  size: 102, 102
+  orig: 102, 102
+  offset: 0, 0
+  index: -1
+trippleFireLoop/trippleLoop_00133
+  rotate: false
+  xy: 113, 761
+  size: 102, 102
+  orig: 102, 102
+  offset: 0, 0
+  index: -1
+trippleFireLoop/trippleLoop_00134
+  rotate: false
+  xy: 113, 869
+  size: 102, 102
+  orig: 102, 102
+  offset: 0, 0
+  index: -1
+trippleFireLoop/trippleLoop_00135
+  rotate: false
+  xy: 221, 113
+  size: 102, 102
+  orig: 102, 102
+  offset: 0, 0
+  index: -1
+trippleFireLoop/trippleLoop_00136
+  rotate: false
+  xy: 329, 113
+  size: 102, 102
+  orig: 102, 102
+  offset: 0, 0
+  index: -1
+trippleFireLoop/trippleLoop_00137
+  rotate: false
+  xy: 437, 113
+  size: 102, 102
+  orig: 102, 102
+  offset: 0, 0
+  index: -1
+trippleFireLoop/trippleLoop_00138
+  rotate: false
+  xy: 545, 113
+  size: 102, 102
+  orig: 102, 102
+  offset: 0, 0
+  index: -1
+trippleFireLoop/trippleLoop_00139
+  rotate: false
+  xy: 653, 113
+  size: 102, 102
+  orig: 102, 102
+  offset: 0, 0
+  index: -1
+trippleFireLoop/trippleLoop_00140
+  rotate: false
+  xy: 761, 113
+  size: 102, 102
+  orig: 102, 102
+  offset: 0, 0
+  index: -1
+trippleFireLoop/trippleLoop_00141
+  rotate: false
+  xy: 869, 113
+  size: 102, 102
+  orig: 102, 102
+  offset: 0, 0
+  index: -1
+trippleFireLoop/trippleLoop_00142
+  rotate: false
+  xy: 221, 221
+  size: 102, 102
+  orig: 102, 102
+  offset: 0, 0
+  index: -1
+trippleFireLoop/trippleLoop_00143
+  rotate: false
+  xy: 221, 329
+  size: 102, 102
+  orig: 102, 102
+  offset: 0, 0
+  index: -1
+trippleFireLoop/trippleLoop_00144
+  rotate: false
+  xy: 221, 437
+  size: 102, 102
+  orig: 102, 102
+  offset: 0, 0
+  index: -1
+trippleFireLoop/trippleLoop_00145
+  rotate: false
+  xy: 221, 545
+  size: 102, 102
+  orig: 102, 102
+  offset: 0, 0
+  index: -1
+trippleFireLoop/trippleLoop_00146
+  rotate: false
+  xy: 221, 653
+  size: 102, 102
+  orig: 102, 102
+  offset: 0, 0
+  index: -1
+trippleFireLoop/trippleLoop_00147
+  rotate: false
+  xy: 221, 761
+  size: 102, 102
+  orig: 102, 102
+  offset: 0, 0
+  index: -1
+trippleFireLoop/trippleLoop_00148
+  rotate: false
+  xy: 221, 869
+  size: 102, 102
+  orig: 102, 102
+  offset: 0, 0
+  index: -1
+trippleFireLoop/trippleLoop_00149
+  rotate: false
+  xy: 329, 221
+  size: 102, 102
+  orig: 102, 102
+  offset: 0, 0
+  index: -1
+trippleFireLoop/trippleLoop_00150
+  rotate: false
+  xy: 5, 5
+  size: 102, 102
+  orig: 102, 102
+  offset: 0, 0
+  index: -1

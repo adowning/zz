@@ -1,0 +1,11 @@
+{
+  "defaultWidth" : "960",
+  "defaultHeight" : "600",
+  "defaultResolution" : "high",
+  "netentExtendSupported" : true,
+  "technologyType" : "html",
+  "technologyPresentation" : "redirect",
+  "technologyVersion" : "5.0.0",
+  "relativeLoaderUrl" : "game/vikings-client.xhtml",
+  "gameFamily" : "videoslots"
+}

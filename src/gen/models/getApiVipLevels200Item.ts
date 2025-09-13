@@ -6,6 +6,14 @@
  */
 
 export type GetApiVipLevels200Item = {
-  level: number;
-  xpForNext: number;
+  id: number;
+  name: string;
+  minXp: number;
+  dailyBonusCoinPct: number;
+  hourlyBonusCoinPct: number;
+  purchaseBonusCoinPct: number;
+  levelUpBonusCoinPct: number;
+  hasConcierge: boolean;
+  hasVipLoungeAccess: boolean;
+  isInvitationOnly: boolean;
 };

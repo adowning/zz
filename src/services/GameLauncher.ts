@@ -38,9 +38,10 @@ class GameLauncher {
     public iframe: HTMLIFrameElement | null = null
     public targetContainer: HTMLElement
 
-    private iframeAttributes: Record<string, string> = {
+    private iframeAttributes: Record<string, string | string[]> = {
         frameBorder: '0',
         allow: 'autoplay',
+        
         scroll: 'false',
         height: '100%',
         width: '100%',
@@ -106,7 +107,7 @@ class GameLauncher {
         this.loadingIndicator.style.top = '0'
         this.loadingIndicator.style.left = '0'
         this.loadingIndicator.style.width = '100%'
-        this.loadingIndicator.style.height = '100%'
+        this.loadingIndicator.style.height = '100vh'
         this.loadingIndicator.style.display = 'flex'
         this.loadingIndicator.style.justifyContent = 'center'
         this.loadingIndicator.style.alignItems = 'center'

@@ -1,13 +1,13 @@
 import type { ServerWebSocket } from 'bun'
 import type { Buffer } from 'node:buffer'
 
-import type { AuthSessionType, GameSessionType, UserType, VipInfoType, WalletType } from '#/db/'
+import type { AuthSessionType,  UserWithRelations, VipInfoType, WalletType } from '#/db/'
 
 // Import topic handlers
 import { chatHandler } from '../common/chat.handler'
 import { notificationsHandler } from '../common/notifications.handler'
 import { userHandler } from '../user/user.handler'
-import { blackjackHandler } from '../blackjack/blackjack.handler' 
+import { blackjackHandler } from '../blackjack/blackjack.handler'
 
 // RPC helpers and contracts
 import { rpcResultEnvelope, rpcErrorEnvelope } from '~/envelope'
@@ -18,6 +18,8 @@ import db from '#/db'
 import chalk from 'chalk'
 import { vipInfos, wallets } from '#/db/'
 import { proxyHandler } from '#/modules/nolimit/nolimit.proxy'
+import { arcadeHandler } from '../arcade/arcade.handler'
+import { GameSession } from '~/types'
 
 // Define a map of topic names to their handlers
 export const topicHandlers = {
@@ -26,18 +28,20 @@ export const topicHandlers = {
   user: userHandler,
   blackjack: blackjackHandler, // Add the blackjack handler
   proxy: proxyHandler,
+  spacecat: arcadeHandler,
+  aircombat: arcadeHandler,
 }
 
 // Define an interface for the data attached to the WebSocket
 export interface WebSocketData {
-  user: UserType;
+  user: UserWithRelations;
   wallet: WalletType;
   vipInfo: VipInfoType;
   backendSocket?: WebSocket;
   messageQueue: (string | Uint8Array)[];
   nolimitSessionKey?: string;
   authSession: AuthSessionType;
-  gameSession: GameSessionType;
+  gameSession: GameSession;
   topic: keyof typeof topicHandlers; // The topic for this connection
 }
 

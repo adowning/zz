@@ -1,0 +1,258 @@
+
+scatterPays.png
+size: 2048,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+scatterPaysFire/intro_00155
+  rotate: false
+  xy: 4, 721
+  size: 274, 113
+  orig: 274, 113
+  offset: 0, 0
+  index: -1
+scatterPaysFire/intro_00156
+  rotate: false
+  xy: 4, 604
+  size: 274, 113
+  orig: 274, 113
+  offset: 0, 0
+  index: -1
+scatterPaysFire/intro_00157
+  rotate: true
+  xy: 282, 677
+  size: 274, 113
+  orig: 274, 113
+  offset: 0, 0
+  index: -1
+scatterPaysFire/intro_00158
+  rotate: false
+  xy: 4, 487
+  size: 274, 113
+  orig: 274, 113
+  offset: 0, 0
+  index: -1
+scatterPaysFire/intro_00159
+  rotate: false
+  xy: 4, 370
+  size: 274, 113
+  orig: 274, 113
+  offset: 0, 0
+  index: -1
+scatterPaysFire/intro_00160
+  rotate: true
+  xy: 282, 399
+  size: 274, 113
+  orig: 274, 113
+  offset: 0, 0
+  index: -1
+scatterPaysFire/intro_00161
+  rotate: false
+  xy: 4, 253
+  size: 274, 113
+  orig: 274, 113
+  offset: 0, 0
+  index: -1
+scatterPaysFire/intro_00162
+  rotate: false
+  xy: 4, 136
+  size: 274, 113
+  orig: 274, 113
+  offset: 0, 0
+  index: -1
+scatterPaysFire/intro_00163
+  rotate: false
+  xy: 4, 19
+  size: 274, 113
+  orig: 274, 113
+  offset: 0, 0
+  index: -1
+scatterPaysFire/intro_00164
+  rotate: true
+  xy: 282, 121
+  size: 274, 113
+  orig: 274, 113
+  offset: 0, 0
+  index: -1
+scatterPaysFire/intro_00165
+  rotate: false
+  xy: 282, 4
+  size: 274, 113
+  orig: 274, 113
+  offset: 0, 0
+  index: -1
+scatterPaysFire/intro_00166
+  rotate: true
+  xy: 399, 677
+  size: 274, 113
+  orig: 274, 113
+  offset: 0, 0
+  index: -1
+scatterPaysFire/loop_00173
+  rotate: true
+  xy: 399, 677
+  size: 274, 113
+  orig: 274, 113
+  offset: 0, 0
+  index: -1
+scatterPaysFire/intro_00167
+  rotate: true
+  xy: 399, 399
+  size: 274, 113
+  orig: 274, 113
+  offset: 0, 0
+  index: -1
+scatterPaysFire/loop_00174
+  rotate: true
+  xy: 399, 399
+  size: 274, 113
+  orig: 274, 113
+  offset: 0, 0
+  index: -1
+scatterPaysFire/intro_00168
+  rotate: true
+  xy: 399, 121
+  size: 274, 113
+  orig: 274, 113
+  offset: 0, 0
+  index: -1
+scatterPaysFire/loop_00175
+  rotate: true
+  xy: 399, 121
+  size: 274, 113
+  orig: 274, 113
+  offset: 0, 0
+  index: -1
+scatterPaysFire/intro_00169
+  rotate: false
+  xy: 516, 907
+  size: 274, 113
+  orig: 274, 113
+  offset: 0, 0
+  index: -1
+scatterPaysFire/loop_00176
+  rotate: false
+  xy: 516, 907
+  size: 274, 113
+  orig: 274, 113
+  offset: 0, 0
+  index: -1
+scatterPaysFire/intro_00170
+  rotate: false
+  xy: 794, 907
+  size: 274, 113
+  orig: 274, 113
+  offset: 0, 0
+  index: -1
+scatterPaysFire/loop_00177
+  rotate: false
+  xy: 794, 907
+  size: 274, 113
+  orig: 274, 113
+  offset: 0, 0
+  index: -1
+scatterPaysFire/intro_00171
+  rotate: false
+  xy: 516, 790
+  size: 274, 113
+  orig: 274, 113
+  offset: 0, 0
+  index: -1
+scatterPaysFire/loop_00178
+  rotate: false
+  xy: 516, 790
+  size: 274, 113
+  orig: 274, 113
+  offset: 0, 0
+  index: -1
+scatterPaysFire/loop_00163
+  rotate: false
+  xy: 1072, 907
+  size: 274, 113
+  orig: 274, 113
+  offset: 0, 0
+  index: -1
+scatterPaysFire/loop_00164
+  rotate: false
+  xy: 794, 790
+  size: 274, 113
+  orig: 274, 113
+  offset: 0, 0
+  index: -1
+scatterPaysFire/loop_00165
+  rotate: false
+  xy: 516, 673
+  size: 274, 113
+  orig: 274, 113
+  offset: 0, 0
+  index: -1
+scatterPaysFire/loop_00166
+  rotate: false
+  xy: 1350, 907
+  size: 274, 113
+  orig: 274, 113
+  offset: 0, 0
+  index: -1
+scatterPaysFire/loop_00167
+  rotate: false
+  xy: 1072, 790
+  size: 274, 113
+  orig: 274, 113
+  offset: 0, 0
+  index: -1
+scatterPaysFire/loop_00168
+  rotate: false
+  xy: 794, 673
+  size: 274, 113
+  orig: 274, 113
+  offset: 0, 0
+  index: -1
+scatterPaysFire/loop_00169
+  rotate: false
+  xy: 516, 556
+  size: 274, 113
+  orig: 274, 113
+  offset: 0, 0
+  index: -1
+scatterPaysFire/loop_00170
+  rotate: false
+  xy: 1628, 907
+  size: 274, 113
+  orig: 274, 113
+  offset: 0, 0
+  index: -1
+scatterPaysFire/loop_00171
+  rotate: false
+  xy: 1350, 790
+  size: 274, 113
+  orig: 274, 113
+  offset: 0, 0
+  index: -1
+scatterPaysFire/loop_00172
+  rotate: false
+  xy: 1072, 673
+  size: 274, 113
+  orig: 274, 113
+  offset: 0, 0
+  index: -1
+scatterPaysFire/loop_00179
+  rotate: false
+  xy: 4, 838
+  size: 274, 113
+  orig: 274, 113
+  offset: 0, 0
+  index: -1
+scatterPaysFire/intro_00172
+  rotate: false
+  xy: 4, 838
+  size: 274, 113
+  orig: 274, 113
+  offset: 0, 0
+  index: -1
+scatterPaysText
+  rotate: false
+  xy: 4, 955
+  size: 467, 65
+  orig: 467, 65
+  offset: 0, 0
+  index: -1

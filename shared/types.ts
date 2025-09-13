@@ -62,7 +62,6 @@ export type JackpotContributionType = InferSelectModel<
 >
 export type JackpotWinType = InferSelectModel<typeof jackpotWins>
 export type AuthSessionType = InferSelectModel<typeof authSessions>
-// export type GameSessionType = InferSelectModel<typeof gameSessions>
 // export type SelectRtgSettingsRequest = InferSelectModel<
 //   typeof rtgSettingsRequests
 // >
@@ -147,7 +146,7 @@ export type UserWithRelations = UserType & {
 export type GameWithRelations = GameType & {
   operator?: OperatorType | null;
 }
-export type GameSessionType = InferSelectModel<typeof gameSessions> & {
+export type GameSession = InferSelectModel<typeof gameSessions> & {
   gameSettings?: z.ZodAny
   user?: UserWithRelations | null;
   game?: GameType | null;

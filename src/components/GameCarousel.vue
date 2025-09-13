@@ -352,6 +352,12 @@ async function loadGame(game: LocalGame): Promise<void> {
       animatingGameId.value = null
     }, 100)
   }
+    if (game.developer === 'kickass') {
+    router.push(`/games/kickass?gameName=${game.name}`)
+    setTimeout(() => {
+      animatingGameId.value = null
+    }, 100)
+  }
 }
 
 let intersectionObserver: IntersectionObserver | null = null

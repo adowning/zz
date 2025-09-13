@@ -1,11 +1,11 @@
 import { SQL } from 'bun'
 import { drizzle } from 'drizzle-orm/bun-sql'
-
 // import env from '../env'
 
 // import * as enums from './schema'
 // import * as relations from './schema/relations'
 import * as schema from './schema'
+// import * as vipSchema from '../modules/vipV2/converted_files/vip.schema'
 
 import { vipInfos } from './schema'
 
@@ -18,11 +18,23 @@ export * from './schema'
 export * from './zod/index'
 // export * from './drizzle'
 // export * from './zod'
-export type {UserType,NewgameSpins,   VipInfoType,Newusers, GameType, 
-    JackpotContributionType,
+export type {
+  UserType,
+  NewgameSpins,
+  VipInfoType,
+  Newusers,
+  GameType,
+  JackpotContributionType,
   JackpotType,
-  JackpotWinType,AppVersion,VipRankType,
+  JackpotWinType,
+  AppVersion,
+  VipRankType,
   Newjackpots,
-     AuthSessionType, GameSessionType,
-  WalletType, OperatorType,UserWithRelations, GameSpinType } from '~/types'
+  AuthSessionType,
+  GameSession,
+  WalletType,
+  OperatorType,
+  UserWithRelations,
+  GameSpinType,
+} from '~/types'
 export const vipInfo = vipInfos

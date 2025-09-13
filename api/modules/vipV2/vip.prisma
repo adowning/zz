@@ -1,0 +1,115 @@
+
+// This is a Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// User model is referenced by other models, so a basic definition is needed.
+model User {
+  id                String              @id @default(cuid())
+  vipCashbacks      VipCashback[]
+  vipLevelUpBonuses VipLevelUpBonus[]
+  vipSpinRewards    VipSpinReward[]
+  affiliateLogsInvited AffiliateLog[]   @relation("Invitor")
+  affiliateLogsReferred  AffiliateLog[]   @relation("Child")
+}
+
+model VipTiers {
+  id                    String       @id @default(cuid())
+  tiersName             String       @map("tiers_name")
+  icon                  String
+  order                 Int
+  weeklyCashback        Boolean      @default(false) @map("weekly_cashback")
+  weeklyCashbackMin     Int          @default(0) @map("weekly_cashback_min")
+  weeklyCashbackPercent Int          @default(0) @map("weekly_cashback_percent")
+  monthlyCashback       Boolean      @default(false) @map("monthly_cashback")
+  monthlyCashbackMin    Int          @default(0) @map("monthly_cashback_min")
+  monthlyCashbackPercent Int         @default(0) @map("monthly_cashback_percent")
+  levelUpBonus          Int          @default(0) @map("level_up_bonus")
+  noFeeWithdrawal       Boolean      @default(false) @map("no_fee_withdrawal")
+  levels                VipLevel[]
+  spinPrizes            VipSpinPrize[]
+
+  @@map("vip_tiers")
+}
+
+model VipLevel {
+  id        String   @id @default(cuid())
+  parentId  String   @map("parent_id")
+  levelName String   @map("level_name")
+  xp        Int
+  parent    VipTiers @relation(fields: [parentId], references: [id])
+
+  @@map("vip_levels")
+}
+
+model VipCashback {
+  id        String   @id @default(cuid())
+  userId    String   @map("user_id")
+  amount    Int
+  currency  String
+  tiersName String   @map("tiers_name")
+  type      String
+  createdAt DateTime @default(now()) @map("created_at")
+  user      User     @relation(fields: [userId], references: [id])
+
+  @@map("vip_cashback")
+}
+
+model VipLevelUpBonus {
+  id        String   @id @default(cuid())
+  userId    String   @map("user_id")
+  amount    Int
+  levelName String   @map("level_name")
+  levelXp   Int      @map("level_xp")
+  createdAt DateTime @default(now()) @map("created_at")
+  user      User     @relation(fields: [userId], references: [id])
+
+  @@map("vip_level_up_bonus")
+}
+
+model VipSpinPrize {
+  id      String   @id @default(cuid())
+  tiersId String   @map("tiers_id")
+  prizes  Json
+  tiers   VipTiers @relation(fields: [tiersId], references: [id])
+
+  @@map("vip_spin_prizes")
+}
+
+model VipSpinReward {
+  id        String   @id @default(cuid())
+  userId    String   @map("user_id")
+  amount    Int
+  currency  String
+  createdAt DateTime @default(now()) @map("created_at")
+  user      User     @relation(fields: [userId], references: [id])
+
+  @@map("vip_spin_rewards")
+}
+
+model AffiliateLog {
+  id                  String  @id @default(cuid())
+  invitorId           String  @map("invitor_id")
+  childId             String  @map("child_id")
+  currency            String
+  referralCode        String  @map("referral_code")
+  betAmount           Int?    @map("bet_amount")
+  commissionAmount    Int?    @map("commission_amount")
+  commissionWager     Int?    @map("commission_wager")
+  totalReferralAmount Int?    @map("total_referral_amount")
+  referralAmount      Int?    @map("referral_amount")
+  referralWager       Int?    @map("referral_wager")
+  lastVipLevelAmount  Int?    @map("last_vip_level_amount")
+  invitor             User    @relation("Invitor", fields: [invitorId], references: [id])
+  child               User    @relation("Child", fields: [childId], references: [id])
+
+  @@map("affiliate_logs")
+}

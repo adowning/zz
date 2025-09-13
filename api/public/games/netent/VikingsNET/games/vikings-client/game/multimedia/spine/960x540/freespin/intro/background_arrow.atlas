@@ -1,0 +1,27 @@
+
+foreground_arrow.png
+size: 512,128
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+source/arrow/raidspinarrow_body
+  rotate: false
+  xy: 217, 79
+  size: 139, 23
+  orig: 139, 23
+  offset: 0, 0
+  index: -1
+source/arrow/raidspinarrow_fire
+  rotate: false
+  xy: 217, 47
+  size: 125, 28
+  orig: 125, 28
+  offset: 0, 0
+  index: -1
+source/arrow/raidspinarrow_light
+  rotate: false
+  xy: 4, 4
+  size: 209, 98
+  orig: 209, 98
+  offset: 0, 0
+  index: -1

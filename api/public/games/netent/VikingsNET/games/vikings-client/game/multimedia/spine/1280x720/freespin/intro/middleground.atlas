@@ -1,0 +1,349 @@
+
+middleground.png
+size: 2048,2048
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Boat_Back
+  rotate: false
+  xy: 1535, 1439
+  size: 268, 182
+  orig: 268, 182
+  offset: 0, 0
+  index: -1
+Boat_Front
+  rotate: false
+  xy: 4, 945
+  size: 445, 559
+  orig: 445, 559
+  offset: 0, 0
+  index: -1
+Boat_Front_Rope
+  rotate: false
+  xy: 960, 1153
+  size: 225, 351
+  orig: 225, 351
+  offset: 0, 0
+  index: -1
+Boat_Mast
+  rotate: true
+  xy: 453, 542
+  size: 124, 469
+  orig: 124, 469
+  offset: 0, 0
+  index: -1
+Boat_Oar
+  rotate: false
+  xy: 1288, 1828
+  size: 397, 92
+  orig: 397, 92
+  offset: 0, 0
+  index: -1
+Boat_Oar2
+  rotate: false
+  xy: 1205, 1427
+  size: 326, 190
+  orig: 326, 190
+  offset: 0, 0
+  index: -1
+Boat_Shieldwall
+  rotate: false
+  xy: 1205, 1621
+  size: 322, 203
+  orig: 322, 203
+  offset: 0, 0
+  index: -1
+Boat_Side_Rope
+  rotate: true
+  xy: 4, 43
+  size: 35, 361
+  orig: 35, 361
+  offset: 0, 0
+  index: -1
+Boat_ppl
+  rotate: false
+  xy: 1531, 1625
+  size: 218, 199
+  orig: 218, 199
+  offset: 0, 0
+  index: -1
+L_Boat_Back
+  rotate: false
+  xy: 1189, 1034
+  size: 268, 182
+  orig: 268, 182
+  offset: 0, 0
+  index: -1
+L_Boat_Front
+  rotate: false
+  xy: 4, 382
+  size: 445, 559
+  orig: 445, 559
+  offset: 0, 0
+  index: -1
+L_Boat_Front_Rope
+  rotate: false
+  xy: 933, 798
+  size: 225, 351
+  orig: 225, 351
+  offset: 0, 0
+  index: -1
+L_Boat_Mast
+  rotate: true
+  xy: 453, 414
+  size: 124, 469
+  orig: 124, 469
+  offset: 0, 0
+  index: -1
+L_Boat_Oar
+  rotate: false
+  xy: 453, 318
+  size: 397, 92
+  orig: 397, 92
+  offset: 0, 0
+  index: -1
+L_Boat_Oar2
+  rotate: false
+  xy: 406, 124
+  size: 326, 190
+  orig: 326, 190
+  offset: 0, 0
+  index: -1
+L_Boat_Shieldwall
+  rotate: false
+  xy: 1189, 1220
+  size: 322, 203
+  orig: 322, 203
+  offset: 0, 0
+  index: -1
+L_Boat_Side_Rope
+  rotate: true
+  xy: 4, 4
+  size: 35, 361
+  orig: 35, 361
+  offset: 0, 0
+  index: -1
+L_SideShield_1
+  rotate: false
+  xy: 854, 315
+  size: 71, 95
+  orig: 71, 95
+  offset: 0, 0
+  index: -1
+L_SideShield_3
+  rotate: false
+  xy: 1461, 1046
+  size: 45, 77
+  orig: 45, 77
+  offset: 0, 0
+  index: -1
+L_SideShield_4
+  rotate: false
+  xy: 369, 10
+  size: 33, 68
+  orig: 33, 68
+  offset: 0, 0
+  index: -1
+L_sail
+  rotate: false
+  xy: 453, 1158
+  size: 503, 346
+  orig: 503, 346
+  offset: 0, 0
+  index: -1
+SideShield_1
+  rotate: true
+  xy: 1790, 1849
+  size: 71, 95
+  orig: 71, 95
+  offset: 0, 0
+  index: -1
+SideShield_2
+  rotate: false
+  xy: 1461, 1127
+  size: 61, 89
+  orig: 61, 89
+  offset: 0, 0
+  index: -1
+SideShield_3
+  rotate: true
+  xy: 851, 174
+  size: 45, 77
+  orig: 45, 77
+  offset: 0, 0
+  index: -1
+SideShield_4
+  rotate: true
+  xy: 406, 87
+  size: 33, 68
+  orig: 33, 68
+  offset: 0, 0
+  index: -1
+arrowFire/arrowFire_00113
+  rotate: false
+  xy: 917, 734
+  size: 62, 60
+  orig: 62, 60
+  offset: 0, 0
+  index: -1
+arrowFire/arrowFire_00114
+  rotate: false
+  xy: 917, 670
+  size: 62, 60
+  orig: 62, 60
+  offset: 0, 0
+  index: -1
+arrowFire/arrowFire_00115
+  rotate: false
+  xy: 983, 734
+  size: 62, 60
+  orig: 62, 60
+  offset: 0, 0
+  index: -1
+arrowFire/arrowFire_00116
+  rotate: false
+  xy: 983, 670
+  size: 62, 60
+  orig: 62, 60
+  offset: 0, 0
+  index: -1
+arrowFire/arrowFire_00117
+  rotate: false
+  xy: 926, 606
+  size: 62, 60
+  orig: 62, 60
+  offset: 0, 0
+  index: -1
+arrowFire/arrowFire_00118
+  rotate: false
+  xy: 1049, 734
+  size: 62, 60
+  orig: 62, 60
+  offset: 0, 0
+  index: -1
+arrowFire/arrowFire_00119
+  rotate: false
+  xy: 926, 542
+  size: 62, 60
+  orig: 62, 60
+  offset: 0, 0
+  index: -1
+arrowFire/arrowFire_00120
+  rotate: false
+  xy: 1049, 670
+  size: 62, 60
+  orig: 62, 60
+  offset: 0, 0
+  index: -1
+arrowFire/arrowFire_00121
+  rotate: false
+  xy: 992, 606
+  size: 62, 60
+  orig: 62, 60
+  offset: 0, 0
+  index: -1
+arrowFire/arrowFire_00122
+  rotate: false
+  xy: 926, 478
+  size: 62, 60
+  orig: 62, 60
+  offset: 0, 0
+  index: -1
+arrowFire/arrowFire_00123
+  rotate: false
+  xy: 926, 414
+  size: 62, 60
+  orig: 62, 60
+  offset: 0, 0
+  index: -1
+arrowFire/arrowFire_00124
+  rotate: false
+  xy: 992, 542
+  size: 62, 60
+  orig: 62, 60
+  offset: 0, 0
+  index: -1
+fader
+  rotate: false
+  xy: 1205, 1844
+  size: 3, 10
+  orig: 3, 10
+  offset: 0, 0
+  index: -1
+fire_reflection
+  rotate: false
+  xy: 1689, 1844
+  size: 97, 76
+  orig: 97, 76
+  offset: 0, 0
+  index: -1
+foam_front
+  rotate: false
+  xy: 4, 1858
+  size: 1280, 186
+  orig: 1280, 225
+  offset: 0, 0
+  index: -1
+foam_moving
+  rotate: false
+  xy: 4, 82
+  size: 398, 296
+  orig: 505, 315
+  offset: 41, 9
+  index: -1
+foam_moving_s
+  rotate: true
+  xy: 736, 163
+  size: 151, 111
+  orig: 151, 111
+  offset: 0, 0
+  index: -1
+rock_front
+  rotate: true
+  xy: 1932, 1874
+  size: 170, 112
+  orig: 170, 113
+  offset: 0, 1
+  index: -1
+sail
+  rotate: false
+  xy: 698, 1508
+  size: 503, 346
+  orig: 503, 346
+  offset: 0, 0
+  index: -1
+splash
+  rotate: false
+  xy: 453, 670
+  size: 460, 209
+  orig: 460, 209
+  offset: 0, 0
+  index: -1
+splash_1
+  rotate: false
+  xy: 4, 1508
+  size: 690, 346
+  orig: 690, 346
+  offset: 0, 0
+  index: -1
+splash_2
+  rotate: false
+  xy: 453, 883
+  size: 476, 271
+  orig: 476, 271
+  offset: 0, 0
+  index: -1
+splash_3
+  rotate: false
+  xy: 851, 223
+  size: 81, 88
+  orig: 81, 88
+  offset: 0, 0
+  index: -1
+water_front
+  rotate: false
+  xy: 1288, 1924
+  size: 640, 120
+  orig: 640, 120
+  offset: 0, 0
+  index: -1

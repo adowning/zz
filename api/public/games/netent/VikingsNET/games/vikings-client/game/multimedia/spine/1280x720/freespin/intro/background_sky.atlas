@@ -1,0 +1,54 @@
+
+background_sky.png
+size: 2048,2048
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+bg_sky
+  rotate: false
+  xy: 4, 4
+  size: 961, 403
+  orig: 961, 403
+  offset: 0, 0
+  index: -1
+filter
+  rotate: true
+  xy: 1894, 1650
+  size: 176, 99
+  orig: 177, 100
+  offset: 1, 0
+  index: -1
+thunder_behindboat
+  rotate: false
+  xy: 4, 411
+  size: 1085, 1415
+  orig: 1087, 1417
+  offset: 1, 1
+  index: -1
+thunder_center
+  rotate: true
+  xy: 1093, 140
+  size: 1686, 797
+  orig: 1688, 799
+  offset: 1, 1
+  index: -1
+
+background_sky2.png
+size: 2048,2048
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+thunder_right
+  rotate: false
+  xy: 4, 4
+  size: 872, 948
+  orig: 874, 950
+  offset: 1, 1
+  index: -1
+thunder_top
+  rotate: false
+  xy: 4, 956
+  size: 1746, 650
+  orig: 1748, 652
+  offset: 1, 1
+  index: -1

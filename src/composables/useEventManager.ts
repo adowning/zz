@@ -1,5 +1,5 @@
 // PATH: frontend/src/types/events.ts
-import type { User, Wallet, VipInfo, OperatorType } from '~/types'
+import type { OperatorType, User, VipInfo, Wallet } from '~/types'
 import { WsMessage } from './useWebSocketClient'
 
 /**
@@ -23,15 +23,19 @@ export interface ChatMessage {
 }
 
 export interface NotificationFromServer {
-  type: string,
-  payload:{
-  message: string
+  type: string
+  payload: {
+    message: string
   }
 }
-
+export interface BalanceChangeMessage {
+  type: string
+  newBalance: number
+  oldBalance: number
+}
 export interface Events {
   'balance:update': BalanceUpdatePayload
-  'settingsModal': boolean
+  settingsModal: boolean
   'animation:add': AnimationEventFromServer
   'animation:update': AnimationEventFromServer
   'animation:remove': AnimationEventFromServer
@@ -41,34 +45,30 @@ export interface Events {
   'user:updated': ModelChangeEventFromServer
   'wallet:updated': ModelChangeEventFromServer
   'vip:updated': ModelChangeEventFromServer
-  'wsMessage': WsMessage
-  'chat': ChatMessage
-  'notification': NotificationFromServer
-  'hideBars': boolean
-  'hideMain': boolean
-  'hideBottomBar': void
-  'activeName': string
-  'shopOpen': boolean
-  'rewardsOpen': boolean
-  'chatOpen': boolean
-  'wheelOpen': boolean
-  'leaderBoardOpen': boolean
-  'wheelFinished': boolean
-  'spinStarted': boolean
-  'wsConnected': boolean
+  wsMessage: WsMessage
+  chat: ChatMessage
+  notification: NotificationFromServer
+  hideBars: boolean
+  hideMain: boolean
+  hideBottomBar: void
+  activeName: string
+  shopOpen: boolean
+  rewardsOpen: boolean
+  chatOpen: boolean
+  wheelOpen: boolean
+  leaderBoardOpen: boolean
+  wheelFinished: boolean
+  spinStarted: boolean
+  wsConnected: boolean
+  balanceChange: BalanceChangeMessage
 }
-
 
 export type EventMessage<T extends keyof Events> = (payload: Events[T]) => void
 
 const baseEventList: Record<string, Array<{ call: (payload: unknown) => void; target: unknown }>> = {}
 
 export interface IEventManagerService {
-  on: <K extends keyof Events>(
-    eventName: K,
-    callback: (payload: Events[K]) => void,
-    target?: unknown
-  ) => void
+  on: <K extends keyof Events>(eventName: K, callback: (payload: Events[K]) => void, target?: unknown) => void
   emit: <K extends keyof Events>(eventName: K, payload: Events[K]) => void
 
   off: (eventName: keyof Events, target: unknown) => void
@@ -77,27 +77,17 @@ export interface IEventManagerService {
 }
 
 export function useEventManager(): IEventManagerService {
-  const on = <K extends keyof Events>(
-    eventName: K,
-    callback: (payload: Events[K]) => void,
-    target?: unknown
-  ) => {
+  const on = <K extends keyof Events>(eventName: K, callback: (payload: Events[K]) => void, target?: unknown) => {
     if (!baseEventList[eventName]) {
       baseEventList[eventName] = []
     }
 
     const listeners = baseEventList[eventName]!
 
-    if (
-      listeners.findIndex(
-        (element) => element.target === target && element.call === callback
-      ) === -1
-    ) {
+    if (listeners.findIndex((element) => element.target === target && element.call === callback) === -1) {
       listeners.push({ call: callback as (payload: unknown) => void, target })
     } else {
-      console.warn(
-        `EventManager: Listener for event "${eventName}" and target already exists.`
-      )
+      console.warn(`EventManager: Listener for event "${eventName}" and target already exists.`)
     }
   }
 
@@ -115,15 +105,9 @@ export function useEventManager(): IEventManagerService {
       }
       listeners.forEach((element) => {
         try {
-          ; (element.call as (payload: Events[K]) => void).call(
-            element.target,
-            payload
-          )
+          ;(element.call as (payload: Events[K]) => void).call(element.target, payload)
         } catch (error) {
-          console.error(
-            `EventManager: Error in event listener for "${eventName}":`,
-            error
-          )
+          console.error(`EventManager: Error in event listener for "${eventName}":`, error)
         }
       })
     }
@@ -131,11 +115,11 @@ export function useEventManager(): IEventManagerService {
 
   const off = (eventName: keyof Events, target: unknown) => {
     const listeners = baseEventList[eventName]
-    if (!listeners) { return }
+    if (!listeners) {
+      return
+    }
 
-    baseEventList[eventName] = listeners.filter(
-      (element) => element.target !== target
-    )
+    baseEventList[eventName] = listeners.filter((element) => element.target !== target)
 
     if (baseEventList[eventName]?.length === 0) {
       delete baseEventList[eventName]
@@ -154,9 +138,7 @@ export function useEventManager(): IEventManagerService {
         const key = eventName as keyof Events
         const listeners = baseEventList[key]
         if (listeners) {
-          baseEventList[key] = listeners.filter(
-            (element) => element.target !== remove
-          )
+          baseEventList[key] = listeners.filter((element) => element.target !== remove)
           if (baseEventList[key]?.length === 0) {
             delete baseEventList[key]
           }
